@@ -16,5 +16,17 @@ SECTIONS
 	main : ALIGN(4)
 	{
 		asm/crt0.o(.text);
+		src/text_02078808.o(.text);
+		asm/code_0207884C.o(.text);
+		asm/code_02078878.o(.text);
+		data/data.o(.data);
+	}
+
+	bin_end = .;
+
+	. = bin_end;
+	BSS : ALIGN(4)
+	{
+		. = 0x0219796C - bin_end; unk_0219796C = .;
 	}
 }

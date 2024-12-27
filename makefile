@@ -30,12 +30,10 @@ CC := wine "tools/mwccarm/2.0/sp2p2/mwccarm.exe"
 # ================
 # = BUILD CONFIG =
 # ================
+# -char signed -g -nolink -msgstyle gcc -d usa 
 
-INC_DIRS := include
-INC_FLAG := $(foreach dir, $(INC_DIRS), -I $(dir))
-
-CFLAGS  := -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -char signed -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -msgstyle gcc -d usa $(INC_FLAG)
-ASFLAGS := -mcpu=arm9tdmi $(INC_FLAG)
+CFLAGS  := -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa  -i include
+ASFLAGS := -mcpu=arm9tdmi -I include
 
 LDS := $(BUILD_NAME).lds
 C_SRCS := $(wildcard $(SRC_DIR)/*.c)
@@ -43,7 +41,7 @@ ASM_SRCS := $(wildcard $(SRC_DIR)/*.S) $(wildcard $(ASM_DIR)/*.S)
 DATA_SRCS := $(wildcard data/*.S)
 
 %.o: %.c
-	wine "tools/mwccarm/2.0/sp2p2/mwccarm.exe" $(CFLAGS) $(INC_FLAG) $< -o $@
+	wine "tools/mwccarm/2.0/sp2p2/mwccarm.exe" $(CFLAGS) $< -o $@
 
 %.o: %.S
 	arm-none-eabi-as $(ASFLAGS) $(INC_FLAG) $< -o $@

@@ -1,8 +1,6 @@
+.include "macros.inc"
 .section .text
-.arm
 
-.global _start
-.type _start, %function
-
+ARM_FUNC_START _start
 _start:
-.incbin "fe11-arm9-base.bin", 0x800, 0x000E8A84 - 0x800
+.incbin "fe11-arm9-base.bin", 0x800, 0x78808 - 0x800
