@@ -1,0 +1,20 @@
+OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
+OUTPUT_ARCH(arm)
+ENTRY(_start)
+
+SECTIONS
+{
+	. = 0x02000000;
+
+	secure : ALIGN(4)
+	{
+		asm/secure.o(.text);
+	}
+
+	. = 0x02000800;
+
+	main : ALIGN(4)
+	{
+		asm/crt0.o(.text);
+	}
+}
