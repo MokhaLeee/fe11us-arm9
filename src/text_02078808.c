@@ -26,9 +26,7 @@ int sub_02078808(struct UnkStruct_Func02078808 * r0)
 	return 1;
 }
 
-#if 0
 int sub_0207884C(struct UnkStruct_Func02078808 * r0)
 {
 	return sub_02078F5C(unk_0219796C.unk_08, 0x400, r0) != 0 ? 1 : 0;
 }
-#endif

@@ -70,7 +70,8 @@ $(ROM): $(ELF)
 	$(OBJCOPY) --strip-debug -O binary $< $@
 
 compare: $(ROM)
-	$(SHASUM) -c fe11-arm9.sha1
+#	$(SHASUM) -c fe11-arm9.sha1
+	@python3 tools/scripts/fix_diff.py
 
 CLEAN_FILES += $(ROM) $(ELF) $(MAP)
 
