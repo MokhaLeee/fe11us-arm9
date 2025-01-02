@@ -51,7 +51,7 @@ def main(args):
                         # print(f"skip offset {offset:08X}")
                         continue
 
-            print(f"Offset {offset:08X}: {byte1} != {byte2}")
+            # print(f"Offset {offset:08X}: {byte1} != {byte2}")
             check = False
 
     if not check:

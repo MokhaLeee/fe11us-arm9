@@ -1,6 +1,6 @@
 #include "global.h"
 
-struct UnkStruct_Func02078808 {
+struct UnkStruct_Func_02078808 {
 	u16 unk_00;
 };
 
@@ -10,10 +10,10 @@ struct UnkStruct_0219796C {
 	int unk_08;
 };
 
-extern int sub_2078F5C(int, int, struct UnkStruct_Func02078808 *);
+extern int sub_2078F5C(int, int, struct UnkStruct_Func_02078808 *);
 extern struct UnkStruct_0219796C unk_0219796C;
 
-int sub_2078808(struct UnkStruct_Func02078808 * r0)
+int sub_2078808(struct UnkStruct_Func_02078808 * r0)
 {
 	int r2;
 
@@ -26,7 +26,7 @@ int sub_2078808(struct UnkStruct_Func02078808 * r0)
 	return 1;
 }
 
-int sub_207884C(struct UnkStruct_Func02078808 * r0)
+int sub_207884C(struct UnkStruct_Func_02078808 * r0)
 {
 	return sub_2078F5C(unk_0219796C.unk_08, 0x400, r0) != 0 ? 1 : 0;
 }

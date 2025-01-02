@@ -3,6 +3,8 @@
 
 #include "types.h"
 
+void sub_01FF8000(void * unk1, u8 a, u8 b, int c, u8 d, int e);
+
 // ??? sub_20000D4
 // ??? sub_20003BC
 // ??? _start
@@ -12,16 +14,19 @@
 // ??? sub_2000A78
 // ??? nullsub_1
 // ??? nullsub_2
-// ??? main
-// ??? sub_2000D2C
+void main(void);
+void * sub_2000C70(void);
+void sub_2000C7C(struct UnkStruct_Func_2000C7C * buf);
+void sub_2000D14(struct UnkStruct_Func_2000C7C * buf, int a);
+void sub_2000D2C(struct UnkStruct_Func_2000D2C * buf, int a, int b);
 // ??? sub_2000F18
 // ??? sub_2000FEC
 // ??? sub_20010A0
 // ??? sub_200148C
-// ??? sub_20016E8
-// ??? sub_2001770
-// ??? sub_2001820
-// ??? sub_2001BAC
+int sub_20016E8(struct UnkStruct_Func_2000D2C * unk1, struct UnkStruct_021E3328_00_04_00 * unk2, int a, int b);
+int sub_2001770(struct UnkStruct_Func_2000D2C * buf, int a, int b);
+int sub_2001820(struct UnkStruct_Func_2000D2C * buf, int a, int b, int c);
+int sub_2001BAC(struct UnkStruct_Func_2000D2C * buf, int a);
 // ??? sub_2001CA0
 // ??? sub_2001CD0
 // ??? sub_2001ED0
@@ -307,9 +312,9 @@
 // ??? sub_200EDD4
 // ??? sub_200EDF0
 // ??? sub_200EECC
-// ??? sub_200EF04
-// ??? sub_200F028
-// ??? sub_200F04C
+void sub_200EF04(void);
+void sub_200F028(void);
+void main_loop(void);
 // ??? sub_200F0F0
 // ??? sub_200F1E8
 // ??? sub_200F20C
@@ -929,7 +934,7 @@
 // ??? sub_2021C84
 // ??? sub_2021DD4
 // ??? sub_20228EC
-// ??? sub_2022F10
+void sub_2022F10(void);
 // ??? sub_2022F28
 // ??? sub_2022F4C
 // ??? sub_2022F54
@@ -1531,7 +1536,7 @@
 // ??? sub_2038F38
 // ??? sub_2038F94
 // ??? sub_2038FE4
-// ??? sub_2039088
+int sub_2039088(void * unk0, int b, int c, int d, int e, int f, int g);
 // ??? sub_20391E0
 // ??? sub_203944C
 // ??? sub_203983C
@@ -1569,10 +1574,10 @@
 // ??? sub_203C660
 // ??? sub_203C6C0
 // ??? sub_203C73C
-// ??? sub_203C77C
+int sub_203C77C(struct UnkStruct_021E3328_00_04_00 * unk);
 // ??? sub_203C7AC
 // ??? sub_203C7E4
-// ??? sub_203C810
+int sub_203C810(struct UnkStruct_021E3328_00_04_00 * unk, int mask);
 // ??? sub_203C834
 // ??? sub_203CB6C
 // ??? sub_203CB98
@@ -3833,7 +3838,7 @@
 // ??? sub_20A57B8
 // ??? sub_20A57D4
 // ??? sub_20A57F8
-// ??? sub_20A5824
+void sub_20A5824(void * buf, int a, int b);
 // ??? sub_20A58B8
 // ??? sub_20A59F8
 // ??? sub_20A5A00
@@ -4065,7 +4070,7 @@
 // ??? sub_20AD1B0
 // ??? sub_20AD1C0
 // ??? sub_20AD228
-// ??? sub_20AD244
+void sub_20AD244(int a);
 // ??? sub_20AD280
 // ??? sub_20AD29C
 // ??? sub_20AD2B8
