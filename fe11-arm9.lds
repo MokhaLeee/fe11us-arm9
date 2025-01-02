@@ -16,6 +16,7 @@ SECTIONS
 	main : ALIGN(4)
 	{
 		asm/crt0.o(.text);
+		asm/code.o(.text);
 		src/text_02078808.o(.text);
 		asm/code_0207884C.o(.text);
 		asm/code_02078878.o(.text);
@@ -28,5 +29,6 @@ SECTIONS
 	BSS : ALIGN(4)
 	{
 		. = 0x0219796C - bin_end; unk_0219796C = .;
+		. = 0x021A23E0 - bin_end; unk_021A23E0 = .;
 	}
 }
