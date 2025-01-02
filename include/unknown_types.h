@@ -29,6 +29,23 @@ struct UnkStruct_Func_2000C7C {
     /* 10F8 */ s8 unk_10F8[0x80];
 };
 
+struct UnkStruct_02197254_20_08 {
+	s8 * unk_00;
+	s8 * unk_04;
+};
+
+struct UnkStruct_02197254_20 {
+	STRUCT_PAD(0x00, 0x08);
+
+	struct UnkStruct_02197254_20_08 unk_08[0x10]; // amt idk
+};
+
+struct UnkStruct_02197254 {
+	STRUCT_PAD(0x00, 0x20);
+
+	/* 00 */ struct UnkStruct_02197254_20 * unk_20;
+};
+
 struct UnkStruct_021E3328_00_04_00_44 {
     STRUCT_PAD(0x00, 0x28);
 
@@ -63,6 +80,10 @@ struct UnkStruct_021E3328 {
     /* 26 */ u8 unk_26;
     /* 27 */ u8 unk_27;
     /* 28 */ u8 unk_28[0x80]; // idk
+
+	STRUCT_PAD(0xA8, 0x828);
+
+	/* 0828 */ u8 * unk_0828; // idk
 };
 
 struct UnkStruct_021E3324 {

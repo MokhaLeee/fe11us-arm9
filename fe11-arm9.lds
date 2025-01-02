@@ -33,6 +33,7 @@ SECTIONS
 	. = bin_end;
 	BSS : ALIGN(4)
 	{
+		. = 0x02197254 - bin_end; unk_02197254 = .;
 		. = 0x0219796C - bin_end; unk_0219796C = .;
 		. = 0x021A23E0 - bin_end; unk_021A23E0 = .;
 		. = 0x021E3324 - bin_end; unk_021E3324 = .;
