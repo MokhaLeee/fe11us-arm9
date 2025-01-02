@@ -1,0 +1,8 @@
+.vscode/
+*.o
+fe11-arm9-base.bin
+fe11-arm9.bin
+fe11-arm9.elf
+fe11-arm9.map
+
+tools/mwccarm
