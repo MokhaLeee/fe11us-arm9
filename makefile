@@ -17,34 +17,36 @@ all: compare
 
 SHASUM ?= sha1sum
 
-PREFIX := arm-none-eabi-
+MWCC := wine "tools/mwccarm/2.0/sp2p2/mwccarm.exe"
+MWAS := wine "tools/mwccarm/2.0/sp2p2/mwasmarm.exe"
+MWLD := wine "tools/mwccarm/2.0/sp2p2/mwldarm.exe"
 
-export OBJCOPY := $(PREFIX)objcopy
-export AS := $(PREFIX)as
-export CPP := $(PREFIX)cpp
-export LD := $(PREFIX)ld
-export STRIP := $(PREFIX)strip
-
-CC := wine "tools/mwccarm/2.0/sp2p2/mwccarm.exe"
+ARMCC     := arm-none-eabi-gcc
+ARMAS     := arm-none-eabi-as
+ARMLD     := arm-none-eabi-ld
+ARMOBJCPY := arm-none-eabi-objcopy
 
 # ================
 # = BUILD CONFIG =
 # ================
 # -char signed -g -nolink -msgstyle gcc -d usa 
 
-CFLAGS  := -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa  -i include
-ASFLAGS := -mcpu=arm9tdmi -I include
+MW_CFLAGS  := -i include -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa
+MW_ASFLAGS := -i include -proc arm5te
 
-LDS := $(BUILD_NAME).lds
+ARM_ASFLAGS := -mcpu=arm9tdmi -I include
+
+ARM_LDS := $(BUILD_NAME).lds
 C_SRCS := $(wildcard $(SRC_DIR)/*.c)
 ASM_SRCS := $(wildcard $(SRC_DIR)/*.S) $(wildcard $(ASM_DIR)/*.S)
 DATA_SRCS := $(wildcard data/*.S)
 
 %.o: %.c
-	wine "tools/mwccarm/2.0/sp2p2/mwccarm.exe" $(CFLAGS) $< -o $@
+	$(MWCC) $(MW_CFLAGS) $< -o $@
 
 %.o: %.S
-	arm-none-eabi-as $(ASFLAGS) $(INC_FLAG) $< -o $@
+	$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
+#	$(MWAS) $(MW_ASFLAGS) $< -o $@
 
 # ===========
 # = Targets =
@@ -63,11 +65,11 @@ ALL_DEPS := $(ALL_OBJS:%.o=%.d)
 
 CLEAN_DIRS += $(ALL_OBJS)
 
-$(ELF): $(ALL_OBJS) $(LDS)
-	$(LD) -T $(LDS) -Map $(MAP) $(ALL_OBJS) -o $@
+$(ELF): $(ALL_OBJS) $(ARM_LDS)
+	$(ARMLD) -T $(ARM_LDS) -Map $(MAP) $(ALL_OBJS) -o $@
 
 $(ROM): $(ELF)
-	$(OBJCOPY) --strip-debug -O binary $< $@
+	$(ARMOBJCPY) --strip-debug -O binary $< $@
 
 compare: $(ROM)
 #	$(SHASUM) -c fe11-arm9.sha1
