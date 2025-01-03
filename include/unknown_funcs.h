@@ -68,8 +68,6 @@ void sub_1FFA764(void);
 
 /* proc.h */
 
-// ??? sub_1FFC3B0
-// ??? sub_1FFC3F4
 // ??? sub_1FFC404
 // ??? sub_1FFC4E4
 // ??? sub_1FFC5D4
@@ -3884,8 +3882,8 @@ void sub_20A2444(int a, int b);
 // ??? sub_20A48EC
 // ??? sub_20A49DC
 // ??? sub_20A4A24
-void * sub_20A4A38(void);
-void sub_20A4A4C(void *);
+void * lock_irqsave(void);
+void unlock_irqrestore(void *);
 // ??? sub_20A4A64
 // ??? sub_20A4A78
 // ??? sub_20A4A90

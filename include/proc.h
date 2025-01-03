@@ -100,25 +100,27 @@ extern struct ProcStack data_02190ce0;
 
 BOOL IsRootProcess(struct Proc * proc);
 void RunProcessScript(struct Proc * proc);
-// ??? AllocateProcess
-// ??? sub_1FFBDA4
-// ??? sub_1FFBDF4
-// ??? sub_1FFBE1C
-// ??? UnlinkProc
-// ??? sub_1FFBEB4
-// ??? sub_1FFBF78
-// ??? sub_1FFBF90
-// ??? sub_1FFBFD0
-// ??? sub_1FFBFE0
-// ??? sub_1FFC018
-// ??? sub_1FFC030
-// ??? sub_1FFC068
-// ??? sub_1FFC0A0
-// ??? ClearProc
-// ??? Proc_End
-// ??? sub_1FFC1E8
-// ??? sub_1FFC2F4
+struct Proc * AllocateProcess(void);
+void sub_1FFBDA4(struct Proc * proc);
+void InsertRootProcess(struct Proc * proc, s32 treeNum);
+void InsertChildProcess(struct Proc * proc, struct Proc * parent);
+void UnlinkProc(struct Proc * proc);
+struct Proc * Proc_StartExt(struct ProcCmd * script, struct Proc * parent, void * arg_2);
+struct Proc * Proc_Start(struct ProcCmd * script, struct Proc * parent);
+struct Proc * sub_1FFBF90(struct ProcCmd * script, struct Proc * parent);
+void sub_1FFBFD0(struct Proc * proc);
+struct Proc * Proc_StartBlockingExt(struct ProcCmd * script, struct Proc * parent, void * arg_2);
+struct Proc * Proc_StartBlocking(struct ProcCmd * script, struct Proc * parent);
+struct Proc * sub_1FFC030(struct ProcCmd * script, struct Proc * parent);
+void sub_1FFC068(struct Proc * proc);
+void sub_1FFC0A0(struct Proc * proc);
+void ClearProc(struct Proc * proc);
+void Proc_End(struct Proc * proc);
+void RunProcessRecursive(struct Proc * proc);
+void sub_1FFC2F4(struct Proc * proc);
 void Proc_Run(u32 tree);
+void Proc_Break(struct Proc * proc, s32 arg_1);
+void sub_1FFC3F4(struct Proc * proc);
 
 extern BOOL (* gProcessCmdTable[])(struct Proc *);
 

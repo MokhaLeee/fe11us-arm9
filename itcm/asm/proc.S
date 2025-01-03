@@ -1,545 +1,10 @@
 .include "macros.inc"
 .section .text
 
-	arm_func_start AllocateProcess
-AllocateProcess: @ 0x01FFBD3C
-	push {r4, lr}
-	bl sub_20A4A38
-	ldr r1, _01FFBDA0 @ =0x02190CE0
-	ldr ip, [r1]
-	ldr r4, [ip]
-	ldrh r1, [r4, #0x32]
-	tst r1, #0x10
-	beq _01FFBD84
-	mov r3, ip
-_01FFBD60:
-	ldr r2, [r3, #4]!
-	ldrh r1, [r2, #0x32]
-	tst r1, #0x10
-	bne _01FFBD60
-	str r2, [ip]
-	ldr r1, _01FFBDA0 @ =0x02190CE0
-	str r4, [r3]
-	ldr r1, [r1]
-	ldr r4, [r1]
-_01FFBD84:
-	ldr r1, _01FFBDA0 @ =0x02190CE0
-	ldr r2, [r1]
-	add r2, r2, #4
-	str r2, [r1]
-	bl sub_20A4A4C
-	mov r0, r4
-	pop {r4, pc}
-	.align 2, 0
-_01FFBDA0: .4byte 0x02190CE0
-
-	arm_func_start sub_1FFBDA4
-sub_1FFBDA4: @ 0x01FFBDA4
-	push {r4, lr}
-	mov r4, r0
-	bl sub_20A4A38
-	ldr r1, _01FFBDF0 @ =0x02190CE0
-	ldr r2, [r1]
-	sub r2, r2, #4
-	str r2, [r1]
-	ldr r3, [r2]
-	cmp r3, r4
-	beq _01FFBDE8
-_01FFBDCC:
-	ldr r1, [r2, #-4]!
-	cmp r1, r4
-	bne _01FFBDCC
-	ldr r1, _01FFBDF0 @ =0x02190CE0
-	str r3, [r2]
-	ldr r1, [r1]
-	str r4, [r1]
-_01FFBDE8:
-	bl sub_20A4A4C
-	pop {r4, pc}
-	.align 2, 0
-_01FFBDF0: .4byte 0x02190CE0
-
-	arm_func_start sub_1FFBDF4
-sub_1FFBDF4: @ 0x01FFBDF4
-	ldr r3, _01FFBE18 @ =gProcTreeRootArray
-	ldr r2, [r3, r1, lsl #2]
-	cmp r2, #0
-	strne r0, [r2, #0x20]
-	ldrne r2, [r3, r1, lsl #2]
-	strne r2, [r0, #0x24]
-	str r1, [r0, #0x18]
-	str r0, [r3, r1, lsl #2]
-	bx lr
-	.align 2, 0
-_01FFBE18: .4byte gProcTreeRootArray
-
-	arm_func_start sub_1FFBE1C
-sub_1FFBE1C: @ 0x01FFBE1C
-	ldr r2, [r1, #0x1c]
-	cmp r2, #0
-	strne r0, [r2, #0x20]
-	ldrne r2, [r1, #0x1c]
-	strne r2, [r0, #0x24]
-	str r0, [r1, #0x1c]
-	str r1, [r0, #0x18]
-	bx lr
-
-	arm_func_start UnlinkProc
-UnlinkProc: @ 0x01FFBE3C
-	push {r4, lr}
-	mov r4, r0
-	ldr r1, [r4, #0x20]
-	cmp r1, #0
-	ldrne r0, [r4, #0x24]
-	strne r0, [r1, #0x24]
-	ldr r1, [r4, #0x24]
-	cmp r1, #0
-	ldrne r0, [r4, #0x20]
-	strne r0, [r1, #0x20]
-	ldr r0, [r4, #0x18]
-	bl IsRootProcess
-	cmp r0, #0
-	ldr r1, [r4, #0x18]
-	bne _01FFBE8C
-	ldr r0, [r1, #0x1c]
-	cmp r0, r4
-	ldreq r0, [r4, #0x24]
-	streq r0, [r1, #0x1c]
-	b _01FFBEA0
-_01FFBE8C:
-	ldr r2, _01FFBEB0 @ =gProcTreeRootArray
-	ldr r0, [r2, r1, lsl #2]
-	cmp r0, r4
-	ldreq r0, [r4, #0x24]
-	streq r0, [r2, r1, lsl #2]
-_01FFBEA0:
-	mov r0, #0
-	str r0, [r4, #0x20]
-	str r0, [r4, #0x24]
-	pop {r4, pc}
-	.align 2, 0
-_01FFBEB0: .4byte gProcTreeRootArray
-
-	arm_func_start sub_1FFBEB4
-sub_1FFBEB4: @ 0x01FFBEB4
-	push {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r5, r1
-	mov r6, r2
-	bl AllocateProcess
-	mov r4, r0
-	str r7, [r4, #4]
-	str r7, [r4, #8]
-	mov r1, #0
-	str r1, [r4, #0xc]
-	str r1, [r4, #0x10]
-	str r1, [r4, #0x14]
-	str r1, [r4, #0x18]
-	str r1, [r4, #0x1c]
-	str r1, [r4, #0x20]
-	str r1, [r4, #0x24]
-	str r6, [r4, #0x28]
-	str r1, [r4, #0x2c]
-	strh r1, [r4, #0x30]
-	strb r1, [r4, #0x34]
-	mov r0, r5
-	strb r1, [r4, #0x35]
-	mov r1, #0xc
-	strh r1, [r4, #0x32]
-	bl IsRootProcess
-	cmp r0, #0
-	beq _01FFBF38
-	cmp r5, #0
-	moveq r5, #9
-	mov r0, r4
-	mov r1, r5
-	bl sub_1FFBDF4
-	b _01FFBF44
-_01FFBF38:
-	mov r0, r4
-	mov r1, r5
-	bl sub_1FFBE1C
-_01FFBF44:
-	ldr r1, _01FFBF74 @ =0x027E1268
-	mov r0, r4
-	ldr r5, [r1]
-	str r6, [r1]
-	bl RunProcessScript
-	ldr r1, _01FFBF74 @ =0x027E1268
-	mov r0, r4
-	str r5, [r1]
-	ldrh r1, [r4, #0x32]
-	bic r1, r1, #4
-	strh r1, [r4, #0x32]
-	pop {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_01FFBF74: .4byte 0x027E1268
-
-	arm_func_start sub_1FFBF78
-sub_1FFBF78: @ 0x01FFBF78
-	ldr r2, _01FFBF88 @ =0x027E1268
-	ldr ip, _01FFBF8C @ =sub_1FFBEB4
-	ldr r2, [r2]
-	bx ip
-	.align 2, 0
-_01FFBF88: .4byte 0x027E1268
-_01FFBF8C: .4byte sub_1FFBEB4
-
-	arm_func_start sub_1FFBF90
-sub_1FFBF90: @ 0x01FFBF90
-	push {r4, r5, r6, lr}
-	mov r6, r0
-	mov r4, r1
-	bl sub_20A4A38
-	mov r5, r0
-	mov r0, r6
-	mov r1, r4
-	bl sub_1FFBF78
-	mov r4, r0
-	ldrh r1, [r4, #0x32]
-	mov r0, r5
-	orr r1, r1, #4
-	strh r1, [r4, #0x32]
-	bl sub_20A4A4C
-	mov r0, r4
-	pop {r4, r5, r6, pc}
-
-	arm_func_start sub_1FFBFD0
-sub_1FFBFD0: @ 0x01FFBFD0
-	ldrh r1, [r0, #0x32]
-	bic r1, r1, #4
-	strh r1, [r0, #0x32]
-	bx lr
-
-	arm_func_start sub_1FFBFE0
-sub_1FFBFE0: @ 0x01FFBFE0
-	push {r3, lr}
-	bl sub_1FFBEB4
-	ldr r1, [r0, #4]
-	cmp r1, #0
-	moveq r0, #0
-	popeq {r3, pc}
-	ldrh r1, [r0, #0x32]
-	orr r1, r1, #2
-	strh r1, [r0, #0x32]
-	ldr r2, [r0, #0x18]
-	ldrb r1, [r2, #0x35]
-	add r1, r1, #1
-	strb r1, [r2, #0x35]
-	pop {r3, pc}
-
-	arm_func_start sub_1FFC018
-sub_1FFC018: @ 0x01FFC018
-	ldr r2, _01FFC028 @ =0x027E1268
-	ldr ip, _01FFC02C @ =sub_1FFBFE0
-	ldr r2, [r2]
-	bx ip
-	.align 2, 0
-_01FFC028: .4byte 0x027E1268
-_01FFC02C: .4byte sub_1FFBFE0
-
-	arm_func_start sub_1FFC030
-sub_1FFC030: @ 0x01FFC030
-	push {r3, r4, r5, lr}
-	movs r4, r1
-	moveq r4, #9
-	mov r5, r0
-	mov r0, r4
-	bl IsRootProcess
-	cmp r0, #0
-	mov r0, r5
-	mov r1, r4
-	beq _01FFC060
-	bl sub_1FFBF78
-	pop {r3, r4, r5, pc}
-_01FFC060:
-	bl sub_1FFC018
-	pop {r3, r4, r5, pc}
-
-	arm_func_start sub_1FFC068
-sub_1FFC068: @ 0x01FFC068
-	push {r4, lr}
-	mov r4, r0
-	ldr r0, [r4, #0x24]
-	cmp r0, #0
-	beq _01FFC080
-	bl sub_1FFC068
-_01FFC080:
-	ldr r0, [r4, #0x1c]
-	cmp r0, #0
-	beq _01FFC090
-	bl sub_1FFC068
-_01FFC090:
-	ldrh r0, [r4, #0x32]
-	orr r0, r0, #1
-	strh r0, [r4, #0x32]
-	pop {r4, pc}
-
-	arm_func_start sub_1FFC0A0
-sub_1FFC0A0: @ 0x01FFC0A0
-	push {r4, lr}
-	mov r4, r0
-	ldr r0, [r4, #0x24]
-	cmp r0, #0
-	beq _01FFC0B8
-	bl sub_1FFC0A0
-_01FFC0B8:
-	ldr r0, [r4, #0x1c]
-	cmp r0, #0
-	beq _01FFC0C8
-	bl sub_1FFC0A0
-_01FFC0C8:
-	ldrh r0, [r4, #0x32]
-	tst r0, #0x80
-	popne {r4, pc}
-	orr r1, r0, #0x80
-	mov r0, r4
-	strh r1, [r4, #0x32]
-	bl sub_1FFBDA4
-	pop {r4, pc}
-
-	arm_func_start ClearProc
-ClearProc: @ 0x01FFC0E8
-	push {r4, lr}
-	mov r4, r0
-	ldr r0, [r4, #0x24]
-	cmp r0, #0
-	beq _01FFC100
-	bl ClearProc
-_01FFC100:
-	ldr r0, [r4, #0x1c]
-	cmp r0, #0
-	beq _01FFC110
-	bl ClearProc
-_01FFC110:
-	ldr r1, [r4, #0xc]
-	cmp r1, #0
-	beq _01FFC124
-	mov r0, r4
-	.4byte 0xE12FFF31 @ blx r1
-_01FFC124:
-	ldr r0, [r4]
-	cmp r0, #0
-	beq _01FFC13C
-	ldr r1, [r0]
-	mov r0, r4
-	.4byte 0xE12FFF31 @ blx r1
-_01FFC13C:
-	mov r0, #0
-	str r0, [r4]
-	str r0, [r4, #4]
-	str r0, [r4, #8]
-	str r0, [r4, #0x10]
-	str r0, [r4, #0x14]
-	ldrh r0, [r4, #0x32]
-	tst r0, #2
-	popeq {r4, pc}
-	ldr r1, [r4, #0x18]
-	ldrb r0, [r1, #0x35]
-	sub r0, r0, #1
-	strb r0, [r1, #0x35]
-	pop {r4, pc}
-
-	arm_func_start Proc_End
-Proc_End: @ 0x01FFC174
-	push {r3, r4, r5, lr}
-	movs r5, r0
-	popeq {r3, r4, r5, pc}
-	ldr r2, _01FFC1E4 @ =0x04000208
-	mov r1, #0
-	ldrh r4, [r2]
-	strh r1, [r2]
-	ldr r1, [r5, #4]
-	cmp r1, #0
-	beq _01FFC1A8
-	ldrh r1, [r5, #0x32]
-	tst r1, #1
-	beq _01FFC1B8
-_01FFC1A8:
-	ldr r1, _01FFC1E4 @ =0x04000208
-	ldrh r0, [r1]
-	strh r4, [r1]
-	pop {r3, r4, r5, pc}
-_01FFC1B8:
-	bl UnlinkProc
-	mov r0, r5
-	bl sub_1FFC068
-	ldr r2, _01FFC1E4 @ =0x04000208
-	mov r0, r5
-	ldrh r1, [r2]
-	strh r4, [r2]
-	bl ClearProc
-	mov r0, r5
-	bl sub_1FFC0A0
-	pop {r3, r4, r5, pc}
-	.align 2, 0
-_01FFC1E4: .4byte 0x04000208
-
-	arm_func_start sub_1FFC1E8
-sub_1FFC1E8: @ 0x01FFC1E8
-	push {r3, r4, r5, lr}
-	movs r5, r0
-	popeq {r3, r4, r5, pc}
-	ldrh r0, [r5, #0x32]
-	orr r0, r0, #0x10
-	strh r0, [r5, #0x32]
-	ldr r0, [r5, #0x24]
-	cmp r0, #0
-	beq _01FFC210
-	bl sub_1FFC1E8
-_01FFC210:
-	ldrh r0, [r5, #0x32]
-	bic r0, r0, #0x10
-	strh r0, [r5, #0x32]
-	ldrh r0, [r5, #0x32]
-	tst r0, #8
-	beq _01FFC250
-	ldr r0, _01FFC2E8 @ =0x027E125C
-	ldrb r0, [r0]
-	cmp r0, #0
-	ldrne r0, _01FFC2EC @ =0x027E1258
-	ldrneb r0, [r0]
-	cmpne r0, #0
-	bne _01FFC2D4
-	ldrh r0, [r5, #0x32]
-	bic r0, r0, #8
-	strh r0, [r5, #0x32]
-_01FFC250:
-	ldrb r0, [r5, #0x35]
-	cmp r0, #0
-	bne _01FFC2D4
-	ldrh r0, [r5, #0x32]
-	tst r0, #4
-	bne _01FFC2D4
-	ldr r0, _01FFC2F0 @ =0x027E1268
-	ldr r1, [r5, #0x28]
-	ldr r4, [r0]
-	str r1, [r0]
-_01FFC278:
-	ldrh r0, [r5, #0x32]
-	bic r0, r0, #0x20
-	strh r0, [r5, #0x32]
-	ldr r0, [r5, #0x10]
-	cmp r0, #0
-	bne _01FFC298
-	mov r0, r5
-	bl RunProcessScript
-_01FFC298:
-	ldr r1, [r5, #0x10]
-	cmp r1, #0
-	beq _01FFC2AC
-	mov r0, r5
-	.4byte 0xE12FFF31 @ blx r1
-_01FFC2AC:
-	ldrh r0, [r5, #0x32]
-	tst r0, #0x20
-	bne _01FFC278
-	bic r1, r0, #0x20
-	ldr r0, _01FFC2F0 @ =0x027E1268
-	strh r1, [r5, #0x32]
-	str r4, [r0]
-	ldrh r0, [r5, #0x32]
-	tst r0, #1
-	popne {r3, r4, r5, pc}
-_01FFC2D4:
-	ldr r0, [r5, #0x1c]
-	cmp r0, #0
-	popeq {r3, r4, r5, pc}
-	bl sub_1FFC1E8
-	pop {r3, r4, r5, pc}
-	.align 2, 0
-_01FFC2E8: .4byte 0x027E125C
-_01FFC2EC: .4byte 0x027E1258
-_01FFC2F0: .4byte 0x027E1268
-
-	arm_func_start sub_1FFC2F4
-sub_1FFC2F4: @ 0x01FFC2F4
-	push {r3, r4, r5, lr}
-	movs r4, r0
-	popeq {r3, r4, r5, pc}
-	ldrh r0, [r4, #0x32]
-	orr r0, r0, #0x10
-	strh r0, [r4, #0x32]
-	ldr r0, [r4, #0x24]
-	cmp r0, #0
-	beq _01FFC31C
-	bl sub_1FFC2F4
-_01FFC31C:
-	ldrh r0, [r4, #0x32]
-	bic r0, r0, #0x10
-	strh r0, [r4, #0x32]
-	ldrh r0, [r4, #0x32]
-	tst r0, #8
-	bne _01FFC378
-	tst r0, #4
-	bne _01FFC378
-	ldr r0, [r4, #0x14]
-	cmp r0, #0
-	beq _01FFC378
-	ldr r1, _01FFC38C @ =0x027E1268
-	ldr r2, [r4, #0x28]
-	ldr r5, [r1]
-	mov r0, r4
-	str r2, [r1]
-	ldr r1, [r4, #0x14]
-	.4byte 0xE12FFF31 @ blx r1
-	ldr r0, _01FFC38C @ =0x027E1268
-	str r5, [r0]
-	ldrh r0, [r4, #0x32]
-	tst r0, #1
-	popne {r3, r4, r5, pc}
-_01FFC378:
-	ldr r0, [r4, #0x1c]
-	cmp r0, #0
-	popeq {r3, r4, r5, pc}
-	bl sub_1FFC2F4
-	pop {r3, r4, r5, pc}
-	.align 2, 0
-_01FFC38C: .4byte 0x027E1268
-
-	arm_func_start Proc_Run
-Proc_Run: @ 0x01FFC390
-	push {r4, lr}
-	mov r4, r0
-	bl Root_Proc
-	bl sub_1FFC1E8
-	mov r0, r4
-	bl Root_Proc
-	bl sub_1FFC2F4
-	pop {r4, pc}
-
-	arm_func_start sub_1FFC3B0
-sub_1FFC3B0: @ 0x01FFC3B0
-	ldr r2, [r0, #0x10]
-	cmp r2, #0
-	movne r2, #0
-	strne r2, [r0, #0x10]
-	bne _01FFC3E0
-	ldr r3, [r0, #8]
-	cmp r3, #0
-	beq _01FFC3E0
-	ldrsh r2, [r3]
-	cmp r2, #2
-	addeq r2, r3, #8
-	streq r2, [r0, #8]
-_01FFC3E0:
-	cmp r1, #0
-	ldrneh r1, [r0, #0x32]
-	orrne r1, r1, #0x20
-	strneh r1, [r0, #0x32]
-	bx lr
-
-	arm_func_start sub_1FFC3F4
-sub_1FFC3F4: @ 0x01FFC3F4
-	ldr r1, [r0, #8]
-	sub r1, r1, #8
-	str r1, [r0, #8]
-	bx lr
-
 	arm_func_start sub_1FFC404
 sub_1FFC404: @ 0x01FFC404
 	push {r3, r4, r5, r6, r7, lr}
-	ldr r5, _01FFC4E0 @ =0x027E1268
+	ldr r5, _01FFC4E0 @ =data_027e1268
 	ldr r4, [sp, #0x18]
 	ldr ip, [r5]
 	ldrb r6, [ip, #0x41]
@@ -591,19 +56,19 @@ _01FFC4C0:
 	mov r1, r2
 	b _01FFC49C
 _01FFC4C8:
-	ldr r0, _01FFC4E0 @ =0x027E1268
+	ldr r0, _01FFC4E0 @ =data_027e1268
 	ldr r1, [r0]
 	ldrb r0, [r1, #0x41]
 	add r0, r0, #1
 	strb r0, [r1, #0x41]
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
-_01FFC4E0: .4byte 0x027E1268
+_01FFC4E0: .4byte data_027e1268
 
 	arm_func_start sub_1FFC4E4
 sub_1FFC4E4: @ 0x01FFC4E4
 	push {r3, r4, r5, r6, r7, lr}
-	ldr r4, _01FFC5D0 @ =0x027E1268
+	ldr r4, _01FFC5D0 @ =data_027e1268
 	ldr lr, [sp, #0x20]
 	ldr r6, [r4]
 	ldrb r5, [r6, #0x41]
@@ -660,19 +125,19 @@ _01FFC5B0:
 	mov r1, r2
 	b _01FFC58C
 _01FFC5B8:
-	ldr r0, _01FFC5D0 @ =0x027E1268
+	ldr r0, _01FFC5D0 @ =data_027e1268
 	ldr r1, [r0]
 	ldrb r0, [r1, #0x41]
 	add r0, r0, #1
 	strb r0, [r1, #0x41]
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
-_01FFC5D0: .4byte 0x027E1268
+_01FFC5D0: .4byte data_027e1268
 
 	arm_func_start sub_1FFC5D4
 sub_1FFC5D4: @ 0x01FFC5D4
 	push {r3, r4, r5, lr}
-	ldr lr, _01FFC610 @ =0x027E1268
+	ldr lr, _01FFC610 @ =data_027e1268
 	mov ip, #0x14
 	ldr r4, [lr]
 	ldrb lr, [sp, #0x10]
@@ -687,13 +152,13 @@ sub_1FFC5D4: @ 0x01FFC5D4
 	strb r0, [r5, #0x12]
 	pop {r3, r4, r5, pc}
 	.align 2, 0
-_01FFC610: .4byte 0x027E1268
+_01FFC610: .4byte data_027e1268
 
 	arm_func_start sub_1FFC614
 sub_1FFC614: @ 0x01FFC614
 	push {r4, r5, r6, r7, lr}
 	sub sp, sp, #0xc
-	ldr ip, _01FFC664 @ =0x027E1268
+	ldr ip, _01FFC664 @ =data_027e1268
 	mov r4, #0x14
 	ldr r6, [ip]
 	ldrh r5, [sp, #0x20]
@@ -712,13 +177,13 @@ sub_1FFC614: @ 0x01FFC614
 	add sp, sp, #0xc
 	pop {r4, r5, r6, r7, pc}
 	.align 2, 0
-_01FFC664: .4byte 0x027E1268
+_01FFC664: .4byte data_027e1268
 
 	arm_func_start sub_1FFC668
 sub_1FFC668: @ 0x01FFC668
 	push {r4, r5, r6, r7, lr}
 	sub sp, sp, #0xc
-	ldr ip, _01FFC6B8 @ =0x027E1268
+	ldr ip, _01FFC6B8 @ =data_027e1268
 	mov r4, #0x14
 	ldr r6, [ip]
 	ldrh r5, [sp, #0x20]
@@ -737,7 +202,7 @@ sub_1FFC668: @ 0x01FFC668
 	add sp, sp, #0xc
 	pop {r4, r5, r6, r7, pc}
 	.align 2, 0
-_01FFC6B8: .4byte 0x027E1268
+_01FFC6B8: .4byte data_027e1268
 
 	arm_func_start sub_1FFC6BC
 sub_1FFC6BC: @ 0x01FFC6BC
@@ -966,12 +431,12 @@ _01FFC9A8:
 	ldr sb, [r0, #0x10]
 	ldr fp, [r0, #0x18]
 	ldr sl, [r0, #0x1c]
-	bl sub_20A4A38
+	bl lock_irqsave
 	mov r4, r0
 	bl sub_20A3CF4
 	bl sub_20A3CE8
 	mov r0, r4
-	bl sub_20A4A4C
+	bl unlock_irqrestore
 	bl sub_20A3DBC
 	bl sub_20A3DB0
 	add r6, r6, r5
@@ -1065,7 +530,7 @@ sub_1FFCB04: @ 0x01FFCB04
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl sub_20A4A38
+	bl lock_irqsave
 	mov r1, #0xc
 	mul r2, r7, r1
 	add r1, r2, #0xb0
@@ -1074,7 +539,7 @@ sub_1FFCB04: @ 0x01FFCB04
 	add r1, r1, #0x4000000
 	str r5, [r1, #4]
 	str r4, [r1, #8]
-	bl sub_20A4A4C
+	bl unlock_irqrestore
 	pop {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start sub_1FFCB44
@@ -1084,7 +549,7 @@ sub_1FFCB44: @ 0x01FFCB44
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl sub_20A4A38
+	bl lock_irqsave
 	mov r1, #0xc
 	mul r2, r7, r1
 	add r1, r2, #0xb0
@@ -1104,7 +569,7 @@ sub_1FFCB44: @ 0x01FFCB44
 	str r2, [r3, #4]
 	str r1, [r3, #8]
 _01FFCBA4:
-	bl sub_20A4A4C
+	bl unlock_irqrestore
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 _01FFCBAC: .4byte 0x040000B0

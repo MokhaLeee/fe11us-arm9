@@ -4361,12 +4361,12 @@ ARM_FUNC_START sub_20A4A24
 sub_20A4A24:
 .incbin "fe11-arm9-base.bin", 0xA4A24, 0xA4A38 - 0xA4A24
 
-ARM_FUNC_START sub_20A4A38
-sub_20A4A38:
+ARM_FUNC_START lock_irqsave
+lock_irqsave:
 .incbin "fe11-arm9-base.bin", 0xA4A38, 0xA4A4C - 0xA4A38
 
-ARM_FUNC_START sub_20A4A4C
-sub_20A4A4C:
+ARM_FUNC_START unlock_irqrestore
+unlock_irqrestore:
 .incbin "fe11-arm9-base.bin", 0xA4A4C, 0xA4A64 - 0xA4A4C
 
 ARM_FUNC_START sub_20A4A64
