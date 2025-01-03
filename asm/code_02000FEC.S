@@ -1132,7 +1132,3 @@ sub_200EECC:
 ARM_FUNC_START sub_200EF04
 sub_200EF04:
 .incbin "fe11-arm9-base.bin", 0x0EF04, 0x0F028 - 0x0EF04
-
-ARM_FUNC_START sub_200F028
-sub_200F028:
-.incbin "fe11-arm9-base.bin", 0x0F028, 0x0F04C - 0x0F028

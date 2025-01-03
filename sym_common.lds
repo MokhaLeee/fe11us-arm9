@@ -18,8 +18,15 @@
 
 . = 0x021E3324 - BSS_START; unk_021E3324 = .;
 . = 0x021E3328 - BSS_START; unk_021E3328 = .;
+
+/* arm9_data */
+. = 0x027E0000 - BSS_START; unk_027E0000 = .;
+. = 0x027E0004 - BSS_START; unk_027E0004 = .;
+
 . = 0x027E00E0 - BSS_START; unk_027E00E0 = .;
 . = 0x027E1258 - BSS_START; gMainLoopBlocked = .;
+. = 0x027E125C - BSS_START; unk_27E125C = .;
 . = 0x027E1260 - BSS_START; gClock = .;
+. = 0x027E1264 - BSS_START; unk_27E1264 = .;
 . = 0x027E1268 - BSS_START; data_027e1268 = .;
 . = 0x027FFF9C - BSS_START; unk_027FFF9C = .;

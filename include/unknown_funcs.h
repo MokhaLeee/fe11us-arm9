@@ -45,10 +45,10 @@ void sub_1FF8000(void * unk1, u8 a, u8 b, int c, u8 d, int e);
 // ??? sub_1FF9C88
 // ??? sub_1FFA218
 // ??? sub_1FFA690
-// ??? sub_1FFA720
+void sub_1FFA720(void);
 // ??? sub_1FFA734
 // ??? sub_1FFA748
-// ??? sub_1FFA764
+void sub_1FFA764(void);
 // ??? sub_1FFA794
 // ??? sub_1FFA828
 // ??? sub_1FFA974
@@ -397,13 +397,13 @@ int sub_2001BAC(struct UnkStruct_Func_2000D2C * buf, int a);
 // ??? sub_200E920
 // ??? sub_200E938
 // ??? sub_200EDD4
-// ??? sub_200EDF0
-// ??? sub_200EECC
+void sub_200EDF0(void);
+void sub_200EECC(void);
 void sub_200EF04(void);
 void sub_200F028(void);
 void main_loop(void);
 // ??? sub_200F0F0
-// ??? sub_200F1E8
+void sub_200F1E8(void);
 // ??? sub_200F20C
 // ??? sub_200F24C
 // ??? sub_200F28C
@@ -411,8 +411,8 @@ void main_loop(void);
 // ??? sub_200F308
 // ??? sub_200F318
 // ??? sub_200F338
-// ??? sub_200F350
-// ??? sub_200F3B8
+void sub_200F350(int a);
+void sub_200F3B8(void);
 // ??? sub_200F4F0
 // ??? sub_200F570
 // ??? sub_200F5F0
@@ -422,15 +422,15 @@ void main_loop(void);
 // ??? sub_200F8D4
 // ??? sub_200FAF8
 // ??? sub_200FBF0
-// ??? sub_200FCDC
+void sub_200FCDC(void);
 // ??? sub_200FDD8
 // ??? sub_200FF50
-// ??? sub_20100AC
+void sub_20100AC(void);
 // ??? sub_2010100
 void sub_201018C(void);
 // ??? sub_20102D8
 // ??? sub_2010310
-// ??? sub_201032C
+void sub_201032C(void);
 void sub_2010398(void);
 // ??? sub_2010624
 // ??? sub_201064C
@@ -443,7 +443,7 @@ void sub_201079C(void);
 // ??? sub_2010894
 // ??? sub_20108C4
 // ??? sub_20108F4
-// ??? sub_2010C84
+void sub_2010C84(void *);
 // ??? sub_2010D04
 // ??? sub_2010D98
 // ??? sub_2010DCC
@@ -459,7 +459,7 @@ void sub_201079C(void);
 // ??? sub_201122C
 // ??? sub_20113D0
 // ??? sub_2011408
-// ??? sub_2011458
+void sub_2011458(void);
 // ??? sub_2011498
 // ??? sub_20114DC
 // ??? sub_201153C
@@ -467,7 +467,7 @@ void sub_201079C(void);
 // ??? sub_201158C
 // ??? sub_20115A4
 // ??? sub_20115BC
-// ??? sub_20115D4
+void sub_20115D4(void);
 // ??? sub_201160C
 // ??? sub_2011650
 // ??? sub_20116A0
@@ -484,8 +484,8 @@ void sub_201079C(void);
 // ??? sub_2011DCC
 // ??? sub_2011E60
 // ??? sub_2011EE4
-// ??? sub_20120F4
-// ??? sub_2012124
+void sub_20120F4(void);
+void sub_2012124(void);
 // ??? sub_2012138
 // ??? sub_2012144
 // ??? sub_2012154
@@ -676,7 +676,7 @@ void sub_201079C(void);
 // ??? sub_2015A34
 // ??? sub_2015A8C
 // ??? sub_2015AA0
-// ??? sub_2015BD0
+void sub_2015BD0(void);
 // ??? sub_2015DC8
 // ??? sub_2015E38
 // ??? sub_2015E8C
@@ -810,7 +810,7 @@ void sub_2015FB4(void);
 // ??? sub_2019AF8
 // ??? sub_2019B48
 // ??? sub_2019B84
-// ??? sub_2019BD4
+void sub_2019BD4(void);
 void sub_2019C30(void);
 // ??? sub_2019D80
 // ??? sub_2019E60
@@ -874,7 +874,7 @@ void sub_2019C30(void);
 // ??? sub_201BB74
 // ??? sub_201BB8C
 // ??? sub_201BBA8
-// ??? sub_201BC28
+void sub_201BC28(void);
 // ??? sub_201BC40
 // ??? sub_201BC80
 // ??? sub_201BCA4
@@ -887,7 +887,7 @@ void sub_2019C30(void);
 // ??? sub_201BE4C
 // ??? sub_201BEEC
 // ??? sub_201C184
-// ??? sub_201C204
+void sub_201C204(void);
 // ??? sub_201C234
 // ??? sub_201C264
 // ??? sub_201C28C
@@ -938,7 +938,7 @@ void sub_2019C30(void);
 // ??? sub_201F170
 // ??? sub_201F270
 // ??? sub_201F3AC
-// ??? sub_201F3DC
+void sub_201F3DC(void);
 // ??? sub_201F4C4
 // ??? sub_201F4FC
 // ??? sub_201F608
@@ -965,7 +965,7 @@ void sub_2019C30(void);
 // ??? sub_201FE6C
 // ??? sub_201FEC0
 // ??? sub_201FEE4
-// ??? sub_201FF20
+void sub_201FF20(void);
 // ??? sub_201FFB0
 // ??? sub_201FFC0
 // ??? sub_201FFD0
@@ -1016,7 +1016,7 @@ void sub_2019C30(void);
 // ??? sub_2021410
 // ??? sub_2021430
 // ??? sub_2021790
-// ??? sub_20217B4
+void sub_20217B4(void);
 // ??? sub_20219A4
 // ??? sub_2021B14
 // ??? sub_2021B28
@@ -3670,7 +3670,7 @@ void sub_2070480(void);
 // ??? sub_209F658
 // ??? sub_209F7D8
 // ??? sub_209F80C
-// ??? sub_209F848
+void sub_209F848(void);
 // ??? sub_209F93C
 // ??? sub_209F99C
 // ??? sub_209FA54
@@ -3891,7 +3891,7 @@ void sub_20A4A4C(void *);
 // ??? sub_20A4A90
 // ??? sub_20A4A9C
 // ??? sub_20A4AA8
-// ??? sub_20A4AB4
+void sub_20A4AB4(void);
 // ??? sub_20A4AD0
 // ??? sub_20A4B24
 // ??? sub_20A4B58
@@ -4129,7 +4129,7 @@ void sub_20A5824(void * buf, int a, int b);
 // ??? sub_20AC250
 // ??? sub_20AC268
 // ??? sub_20AC280
-// ??? sub_20AC298
+void sub_20AC298(void);
 // ??? sub_20AC304
 // ??? sub_20AC374
 // ??? sub_20AC3AC

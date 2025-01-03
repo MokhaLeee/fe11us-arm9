@@ -1,7 +1,14 @@
     .section .rodata
 
 @ This is copy to 0x027E0000 (size = 0xE0)
-.incbin "fe11-arm9-base.bin", 0xE8980, 0xE8A60 - 0xE8980
+.global ram_copy_start
+ram_copy_start:
+.4byte 0x027E126C
+.4byte 0x027E12B0
+.4byte 0x027E1B48
+.4byte 0x027E1AF4
+
+.incbin "fe11-arm9-base.bin", 0xE8990, 0xE8A60 - 0xE8990
 
 .global itcm_copy_config
 itcm_copy_config:

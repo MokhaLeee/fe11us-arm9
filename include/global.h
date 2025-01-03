@@ -1,7 +1,10 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+#define ARM9
+
 #include "types.h"
+#include "nds/nds.h"
 
 #define STRUCT_PAD(from, to) unsigned char _pad_ ## from[(to) - (from)]
 
