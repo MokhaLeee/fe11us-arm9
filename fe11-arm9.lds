@@ -8,7 +8,7 @@ SECTIONS
 {
 	itcm : ALIGN(4)
 	{
-		. = 0x01FF8000; sub_01FF8000 = .;
+		. = 0x01FF8000; sub_1FF8000 = .;
 		. = 0x01FFC390; Proc_Run = .;
 		. = 0x01FFC6BC; unk_01FFC6BC = .;
 	}

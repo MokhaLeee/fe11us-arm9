@@ -89,10 +89,27 @@ struct Proc
     STRUCT_PAD(0x5A, 0x78);
 };
 
-// ITCM
-void Proc_Run(u32 tree);
 BOOL IsRootProcess(struct Proc * proc);
 void RunProcessScript(struct Proc * proc);
+// ??? AllocateProcess
+// ??? sub_1FFBDA4
+// ??? sub_1FFBDF4
+// ??? sub_1FFBE1C
+// ??? UnlinkProc
+// ??? sub_1FFBEB4
+// ??? sub_1FFBF78
+// ??? sub_1FFBF90
+// ??? sub_1FFBFD0
+// ??? sub_1FFBFE0
+// ??? sub_1FFC018
+// ??? sub_1FFC030
+// ??? sub_1FFC068
+// ??? sub_1FFC0A0
+// ??? ClearProc
+// ??? Proc_End
+// ??? sub_1FFC1E8
+// ??? sub_1FFC2F4
+void Proc_Run(u32 tree);
 
 extern BOOL (* gProcessCmdTable[])(struct Proc *);
 extern struct Proc * gProcTreeRootArray[14];

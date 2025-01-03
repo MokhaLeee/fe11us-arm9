@@ -84,8 +84,8 @@ sub_1FFBE1C: @ 0x01FFBE1C
 	str r1, [r0, #0x18]
 	bx lr
 
-	arm_func_start sub_1FFBE3C
-sub_1FFBE3C: @ 0x01FFBE3C
+	arm_func_start UnlinkProc
+UnlinkProc: @ 0x01FFBE3C
 	push {r4, lr}
 	mov r4, r0
 	ldr r1, [r4, #0x20]
@@ -298,19 +298,19 @@ _01FFC0C8:
 	bl sub_1FFBDA4
 	pop {r4, pc}
 
-	arm_func_start sub_1FFC0E8
-sub_1FFC0E8: @ 0x01FFC0E8
+	arm_func_start ClearProc
+ClearProc: @ 0x01FFC0E8
 	push {r4, lr}
 	mov r4, r0
 	ldr r0, [r4, #0x24]
 	cmp r0, #0
 	beq _01FFC100
-	bl sub_1FFC0E8
+	bl ClearProc
 _01FFC100:
 	ldr r0, [r4, #0x1c]
 	cmp r0, #0
 	beq _01FFC110
-	bl sub_1FFC0E8
+	bl ClearProc
 _01FFC110:
 	ldr r1, [r4, #0xc]
 	cmp r1, #0
@@ -340,8 +340,8 @@ _01FFC13C:
 	strb r0, [r1, #0x35]
 	pop {r4, pc}
 
-	arm_func_start sub_1FFC174
-sub_1FFC174: @ 0x01FFC174
+	arm_func_start Proc_End
+Proc_End: @ 0x01FFC174
 	push {r3, r4, r5, lr}
 	movs r5, r0
 	popeq {r3, r4, r5, pc}
@@ -361,14 +361,14 @@ _01FFC1A8:
 	strh r4, [r1]
 	pop {r3, r4, r5, pc}
 _01FFC1B8:
-	bl sub_1FFBE3C
+	bl UnlinkProc
 	mov r0, r5
 	bl sub_1FFC068
 	ldr r2, _01FFC1E4 @ =0x04000208
 	mov r0, r5
 	ldrh r1, [r2]
 	strh r4, [r2]
-	bl sub_1FFC0E8
+	bl ClearProc
 	mov r0, r5
 	bl sub_1FFC0A0
 	pop {r3, r4, r5, pc}
