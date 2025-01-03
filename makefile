@@ -1,6 +1,3 @@
-.SUFFIXES:
-.SECONDARY:
-
 BUILD_NAME := fe11-arm9
 
 SRC_DIR  = src
@@ -107,6 +104,8 @@ $(ROM): $(ELF)
 
 fe11-arm9.runtime.elf: $(ALL_OBJS) $(ARM_LDS)
 	$(ARMLD) -T $(ARM_LDS) -Map fe11-arm9.runtime.lds $(ALL_OBJS) -o $@
+
+runtime: fe11-arm9.runtime.elf
 
 compare: $(ROM)
 #	$(SHASUM) -c fe11-arm9.sha1
