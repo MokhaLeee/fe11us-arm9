@@ -1,17 +1,17 @@
 #!/bin/python3
 
-import sys
+import sys, os
 
 def is_bl_instruction(instruction):
     condition_code = (instruction >> 28) & 0xF
     is_bl = (instruction & 0x0F000000) == 0x0B000000
     return condition_code == 0b1110 and is_bl
 
-def compare_bin_files(src_data, dst_data):
+def compare_bin_files(src_data, dst_data, size):
     differences = []
     offset = 0
 
-    for offset in range(0xE8A84):
+    for offset in range(size):
         byte1 = src_data[offset]
         byte2 = dst_data[offset]
 
@@ -36,7 +36,10 @@ def main(args):
         src_data = f1.read()
         dst_data = f2.read()
 
-    diffs = compare_bin_files(src_data, dst_data)
+    print(f"[DEBUG] src size=0x{os.stat(src_file).st_size:x}")
+    print(f"[DEBUG] dst size=0x{os.stat(dst_file).st_size:x}")
+
+    diffs = compare_bin_files(src_data, dst_data, os.stat(src_file).st_size)
 
     check = True
 

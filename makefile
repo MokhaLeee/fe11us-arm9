@@ -60,14 +60,22 @@ ITCM_ASM_DIR  = $(ITCM_DIR)/asm
 ITCM_DATA_DIR = $(ITCM_DIR)/data
 
 ITCM_BIN = $(ITCM_DIR)/itcm.bin
+ITCM_S   = $(ITCM_DIR)/itcm.S
+
+ASM_SRCS += $(ITCM_S)
 
 ITCM_C_SRCS    += $(wildcard $(ITCM_SRC_DIR)/*.c)
 ITCM_ASM_SRCS  += $(wildcard $(ITCM_ASM_DIR)/*.S) $(wildcard $(ITCM_ASM_DIR)/*.S)
 ITCM_DATA_SRCS += $(wildcard $(ITCM_DATA_DIR)/*.S) $(wildcard $(ITCM_DIR)/*.S)
 
-C_SRCS += $(ITCM_C_SRCS)
-ASM_SRCS += $(ITCM_ASM_SRCS)
-DATA_SRCS += $(ITCM_DATA_SRCS)
+ITCM_C_OBJS := $(ITCM_C_SRCS:%.c=%.o)
+ITCM_ASM_OBJS := $(ITCM_ASM_SRCS:%.S=%.o)
+ITCM_DATA_OBJS := $(ITCM_DATA_SRCS:%.S=%.o)
+
+CLEAN_DIRS += $(ITCM_C_OBJS) $(ITCM_ASM_OBJS) $(ITCM_DATA_OBJS)
+
+$(ITCM_DIR)/itcm.bin: $(ITCM_C_SRCS) $(ITCM_ASM_SRCS) $(ITCM_DATA_SRCS)
+	$(MAKE) -C $(ITCM_DIR) > /dev/null
 
 # ============
 # = Recepies =
@@ -77,7 +85,7 @@ C_OBJS := $(C_SRCS:%.c=%.o)
 ASM_OBJS := $(ASM_SRCS:%.S=%.o)
 DATA_OBJS := $(DATA_SRCS:%.S=%.o)
 
-ALL_OBJS := $(C_OBJS) $(ASM_OBJS) $(DATA_OBJS)
+ALL_OBJS += $(C_OBJS) $(ASM_OBJS) $(DATA_OBJS)
 ALL_DEPS := $(ALL_OBJS:%.o=%.d)
 
 CLEAN_DIRS += $(ALL_OBJS)
@@ -88,6 +96,8 @@ CLEAN_DIRS += $(ALL_OBJS)
 %.o: %.S
 	$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
 #	$(MWAS) $(MW_ASFLAGS) $< -o $@
+
+$(ITCM_DIR)/itcm.o: $(ITCM_DIR)/itcm.S $(ITCM_DIR)/itcm.bin
 
 $(ELF): $(ALL_OBJS) $(ARM_LDS)
 	$(ARMLD) -T $(ARM_LDS) -Map $(MAP) $(ALL_OBJS) -o $@

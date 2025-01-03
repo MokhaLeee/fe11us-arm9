@@ -1,0 +1,7 @@
+ldrblo --> ldrccb
+ldrbhs --> ldrcsb
+ldrbne --> ldrneb
+ldrbeq --> ldreqb
+strblt --> strltb
+strble --> strleb
+ldrsbeq --> ldreqsb

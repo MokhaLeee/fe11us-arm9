@@ -340,17 +340,17 @@ void main_loop(void);
 // ??? sub_200FF50
 // ??? sub_20100AC
 // ??? sub_2010100
-// ??? sub_201018C
+void sub_201018C(void);
 // ??? sub_20102D8
 // ??? sub_2010310
 // ??? sub_201032C
-// ??? sub_2010398
+void sub_2010398(void);
 // ??? sub_2010624
 // ??? sub_201064C
 // ??? sub_2010668
 // ??? sub_20106A0
 // ??? sub_20106BC
-// ??? sub_201079C
+void sub_201079C(void);
 // ??? sub_2010810
 // ??? sub_201082C
 // ??? sub_2010894
@@ -596,7 +596,7 @@ void main_loop(void);
 // ??? sub_2015EC0
 // ??? sub_2015F58
 // ??? sub_2015F64
-// ??? sub_2015FB4
+void sub_2015FB4(void);
 // ??? sub_2016004
 // ??? sub_2016064
 // ??? sub_201619C
@@ -722,7 +722,7 @@ void main_loop(void);
 // ??? sub_2019B48
 // ??? sub_2019B84
 // ??? sub_2019BD4
-// ??? sub_2019C30
+void sub_2019C30(void);
 // ??? sub_2019D80
 // ??? sub_2019E60
 // ??? sub_2019F68
@@ -2547,8 +2547,8 @@ int sub_203C810(struct UnkStruct_021E3328_00_04_00 * unk, int mask);
 // ??? sub_2070438
 // ??? sub_2070448
 // ??? sub_2070454
-// ??? sub_2070468
-// ??? sub_2070480
+void sub_2070468(void);
+void sub_2070480(void);
 // ??? sub_2070570
 // ??? sub_207058C
 // ??? sub_20707F0
@@ -3669,7 +3669,7 @@ int sub_203C810(struct UnkStruct_021E3328_00_04_00 * unk, int mask);
 // ??? sub_20A22F4
 // ??? sub_20A2358
 // ??? sub_20A2428
-// ??? sub_20A2444
+void sub_20A2444(int a, int b);
 // ??? sub_20A24BC
 // ??? sub_20A25C4
 // ??? sub_20A25DC

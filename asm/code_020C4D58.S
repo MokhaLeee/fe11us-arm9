@@ -3,7 +3,7 @@
 
 	arm_func_start sub_20C4CDC
 sub_20C4CDC: @ 0x020C4CDC
-	ldr r0, _020C4CF8 @ =0x020E3CF8
+	ldr r0, _020C4CF8 @ =unk_020E3CF8
 	mov r1, #0
 	str r1, [r0, #0x18]
 	str r1, [r0, #0x3c]
@@ -11,25 +11,25 @@ sub_20C4CDC: @ 0x020C4CDC
 	str r1, [r0, #0x44]
 	bx lr
 	.align 2, 0
-_020C4CF8: .4byte 0x020E3CF8
+_020C4CF8: .4byte unk_020E3CF8
 
 	arm_func_start sub_20C4CFC
 sub_20C4CFC: @ 0x020C4CFC
-	ldr r0, _020C4D0C @ =0x020E3D44
+	ldr r0, _020C4D0C @ =unk_020E3D44
 	mov r1, #0
 	str r1, [r0]
 	bx lr
 	.align 2, 0
-_020C4D0C: .4byte 0x020E3D44
+_020C4D0C: .4byte unk_020E3D44
 
 	arm_func_start sub_20C4D10
 sub_20C4D10: @ 0x020C4D10
-	ldr r0, _020C4D20 @ =0x020E3DA8
+	ldr r0, _020C4D20 @ =unk_020E3DA8
 	ldr r1, _020C4D24 @ =0x020CA3D4
 	str r1, [r0]
 	bx lr
 	.align 2, 0
-_020C4D20: .4byte 0x020E3DA8
+_020C4D20: .4byte unk_020E3DA8
 _020C4D24: .4byte 0x020CA3D4
 
 	arm_func_start sub_20C4D28
@@ -39,7 +39,7 @@ sub_20C4D28: @ 0x020C4D28
 	arm_func_start sub_20C4D2C
 sub_20C4D2C: @ 0x020C4D2C
 	push {r3, lr}
-	ldr r0, _020C4D50 @ =0x020EF264
+	ldr r0, _020C4D50 @ =unk_020EF264
 	mov ip, #0
 	ldr r3, _020C4D54 @ =0x02013164
 	mov r1, #2
@@ -48,7 +48,7 @@ sub_20C4D2C: @ 0x020C4D2C
 	bl sub_20C3CB4
 	pop {r3, pc}
 	.align 2, 0
-_020C4D50: .4byte 0x020EF264
+_020C4D50: .4byte unk_020EF264
 _020C4D54: .4byte 0x02013164
 
 	arm_func_start sub_20C4D58
@@ -56,7 +56,7 @@ sub_20C4D58: @ 0x020C4D58
 	push {r3, r4, r5, r6, r7, lr}
 	sub sp, sp, #0x90
 	ldr r1, _020C4F78 @ =0x005DC000
-	ldr r4, _020C4F7C @ =0x020EF27C
+	ldr r4, _020C4F7C @ =unk_020EF27C
 	ldr r0, _020C4F80 @ =0x020C5188
 	str r1, [r4, #0x44]
 	add lr, sp, #0x10
@@ -89,7 +89,7 @@ sub_20C4D58: @ 0x020C4D58
 	ldm lr, {r0, r1, r2, r3}
 	stm r7, {r0, r1, r2, r3}
 	ldr r1, [sp, #0x20]
-	ldr r0, _020C4F88 @ =0x020EF280
+	ldr r0, _020C4F88 @ =unk_020EF280
 	str r1, [r4, #0x64]
 	ldr r2, [sp, #0x24]
 	mov r1, ip
@@ -193,10 +193,10 @@ _020C4F50:
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 _020C4F78: .4byte 0x005DC000
-_020C4F7C: .4byte 0x020EF27C
+_020C4F7C: .4byte unk_020EF27C
 _020C4F80: .4byte 0x020C5188
 _020C4F84: .4byte 0x08062400
-_020C4F88: .4byte 0x020EF280
+_020C4F88: .4byte unk_020EF280
 _020C4F8C: .4byte 0x020C5178
 _020C4F90: .4byte 0x020EF600
 _020C4F94: .4byte 0x020EFC80

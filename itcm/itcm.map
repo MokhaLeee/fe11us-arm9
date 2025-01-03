@@ -1,0 +1,257 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x00000000020e3ca0                BSS_START = 0x20e3ca0
+                0x0000000001ff8000                . = 0x1ff8000
+
+itcm            0x0000000001ff8000     0x4ce0
+ asm/code.o(.text)
+ .text          0x0000000001ff8000     0x4ce0 asm/code.o
+                0x0000000001ff8000                sub_1FF8000
+                0x0000000001ff8204                sub_1FF8204
+                0x0000000001ff8258                sub_1FF8258
+                0x0000000001ff82b4                sub_1FF82B4
+                0x0000000001ff8580                sub_1FF8580
+                0x0000000001ff87a0                sub_1FF87A0
+                0x0000000001ff89c0                sub_1FF89C0
+                0x0000000001ff8c3c                sub_1FF8C3C
+                0x0000000001ff8d88                sub_1FF8D88
+                0x0000000001ff8db8                sub_1FF8DB8
+                0x0000000001ff8e50                sub_1FF8E50
+                0x0000000001ff8f24                sub_1FF8F24
+                0x0000000001ff9000                sub_1FF9000
+                0x0000000001ff90d8                sub_1FF90D8
+                0x0000000001ff90f8                sub_1FF90F8
+                0x0000000001ff91c8                sub_1FF91C8
+                0x0000000001ff9300                sub_1FF9300
+                0x0000000001ff9420                sub_1FF9420
+                0x0000000001ff95a4                sub_1FF95A4
+                0x0000000001ff9728                sub_1FF9728
+                0x0000000001ff9758                sub_1FF9758
+                0x0000000001ff976c                sub_1FF976C
+                0x0000000001ff9780                sub_1FF9780
+                0x0000000001ff97a0                sub_1FF97A0
+                0x0000000001ff97f4                sub_1FF97F4
+                0x0000000001ff9850                sub_1FF9850
+                0x0000000001ff9894                sub_1FF9894
+                0x0000000001ff9948                sub_1FF9948
+                0x0000000001ff9998                sub_1FF9998
+                0x0000000001ff99cc                sub_1FF99CC
+                0x0000000001ff9a00                sub_1FF9A00
+                0x0000000001ff9a34                sub_1FF9A34
+                0x0000000001ff9a68                sub_1FF9A68
+                0x0000000001ff9a8c                sub_1FF9A8C
+                0x0000000001ff9af8                sub_1FF9AF8
+                0x0000000001ff9c88                sub_1FF9C88
+                0x0000000001ffa218                sub_1FFA218
+                0x0000000001ffa690                sub_1FFA690
+                0x0000000001ffa720                sub_1FFA720
+                0x0000000001ffa734                sub_1FFA734
+                0x0000000001ffa748                sub_1FFA748
+                0x0000000001ffa764                sub_1FFA764
+                0x0000000001ffa794                sub_1FFA794
+                0x0000000001ffa828                sub_1FFA828
+                0x0000000001ffa974                sub_1FFA974
+                0x0000000001ffabdc                sub_1FFABDC
+                0x0000000001ffadc0                sub_1FFADC0
+                0x0000000001ffb08c                sub_1FFB08C
+                0x0000000001ffb264                sub_1FFB264
+                0x0000000001ffb574                sub_1FFB574
+                0x0000000001ffb5dc                sub_1FFB5DC
+                0x0000000001ffb718                sub_1FFB718
+                0x0000000001ffb82c                sub_1FFB82C
+                0x0000000001ffb934                sub_1FFB934
+                0x0000000001ffb9bc                sub_1FFB9BC
+                0x0000000001ffba40                sub_1FFBA40
+                0x0000000001ffbaec                sub_1FFBAEC
+                0x0000000001ffbb90                sub_1FFBB90
+                0x0000000001ffbbf8                unk_1FFBBF8
+                0x0000000001ffbc90                sub_1FFBC90
+                0x0000000001ffbca0                sub_1FFBCA0
+                0x0000000001ffbcb0                sub_1FFBCB0
+                0x0000000001ffbd3c                sub_1FFBD3C
+                0x0000000001ffbda4                sub_1FFBDA4
+                0x0000000001ffbdf4                sub_1FFBDF4
+                0x0000000001ffbe1c                sub_1FFBE1C
+                0x0000000001ffbe3c                sub_1FFBE3C
+                0x0000000001ffbeb4                sub_1FFBEB4
+                0x0000000001ffbf78                sub_1FFBF78
+                0x0000000001ffbf90                sub_1FFBF90
+                0x0000000001ffbfd0                sub_1FFBFD0
+                0x0000000001ffbfe0                sub_1FFBFE0
+                0x0000000001ffc018                sub_1FFC018
+                0x0000000001ffc030                sub_1FFC030
+                0x0000000001ffc068                sub_1FFC068
+                0x0000000001ffc0a0                sub_1FFC0A0
+                0x0000000001ffc0e8                sub_1FFC0E8
+                0x0000000001ffc174                sub_1FFC174
+                0x0000000001ffc1e8                sub_1FFC1E8
+                0x0000000001ffc2f4                sub_1FFC2F4
+                0x0000000001ffc390                sub_1FFC390
+                0x0000000001ffc3b0                sub_1FFC3B0
+                0x0000000001ffc3f4                sub_1FFC3F4
+                0x0000000001ffc404                sub_1FFC404
+                0x0000000001ffc4e4                sub_1FFC4E4
+
+.data           0x0000000001ffcce0        0x0
+ .data          0x0000000001ffcce0        0x0 asm/code.o
+
+.igot.plt       0x0000000001ffcce0        0x0
+ .igot.plt      0x0000000001ffcce0        0x0 asm/code.o
+
+.glue_7         0x0000000001ffcce0        0x0
+ .glue_7        0x0000000001ffcce0        0x0 linker stubs
+
+.glue_7t        0x0000000001ffcce0        0x0
+ .glue_7t       0x0000000001ffcce0        0x0 linker stubs
+
+.vfp11_veneer   0x0000000001ffcce0        0x0
+ .vfp11_veneer  0x0000000001ffcce0        0x0 linker stubs
+
+.v4_bx          0x0000000001ffcce0        0x0
+ .v4_bx         0x0000000001ffcce0        0x0 linker stubs
+
+.iplt           0x0000000001ffcce0        0x0
+ .iplt          0x0000000001ffcce0        0x0 asm/code.o
+
+.rel.dyn        0x0000000001ffcce0        0x0
+ .rel.iplt      0x0000000001ffcce0        0x0 asm/code.o
+
+.bss            0x0000000001ffcce0        0x0
+ .bss           0x0000000001ffcce0        0x0 asm/code.o
+                0x0000000002000000                . = 0x2000000
+
+main_mem        0x0000000002000000    0xa58b8
+                0x0000000000000d14                . = 0xd14
+ *fill*         0x0000000002000000      0xd14 
+                0x0000000002000d14                sub_2000D14 = .
+                0x0000000000001770                . = 0x1770
+ *fill*         0x0000000002000d14      0xa5c 
+                0x0000000002001770                sub_2001770 = .
+                0x000000000000f2f8                . = 0xf2f8
+ *fill*         0x0000000002001770     0xdb88 
+                0x000000000200f2f8                sub_200F2F8 = .
+                0x0000000000021410                . = 0x21410
+ *fill*         0x000000000200f2f8    0x12118 
+                0x0000000002021410                sub_2021410 = .
+                0x0000000000038248                . = 0x38248
+ *fill*         0x0000000002021410    0x16e38 
+                0x0000000002038248                sub_2038248 = .
+                0x0000000000038e0c                . = 0x38e0c
+ *fill*         0x0000000002038248      0xbc4 
+                0x0000000002038e0c                sub_2038E0C = .
+                0x000000000003c77c                . = 0x3c77c
+ *fill*         0x0000000002038e0c     0x3970 
+                0x000000000203c77c                sub_203C77C = .
+                0x000000000003c810                . = 0x3c810
+ *fill*         0x000000000203c77c       0x94 
+                0x000000000203c810                sub_203C810 = .
+                0x000000000003cb6c                . = 0x3cb6c
+ *fill*         0x000000000203c810      0x35c 
+                0x000000000203cb6c                sub_203CB6C = .
+                0x000000000003df8c                . = 0x3df8c
+ *fill*         0x000000000203cb6c     0x1420 
+                0x000000000203df8c                sub_203DF8C = .
+                0x000000000009f7a4                . = 0x9f7a4
+ *fill*         0x000000000203df8c    0x61818 
+                0x000000000209f7a4                sub_209F7A4 = .
+                0x000000000009f7d8                . = 0x9f7d8
+ *fill*         0x000000000209f7a4       0x34 
+                0x000000000209f7d8                sub_209F7D8 = .
+                0x000000000009f890                . = 0x9f890
+ *fill*         0x000000000209f7d8       0xb8 
+                0x000000000209f890                sub_209F890 = .
+                0x000000000009f8f8                . = 0x9f8f8
+ *fill*         0x000000000209f890       0x68 
+                0x000000000209f8f8                sub_209F8F8 = .
+                0x000000000009f914                . = 0x9f914
+ *fill*         0x000000000209f8f8       0x1c 
+                0x000000000209f914                sub_209F914 = .
+                0x00000000000a1478                . = 0xa1478
+ *fill*         0x000000000209f914     0x1b64 
+                0x00000000020a1478                sub_20A1478 = .
+                0x00000000000a4a38                . = 0xa4a38
+ *fill*         0x00000000020a1478     0x35c0 
+                0x00000000020a4a38                sub_20A4A38 = .
+                0x00000000000a4a4c                . = 0xa4a4c
+ *fill*         0x00000000020a4a38       0x14 
+                0x00000000020a4a4c                sub_20A4A4C = .
+                0x00000000000a5734                . = 0xa5734
+ *fill*         0x00000000020a4a4c      0xce8 
+                0x00000000020a5734                sub_20A5734 = .
+                0x00000000000a5780                . = 0xa5780
+ *fill*         0x00000000020a5734       0x4c 
+                0x00000000020a5780                sub_20A5780 = .
+                0x00000000000a5824                . = 0xa5824
+ *fill*         0x00000000020a5780       0xa4 
+                0x00000000020a5824                sub_20A5824 = .
+                0x00000000000a58b8                . = 0xa58b8
+ *fill*         0x00000000020a5824       0x94 
+                0x00000000020a58b8                sub_20A58B8 = .
+                0x00000000020e3ca0                . = BSS_START
+
+BSS             0x00000000020e3ca0   0x71c2fc
+                0x0000000000000058                . = (0x20e3cf8 - BSS_START)
+ *fill*         0x00000000020e3ca0       0x58 
+                0x00000000020e3cf8                unk_020E3CF8 = .
+                0x00000000000000a4                . = (0x20e3d44 - BSS_START)
+ *fill*         0x00000000020e3cf8       0x4c 
+                0x00000000020e3d44                unk_020E3D44 = .
+                0x0000000000000108                . = (0x20e3da8 - BSS_START)
+ *fill*         0x00000000020e3d44       0x64 
+                0x00000000020e3da8                unk_020E3DA8 = .
+                0x000000000000b5c4                . = (0x20ef264 - BSS_START)
+ *fill*         0x00000000020e3da8     0xb4bc 
+                0x00000000020ef264                unk_020EF264 = .
+                0x000000000000b5dc                . = (0x20ef27c - BSS_START)
+ *fill*         0x00000000020ef264       0x18 
+                0x00000000020ef27c                unk_020EF27C = .
+                0x000000000000b5e0                . = (0x20ef280 - BSS_START)
+ *fill*         0x00000000020ef27c        0x4 
+                0x00000000020ef280                unk_020EF280 = .
+                0x00000000000b35b4                . = (0x2197254 - BSS_START)
+ *fill*         0x00000000020ef280    0xa7fd4 
+                0x0000000002197254                unk_02197254 = .
+                0x00000000000b3ccc                . = (0x219796c - BSS_START)
+ *fill*         0x0000000002197254      0x718 
+                0x000000000219796c                unk_0219796C = .
+                0x00000000000be740                . = (0x21a23e0 - BSS_START)
+ *fill*         0x000000000219796c     0xaa74 
+                0x00000000021a23e0                bss_end = .
+                0x00000000000c0b64                . = (0x21a4804 - BSS_START)
+ *fill*         0x00000000021a23e0     0x2424 
+                0x00000000021a4804                sub_21A4804 = .
+                0x00000000000c45d4                . = (0x21a8274 - BSS_START)
+ *fill*         0x00000000021a4804     0x3a70 
+                0x00000000021a8274                sub_21A8274 = .
+                0x00000000000ff684                . = (0x21e3324 - BSS_START)
+ *fill*         0x00000000021a8274    0x3b0b0 
+                0x00000000021e3324                unk_021E3324 = .
+                0x00000000000ff688                . = (0x21e3328 - BSS_START)
+ *fill*         0x00000000021e3324        0x4 
+                0x00000000021e3328                unk_021E3328 = .
+                0x00000000006fc440                . = (0x27e00e0 - BSS_START)
+ *fill*         0x00000000021e3328   0x5fcdb8 
+                0x00000000027e00e0                unk_027E00E0 = .
+                0x00000000006fd5b8                . = (0x27e1258 - BSS_START)
+ *fill*         0x00000000027e00e0     0x1178 
+                0x00000000027e1258                gMainLoopBlocked = .
+                0x00000000006fd5c0                . = (0x27e1260 - BSS_START)
+ *fill*         0x00000000027e1258        0x8 
+                0x00000000027e1260                gClock = .
+                0x000000000071c2fc                . = (0x27fff9c - BSS_START)
+ *fill*         0x00000000027e1260    0x1ed3c 
+                0x00000000027fff9c                unk_027FFF9C = .
+LOAD asm/code.o
+OUTPUT(itcm.elf elf32-littlearm)
+LOAD linker stubs
+
+.ARM.attributes
+                0x0000000000000000       0x20
+ .ARM.attributes
+                0x0000000000000000       0x20 asm/code.o
