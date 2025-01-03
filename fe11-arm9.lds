@@ -28,6 +28,8 @@ SECTIONS
 		src/main.o(.text);
 		asm/code_02000FEC.o(.text);
 		src/main_loop.o(.text);
+		asm/code_0200F0F0.o(.text);
+		src/proc.o(.text);
 		asm/code.o(.text);
 		src/text_02078808.o(.text);
 		asm/code_0207884C.o(.text);

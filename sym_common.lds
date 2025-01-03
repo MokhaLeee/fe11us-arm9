@@ -4,7 +4,10 @@
 . = 0x020EF264 - BSS_START; unk_020EF264 = .;
 . = 0x020EF27C - BSS_START; unk_020EF27C = .;
 . = 0x020EF280 - BSS_START; unk_020EF280 = .;
+. = 0x02190CE0 - BSS_START; data_02190ce0 = .;
 . = 0x02190CEC - BSS_START; gProcTreeRootArray = .;
+. = 0x02190D24 - BSS_START; gProcAllocList = .;
+. = 0x02190F28 - BSS_START; gProcArray = .;
 . = 0x02197254 - BSS_START; unk_02197254 = .;
 . = 0x0219796C - BSS_START; unk_0219796C = .;
 . = 0x021A23E0 - BSS_START; bss_end = .;

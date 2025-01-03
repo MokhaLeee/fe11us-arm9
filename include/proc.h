@@ -89,6 +89,15 @@ struct Proc
     STRUCT_PAD(0x5A, 0x78);
 };
 
+struct Unknown02190ce0
+{
+    /* 00 */ struct Proc ** unk_00;
+    /* 04 */ void * unk_04;
+    /* 08 */ void * unk_08;
+};
+
+extern struct Unknown02190ce0 data_02190ce0;
+
 BOOL IsRootProcess(struct Proc * proc);
 void RunProcessScript(struct Proc * proc);
 // ??? AllocateProcess
@@ -112,4 +121,7 @@ void RunProcessScript(struct Proc * proc);
 void Proc_Run(u32 tree);
 
 extern BOOL (* gProcessCmdTable[])(struct Proc *);
+
 extern struct Proc * gProcTreeRootArray[14];
+extern struct Proc * gProcAllocList[0x80 + 1];
+extern struct Proc gProcArray[0x80];
