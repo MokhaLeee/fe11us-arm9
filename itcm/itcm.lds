@@ -1,6 +1,6 @@
 OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
 OUTPUT_ARCH(arm)
-ENTRY(_start)
+/* ENTRY(_start) */
 
 BSS_START = 0x020E3CA0; /* itcm_copy_start */
 
@@ -44,7 +44,6 @@ SECTIONS
 		. = 0x020A5780 - 0x02000000; sub_20A5780 = .;
 		. = 0x020A5824 - 0x02000000; sub_20A5824 = .;
 		. = 0x020A58B8 - 0x02000000; sub_20A58B8 = .;
-
 	}
 
 	. = BSS_START;

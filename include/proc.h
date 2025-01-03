@@ -90,6 +90,4 @@ struct Proc
 };
 
 // ITCM
-void Proc_Run_itcm(u32 tree);
-
-#define Proc_Run Proc_Run_itcm
+void Proc_Run(u32 tree);

@@ -36,8 +36,8 @@ def main(args):
         src_data = f1.read()
         dst_data = f2.read()
 
-    print(f"[DEBUG] src size=0x{os.stat(src_file).st_size:x}")
-    print(f"[DEBUG] dst size=0x{os.stat(dst_file).st_size:x}")
+    print(f"[DEBUG]\tsrc size=0x{os.stat(src_file).st_size:x} ({src_file})")
+    print(f"[DEBUG]\tdst size=0x{os.stat(dst_file).st_size:x} ({dst_file})")
 
     diffs = compare_bin_files(src_data, dst_data, os.stat(src_file).st_size)
 
@@ -58,9 +58,9 @@ def main(args):
             check = False
 
     if not check:
-        print("compare failed!")
+        print(f"[CMP]\tcompare failed! ({dst_file})")
     else:
-        print("compare pass!")
+        print(f"[CMP]\tcompare pass! ({dst_file})")
 
 if __name__ == '__main__':
     main(sys.argv)

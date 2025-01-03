@@ -34,16 +34,21 @@ ALL_DEPS := $(ALL_OBJS:%.o=%.d)
 CLEAN_DIRS += $(ALL_OBJS)
 
 %.o: %.c
-	$(MWCC) $(MW_CFLAGS) $< -o $@
+	@echo "[CC]	$@"
+	@$(MWCC) $(MW_CFLAGS) $< -o $@
 
 %.o: %.S
-	$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
+	@echo "[AS]	$@"
+	@$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
+#	$(MWAS) $(MW_ASFLAGS) $< -o $@
 
 $(ELF): $(ALL_OBJS) $(ARM_LDS)
-	$(ARMLD) -T $(ARM_LDS) -Map $(MAP) $(ALL_OBJS) -o $@
+	@echo "[LD]	$@"
+	@$(ARMLD) -T $(ARM_LDS) -Map $(MAP) $(ALL_OBJS) -o $@
 
 $(ROM): $(ELF)
-	$(ARMOBJCPY) --strip-debug -O binary $< $@
+	@echo "[OBJCPY]	$@"
+	@$(ARMOBJCPY) --strip-debug -O binary $< $@
 
 compare: $(ROM)
 	@python3 ../tools/scripts/fix_diff.py itcm-base.bin itcm.bin

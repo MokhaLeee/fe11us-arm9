@@ -4761,8 +4761,8 @@ _01FFC378:
 	.align 2, 0
 _01FFC38C: .4byte 0x027E1268
 
-	arm_func_start sub_1FFC390
-sub_1FFC390: @ 0x01FFC390
+	arm_func_start Proc_Run
+Proc_Run: @ 0x01FFC390
 	push {r4, lr}
 	mov r4, r0
 	bl sub_1FFBC90

@@ -1,3 +1,4 @@
+MAKEFLAGS += --no-print-directory
 BUILD_NAME := fe11-arm9
 
 SRC_DIR  = src
@@ -72,7 +73,7 @@ ITCM_DATA_OBJS := $(ITCM_DATA_SRCS:%.S=%.o)
 CLEAN_DIRS += $(ITCM_C_OBJS) $(ITCM_ASM_OBJS) $(ITCM_DATA_OBJS)
 
 $(ITCM_DIR)/itcm.bin: $(ITCM_C_SRCS) $(ITCM_ASM_SRCS) $(ITCM_DATA_SRCS)
-	$(MAKE) -C $(ITCM_DIR) > /dev/null
+	@$(MAKE) -C $(ITCM_DIR)
 
 # ============
 # = Recepies =
@@ -88,19 +89,23 @@ ALL_DEPS := $(ALL_OBJS:%.o=%.d)
 CLEAN_DIRS += $(ALL_OBJS)
 
 %.o: %.c
-	$(MWCC) $(MW_CFLAGS) $< -o $@
+	@echo "[CC]	$@"
+	@$(MWCC) $(MW_CFLAGS) $< -o $@
 
 %.o: %.S
-	$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
-#	$(MWAS) $(MW_ASFLAGS) $< -o $@
+	@echo "[AS]	$@"
+	@$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
+#	@$(MWAS) $(MW_ASFLAGS) $< -o $@
 
 $(ITCM_DIR)/itcm.o: $(ITCM_DIR)/itcm.S $(ITCM_DIR)/itcm.bin
 
 $(ELF): $(ALL_OBJS) $(ARM_LDS)
-	$(ARMLD) -T $(ARM_LDS) -Map $(MAP) $(ALL_OBJS) -o $@
+	@echo "[LD]	$@"
+	@$(ARMLD) -T $(ARM_LDS) -Map $(MAP) $(ALL_OBJS) -o $@
 
 $(ROM): $(ELF)
-	$(ARMOBJCPY) --strip-debug -O binary $< $@
+	@echo "[OBJCPY]	$@"
+	@$(ARMOBJCPY) --strip-debug -O binary $< $@
 
 # ===========
 # = runtime =
@@ -109,7 +114,8 @@ $(ROM): $(ELF)
 RUNTIME_BUILD := $(BUILD_NAME).runtime
 
 $(RUNTIME_BUILD).elf: $(ALL_OBJS) $(ARM_LDS)
-	$(ARMLD) -T $(RUNTIME_BUILD).lds -Map $(RUNTIME_BUILD).map $(ALL_OBJS) -o $@
+	@echo "[LD]	$@"
+	@$(ARMLD) -T $(RUNTIME_BUILD).lds -Map $(RUNTIME_BUILD).map $(ALL_OBJS) -o $@
 
 runtime: fe11-arm9.runtime.elf
 
@@ -128,6 +134,7 @@ CLEAN_DIRS += $(shell find . -type d -name "__pycache__")
 clean:
 	@rm -f $(CLEAN_FILES)
 	@rm -rf $(CLEAN_DIRS)
+	@$(MAKE) -C $(ITCM_DIR) clean > /dev/null
 	@echo "all cleaned..."
 
 .PHONY: clean
