@@ -89,14 +89,14 @@ struct Proc
     STRUCT_PAD(0x5A, 0x78);
 };
 
-struct Unknown02190ce0
+struct ProcStack
 {
     /* 00 */ struct Proc ** unk_00;
     /* 04 */ void * unk_04;
     /* 08 */ void * unk_08;
 };
 
-extern struct Unknown02190ce0 data_02190ce0;
+extern struct ProcStack data_02190ce0;
 
 BOOL IsRootProcess(struct Proc * proc);
 void RunProcessScript(struct Proc * proc);

@@ -30,6 +30,7 @@ SECTIONS
 		src/main_loop.o(.text);
 		asm/code_0200F0F0.o(.text);
 		src/proc.o(.text);
+		asm/proc.o(.text);
 		asm/code.o(.text);
 		src/text_02078808.o(.text);
 		asm/code_0207884C.o(.text);
@@ -47,7 +48,8 @@ SECTIONS
 		data/tale.o(.rodata);
 	}
 
-	. = BSS_START;
+	/* . = BSS_START; */
+	. = main_end;
 	BSS : ALIGN(4)
 	{
 		INCLUDE "sym_common.lds"

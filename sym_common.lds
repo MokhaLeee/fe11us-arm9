@@ -21,4 +21,5 @@
 . = 0x027E00E0 - BSS_START; unk_027E00E0 = .;
 . = 0x027E1258 - BSS_START; gMainLoopBlocked = .;
 . = 0x027E1260 - BSS_START; gClock = .;
+. = 0x027E1268 - BSS_START; data_027e1268 = .;
 . = 0x027FFF9C - BSS_START; unk_027FFF9C = .;

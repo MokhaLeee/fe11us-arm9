@@ -12,5 +12,6 @@ extern struct UnkStruct_021E3328 * unk_021E3328;
 extern int unk_027E00E0;
 extern u8 gMainLoopBlocked;
 extern int gClock;
+extern void * data_027e1268;
 
 #endif // UNKNOWN_DATA_H
