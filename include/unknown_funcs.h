@@ -4402,6 +4402,7 @@ void sub_20AD244(int a);
 // ??? nullsub_8
 // ??? sub_20C2528
 // ??? sub_20C253C
+// ??? sub_20C2550
 // ??? sub_20C2560
 // ??? sub_20C25B0
 // ??? sub_20C25E4
@@ -4455,6 +4456,10 @@ void sub_20AD244(int a);
 // ??? sub_20C4638
 // ??? sub_20C4684
 // ??? sub_20C4CDC
+void sub_20C4CDC(void);
+void sub_20C4CFC(void);
+void sub_20C4D10(void);
+void sub_20C4D28(void);
 // ??? sub_20C4D2C
 // ??? sub_20C4D58
 // ??? sub_20C4FA0

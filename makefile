@@ -3,8 +3,9 @@
 
 BUILD_NAME := fe11-arm9
 
-SRC_DIR = src
-ASM_DIR = asm
+SRC_DIR  = src
+ASM_DIR  = asm
+DATA_DIR = data
 
 CLEAN_FILES :=
 CLEAN_DIRS  :=
@@ -39,14 +40,7 @@ ARM_ASFLAGS := -mcpu=arm9tdmi -I include
 ARM_LDS := $(BUILD_NAME).lds
 C_SRCS := $(wildcard $(SRC_DIR)/*.c)
 ASM_SRCS := $(wildcard $(SRC_DIR)/*.S) $(wildcard $(ASM_DIR)/*.S)
-DATA_SRCS := $(wildcard data/*.S)
-
-%.o: %.c
-	$(MWCC) $(MW_CFLAGS) $< -o $@
-
-%.o: %.S
-	$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
-#	$(MWAS) $(MW_ASFLAGS) $< -o $@
+DATA_SRCS := $(wildcard $(DATA_DIR)/*.S)
 
 # ===========
 # = Targets =
@@ -56,6 +50,29 @@ ROM := $(BUILD_NAME).bin
 ELF := $(ROM:%.bin=%.elf)
 MAP := $(ROM:%.bin=%.map)
 
+# ========
+# = ITCM =
+# ========
+
+ITCM_DIR = itcm
+ITCM_SRC_DIR  = $(ITCM_DIR)/src
+ITCM_ASM_DIR  = $(ITCM_DIR)/asm
+ITCM_DATA_DIR = $(ITCM_DIR)/data
+
+ITCM_BIN = $(ITCM_DIR)/itcm.bin
+
+ITCM_C_SRCS    += $(wildcard $(ITCM_SRC_DIR)/*.c)
+ITCM_ASM_SRCS  += $(wildcard $(ITCM_ASM_DIR)/*.S) $(wildcard $(ITCM_ASM_DIR)/*.S)
+ITCM_DATA_SRCS += $(wildcard $(ITCM_DATA_DIR)/*.S) $(wildcard $(ITCM_DIR)/*.S)
+
+C_SRCS += $(ITCM_C_SRCS)
+ASM_SRCS += $(ITCM_ASM_SRCS)
+DATA_SRCS += $(ITCM_DATA_SRCS)
+
+# ============
+# = Recepies =
+# ============
+
 C_OBJS := $(C_SRCS:%.c=%.o)
 ASM_OBJS := $(ASM_SRCS:%.S=%.o)
 DATA_OBJS := $(DATA_SRCS:%.S=%.o)
@@ -64,6 +81,13 @@ ALL_OBJS := $(C_OBJS) $(ASM_OBJS) $(DATA_OBJS)
 ALL_DEPS := $(ALL_OBJS:%.o=%.d)
 
 CLEAN_DIRS += $(ALL_OBJS)
+
+%.o: %.c
+	$(MWCC) $(MW_CFLAGS) $< -o $@
+
+%.o: %.S
+	$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
+#	$(MWAS) $(MW_ASFLAGS) $< -o $@
 
 $(ELF): $(ALL_OBJS) $(ARM_LDS)
 	$(ARMLD) -T $(ARM_LDS) -Map $(MAP) $(ALL_OBJS) -o $@

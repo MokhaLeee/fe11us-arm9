@@ -27,19 +27,28 @@ SECTIONS
 		src/text_02078808.o(.text);
 		asm/code_0207884C.o(.text);
 		asm/code_02078878.o(.text);
+		asm/code_020C4D58.o(.text);
+		data/rodata.o(.rodata);
 	}
 
-	bin_end = .;
+	main_end = .;
 
-	. = bin_end;
+	. = main_end;
+	bin_tail : ALIGN(4)
+	{
+		itcm/itcm.o(.rodata);
+		data/tale.o(.rodata);
+	}
+
+	. = main_end;
 	BSS : ALIGN(4)
 	{
-		. = 0x02197254 - bin_end; unk_02197254 = .;
-		. = 0x0219796C - bin_end; unk_0219796C = .;
-		. = 0x021A23E0 - bin_end; bss_end = .;
-		. = 0x021E3324 - bin_end; unk_021E3324 = .;
-		. = 0x021E3328 - bin_end; unk_021E3328 = .;
-		. = 0x027E00E0 - bin_end; unk_027E00E0 = .;
-		. = 0x027FFF9C - bin_end; unk_027FFF9C = .;
+		. = 0x02197254 - main_end; unk_02197254 = .;
+		. = 0x0219796C - main_end; unk_0219796C = .;
+		. = 0x021A23E0 - main_end; bss_end = .;
+		. = 0x021E3324 - main_end; unk_021E3324 = .;
+		. = 0x021E3328 - main_end; unk_021E3328 = .;
+		. = 0x027E00E0 - main_end; unk_027E00E0 = .;
+		. = 0x027FFF9C - main_end; unk_027FFF9C = .;
 	}
 }

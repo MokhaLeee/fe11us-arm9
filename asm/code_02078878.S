@@ -6745,45 +6745,283 @@ ARM_FUNC_START nullsub_8
 nullsub_8: @ 0x020C2524
 	bx lr
 
-ARM_FUNC_START sub_20C2528
-sub_20C2528:
-.incbin "fe11-arm9-base.bin", 0xC2528, 0xC253C - 0xC2528
+	arm_func_start sub_20C2528
+sub_20C2528: @ 0x020C2528
+	str lr, [sp, #-4]!
+	mov r1, r0
+	mov r0, #3
+	svc #0x123456
+	pop {pc}
 
-ARM_FUNC_START sub_20C253C
-sub_20C253C:
-.incbin "fe11-arm9-base.bin", 0xC253C, 0xC2560 - 0xC253C
+	arm_func_start sub_20C253C
+sub_20C253C: @ 0x020C253C
+	str lr, [sp, #-4]!
+	mov r1, #0
+	mov r0, #7
+	svc #0x123456
+	pop {pc}
 
-ARM_FUNC_START sub_20C2560
-sub_20C2560:
-.incbin "fe11-arm9-base.bin", 0xC2560, 0xC25B0 - 0xC2560
+	arm_func_start sub_20C2550
+sub_20C2550: @ 0x020C2550
+	mov r1, #0
+	mov r0, #0x18
+	svc #0x123456
+	mov pc, lr
 
-ARM_FUNC_START sub_20C25B0
-sub_20C25B0:
-.incbin "fe11-arm9-base.bin", 0xC25B0, 0xC25E4 - 0xC25B0
+	arm_func_start sub_20C2560
+sub_20C2560: @ 0x020C2560
+	push {r3, r4, r5, r6, r7, lr}
+	mov r6, r2
+	ldr r5, [r6]
+	mov r7, r1
+	cmp r5, #0
+	mov r4, #0
+	bls _020C25A8
+_020C257C:
+	bl sub_20C253C
+	and r1, r0, #0xff
+	cmp r1, #0xd
+	strb r0, [r7, r4]
+	cmpne r1, #0xa
+	addeq r0, r4, #1
+	streq r0, [r6]
+	beq _020C25A8
+	add r4, r4, #1
+	cmp r4, r5
+	blo _020C257C
+_020C25A8:
+	mov r0, #0
+	pop {r3, r4, r5, r6, r7, pc}
 
-ARM_FUNC_START sub_20C25E4
-sub_20C25E4:
-.incbin "fe11-arm9-base.bin", 0xC25E4, 0xC2608 - 0xC25E4
+	arm_func_start sub_20C25B0
+sub_20C25B0: @ 0x020C25B0
+	push {r4, r5, r6, lr}
+	ldr r5, [r2]
+	mov r6, r1
+	cmp r5, #0
+	mov r4, #0
+	bls _020C25DC
+_020C25C8:
+	add r0, r6, r4
+	bl sub_20C2528
+	add r4, r4, #1
+	cmp r4, r5
+	blo _020C25C8
+_020C25DC:
+	mov r0, #0
+	pop {r4, r5, r6, pc}
 
-ARM_FUNC_START sub_20C2608
-sub_20C2608:
-.incbin "fe11-arm9-base.bin", 0xC2608, 0xC2694 - 0xC2608
+	arm_func_start sub_20C25E4
+sub_20C25E4: @ 0x020C25E4
+	mov r0, #0
+	bx lr
 
-ARM_FUNC_START sub_20C2694
-sub_20C2694:
-.incbin "fe11-arm9-base.bin", 0xC2694, 0xC2720 - 0xC2694
+	arm_func_start sub_20C25EC
+sub_20C25EC: @ 0x020C25EC
+	stm r0, {r4, r5, r6, r7, r8, sb, sl, fp, sp, lr}
+	mov r0, #0
+	bx lr
 
-ARM_FUNC_START sub_20C2720
-sub_20C2720:
-.incbin "fe11-arm9-base.bin", 0xC2720, 0xC2784 - 0xC2720
+	arm_func_start sub_20C25F8
+sub_20C25F8: @ 0x020C25F8
+	ldm r0, {r4, r5, r6, r7, r8, sb, sl, fp, sp, lr}
+	movs r0, r1
+	moveq r0, #1
+	bx lr
 
-ARM_FUNC_START sub_20C2784
-sub_20C2784:
-.incbin "fe11-arm9-base.bin", 0xC2784, 0xC288C - 0xC2784
+	arm_func_start sub_20C2608
+sub_20C2608: @ 0x020C2608
+	push {r4, lr}
+	ldrsb r2, [r0]
+	tst r2, #1
+	bne _020C2628
+	asr r2, r2, #1
+	str r2, [r1]
+	add r0, r0, #1
+	pop {r4, pc}
+_020C2628:
+	tst r2, #2
+	ldrb r4, [r0, #1]
+	bne _020C2648
+	asr r2, r2, #2
+	orr r2, r4, r2, lsl #8
+	str r2, [r1]
+	add r0, r0, #2
+	pop {r4, pc}
+_020C2648:
+	tst r2, #4
+	ldrb lr, [r0, #2]
+	bne _020C2670
+	asr r3, r2, #3
+	lsl r2, r4, #8
+	orr r2, r2, r3, lsl #16
+	orr r2, lr, r2
+	str r2, [r1]
+	add r0, r0, #3
+	pop {r4, pc}
+_020C2670:
+	ldrb ip, [r0, #3]
+	asr r3, r2, #3
+	lsl r2, r4, #0x10
+	orr r2, r2, r3, lsl #24
+	orr r2, r2, lr, lsl #8
+	orr r2, ip, r2
+	str r2, [r1]
+	add r0, r0, #4
+	pop {r4, pc}
 
-ARM_FUNC_START sub_20C288C
-sub_20C288C:
-.incbin "fe11-arm9-base.bin", 0xC288C, 0xC28A8 - 0xC288C
+	arm_func_start sub_20C2694
+sub_20C2694: @ 0x020C2694
+	push {r4, lr}
+	ldrb r2, [r0]
+	tst r2, #1
+	bne _020C26B4
+	lsr r2, r2, #1
+	str r2, [r1]
+	add r0, r0, #1
+	pop {r4, pc}
+_020C26B4:
+	tst r2, #2
+	ldrb r4, [r0, #1]
+	bne _020C26D4
+	lsr r2, r2, #2
+	orr r2, r4, r2, lsl #8
+	str r2, [r1]
+	add r0, r0, #2
+	pop {r4, pc}
+_020C26D4:
+	tst r2, #4
+	ldrb lr, [r0, #2]
+	bne _020C26FC
+	lsr r3, r2, #3
+	lsl r2, r4, #8
+	orr r2, r2, r3, lsl #16
+	orr r2, lr, r2
+	str r2, [r1]
+	add r0, r0, #3
+	pop {r4, pc}
+_020C26FC:
+	ldrb ip, [r0, #3]
+	lsr r3, r2, #3
+	lsl r2, r4, #0x10
+	orr r2, r2, r3, lsl #24
+	orr r2, r2, lr, lsl #8
+	orr r2, ip, r2
+	str r2, [r1]
+	add r0, r0, #4
+	pop {r4, pc}
+
+	arm_func_start sub_20C2720
+sub_20C2720: @ 0x020C2720
+	push {r4, r5, r6, lr}
+	subs r6, r1, #1
+	mov r5, #0
+	bmi _020C277C
+	mov r1, #0xc
+_020C2734:
+	add r3, r5, r6
+	asr r4, r3, #1
+	mul r3, r4, r1
+	ldr ip, [r0, r3]
+	add lr, r0, r3
+	cmp r2, ip
+	sublo r6, r4, #1
+	blo _020C2774
+	ldr r3, [lr, #4]
+	bic r3, r3, #1
+	add r3, ip, r3
+	cmp r2, r3
+	addhi r5, r4, #1
+	bhi _020C2774
+	mov r0, lr
+	pop {r4, r5, r6, pc}
+_020C2774:
+	cmp r5, r6
+	ble _020C2734
+_020C277C:
+	mov r0, #0
+	pop {r4, r5, r6, pc}
+
+	arm_func_start sub_20C2784
+sub_20C2784: @ 0x020C2784
+	push {r4, r5, r6, r7, r8, sb, lr}
+	sub sp, sp, #0xc
+	mov r4, r0
+	mov sb, r1
+	mov r2, #0
+	str r2, [sb, #4]
+	mov r0, sb
+	mov r1, r4
+	str r2, [sb, #8]
+	bl sub_20C4570
+	cmp r0, #0
+	addeq sp, sp, #0xc
+	popeq {r4, r5, r6, r7, r8, sb, pc}
+	ldr r0, [sb, #0xc]
+	ldr r1, [sb, #0x10]
+	ldr r3, _020C2888 @ =0x2AAAAAAB
+	sub r5, r1, r0
+	smull r2, r1, r3, r5
+	lsr r3, r5, #0x1f
+	mov r2, r4
+	add r1, r3, r1, asr #1
+	bl sub_20C2720
+	cmp r0, #0
+	addeq sp, sp, #0xc
+	popeq {r4, r5, r6, r7, r8, sb, pc}
+	ldr r1, [r0, #4]
+	tst r1, #1
+	addne r1, r0, #8
+	ldreq r1, [r0, #8]
+	str r1, [sb, #4]
+	ldr r1, [r0]
+	str r1, [sb]
+	ldr r1, [r0]
+	ldr r0, [sb, #4]
+	sub r7, r4, r1
+	bl sub_20C4590
+	mov r8, #0
+	add r5, sp, #4
+	add r4, sp, #0
+	add r6, sp, #8
+_020C2824:
+	mov r1, r6
+	bl sub_20C2694
+	ldr r1, [sp, #8]
+	cmp r1, #0
+	addeq sp, sp, #0xc
+	popeq {r4, r5, r6, r7, r8, sb, pc}
+	mov r1, r5
+	bl sub_20C2694
+	mov r1, r4
+	bl sub_20C2694
+	ldr r1, [sp, #8]
+	add r2, r8, r1
+	cmp r7, r2
+	addlo sp, sp, #0xc
+	poplo {r4, r5, r6, r7, r8, sb, pc}
+	ldr r1, [sp, #4]
+	add r8, r2, r1
+	cmp r7, r8
+	bhi _020C2824
+	ldr r1, [sb, #4]
+	ldr r0, [sp]
+	add r0, r1, r0
+	str r0, [sb, #8]
+	add sp, sp, #0xc
+	pop {r4, r5, r6, r7, r8, sb, pc}
+	.align 2, 0
+_020C2888: .4byte 0x2AAAAAAB
+
+	arm_func_start sub_20C288C
+sub_20C288C: @ 0x020C288C
+	ldr r0, [r0, #8]
+	cmp r0, #0
+	ldrneb r0, [r0]
+	andne r0, r0, #0x1f
+	moveq r0, #0
+	and r0, r0, #0xff
+	bx lr
 
 ARM_FUNC_START sub_20C28A8
 sub_20C28A8:
@@ -6965,246 +7203,3 @@ sub_20C4638:
 ARM_FUNC_START sub_20C4684
 sub_20C4684:
 .incbin "fe11-arm9-base.bin", 0xC4684, 0xC4CDC - 0xC4684
-
-ARM_FUNC_START sub_20C4CDC
-sub_20C4CDC:
-.incbin "fe11-arm9-base.bin", 0xC4CDC, 0xC4D2C - 0xC4CDC
-
-ARM_FUNC_START sub_20C4D2C
-sub_20C4D2C:
-.incbin "fe11-arm9-base.bin", 0xC4D2C, 0xC4D58 - 0xC4D2C
-
-ARM_FUNC_START sub_20C4D58
-sub_20C4D58:
-.incbin "fe11-arm9-base.bin", 0xC4D58, 0xC4FA0 - 0xC4D58
-
-ARM_FUNC_START sub_20C4FA0
-sub_20C4FA0:
-.incbin "fe11-arm9-base.bin", 0xC4FA0, 0xC4FCC - 0xC4FA0
-
-ARM_FUNC_START sub_20C4FCC
-sub_20C4FCC:
-.incbin "fe11-arm9-base.bin", 0xC4FCC, 0xC5064 - 0xC4FCC
-
-ARM_FUNC_START sub_20C5064
-sub_20C5064:
-.incbin "fe11-arm9-base.bin", 0xC5064, 0xC5088 - 0xC5064
-
-ARM_FUNC_START sub_20C5088
-sub_20C5088:
-.incbin "fe11-arm9-base.bin", 0xC5088, 0xC50C0 - 0xC5088
-
-ARM_FUNC_START sub_20C50C0
-sub_20C50C0:
-.incbin "fe11-arm9-base.bin", 0xC50C0, 0xC50D8 - 0xC50C0
-
-ARM_FUNC_START sub_20C50D8
-sub_20C50D8:
-.incbin "fe11-arm9-base.bin", 0xC50D8, 0xC50F0 - 0xC50D8
-
-ARM_FUNC_START sub_20C50F0
-sub_20C50F0:
-.incbin "fe11-arm9-base.bin", 0xC50F0, 0xC9B10 - 0xC50F0
-
-.global boot_hook_list
-boot_hook_list: @ 0x020C9B10
-	.4byte sub_20C4CDC
-	.4byte 0x20C4CFC
-	.4byte 0x20C4D10
-	.4byte 0x20C4D28
-	.4byte sub_20C4D2C
-	.4byte sub_20C4D58
-	.4byte sub_20C4FA0
-	.4byte sub_20C4FCC
-	.4byte sub_20C5064
-	.4byte sub_20C5088
-	.4byte sub_20C50C0
-	.4byte sub_20C50D8
-	.4byte sub_20C50F0
-	.4byte 0
-	.4byte 0
-	.4byte 0
-	.4byte 0
-	.4byte 0
-	.4byte 0
-	.4byte 0
-
-@ rodata
-.incbin "fe11-arm9-base.bin", 0xC9B60, 0xE3CA0 - 0xC9B60
-
-.global itcm_copy_start
-itcm_copy_start:
-
-ARM_FUNC_START sub_20E3CA0
-sub_20E3CA0:
-.incbin "fe11-arm9-base.bin", 0xE3CA0, 0xE3F54 - 0xE3CA0
-
-ARM_FUNC_START sub_20E3F54
-sub_20E3F54:
-.incbin "fe11-arm9-base.bin", 0xE3F54, 0xE4220 - 0xE3F54
-
-ARM_FUNC_START sub_20E4220
-sub_20E4220:
-.incbin "fe11-arm9-base.bin", 0xE4220, 0xE4440 - 0xE4220
-
-ARM_FUNC_START sub_20E4440
-sub_20E4440:
-.incbin "fe11-arm9-base.bin", 0xE4440, 0xE4660 - 0xE4440
-
-ARM_FUNC_START sub_20E4660
-sub_20E4660:
-.incbin "fe11-arm9-base.bin", 0xE4660, 0xE48DC - 0xE4660
-
-ARM_FUNC_START sub_20E48DC
-sub_20E48DC:
-.incbin "fe11-arm9-base.bin", 0xE48DC, 0xE4AF0 - 0xE48DC
-
-ARM_FUNC_START sub_20E4AF0
-sub_20E4AF0:
-.incbin "fe11-arm9-base.bin", 0xE4AF0, 0xE4BC4 - 0xE4AF0
-
-ARM_FUNC_START sub_20E4BC4
-sub_20E4BC4:
-.incbin "fe11-arm9-base.bin", 0xE4BC4, 0xE4CA0 - 0xE4BC4
-
-ARM_FUNC_START sub_20E4CA0
-sub_20E4CA0:
-.incbin "fe11-arm9-base.bin", 0xE4CA0, 0xE4D98 - 0xE4CA0
-
-ARM_FUNC_START sub_20E4D98
-sub_20E4D98:
-.incbin "fe11-arm9-base.bin", 0xE4D98, 0xE63D4 - 0xE4D98
-
-ARM_FUNC_START sub_20E63D4
-sub_20E63D4:
-.incbin "fe11-arm9-base.bin", 0xE63D4, 0xE63E8 - 0xE63D4
-
-ARM_FUNC_START sub_20E63E8
-sub_20E63E8:
-.incbin "fe11-arm9-base.bin", 0xE63E8, 0xE6404 - 0xE63E8
-
-ARM_FUNC_START sub_20E6404
-sub_20E6404:
-.incbin "fe11-arm9-base.bin", 0xE6404, 0xE727C - 0xE6404
-
-ARM_FUNC_START sub_20E727C
-sub_20E727C:
-.incbin "fe11-arm9-base.bin", 0xE727C, 0xE73B8 - 0xE727C
-
-ARM_FUNC_START sub_20E73B8
-sub_20E73B8:
-.incbin "fe11-arm9-base.bin", 0xE73B8, 0xE74CC - 0xE73B8
-
-ARM_FUNC_START sub_20E74CC
-sub_20E74CC:
-.incbin "fe11-arm9-base.bin", 0xE74CC, 0xE7930 - 0xE74CC
-
-ARM_FUNC_START sub_20E7930
-sub_20E7930:
-.incbin "fe11-arm9-base.bin", 0xE7930, 0xE7940 - 0xE7930
-
-ARM_FUNC_START sub_20E7940
-sub_20E7940:
-.incbin "fe11-arm9-base.bin", 0xE7940, 0xE7950 - 0xE7940
-
-ARM_FUNC_START sub_20E7950
-sub_20E7950:
-.incbin "fe11-arm9-base.bin", 0xE7950, 0xE79DC - 0xE7950
-
-ARM_FUNC_START sub_20E79DC
-sub_20E79DC:
-.incbin "fe11-arm9-base.bin", 0xE79DC, 0xE7A44 - 0xE79DC
-
-ARM_FUNC_START sub_20E7A44
-sub_20E7A44:
-.incbin "fe11-arm9-base.bin", 0xE7A44, 0xE7A94 - 0xE7A44
-
-ARM_FUNC_START sub_20E7A94
-sub_20E7A94:
-.incbin "fe11-arm9-base.bin", 0xE7A94, 0xE7ABC - 0xE7A94
-
-ARM_FUNC_START sub_20E7ABC
-sub_20E7ABC:
-.incbin "fe11-arm9-base.bin", 0xE7ABC, 0xE7ADC - 0xE7ABC
-
-ARM_FUNC_START sub_20E7ADC
-sub_20E7ADC:
-.incbin "fe11-arm9-base.bin", 0xE7ADC, 0xE7B54 - 0xE7ADC
-
-ARM_FUNC_START sub_20E7B54
-sub_20E7B54:
-.incbin "fe11-arm9-base.bin", 0xE7B54, 0xE7C18 - 0xE7B54
-
-ARM_FUNC_START sub_20E7C18
-sub_20E7C18:
-.incbin "fe11-arm9-base.bin", 0xE7C18, 0xE7CB8 - 0xE7C18
-
-ARM_FUNC_START sub_20E7CB8
-sub_20E7CB8:
-.incbin "fe11-arm9-base.bin", 0xE7CB8, 0xE7D08 - 0xE7CB8
-
-ARM_FUNC_START sub_20E7D08
-sub_20E7D08:
-.incbin "fe11-arm9-base.bin", 0xE7D08, 0xE7D40 - 0xE7D08
-
-ARM_FUNC_START sub_20E7D40
-sub_20E7D40:
-.incbin "fe11-arm9-base.bin", 0xE7D40, 0xE7D88 - 0xE7D40
-
-ARM_FUNC_START sub_20E7D88
-sub_20E7D88:
-.incbin "fe11-arm9-base.bin", 0xE7D88, 0xE7E88 - 0xE7D88
-
-ARM_FUNC_START sub_20E7E88
-sub_20E7E88:
-.incbin "fe11-arm9-base.bin", 0xE7E88, 0xE7F94 - 0xE7E88
-
-ARM_FUNC_START sub_20E7F94
-sub_20E7F94:
-.incbin "fe11-arm9-base.bin", 0xE7F94, 0xE80A4 - 0xE7F94
-
-ARM_FUNC_START sub_20E80A4
-sub_20E80A4:
-.incbin "fe11-arm9-base.bin", 0xE80A4, 0xE8184 - 0xE80A4
-
-ARM_FUNC_START sub_20E8184
-sub_20E8184:
-.incbin "fe11-arm9-base.bin", 0xE8184, 0xE8544 - 0xE8184
-
-ARM_FUNC_START sub_20E8544
-sub_20E8544:
-.incbin "fe11-arm9-base.bin", 0xE8544, 0xE8610 - 0xE8544
-
-ARM_FUNC_START sub_20E8610
-sub_20E8610:
-.incbin "fe11-arm9-base.bin", 0xE8610, 0xE8624 - 0xE8610
-
-ARM_FUNC_START sub_20E8624
-sub_20E8624:
-.incbin "fe11-arm9-base.bin", 0xE8624, 0xE86CC - 0xE8624
-
-ARM_FUNC_START sub_20E86CC
-sub_20E86CC:
-.incbin "fe11-arm9-base.bin", 0xE86CC, 0xE87A4 - 0xE86CC
-
-ARM_FUNC_START sub_20E87A4
-sub_20E87A4:
-.incbin "fe11-arm9-base.bin", 0xE87A4, 0xE8980 - 0xE87A4
-
-@ This is copy to 0x027E0000 (size = 0xE0)
-ARM_FUNC_START sub_20E8980
-sub_20E8980:
-.incbin "fe11-arm9-base.bin", 0xE8980, 0xE8A60 - 0xE8980
-
-.global itcm_copy_config
-itcm_copy_config:
-	.4byte 0x01FF8000	@ itcm_copy_dest
-	.4byte 0x4CE0		@ itcm_copy_size
-	.4byte 0x0
-	.4byte 0x027E0000
-	.4byte 0xE0
-	.4byte 0x1AE0
-
-.global itcm_copy_config_end
-itcm_copy_config_end:
-.incbin "fe11-arm9-base.bin", 0xE8A78, 0xE8A84 - 0xE8A78
