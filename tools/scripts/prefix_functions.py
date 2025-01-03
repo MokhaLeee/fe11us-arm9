@@ -11,15 +11,19 @@ def main(args):
     pre = None
     with open(src_file, "r") as f:
         for line in f.readlines():
-            func = line.strip()[7:]
+            func = line.strip()
 
             if func[0:3] == "sub":
 
-                cur_offset = eval(f"0x{func[3:]}") - 0x02000000
+                addr = eval(f"0x{func[4:]}")
 
+                if pre is None:
+                    start_off = addr
+
+                cur_offset = addr - start_off
 
                 if pre is not None:
-                    print(f".incbin \"fe11-arm9-base.bin\", 0x{pre:05X}, 0x{cur_offset:05X} - 0x{pre:05X}")
+                    print(f".incbin \"itcm.bin\", 0x{pre:05X}, 0x{cur_offset:05X} - 0x{pre:05X}")
                     print("")
 
                 print(f"ARM_FUNC_START {func}")
