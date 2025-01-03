@@ -105,10 +105,14 @@ $(ELF): $(ALL_OBJS) $(ARM_LDS)
 $(ROM): $(ELF)
 	$(ARMOBJCPY) --strip-debug -O binary $< $@
 
+fe11-arm9.runtime.elf: $(ALL_OBJS) $(ARM_LDS)
+	$(ARMLD) -T $(ARM_LDS) -Map fe11-arm9.runtime.lds $(ALL_OBJS) -o $@
+
 compare: $(ROM)
 #	$(SHASUM) -c fe11-arm9.sha1
 	@python3 tools/scripts/fix_diff.py
 
+CLEAN_FILES += fe11-arm9.runtime.elf fe11-arm9.runtime.map
 CLEAN_FILES += $(ROM) $(ELF) $(MAP)
 
 # ==============
