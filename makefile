@@ -102,8 +102,14 @@ $(ELF): $(ALL_OBJS) $(ARM_LDS)
 $(ROM): $(ELF)
 	$(ARMOBJCPY) --strip-debug -O binary $< $@
 
-fe11-arm9.runtime.elf: $(ALL_OBJS) $(ARM_LDS)
-	$(ARMLD) -T $(ARM_LDS) -Map fe11-arm9.runtime.lds $(ALL_OBJS) -o $@
+# ===========
+# = runtime =
+# ===========
+
+RUNTIME_BUILD := $(BUILD_NAME).runtime
+
+$(RUNTIME_BUILD).elf: $(ALL_OBJS) $(ARM_LDS)
+	$(ARMLD) -T $(RUNTIME_BUILD).lds -Map $(RUNTIME_BUILD).map $(ALL_OBJS) -o $@
 
 runtime: fe11-arm9.runtime.elf
 
