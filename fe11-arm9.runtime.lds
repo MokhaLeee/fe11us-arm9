@@ -4,6 +4,8 @@ ENTRY(_start)
 
 SECTIONS
 {
+	. = 0x01FF8000;
+
 	unk : ALIGN(4)
 	{
 		itcm/itcm.o(.text);
