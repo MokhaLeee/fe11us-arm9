@@ -93,7 +93,7 @@ void sub_2000D2C(struct UnkStruct_Func_2000D2C * buf, int a, int b)
 
 	unk_021E3328->unk_08->unk_0854 = unk_021E3328->unk_08->unk_0C78;
 
-	sub_01FF8000(
+	sub_1FF8000(
 		unk_021E3328->unk_08,
 		buf->unk_42,
 		buf->unk_43,

@@ -6,7 +6,7 @@ SECTIONS
 {
 	unk : ALIGN(4)
 	{
-		. = 0x01FF8000; sub_1FF8000 = .;
+		itcm/itcm.o(.text);
 	}
 
 	. = 0x02000000;

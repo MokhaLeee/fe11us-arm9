@@ -3471,7 +3471,11 @@ sub_209F4E0:
 
 ARM_FUNC_START sub_209F658
 sub_209F658:
-.incbin "fe11-arm9-base.bin", 0x9F658, 0x9F7D8 - 0x9F658
+.incbin "fe11-arm9-base.bin", 0x9F658, 0x9F7A4 - 0x9F658
+
+ARM_FUNC_START sub_209F7A4
+sub_209F7A4:
+.incbin "fe11-arm9-base.bin", 0x9F7A4, 0x9F7D8 - 0x9F7A4
 
 ARM_FUNC_START sub_209F7D8
 sub_209F7D8:
@@ -3483,7 +3487,19 @@ sub_209F80C:
 
 ARM_FUNC_START sub_209F848
 sub_209F848:
-.incbin "fe11-arm9-base.bin", 0x9F848, 0x9F93C - 0x9F848
+.incbin "fe11-arm9-base.bin", 0x9F848, 0x9F890 - 0x9F848
+
+ARM_FUNC_START sub_209F890
+sub_209F890:
+.incbin "fe11-arm9-base.bin", 0x9F890, 0x9F8F8 - 0x9F890
+
+ARM_FUNC_START sub_209F8F8
+sub_209F8F8:
+.incbin "fe11-arm9-base.bin", 0x9F8F8, 0x9F914 - 0x9F8F8
+
+ARM_FUNC_START sub_209F914
+sub_209F914:
+.incbin "fe11-arm9-base.bin", 0x9F914, 0x9F93C - 0x9F914
 
 ARM_FUNC_START sub_209F93C
 sub_209F93C:
@@ -4155,7 +4171,15 @@ sub_20A3CA0:
 
 ARM_FUNC_START sub_20A3CC4
 sub_20A3CC4:
-.incbin "fe11-arm9-base.bin", 0xA3CC4, 0xA3D20 - 0xA3CC4
+.incbin "fe11-arm9-base.bin", 0xA3CC4, 0xA3CE8 - 0xA3CC4
+
+ARM_FUNC_START sub_20A3CE8
+sub_20A3CE8:
+.incbin "fe11-arm9-base.bin", 0xA3CE8, 0xA3CF4 - 0xA3CE8
+
+ARM_FUNC_START sub_20A3CF4
+sub_20A3CF4:
+.incbin "fe11-arm9-base.bin", 0xA3CF4, 0xA3D20 - 0xA3CF4
 
 ARM_FUNC_START sub_20A3D20
 sub_20A3D20:

@@ -3,7 +3,7 @@
 
 #include "types.h"
 
-void sub_01FF8000(void * unk1, u8 a, u8 b, int c, u8 d, int e);
+void sub_1FF8000(void * unk1, u8 a, u8 b, int c, u8 d, int e);
 
 // ??? sub_20000D4
 // ??? sub_20003BC

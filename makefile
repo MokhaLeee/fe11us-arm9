@@ -1,6 +1,3 @@
-.SUFFIXES:
-.SECONDARY:
-
 BUILD_NAME := fe11-arm9
 
 SRC_DIR = src
@@ -74,6 +71,20 @@ compare: $(ROM)
 	@python3 tools/scripts/fix_diff.py
 
 CLEAN_FILES += $(ROM) $(ELF) $(MAP)
+
+# ===========
+# = runtime =
+# ===========
+
+ITCM_S := itcm/itcm.S
+ITCM_O := itcm/itcm.o
+
+runtime: fe11-arm9.runtime.elf
+
+fe11-arm9.runtime.elf: fe11-arm9.runtime.lds $(ALL_OBJS) $(ITCM_O)
+	$(LD) -T fe11-arm9.runtime.lds -Map fe11-arm9.runtime.map $(ALL_OBJS) $(ITCM_O) -o $@
+
+CLEAN_FILES += fe11-arm9.runtime.elf fe11-arm9.runtime.map $(ITCM_O)
 
 # ==============
 # = Make clean =
