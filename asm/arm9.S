@@ -2549,12 +2549,12 @@ ARM_FUNC_START sub_2018C3C
 sub_2018C3C:
 .incbin "fe11-arm9-base.bin", 0x18C3C, 0x18C58 - 0x18C3C
 
-ARM_FUNC_START sub_2018C58
-sub_2018C58:
+ARM_FUNC_START Proc_Init
+Proc_Init:
 .incbin "fe11-arm9-base.bin", 0x18C58, 0x18CFC - 0x18C58
 
-ARM_FUNC_START sub_2018CFC
-sub_2018CFC:
+ARM_FUNC_START Proc_Find
+Proc_Find:
 .incbin "fe11-arm9-base.bin", 0x18CFC, 0x18D40 - 0x18CFC
 
 ARM_FUNC_START sub_2018D40
@@ -2593,8 +2593,8 @@ ARM_FUNC_START sub_2018F5C
 sub_2018F5C:
 .incbin "fe11-arm9-base.bin", 0x18F5C, 0x18F64 - 0x18F5C
 
-ARM_FUNC_START sub_2018F64
-sub_2018F64:
+ARM_FUNC_START Proc_ForEach
+Proc_ForEach:
 .incbin "fe11-arm9-base.bin", 0x18F64, 0x18FA4 - 0x18F64
 
 ARM_FUNC_START sub_2018FA4
@@ -14961,12 +14961,12 @@ ARM_FUNC_START sub_20A4A24
 sub_20A4A24:
 .incbin "fe11-arm9-base.bin", 0xA4A24, 0xA4A38 - 0xA4A24
 
-ARM_FUNC_START sub_20A4A38
-sub_20A4A38:
+ARM_FUNC_START lock_irqsave
+lock_irqsave:
 .incbin "fe11-arm9-base.bin", 0xA4A38, 0xA4A4C - 0xA4A38
 
-ARM_FUNC_START sub_20A4A4C
-sub_20A4A4C:
+ARM_FUNC_START unlock_irqrestore
+unlock_irqrestore:
 .incbin "fe11-arm9-base.bin", 0xA4A4C, 0xA4A64 - 0xA4A4C
 
 ARM_FUNC_START sub_20A4A64

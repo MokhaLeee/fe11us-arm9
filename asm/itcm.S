@@ -233,20 +233,20 @@ ARM_FUNC_START sub_1FFBB90
 sub_1FFBB90:
 .incbin "itcm-base.bin", 0x03B90, 0x03C90 - 0x03B90
 
-ARM_FUNC_START sub_1FFBC90
-sub_1FFBC90:
+ARM_FUNC_START Root_Proc
+Root_Proc:
 .incbin "itcm-base.bin", 0x03C90, 0x03CA0 - 0x03C90
 
-ARM_FUNC_START sub_1FFBCA0
-sub_1FFBCA0:
+ARM_FUNC_START IsRootProcess
+IsRootProcess:
 .incbin "itcm-base.bin", 0x03CA0, 0x03CB0 - 0x03CA0
 
 ARM_FUNC_START sub_1FFBCB0
 sub_1FFBCB0:
 .incbin "itcm-base.bin", 0x03CB0, 0x03D3C - 0x03CB0
 
-ARM_FUNC_START sub_1FFBD3C
-sub_1FFBD3C:
+ARM_FUNC_START AllocateProcess
+AllocateProcess:
 .incbin "itcm-base.bin", 0x03D3C, 0x03DA4 - 0x03D3C
 
 ARM_FUNC_START sub_1FFBDA4
@@ -261,16 +261,16 @@ ARM_FUNC_START sub_1FFBE1C
 sub_1FFBE1C:
 .incbin "itcm-base.bin", 0x03E1C, 0x03E3C - 0x03E1C
 
-ARM_FUNC_START sub_1FFBE3C
-sub_1FFBE3C:
+ARM_FUNC_START UnlinkProc
+UnlinkProc:
 .incbin "itcm-base.bin", 0x03E3C, 0x03EB4 - 0x03E3C
 
 ARM_FUNC_START sub_1FFBEB4
 sub_1FFBEB4:
 .incbin "itcm-base.bin", 0x03EB4, 0x03F78 - 0x03EB4
 
-ARM_FUNC_START sub_1FFBF78
-sub_1FFBF78:
+ARM_FUNC_START Proc_Start
+Proc_Start:
 .incbin "itcm-base.bin", 0x03F78, 0x03F90 - 0x03F78
 
 ARM_FUNC_START sub_1FFBF90
@@ -285,8 +285,8 @@ ARM_FUNC_START sub_1FFBFE0
 sub_1FFBFE0:
 .incbin "itcm-base.bin", 0x03FE0, 0x04018 - 0x03FE0
 
-ARM_FUNC_START sub_1FFC018
-sub_1FFC018:
+ARM_FUNC_START Proc_StartBlocking
+Proc_StartBlocking:
 .incbin "itcm-base.bin", 0x04018, 0x04030 - 0x04018
 
 ARM_FUNC_START sub_1FFC030
@@ -317,8 +317,8 @@ ARM_FUNC_START sub_1FFC2F4
 sub_1FFC2F4:
 .incbin "itcm-base.bin", 0x042F4, 0x04390 - 0x042F4
 
-ARM_FUNC_START sub_1FFC390
-sub_1FFC390:
+ARM_FUNC_START Proc_Run
+Proc_Run:
 .incbin "itcm-base.bin", 0x04390, 0x043B0 - 0x04390
 
 ARM_FUNC_START sub_1FFC3B0
