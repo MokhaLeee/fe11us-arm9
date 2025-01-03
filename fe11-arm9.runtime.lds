@@ -16,4 +16,16 @@ SECTIONS
 	{
 		asm/arm9.o(.text);
 	}
+
+	. = 0x021A23E0;
+	main : ALIGN(4)
+	{
+		asm/overlay0.o(.text);
+	}
+
+	. = 0x02204C20;
+	main : ALIGN(4)
+	{
+		asm/overlay4.o(.text);
+	}
 }
