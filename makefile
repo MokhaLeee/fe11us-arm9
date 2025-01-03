@@ -104,7 +104,7 @@ $(ELF): $(ALL_OBJS) $(ARM_LDS)
 	@$(ARMLD) -T $(ARM_LDS) -Map $(MAP) $(ALL_OBJS) -o $@
 
 $(ROM): $(ELF)
-	@echo "[OBJCPY]	$@"
+	@echo "[OBP]	$@"
 	@$(ARMOBJCPY) --strip-debug -O binary $< $@
 
 # ===========

@@ -5,7 +5,7 @@ DATA_DIR = data
 
 all: compare
 
-MWCC  := wine "tools/mwccarm/2.0/sp2p2/mwccarm.exe"
+MWCC  := wine "../tools/mwccarm/2.0/sp2p2/mwccarm.exe"
 
 ARMAS     := arm-none-eabi-as
 ARMLD     := arm-none-eabi-ld
@@ -47,7 +47,7 @@ $(ELF): $(ALL_OBJS) $(ARM_LDS)
 	@$(ARMLD) -T $(ARM_LDS) -Map $(MAP) $(ALL_OBJS) -o $@
 
 $(ROM): $(ELF)
-	@echo "[OBJCPY]	$@"
+	@echo "[OBP]	$@"
 	@$(ARMOBJCPY) --strip-debug -O binary $< $@
 
 compare: $(ROM)

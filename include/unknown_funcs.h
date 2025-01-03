@@ -3795,8 +3795,8 @@ void sub_20A2444(int a, int b);
 // ??? sub_20A48EC
 // ??? sub_20A49DC
 // ??? sub_20A4A24
-// ??? sub_20A4A38
-// ??? sub_20A4A4C
+void * sub_20A4A38(void);
+void sub_20A4A4C(void *);
 // ??? sub_20A4A64
 // ??? sub_20A4A78
 // ??? sub_20A4A90

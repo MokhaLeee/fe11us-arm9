@@ -11,6 +11,8 @@ SECTIONS
 	itcm : ALIGN(4)
 	{
 		asm/code.o(.text);
+		src/proc.o(.text);
+		asm/proc.o(.text);
 	}
 
 	. = 0x02000000;

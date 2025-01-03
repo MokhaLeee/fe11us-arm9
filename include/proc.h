@@ -91,3 +91,8 @@ struct Proc
 
 // ITCM
 void Proc_Run(u32 tree);
+BOOL IsRootProcess(struct Proc * proc);
+void RunProcessScript(struct Proc * proc);
+
+extern BOOL (* gProcessCmdTable[])(struct Proc *);
+extern struct Proc * gProcTreeRootArray[14];
