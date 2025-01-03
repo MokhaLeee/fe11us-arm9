@@ -11,12 +11,20 @@ _start: @ 0x02000800
 	cmp r0, #0
 	bne 1b
 
-	bl sub_2000A78
+	bl config_coprocessor
+
+	/**
+	 * Supervisor (SWI): sp = 0x027E3FC0
+	 */
 	mov r0, #0x13
 	msr cpsr_c, r0
 	ldr r0, _02000918 @ =0x027E0000
 	add r0, r0, #0x3fc0
 	mov sp, r0
+
+	/**
+	 * IRQ: sp = 0x027E3F7C
+	 */
 	mov r0, #0x12
 	msr cpsr_c, r0
 	ldr r0, _02000918 @ =0x027E0000
@@ -25,57 +33,79 @@ _start: @ 0x02000800
 	sub sp, r0, #4
 	tst sp, #4
 	subeq sp, sp, #4
+
+	/**
+	 * System (privileged 'User' mode): sp = 0x027E377C
+	 */
 	ldr r1, _0200091C @ =0x00000800
 	sub r1, r0, r1
 	mov r0, #0x1f
 	msr cpsr_fsxc, r0
 	sub sp, r1, #4
+
+	/* clear BSS */
 	mov r0, #0
 	ldr r1, _02000918 @ =0x027E0000
 	mov r2, #0x4000
 	bl _memset
 
+	/* clear palette */
 	mov r0, #0
 	ldr r1, _02000920 @ =0x05000000
 	mov r2, #0x400
 	bl _memset
 
+	/* clear OAM */
 	mov r0, #0x200
 	ldr r1, _02000924 @ =0x07000000
 	mov r2, #0x400
 	bl _memset
 
-	ldr r1, _02000928 @ =unk_02000B68
+	/* did nothing actually */
+	ldr r1, _02000928 @ =boot_ram_copy_config
 	ldr r0, [r1, #0x14]
 	bl sub_2000950
-	bl sub_20009FC
-	ldr r0, _02000928 @ =unk_02000B68
+
+	/* copy to itcm (0x01FF8000) */
+	bl copy_itcm
+
+
+	/* clear data section */
+	ldr r0, _02000928 @ =boot_ram_copy_config
 	ldr r1, [r0, #0xc]
 	ldr r2, [r0, #0x10]
 	mov r3, r1
 	mov r0, #0
-_020008B4:
+1:
 	cmp r1, r2
 	strlo r0, [r1], #4
-	blo _020008B4
+	blo 1b
+
 	bic r1, r3, #0x1f
-_020008C4:
+1:
 	mcr p15, #0, r0, c7, c10, #4
 	mcr p15, #0, r1, c7, c5, #1
 	mcr p15, #0, r1, c7, c14, #1
 	add r1, r1, #0x20
 	cmp r1, r2
-	blt _020008C4
-	ldr r1, _0200092C @ =0x027FFF9C
+	blt 1b
+
+	ldr r1, _0200092C @ =unk_027FFF9C
 	str r0, [r1]
+
 	ldr r1, _02000918 @ =0x027E0000
 	add r1, r1, #0x3fc0
 	add r1, r1, #0x3c
-	ldr r0, _02000930 @ =0x01FFC6BC
+	ldr r0, _02000930 @ =unk_01FFC6BC
 	str r0, [r1]
+
 	bl nullsub_8
 	bl nullsub_1
-	bl sub_20C3B30
+
+	@ hook list
+	bl exec_boot_hook_list
+
+	@ jump to main
 	ldr r1, _02000934 @ =main
 	ldr lr, _02000938 @ =0xFFFF0000
 	tst sp, #4
@@ -86,9 +116,9 @@ _02000918: .4byte 0x027E0000
 _0200091C: .4byte 0x00000800
 _02000920: .4byte 0x05000000
 _02000924: .4byte 0x07000000
-_02000928: .4byte unk_02000B68
-_0200092C: .4byte 0x027FFF9C
-_02000930: .4byte 0x01FFC6BC
+_02000928: .4byte boot_ram_copy_config
+_0200092C: .4byte unk_027FFF9C
+_02000930: .4byte unk_01FFC6BC
 _02000934: .4byte main
 _02000938: .4byte 0xFFFF0000
 
@@ -158,9 +188,9 @@ _020009DC:
 _020009F8:
 	bx lr
 
-	arm_func_start sub_20009FC
-sub_20009FC: @ 0x020009FC
-	ldr r0, _02000A70 @ =unk_02000B68
+	arm_func_start copy_itcm
+copy_itcm: @ 0x020009FC
+	ldr r0, _02000A70 @ =boot_ram_copy_config
 	ldr r1, [r0]
 	ldr r2, [r0, #4]
 	ldr r3, [r0, #8]
@@ -195,12 +225,13 @@ _02000A50:
 _02000A6C:
 	b _02000A74
 	.align 2, 0
-_02000A70: .4byte unk_02000B68
+_02000A70: .4byte boot_ram_copy_config
 _02000A74:
 	bx lr
 
-	arm_func_start sub_2000A78
-sub_2000A78: @ 0x02000A78
+	arm_func_start config_coprocessor
+config_coprocessor: @ 0x02000A78
+	@ ARM11: Processor Feature Register 0
 	mrc p15, #0, r0, c1, c0, #0
 	ldr r1, _02000B30 @ =0x000F9005
 	bic r0, r0, r1
@@ -269,12 +300,15 @@ ARM_FUNC_START nullsub_2
 nullsub_2: @ 0x02000B64
 	bx lr
 
-.global unk_02000B68
-unk_02000B68:
-	.4byte unk_020E8A60
-	.4byte unk_020E8A78
-	.4byte sub_20E3CA0
-	.4byte sub_20E3CA0
-	.4byte unk_021A23E0
+.global boot_ram_copy_config @ 0x02000B68
+boot_ram_copy_config:
+	@ itcm copy
+	.4byte itcm_copy_config
+	.4byte itcm_copy_config_end
+	.4byte itcm_copy_start
 
-.incbin "fe11-arm9-base.bin", 0x00B7C, 0x00C50 - 0x00B7C
+	.4byte itcm_copy_start	@ bss_start
+	.4byte bss_end
+	.4byte 0
+
+.incbin "fe11-arm9-base.bin", 0x00B80, 0x00C50 - 0x00B80

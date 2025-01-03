@@ -6833,9 +6833,22 @@ ARM_FUNC_START sub_20C3B24
 sub_20C3B24:
 .incbin "fe11-arm9-base.bin", 0xC3B24, 0xC3B30 - 0xC3B24
 
-ARM_FUNC_START sub_20C3B30
-sub_20C3B30:
-.incbin "fe11-arm9-base.bin", 0xC3B30, 0xC3B5C - 0xC3B30
+ARM_FUNC_START exec_boot_hook_list
+exec_boot_hook_list: @ 0x020C3B30
+	push {r4, lr}
+	ldr r4, _020C3B58 @ =boot_hook_list
+	b _020C3B44
+_020C3B3C:
+	.4byte 0xE12FFF30 @ blx r0
+	add r4, r4, #4
+_020C3B44:
+	cmp r4, #0
+	ldrne r0, [r4]
+	cmpne r0, #0
+	bne _020C3B3C
+	pop {r4, pc}
+	.align 2, 0
+_020C3B58: .4byte boot_hook_list
 
 ARM_FUNC_START sub_20C3B5C
 sub_20C3B5C:
@@ -6991,7 +7004,36 @@ sub_20C50D8:
 
 ARM_FUNC_START sub_20C50F0
 sub_20C50F0:
-.incbin "fe11-arm9-base.bin", 0xC50F0, 0xE3CA0 - 0xC50F0
+.incbin "fe11-arm9-base.bin", 0xC50F0, 0xC9B10 - 0xC50F0
+
+.global boot_hook_list
+boot_hook_list: @ 0x020C9B10
+	.4byte sub_20C4CDC
+	.4byte 0x20C4CFC
+	.4byte 0x20C4D10
+	.4byte 0x20C4D28
+	.4byte sub_20C4D2C
+	.4byte sub_20C4D58
+	.4byte sub_20C4FA0
+	.4byte sub_20C4FCC
+	.4byte sub_20C5064
+	.4byte sub_20C5088
+	.4byte sub_20C50C0
+	.4byte sub_20C50D8
+	.4byte sub_20C50F0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+
+@ rodata
+.incbin "fe11-arm9-base.bin", 0xC9B60, 0xE3CA0 - 0xC9B60
+
+.global itcm_copy_start
+itcm_copy_start:
 
 ARM_FUNC_START sub_20E3CA0
 sub_20E3CA0:
@@ -7147,12 +7189,22 @@ sub_20E86CC:
 
 ARM_FUNC_START sub_20E87A4
 sub_20E87A4:
-.incbin "fe11-arm9-base.bin", 0xE87A4, 0xE8A60 - 0xE87A4
+.incbin "fe11-arm9-base.bin", 0xE87A4, 0xE8980 - 0xE87A4
 
-.global unk_020E8A60
-unk_020E8A60:
-.incbin "fe11-arm9-base.bin", 0xE8A60, 0xE8A78 - 0xE8A60
+@ This is copy to 0x027E0000 (size = 0xE0)
+ARM_FUNC_START sub_20E8980
+sub_20E8980:
+.incbin "fe11-arm9-base.bin", 0xE8980, 0xE8A60 - 0xE8980
 
-.global unk_020E8A78
-unk_020E8A78:
+.global itcm_copy_config
+itcm_copy_config:
+	.4byte 0x01FF8000	@ itcm_copy_dest
+	.4byte 0x4CE0		@ itcm_copy_size
+	.4byte 0x0
+	.4byte 0x027E0000
+	.4byte 0xE0
+	.4byte 0x1AE0
+
+.global itcm_copy_config_end
+itcm_copy_config_end:
 .incbin "fe11-arm9-base.bin", 0xE8A78, 0xE8A84 - 0xE8A78

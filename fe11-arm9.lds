@@ -4,9 +4,10 @@ ENTRY(_start)
 
 SECTIONS
 {
-	unk : ALIGN(4)
+	itcm : ALIGN(4)
 	{
 		. = 0x01FF8000; sub_01FF8000 = .;
+		. = 0x01FFC6BC; unk_01FFC6BC = .;
 	}
 
 	. = 0x02000000;
@@ -35,9 +36,10 @@ SECTIONS
 	{
 		. = 0x02197254 - bin_end; unk_02197254 = .;
 		. = 0x0219796C - bin_end; unk_0219796C = .;
-		. = 0x021A23E0 - bin_end; unk_021A23E0 = .;
+		. = 0x021A23E0 - bin_end; bss_end = .;
 		. = 0x021E3324 - bin_end; unk_021E3324 = .;
 		. = 0x021E3328 - bin_end; unk_021E3328 = .;
 		. = 0x027E00E0 - bin_end; unk_027E00E0 = .;
+		. = 0x027FFF9C - bin_end; unk_027FFF9C = .;
 	}
 }
