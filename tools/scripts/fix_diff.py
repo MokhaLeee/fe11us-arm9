@@ -11,14 +11,17 @@ def compare_bin_files(src_data, dst_data, size):
     differences = []
     offset = 0
 
-    for offset in range(size):
-        byte1 = src_data[offset]
-        byte2 = dst_data[offset]
+    while True:
+        if offset >= size:
+            break
 
-        if byte1 != byte2:
-            differences.append((offset, byte1, byte2))
+        data1 = int.from_bytes(src_data[offset + 0:offset + 4], 'little')
+        data2 = int.from_bytes(dst_data[offset + 0:offset + 4], 'little')
 
-        offset += 1
+        if data1 != data2:
+            differences.append((offset, data1, data2))
+
+        offset = offset + 4
 
     return differences
 
@@ -41,23 +44,23 @@ def main(args):
 
     diffs = compare_bin_files(src_data, dst_data, os.stat(src_file).st_size)
 
-    check = True
+    check_cnt = 0
 
     if diffs:
-        for offset, byte1, byte2 in diffs:
-            if offset % 4 == 0:
-                src_inst = int.from_bytes(src_data[offset + 0:offset + 4], 'little')
-                dst_inst = int.from_bytes(dst_data[offset + 0:offset + 4], 'little')
+        for offset, src_inst, dst_inst in diffs:
+            if is_bl_instruction(src_inst) and is_bl_instruction(dst_inst):
+                if dst_inst == (src_inst + 2):
+                    # print(f"skip offset {offset:08X}")
+                    continue
 
-                if is_bl_instruction(src_inst) and is_bl_instruction(dst_inst):
-                    if dst_inst == (src_inst + 2):
-                        # print(f"skip offset {offset:08X}")
-                        continue
+            print(f"Offset {offset:08X}: 0x{src_inst:08X} != 0x{dst_inst:08X}")
+            check_cnt = check_cnt + 1
 
-            # print(f"Offset {offset:08X}: {byte1} != {byte2}")
-            check = False
+            if check_cnt > 3:
+                print("horrorable!")
+                break
 
-    if not check:
+    if check_cnt != 0:
         print(f"[CRIT]\tcompare failed!\t({src_file}, {dst_file})")
     else:
         print(f"[CRIT]\tcompare pass!\t({src_file}, {dst_file})")

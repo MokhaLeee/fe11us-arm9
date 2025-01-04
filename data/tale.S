@@ -10,16 +10,16 @@ ram_copy_start:
 
 .incbin "fe11-arm9-base.bin", 0xE8990, 0xE8A60 - 0xE8990
 
-.global itcm_copy_config
-itcm_copy_config:
+.global SDK_AUTOLOAD_LIST
+SDK_AUTOLOAD_LIST:
 	.4byte 0x01FF8000	@ itcm_copy_dest
 	.4byte 0x4CE0		@ itcm_copy_size
 	.4byte 0x0
 	.4byte 0x027E0000
 	.4byte 0xE0
 	.4byte 0x1AE0
-.global itcm_copy_config_end
-itcm_copy_config_end:
+.global SDK_AUTOLOAD_LIST_END
+SDK_AUTOLOAD_LIST_END:
 
 	@ idk
 	.4byte 0xDEC00621

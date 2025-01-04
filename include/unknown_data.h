@@ -3,8 +3,8 @@
 
 #include "types.h"
 
-// ??? itcm_copy_config
-// ??? itcm_copy_config_end
+// ??? SDK_AUTOLOAD_LIST
+// ??? SDK_AUTOLOAD_LIST_END
 
 extern struct UnkStruct_02197254 * unk_02197254;
 extern struct UnkStruct_021E3324 * unk_021E3324;

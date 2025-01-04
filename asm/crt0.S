@@ -11,7 +11,7 @@ _start: @ 0x02000800
 	cmp r0, #0
 	bne 1b
 
-	bl config_coprocessor
+	bl init_cp15
 
 	/**
 	 * Supervisor (SWI): sp = 0x027E3FC0
@@ -62,16 +62,16 @@ _start: @ 0x02000800
 	bl _memset
 
 	/* did nothing actually */
-	ldr r1, _02000928 @ =boot_ram_copy_config
+	ldr r1, _02000928 @ =_start_ModuleParams
 	ldr r0, [r1, #0x14]
 	bl sub_2000950
 
 	/* copy to itcm (0x01FF8000) */
-	bl copy_itcm
+	bl do_autoload
 
 
 	/* clear data section */
-	ldr r0, _02000928 @ =boot_ram_copy_config
+	ldr r0, _02000928 @ =_start_ModuleParams
 	ldr r1, [r0, #0xc]
 	ldr r2, [r0, #0x10]
 	mov r3, r1
@@ -116,7 +116,7 @@ _02000918: .4byte 0x027E0000
 _0200091C: .4byte 0x00000800
 _02000920: .4byte 0x05000000
 _02000924: .4byte 0x07000000
-_02000928: .4byte boot_ram_copy_config
+_02000928: .4byte _start_ModuleParams
 _0200092C: .4byte unk_027FFF9C
 _02000930: .4byte unk_01FFC6BC
 _02000934: .4byte main
@@ -188,9 +188,9 @@ _020009DC:
 _020009F8:
 	bx lr
 
-	arm_func_start copy_itcm
-copy_itcm: @ 0x020009FC
-	ldr r0, _02000A70 @ =boot_ram_copy_config
+	arm_func_start do_autoload
+do_autoload: @ 0x020009FC
+	ldr r0, _02000A70 @ =_start_ModuleParams
 	ldr r1, [r0]
 	ldr r2, [r0, #4]
 	ldr r3, [r0, #8]
@@ -225,12 +225,12 @@ _02000A50:
 _02000A6C:
 	b _02000A74
 	.align 2, 0
-_02000A70: .4byte boot_ram_copy_config
+_02000A70: .4byte _start_ModuleParams
 _02000A74:
 	bx lr
 
-	arm_func_start config_coprocessor
-config_coprocessor: @ 0x02000A78
+	arm_func_start init_cp15
+init_cp15: @ 0x02000A78
 	@ ARM11: Processor Feature Register 0
 	mrc p15, #0, r0, c1, c0, #0
 	ldr r1, _02000B30 @ =0x000F9005
@@ -300,11 +300,11 @@ ARM_FUNC_START nullsub_2
 nullsub_2: @ 0x02000B64
 	bx lr
 
-.global boot_ram_copy_config @ 0x02000B68
-boot_ram_copy_config:
+.global _start_ModuleParams @ 0x02000B68
+_start_ModuleParams:
 	@ itcm copy
-	.4byte itcm_copy_config
-	.4byte itcm_copy_config_end
+	.4byte SDK_AUTOLOAD_LIST
+	.4byte SDK_AUTOLOAD_LIST_END
 	.4byte itcm_copy_start
 
 	.4byte itcm_copy_start	@ bss_start
