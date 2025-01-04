@@ -32,7 +32,7 @@ SECTIONS
 		src/proc.o(.text);
 		asm/proc.o(.text);
 		asm/code.o(.text);
-		src/text_02078808.o(.text);
+		src/code_02078808.o(.text);
 		asm/code_0207884C.o(.text);
 		asm/code_02078878.o(.text);
 		asm/code_020C4D58.o(.text);
