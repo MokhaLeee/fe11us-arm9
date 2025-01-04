@@ -10,6 +10,8 @@
 . = 0x02190F28 - BSS_START; gProcArray = .;
 . = 0x02197254 - BSS_START; unk_02197254 = .;
 . = 0x0219796C - BSS_START; unk_0219796C = .;
+. = 0x0219E5AC - BSS_START; unk_0219E5AC = .;
+. = 0x0219E5D8 - BSS_START; unk_0219E5D8 = .;
 . = 0x021A23E0 - BSS_START; bss_end = .;
 
 /* idk */
@@ -29,4 +31,5 @@
 . = 0x027E1260 - BSS_START; gClock = .;
 . = 0x027E1264 - BSS_START; unk_27E1264 = .;
 . = 0x027E1268 - BSS_START; data_027e1268 = .;
+. = 0x027FFC00 - BSS_START; g_nds_bios_ram_h = .;
 . = 0x027FFF9C - BSS_START; unk_027FFF9C = .;

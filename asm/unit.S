@@ -145,8 +145,8 @@ ARM_FUNC_START sub_203C660
 sub_203C660:
 .incbin "fe11-arm9-base.bin", 0x3C660, 0x3C6C0 - 0x3C660
 
-ARM_FUNC_START sub_203C6C0
-sub_203C6C0:
+ARM_FUNC_START GetUnitStatus
+GetUnitStatus:
 .incbin "fe11-arm9-base.bin", 0x3C6C0, 0x3C73C - 0x3C6C0
 
 ARM_FUNC_START sub_203C73C

@@ -1343,7 +1343,11 @@ sub_204DF64:
 
 ARM_FUNC_START sub_204E06C
 sub_204E06C:
-.incbin "fe11-arm9-base.bin", 0x4E06C, 0x4E1A4 - 0x4E06C
+.incbin "fe11-arm9-base.bin", 0x4E06C, 0x4E170 - 0x4E06C
+
+ARM_FUNC_START sub_204E170
+sub_204E170:
+.incbin "fe11-arm9-base.bin", 0x4E170, 0x4E1A4 - 0x4E170
 
 ARM_FUNC_START sub_204E1A4
 sub_204E1A4:

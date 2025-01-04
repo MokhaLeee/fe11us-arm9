@@ -6,6 +6,12 @@
 #include "types.h"
 #include "nds/nds.h"
 
+//! aligns a struct (and other types?) to m, making sure that the size of the struct is a multiple of m.
+#define ALIGN(m)	__attribute__((aligned (m)))
+
+//! packs a struct (and other types?) so it won't include padding bytes.
+#define PACKED __attribute__ ((packed))
+#define packed_struct struct PACKED
 #define STRUCT_PAD(from, to) unsigned char _pad_ ## from[(to) - (from)]
 
 #pragma define_section force_text ".text"

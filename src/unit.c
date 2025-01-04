@@ -27,5 +27,4 @@ struct JobData * GetJInfoFromItem(struct ItemData * iinfo, struct Unit * unit)
     }
 }
 
-
 char str_MP_RNG[] = "MP_RNG\0";

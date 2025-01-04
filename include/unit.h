@@ -197,7 +197,7 @@ int sub_2039088(void * unk0, int b, int c, int d, int e, int f, int g);
 // ??? sub_203C5C0
 // ??? sub_203C610
 // ??? sub_203C660
-// ??? sub_203C6C0
+// ??? GetUnitStatus
 // ??? sub_203C73C
 int sub_203C77C(struct UnkStruct_021E3328_00_04_00 * unk);
 // ??? sub_203C7AC

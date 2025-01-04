@@ -1,6 +1,17 @@
 #ifndef TYPES_H
 #define TYPES_H
 
+/*!
+	\brief returns a number with the nth bit set.
+*/
+#define BIT(n) (1 << (n))
+
+// Handy function pointer typedefs
+//! a function pointer that takes no arguments and doesn't return anything.
+typedef void (* VoidFn)(void);
+typedef void (* IntFn)(void);
+typedef void (* fp)(void);
+
 typedef unsigned char u8;
 typedef unsigned short int u16;
 typedef unsigned long u32;
