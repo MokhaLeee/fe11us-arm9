@@ -32,8 +32,8 @@ def main(args):
 
     except IndexError:
         # sys.exit(f"Usage: {args[0]} src dst")
-        src_file = "./fe11-arm9-base.bin"
-        dst_file = "./fe11-arm9.bin"
+        src_file = "fe11-arm9-base.bin"
+        dst_file = "fe11-arm9.bin"
 
     with open(src_file, "rb") as f1, open(dst_file, "rb") as f2:
         src_data = f1.read()

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-SRC=itcm-base
-TAR=itcm
+SRC=dtcm-base
+TAR=dtcm
 
 xxd $TAR.bin > $TAR.hex
 xxd $SRC.bin > $SRC.hex

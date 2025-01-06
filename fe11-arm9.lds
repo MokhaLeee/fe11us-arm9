@@ -2,11 +2,11 @@ OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
 OUTPUT_ARCH(arm)
 ENTRY(_start)
 
-BSS_START = 0x020E3CA0; /* itcm_copy_start */
+BSS_START = 0x020E3CA0; /* dtcm_copy_start */
 
 SECTIONS
 {
-	itcm : ALIGN(4)
+	dtcm : ALIGN(4)
 	{
 		. = 0x01FF8000; sub_1FF8000 = .;
 		. = 0x01FFA720; sub_1FFA720 = .;
@@ -58,7 +58,7 @@ SECTIONS
 	. = main_end;
 	bin_tail : ALIGN(4)
 	{
-		itcm/itcm.o(.rodata);
+		dtcm/dtcm.o(.rodata);
 		data/tale.o(.rodata);
 	}
 

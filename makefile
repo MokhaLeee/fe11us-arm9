@@ -49,31 +49,31 @@ ELF := $(ROM:%.bin=%.elf)
 MAP := $(ROM:%.bin=%.map)
 
 # ========
-# = ITCM =
+# = DTCM =
 # ========
 
-ITCM_DIR = itcm
-ITCM_SRC_DIR  = $(ITCM_DIR)/src
-ITCM_ASM_DIR  = $(ITCM_DIR)/asm
-ITCM_DATA_DIR = $(ITCM_DIR)/data
+DTCM_DIR = dtcm
+DTCM_SRC_DIR  = $(DTCM_DIR)/src
+DTCM_ASM_DIR  = $(DTCM_DIR)/asm
+DTCM_DATA_DIR = $(DTCM_DIR)/data
 
-ITCM_BIN = $(ITCM_DIR)/itcm.bin
-ITCM_S   = $(ITCM_DIR)/itcm.S
+DTCM_BIN = $(DTCM_DIR)/dtcm.bin
+DTCM_S   = $(DTCM_DIR)/dtcm.S
 
-ASM_SRCS += $(ITCM_S)
+ASM_SRCS += $(DTCM_S)
 
-ITCM_C_SRCS    += $(wildcard $(ITCM_SRC_DIR)/*.c)
-ITCM_ASM_SRCS  += $(wildcard $(ITCM_ASM_DIR)/*.S) $(wildcard $(ITCM_ASM_DIR)/*.S)
-ITCM_DATA_SRCS += $(wildcard $(ITCM_DATA_DIR)/*.S) $(wildcard $(ITCM_DIR)/*.S)
+DTCM_C_SRCS    += $(wildcard $(DTCM_SRC_DIR)/*.c)
+DTCM_ASM_SRCS  += $(wildcard $(DTCM_ASM_DIR)/*.S) $(wildcard $(DTCM_ASM_DIR)/*.S)
+DTCM_DATA_SRCS += $(wildcard $(DTCM_DATA_DIR)/*.S) $(wildcard $(DTCM_DIR)/*.S)
 
-ITCM_C_OBJS := $(ITCM_C_SRCS:%.c=%.o)
-ITCM_ASM_OBJS := $(ITCM_ASM_SRCS:%.S=%.o)
-ITCM_DATA_OBJS := $(ITCM_DATA_SRCS:%.S=%.o)
+DTCM_C_OBJS := $(DTCM_C_SRCS:%.c=%.o)
+DTCM_ASM_OBJS := $(DTCM_ASM_SRCS:%.S=%.o)
+DTCM_DATA_OBJS := $(DTCM_DATA_SRCS:%.S=%.o)
 
-CLEAN_DIRS += $(ITCM_C_OBJS) $(ITCM_ASM_OBJS) $(ITCM_DATA_OBJS)
+CLEAN_DIRS += $(DTCM_C_OBJS) $(DTCM_ASM_OBJS) $(DTCM_DATA_OBJS)
 
-$(ITCM_DIR)/itcm.bin: $(ITCM_C_SRCS) $(ITCM_ASM_SRCS) $(ITCM_DATA_SRCS)
-	@$(MAKE) -C $(ITCM_DIR)
+$(DTCM_DIR)/dtcm.bin: $(DTCM_C_SRCS) $(DTCM_ASM_SRCS) $(DTCM_DATA_SRCS)
+	@$(MAKE) -C $(DTCM_DIR)
 
 # ============
 # = Recepies =
@@ -97,7 +97,7 @@ CLEAN_DIRS += $(ALL_OBJS)
 	@$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
 #	@$(MWAS) $(MW_ASFLAGS) $< -o $@
 
-$(ITCM_DIR)/itcm.o: $(ITCM_DIR)/itcm.S $(ITCM_DIR)/itcm.bin
+$(DTCM_DIR)/dtcm.o: $(DTCM_DIR)/dtcm.S $(DTCM_DIR)/dtcm.bin
 
 $(ELF): $(ALL_OBJS) $(ARM_LDS)
 	@echo "[LD]	$@"
@@ -118,12 +118,16 @@ $(RUNTIME_BUILD).elf: $(ALL_OBJS) $(ARM_LDS)
 	@$(ARMLD) -T $(RUNTIME_BUILD).lds -Map $(RUNTIME_BUILD).map $(ALL_OBJS) -o $@
 
 runtime: fe11-arm9.runtime.elf
+CLEAN_FILES += fe11-arm9.runtime.elf fe11-arm9.runtime.map
+
+# ===========
+# = compare =
+# ===========
 
 compare: $(ROM)
 #	$(SHASUM) -c fe11-arm9.sha1
-	@python3 tools/scripts/fix_diff.py
+	@python3 tools/scripts/fix_diff.py $(BUILD_NAME)-base.bin $(BUILD_NAME).bin
 
-CLEAN_FILES += fe11-arm9.runtime.elf fe11-arm9.runtime.map
 CLEAN_FILES += $(ROM) $(ELF) $(MAP)
 
 # ==============
@@ -134,7 +138,7 @@ CLEAN_DIRS += $(shell find . -type d -name "__pycache__")
 clean:
 	@rm -f $(CLEAN_FILES)
 	@rm -rf $(CLEAN_DIRS)
-	@$(MAKE) -C $(ITCM_DIR) clean > /dev/null
+	@$(MAKE) -C $(DTCM_DIR) clean > /dev/null
 	@echo "all cleaned..."
 
 .PHONY: clean
