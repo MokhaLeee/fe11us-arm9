@@ -4245,12 +4245,13 @@ void sub_20AD244(int a);
 // ??? sub_20B6BAC
 // ??? sub_20B6BD4
 char * strcpy(char * dest, const char * src);
-// ??? _strncpy
-// ??? strncpy
-// ??? strstr
-// ??? strlen
-// ??? strcat
-// ??? strcmp
+int _strncpy(char * dst, const char * src, int n);
+int strncpy(char * dst, const char * src, int n);
+char * strstr(char * haystack, const char * needle);
+int strlen(const char * s);
+const char * strcat(char * dst, const char * src);
+int strcmp(const char *s1, const char *s2);
+int strncmp(const char *s1, const char *s2, int n);
 // ??? sub_20B6EC0
 // ??? sub_20B6EE8
 // ??? _vfprintf_r
