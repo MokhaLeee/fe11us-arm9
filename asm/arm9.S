@@ -16849,29 +16849,37 @@ ARM_FUNC_START sub_20B6BD4
 sub_20B6BD4:
 .incbin "fe11-arm9-base.bin", 0xB6BD4, 0xB6C98 - 0xB6BD4
 
-ARM_FUNC_START sub_20B6C98
-sub_20B6C98:
+ARM_FUNC_START strcpy
+strcpy:
 .incbin "fe11-arm9-base.bin", 0xB6C98, 0xB6CCC - 0xB6C98
 
-ARM_FUNC_START sub_20B6CCC
-sub_20B6CCC:
+ARM_FUNC_START _strncpy
+_strncpy:
 .incbin "fe11-arm9-base.bin", 0xB6CCC, 0xB6D18 - 0xB6CCC
 
-ARM_FUNC_START sub_20B6D18
-sub_20B6D18:
-.incbin "fe11-arm9-base.bin", 0xB6D18, 0xB6DE0 - 0xB6D18
+ARM_FUNC_START strncpy
+strncpy:
+.incbin "fe11-arm9-base.bin", 0xB6D18, 0xB6D78 - 0xB6D18
 
-ARM_FUNC_START sub_20B6DE0
-sub_20B6DE0:
+ARM_FUNC_START strstr
+strstr:
+.incbin "fe11-arm9-base.bin", 0xB6D78, 0xB6DE0 - 0xB6D78
+
+ARM_FUNC_START strlen
+strlen:
 .incbin "fe11-arm9-base.bin", 0xB6DE0, 0xB6E08 - 0xB6DE0
 
-ARM_FUNC_START sub_20B6E08
-sub_20B6E08:
+ARM_FUNC_START strcat
+strcat:
 .incbin "fe11-arm9-base.bin", 0xB6E08, 0xB6E2C - 0xB6E08
 
-ARM_FUNC_START sub_20B6E2C
-sub_20B6E2C:
-.incbin "fe11-arm9-base.bin", 0xB6E2C, 0xB6EC0 - 0xB6E2C
+ARM_FUNC_START strcmp
+strcmp:
+.incbin "fe11-arm9-base.bin", 0xB6E2C, 0xB6E58 - 0xB6E2C
+
+ARM_FUNC_START strncmp
+strncmp:
+.incbin "fe11-arm9-base.bin", 0xB6E58, 0xB6EC0 - 0xB6E58
 
 ARM_FUNC_START sub_20B6EC0
 sub_20B6EC0:
