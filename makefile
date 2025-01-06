@@ -138,3 +138,8 @@ clean:
 	@echo "all cleaned..."
 
 .PHONY: clean
+
+# ======================
+# = CFLAGS overrides =
+# ======================
+src/main_loop.o: MW_CFLAGS +=

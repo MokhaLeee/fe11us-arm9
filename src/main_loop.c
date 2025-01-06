@@ -1,12 +1,10 @@
 #include "global.h"
 #include "proc.h"
 
-#if 0
 void sub_200EF04(void)
 {
-	int i, j;
-	void * unk_r7;
 	void * tmp;
+	int i;
 
 	gClock = 0;
 	unk_27E1264 = 0;
@@ -23,15 +21,14 @@ void sub_200EF04(void)
 	sub_200F1E8();
 	sub_200F350(1);
 
-	for (i = 0, tmp = data_027e1268, unk_r7 = NULL; i < 2; i++)
+	tmp = data_027e1268;
+
+	for (i = 0; i < 2; i++)
 	{
-		if (i == 0)
-			data_027e1268 = unk_027E0000;
-		else
-			data_027e1268 = unk_027E0004;
+		data_027e1268 = i == 0 ? unk_027E0000 : unk_027E0004;
 
 		sub_1FFA764();
-		sub_2010C84(unk_r7);
+		sub_2010C84(NULL);
 	}
 
 	data_027e1268 = tmp;
@@ -48,12 +45,11 @@ void sub_200EF04(void)
 	sub_201FF20();
 	sub_20217B4();
 
-	for (j = 0, tmp = data_027e1268; j < 2; j++)
+	tmp = data_027e1268;
+
+	for (i = 0; i < 2; i++)
 	{
-		if (j == 0)
-			data_027e1268 = unk_027E0000;
-		else
-			data_027e1268 = unk_027E0004;
+		data_027e1268 = (i == 0) ? unk_027E0000 : unk_027E0004;
 
 		sub_201C204();
 		sub_1FFA720();
@@ -61,7 +57,6 @@ void sub_200EF04(void)
 
 	data_027e1268 = tmp;
 }
-#endif
 
 void sub_200F028(void)
 {

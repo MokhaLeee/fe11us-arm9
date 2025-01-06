@@ -12,10 +12,10 @@ extern struct UnkStruct_021E3328 * unk_021E3328;
 extern void * unk_027E0000;
 extern void * unk_027E0004;
 extern int unk_027E00E0;
-extern u8 gMainLoopBlocked;
-extern u8 unk_27E125C;
-extern int gClock;
-extern int unk_27E1264;
+extern vu8 gMainLoopBlocked;
+extern vu8 unk_27E125C;
+extern vu32 gClock;
+extern vu32 unk_27E1264;
 extern void * data_027e1268;
 
 #endif // UNKNOWN_DATA_H
