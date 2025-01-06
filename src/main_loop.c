@@ -1,6 +1,57 @@
 #include "global.h"
 #include "proc.h"
 
+struct UnkStruct_Func_200EDD4 * sub_200EDD4(struct UnkStruct_Func_200EDD4 * unk)
+{
+	sub_200C49C(unk);
+	sub_20115A4(unk);
+
+	return unk;
+}
+
+void sub_200EDF0(void)
+{
+	sub_20A3E04();
+	sub_20A4430();
+	sub_20A465C();
+	sub_209F654();
+
+	unk_20DD67C = 0xFFFFFFFF;
+
+	sub_209F658();
+	sub_209F80C();
+
+	REG_DISPCNT_SUB &= ~MODE_0_2D;
+
+	sub_20AB6C0();
+	sub_20A0480(0x1FF);
+
+	mem_fill(0, VRAM, 0xA4000);
+	sub_20A094C();
+	mem_fill(0xC0, OAM, 0x400);
+	mem_fill(0x0, BG_PALETTE, 0x400);
+	mem_fill(0xC0, OAM_SUB, 0x400);
+	mem_fill(0x0, BG_PALETTE_SUB, 0x400);
+
+	REG_EXMEMCNT |= ARM7_MAIN_RAM_PRIORITY;
+	REG_POWERCNT &= ~BIT(15); // disp_swap
+
+	sub_20A4198();
+	sub_20A41A8();
+}
+
+void sub_200EECC(void)
+{
+	int ime_old;
+
+	sub_20A25DC(1, sub_200F0F0);
+	sub_20A27AC(1);
+
+	ime_old = REG_IME;
+	REG_IME = 1;
+	sub_209F7D8(1);
+}
+
 void sub_200EF04(void)
 {
 	void * tmp;

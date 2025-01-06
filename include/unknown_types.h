@@ -108,4 +108,9 @@ struct Unknown_func_01ffb934_ret
     /* 6C */ u32 unk_6c;
 };
 
+struct UnkStruct_Func_200EDD4 {
+    /* 00 */ void * unk_00;
+    /* 04 */ u32 unk_04;
+};
+
 #endif // UNKNOWN_TYPES_H

@@ -1826,7 +1826,7 @@ sub_1FF9948: @ 0x01FF9948
 	mov r0, #0
 	add r1, r1, r4, lsl #2
 	ldr r1, [r1, #0x20]
-	bl sub_20A5734
+	bl mem_fill
 	pop {r4, pc}
 	.align 2, 0
 _01FF9994: .4byte data_027e1268
@@ -2783,7 +2783,7 @@ sub_1FFA764: @ 0x01FFA764
 	ldr r1, _01FFA78C @ =data_027e1268
 	mov r3, #0
 	ldr r2, [r1]
-	ldr ip, _01FFA790 @ =sub_20A5734
+	ldr ip, _01FFA790 @ =mem_fill
 	strb r3, [r2, #0x40]
 	ldr r1, [r1]
 	mov r0, #0xc0
@@ -2792,7 +2792,7 @@ sub_1FFA764: @ 0x01FFA764
 	bx ip
 	.align 2, 0
 _01FFA78C: .4byte data_027e1268
-_01FFA790: .4byte sub_20A5734
+_01FFA790: .4byte mem_fill
 
 	arm_func_start sub_1FFA794
 sub_1FFA794: @ 0x01FFA794

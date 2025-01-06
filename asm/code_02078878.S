@@ -3467,7 +3467,11 @@ sub_209F3FC:
 
 ARM_FUNC_START sub_209F4E0
 sub_209F4E0:
-.incbin "fe11-arm9-base.bin", 0x9F4E0, 0x9F658 - 0x9F4E0
+.incbin "fe11-arm9-base.bin", 0x9F4E0, 0x9F654 - 0x9F4E0
+
+ARM_FUNC_START sub_209F654
+sub_209F654:
+	bx lr
 
 ARM_FUNC_START sub_209F658
 sub_209F658:

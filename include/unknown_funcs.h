@@ -326,7 +326,7 @@ int sub_2001BAC(struct UnkStruct_Func_2000D2C * buf, int a);
 // ??? sub_200C3C8
 // ??? sub_200C42C
 // ??? sub_200C460
-// ??? sub_200C49C
+void sub_200C49C(struct UnkStruct_Func_200EDD4 * unk);
 // ??? sub_200C4D0
 // ??? sub_200C530
 // ??? sub_200C588
@@ -394,13 +394,13 @@ int sub_2001BAC(struct UnkStruct_Func_2000D2C * buf, int a);
 // ??? sub_200E8E4
 // ??? sub_200E920
 // ??? sub_200E938
-// ??? sub_200EDD4
+struct UnkStruct_Func_200EDD4 * sub_200EDD4(struct UnkStruct_Func_200EDD4 * unk);
 void sub_200EDF0(void);
 void sub_200EECC(void);
 void sub_200EF04(void);
 void sub_200F028(void);
 void main_loop(void);
-// ??? sub_200F0F0
+void sub_200F0F0(void);
 void sub_200F1E8(void);
 // ??? sub_200F20C
 // ??? sub_200F24C
@@ -463,7 +463,7 @@ void sub_2011458(void);
 // ??? sub_201153C
 // ??? sub_2011574
 // ??? sub_201158C
-// ??? sub_20115A4
+void sub_20115A4(struct UnkStruct_Func_200EDD4 * unk);
 // ??? sub_20115BC
 void sub_20115D4(void);
 // ??? sub_201160C
@@ -3554,10 +3554,10 @@ void sub_2070480(void);
 // ??? sub_209F3C0
 // ??? sub_209F3FC
 // ??? sub_209F4E0
-// ??? nullsub_6
-// ??? sub_209F658
-// ??? sub_209F7D8
-// ??? sub_209F80C
+void sub_209F654(void);
+void sub_209F658(void);
+void sub_209F7D8(int a);
+void sub_209F80C(void);
 void sub_209F848(void);
 // ??? sub_209F93C
 // ??? sub_209F99C
@@ -3567,7 +3567,7 @@ void sub_209F848(void);
 // ??? sub_209FF34
 // ??? sub_209FFE0
 // ??? sub_20A01B8
-// ??? sub_20A0480
+void sub_20A0480(int a);
 // ??? sub_20A04A0
 // ??? sub_20A0548
 // ??? sub_20A05B8
@@ -3586,7 +3586,7 @@ void sub_209F848(void);
 // ??? sub_20A08D8
 // ??? sub_20A08FC
 // ??? sub_20A0910
-// ??? sub_20A094C
+void sub_20A094C(void);
 // ??? sub_20A0960
 // ??? sub_20A0974
 // ??? sub_20A0988
@@ -3649,12 +3649,12 @@ void sub_209F848(void);
 void sub_20A2444(int a, int b);
 // ??? sub_20A24BC
 // ??? sub_20A25C4
-// ??? sub_20A25DC
+void sub_20A25DC(u32 a, void (* func)(void));
 // ??? sub_20A2664
 // ??? sub_20A26F0
 // ??? sub_20A2738
 // ??? sub_20A2780
-// ??? sub_20A27AC
+void sub_20A27AC(int a);
 // ??? sub_20A27DC
 // ??? sub_20A280C
 // ??? sub_20A2838
@@ -3735,7 +3735,7 @@ void sub_20A2444(int a, int b);
 // ??? sub_20A3DBC
 // ??? sub_20A3DC8
 // ??? sub_20A3DE4
-// ??? sub_20A3E04
+void sub_20A3E04(void);
 // ??? sub_20A3E4C
 // ??? sub_20A3F50
 // ??? sub_20A3FBC
@@ -3744,8 +3744,8 @@ void sub_20A2444(int a, int b);
 // ??? sub_20A40C8
 // ??? sub_20A4170
 // ??? sub_20A4184
-// ??? sub_20A4198
-// ??? sub_20A41A8
+void sub_20A4198(void);
+void sub_20A41A8(void);
 // ??? sub_20A41B8
 // ??? sub_20A41CC
 // ??? sub_20A41DC
@@ -3757,12 +3757,12 @@ void sub_20A2444(int a, int b);
 // ??? sub_20A4308
 // ??? sub_20A4398
 // ??? sub_20A4414
-// ??? sub_20A4430
+void sub_20A4430(void);
 // ??? sub_20A44A8
 // ??? sub_20A4520
 u16 GetTimer0Control(void);
 // ??? sub_20A45D0
-// ??? sub_20A465C
+void sub_20A465C(void);
 // ??? sub_20A469C
 // ??? sub_20A46AC
 // ??? sub_20A46BC
@@ -3810,7 +3810,7 @@ void WaitForInterrupt(void);
 // ??? sub_20A56D4
 // ??? sub_20A56F0
 // ??? sub_20A5704
-// ??? sub_20A5734
+void mem_fill(int val, void * dst, int size);
 // ??? sub_20A5780
 // ??? sub_20A57B8
 // ??? sub_20A57D4
@@ -3987,7 +3987,7 @@ void sub_20A5824(void * buf, int a, int b);
 // ??? sub_20AB5FC
 // ??? sub_20AB638
 // ??? sub_20AB680
-// ??? sub_20AB6C0
+void sub_20AB6C0(void);
 // ??? sub_20AB764
 // ??? sub_20AB82C
 // ??? sub_20AB8C0
@@ -4244,15 +4244,16 @@ void sub_20AD244(int a);
 // ??? sub_20B6B84
 // ??? sub_20B6BAC
 // ??? sub_20B6BD4
-// ??? sub_20B6C98
-// ??? sub_20B6CCC
-// ??? sub_20B6D18
-// ??? sub_20B6DE0
-// ??? sub_20B6E08
-// ??? sub_20B6E2C
+char * strcpy(char * dest, const char * src);
+// ??? _strncpy
+// ??? strncpy
+// ??? strstr
+// ??? strlen
+// ??? strcat
+// ??? strcmp
 // ??? sub_20B6EC0
 // ??? sub_20B6EE8
-// ??? sub_20B6F3C
+// ??? _vfprintf_r
 // ??? sub_20B7658
 // ??? sub_20B7688
 // ??? sub_20B76DC

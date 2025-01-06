@@ -1,8 +1,6 @@
 #include "global.h"
 #include "proc.h"
 
-#define REG_IME (*(vu16 *)(0x04000208))
-
 struct Proc * Root_Proc(u32 root)
 {
     return gProcTreeRootArray[root];

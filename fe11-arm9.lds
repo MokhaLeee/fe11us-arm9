@@ -42,6 +42,9 @@ SECTIONS
 		asm/code_02078878.o(.text);
 		src/sys.o(.text);
 		asm/code_020A4E90.o(.text);
+		src/string.o(.text);
+		asm/stdio.o(.text);
+		asm/code_020B6F3C.o(.text);
 		asm/code_020C4D58.o(.text);
 
 		/* rodata */

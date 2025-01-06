@@ -1116,15 +1116,3 @@ sub_200E920:
 ARM_FUNC_START sub_200E938
 sub_200E938:
 .incbin "fe11-arm9-base.bin", 0x0E938, 0x0EDD4 - 0x0E938
-
-ARM_FUNC_START sub_200EDD4
-sub_200EDD4:
-.incbin "fe11-arm9-base.bin", 0x0EDD4, 0x0EDF0 - 0x0EDD4
-
-ARM_FUNC_START sub_200EDF0
-sub_200EDF0:
-.incbin "fe11-arm9-base.bin", 0x0EDF0, 0x0EECC - 0x0EDF0
-
-ARM_FUNC_START sub_200EECC
-sub_200EECC:
-.incbin "fe11-arm9-base.bin", 0x0EECC, 0x0EF04 - 0x0EECC
