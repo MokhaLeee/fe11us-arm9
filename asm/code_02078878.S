@@ -4197,8 +4197,8 @@ ARM_FUNC_START sub_20A3D70
 sub_20A3D70:
 .incbin "fe11-arm9-base.bin", 0xA3D70, 0xA3D8C - 0xA3D70
 
-ARM_FUNC_START sub_20A3D8C
-sub_20A3D8C:
+ARM_FUNC_START DC_FlushRange
+DC_FlushRange:
 .incbin "fe11-arm9-base.bin", 0xA3D8C, 0xA3DB0 - 0xA3D8C
 
 ARM_FUNC_START sub_20A3DB0

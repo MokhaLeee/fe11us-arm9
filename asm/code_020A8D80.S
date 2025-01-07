@@ -1,30 +1,6 @@
 .include "macros.inc"
 .section .text
 
-ARM_FUNC_START FSi_CompareDigest
-FSi_CompareDigest:
-.incbin "fe11-arm9-base.bin", 0xA94F4, 0xA9588 - 0xA94F4
-
-ARM_FUNC_START sub_20A9588
-sub_20A9588:
-.incbin "fe11-arm9-base.bin", 0xA9588, 0xA967C - 0xA9588
-
-ARM_FUNC_START sub_20A967C
-sub_20A967C:
-.incbin "fe11-arm9-base.bin", 0xA967C, 0xA976C - 0xA967C
-
-ARM_FUNC_START sub_20A976C
-sub_20A976C:
-.incbin "fe11-arm9-base.bin", 0xA976C, 0xA977C - 0xA976C
-
-ARM_FUNC_START sub_20A977C
-sub_20A977C:
-.incbin "fe11-arm9-base.bin", 0xA977C, 0xA97D0 - 0xA977C
-
-ARM_FUNC_START sub_20A97D0
-sub_20A97D0:
-.incbin "fe11-arm9-base.bin", 0xA97D0, 0xA981C - 0xA97D0
-
 ARM_FUNC_START sub_20A981C
 sub_20A981C:
 .incbin "fe11-arm9-base.bin", 0xA981C, 0xA985C - 0xA981C
@@ -39,7 +15,11 @@ sub_20A9924:
 
 ARM_FUNC_START sub_20A99DC
 sub_20A99DC:
-.incbin "fe11-arm9-base.bin", 0xA99DC, 0xA9DE0 - 0xA99DC
+.incbin "fe11-arm9-base.bin", 0xA99DC, 0xA9D90 - 0xA99DC
+
+ARM_FUNC_START sub_20A9D90
+sub_20A9D90:
+.incbin "fe11-arm9-base.bin", 0xA9D90, 0xA9DE0 - 0xA9D90
 
 ARM_FUNC_START sub_20A9DE0
 sub_20A9DE0:
