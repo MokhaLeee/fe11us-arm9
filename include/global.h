@@ -5,6 +5,7 @@
 
 #include "types.h"
 #include "nds/nds.h"
+#include "memmap.h"
 
 //! aligns a struct (and other types?) to m, making sure that the size of the struct is a multiple of m.
 #define ALIGN(m)	__attribute__((aligned (m)))

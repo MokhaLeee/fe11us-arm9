@@ -231,8 +231,8 @@ ARM_FUNC_START sub_20C50F0
 sub_20C50F0:
 .incbin "fe11-arm9-base.bin", 0xC50F0, 0xC9B10 - 0xC50F0
 
-.global boot_hook_list
-boot_hook_list: @ 0x020C9B10
+.global __sinit__
+__sinit__: @ 0x020C9B10
 	.4byte sub_20C4CDC
 	.4byte sub_20C4CFC
 	.4byte sub_20C4D10

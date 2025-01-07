@@ -3,6 +3,7 @@
 
 ARM_FUNC_START _start
 _start: @ 0x02000800
+	// set IME to 0
 	mov ip, #0x4000000
 	str ip, [ip, #0x208]
 
@@ -18,7 +19,7 @@ _start: @ 0x02000800
 	 */
 	mov r0, #0x13
 	msr cpsr_c, r0
-	ldr r0, _02000918 @ =0x027E0000
+	ldr r0, pr_SDK_AUTOLOAD_DTCM_START @ =0x027E0000
 	add r0, r0, #0x3fc0
 	mov sp, r0
 
@@ -27,7 +28,7 @@ _start: @ 0x02000800
 	 */
 	mov r0, #0x12
 	msr cpsr_c, r0
-	ldr r0, _02000918 @ =0x027E0000
+	ldr r0, pr_SDK_AUTOLOAD_DTCM_START @ =0x027E0000
 	add r0, r0, #0x3fc0
 	sub r0, r0, #0x40
 	sub sp, r0, #4
@@ -45,26 +46,26 @@ _start: @ 0x02000800
 
 	/* clear BSS */
 	mov r0, #0
-	ldr r1, _02000918 @ =0x027E0000
+	ldr r1, pr_SDK_AUTOLOAD_DTCM_START @ =0x027E0000
 	mov r2, #0x4000
-	bl _memset
+	bl INITi_CpuClear32
 
 	/* clear palette */
 	mov r0, #0
 	ldr r1, _02000920 @ =0x05000000
 	mov r2, #0x400
-	bl _memset
+	bl INITi_CpuClear32
 
 	/* clear OAM */
 	mov r0, #0x200
 	ldr r1, _02000924 @ =0x07000000
 	mov r2, #0x400
-	bl _memset
+	bl INITi_CpuClear32
 
 	/* did nothing actually */
 	ldr r1, _02000928 @ =_start_ModuleParams
 	ldr r0, [r1, #0x14]
-	bl sub_2000950
+	bl MIi_UncompressBackward
 
 	/* copy to itcm (0x01FF8000) */
 	bl do_autoload
@@ -93,49 +94,47 @@ _start: @ 0x02000800
 	ldr r1, _0200092C @ =unk_027FFF9C
 	str r0, [r1]
 
-	ldr r1, _02000918 @ =0x027E0000
+	ldr r1, pr_SDK_AUTOLOAD_DTCM_START @ =0x027E0000
 	add r1, r1, #0x3fc0
 	add r1, r1, #0x3c
 	ldr r0, _02000930 @ =unk_01FFC6BC
 	str r0, [r1]
 
-	bl nullsub_8
-	bl nullsub_1
-
-	@ hook list
-	bl exec_boot_hook_list
+	bl _fp_init
+	bl NitroStartUp
+	bl __call_static_initializers
 
 	@ jump to main
-	ldr r1, _02000934 @ =main
+	ldr r1, _pr_NitroMain
 	ldr lr, _02000938 @ =0xFFFF0000
 	tst sp, #4
 	subne sp, sp, #4
 	bx r1
 	.align 2, 0
-_02000918: .4byte 0x027E0000
+pr_SDK_AUTOLOAD_DTCM_START: .4byte 0x027E0000
 _0200091C: .4byte 0x00000800
 _02000920: .4byte 0x05000000
 _02000924: .4byte 0x07000000
 _02000928: .4byte _start_ModuleParams
 _0200092C: .4byte unk_027FFF9C
 _02000930: .4byte unk_01FFC6BC
-_02000934: .4byte main
+_pr_NitroMain: .4byte NitroMain
 _02000938: .4byte 0xFFFF0000
 
 /**
- * void _memset(int c, const void * src, size_t size);
+ * void INITi_CpuClear32(register u32 data, register void *destp, register u32 size)
  */
-	arm_func_start _memset
-_memset: @ 0x0200093C
+	arm_func_start INITi_CpuClear32
+INITi_CpuClear32: @ 0x0200093C
 	add ip, r1, r2
-_02000940:
+1:
 	cmp r1, ip
 	stmlt r1!, {r0}
-	blt _02000940
+	blt 1b
 	bx lr
 
-	arm_func_start sub_2000950
-sub_2000950: @ 0x02000950
+	arm_func_start MIi_UncompressBackward
+MIi_UncompressBackward: @ 0x02000950
 	cmp r0, #0
 	beq _020009F8
 	push {r4, r5, r6, r7}
@@ -292,8 +291,8 @@ _02000B54: .4byte 0x05100011
 _02000B58: .4byte 0x15111011
 _02000B5C: .4byte 0x0005707D
 
-ARM_FUNC_START nullsub_1
-nullsub_1: @ 0x02000B60
+ARM_FUNC_START NitroStartUp
+NitroStartUp: @ 0x02000B60
 	bx lr
 
 ARM_FUNC_START nullsub_2
@@ -310,5 +309,31 @@ _start_ModuleParams:
 	.4byte itcm_copy_start	@ bss_start
 	.4byte bss_end
 	.4byte 0
+	.4byte 0x04027531 @ SDK_VERSION_ID
+	.4byte 0xDEC00621 @ SDK_NITROCODE_BE
+	.4byte 0x2106C0DE @ SDK_NITROCODE_LE
 
-.incbin "fe11-arm9-base.bin", 0x00B80, 0x00C50 - 0x00B80
+# some rodata string
+.align 2, 0
+aSdkNintendoDwc:
+.ascii "[SDK+NINTENDO:DWC3.0.30001.080305.0101_DWC_3_0_PLUS]\0"
+
+.align 2, 0
+aSdkNintendoWif:
+.ascii "[SDK+NINTENDO:WiFi2.1.30003.0709200229]\0"
+
+.align 2, 0
+aSdkUbiquitousC:
+.ascii "[SDK+UBIQUITOUS:CPS]\0"
+
+.align 2, 0
+aSdkUbiquitousS:
+.ascii "[SDK+UBIQUITOUS:SSL]\0"
+
+.align 2, 0
+aSdkNintendoBac:
+.ascii "[SDK+NINTENDO:BACKUP]\0"
+
+.align 2, 0
+aSdkAbiossoLibv:
+.ascii "[SDK+Abiosso:libVCT 1.3.1]\0"

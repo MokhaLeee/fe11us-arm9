@@ -457,8 +457,8 @@ ARM_FUNC_START sub_20C1FE0
 sub_20C1FE0:
 .incbin "fe11-arm9-base.bin", 0xC1FE0, 0xC2524 - 0xC1FE0
 
-ARM_FUNC_START nullsub_8
-nullsub_8: @ 0x020C2524
+ARM_FUNC_START _fp_init
+_fp_init: @ 0x020C2524
 	bx lr
 
 	arm_func_start sub_20C2528
@@ -787,22 +787,22 @@ ARM_FUNC_START sub_20C3B24
 sub_20C3B24:
 .incbin "fe11-arm9-base.bin", 0xC3B24, 0xC3B30 - 0xC3B24
 
-ARM_FUNC_START exec_boot_hook_list
-exec_boot_hook_list: @ 0x020C3B30
+ARM_FUNC_START __call_static_initializers
+__call_static_initializers: @ 0x020C3B30
 	push {r4, lr}
-	ldr r4, _020C3B58 @ =boot_hook_list
-	b _020C3B44
-_020C3B3C:
+	ldr r4, _020C3B58 @ =__sinit__
+	b 2f
+1:
 	.4byte 0xE12FFF30 @ blx r0
 	add r4, r4, #4
-_020C3B44:
+2:
 	cmp r4, #0
 	ldrne r0, [r4]
 	cmpne r0, #0
-	bne _020C3B3C
+	bne 1b
 	pop {r4, pc}
 	.align 2, 0
-_020C3B58: .4byte boot_hook_list
+_020C3B58: .4byte __sinit__
 
 ARM_FUNC_START sub_20C3B5C
 sub_20C3B5C:

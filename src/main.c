@@ -1,7 +1,7 @@
 #include "global.h"
 #include "unit.h"
 
-void main(void)
+void NitroMain(void)
 {
     sub_200EF04();
     sub_200F028();

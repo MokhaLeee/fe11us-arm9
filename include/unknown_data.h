@@ -10,7 +10,6 @@ extern u32 unk_20DD67C;
 extern struct UnkStruct_02197254 * unk_02197254;
 extern struct UnkStruct_021E3324 * unk_021E3324;
 extern struct UnkStruct_021E3328 * unk_021E3328;
-extern void * unk_027E0000;
 extern void * unk_027E0004;
 extern int unk_027E00E0;
 extern vu8 gMainLoopBlocked;

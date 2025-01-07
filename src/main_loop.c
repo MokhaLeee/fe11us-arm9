@@ -76,7 +76,7 @@ void sub_200EF04(void)
 
 	for (i = 0; i < 2; i++)
 	{
-		data_027e1268 = i == 0 ? unk_027E0000 : unk_027E0004;
+		data_027e1268 = i == 0 ? SDK_AUTOLOAD_DTCM_START : unk_027E0004;
 
 		sub_1FFA764();
 		sub_2010C84(NULL);
@@ -100,7 +100,7 @@ void sub_200EF04(void)
 
 	for (i = 0; i < 2; i++)
 	{
-		data_027e1268 = (i == 0) ? unk_027E0000 : unk_027E0004;
+		data_027e1268 = (i == 0) ? SDK_AUTOLOAD_DTCM_START : unk_027E0004;
 
 		sub_201C204();
 		sub_1FFA720();
