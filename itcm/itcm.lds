@@ -37,8 +37,8 @@ SECTIONS
 		. = 0x020A1478 - 0x02000000; sub_20A1478 = .;
 		. = 0x020A3CE8 - 0x02000000; sub_20A3CE8 = .;
 		. = 0x020A3CF4 - 0x02000000; sub_20A3CF4 = .;
-		. = 0x020A3DB0 - 0x02000000; sub_20A3DB0 = .;
-		. = 0x020A3DBC - 0x02000000; sub_20A3DBC = .;
+		. = 0x020A3DB0 - 0x02000000; DC_WaitWriteBufferEmpty = .;
+		. = 0x020A3DBC - 0x02000000; IC_InvalidateAll = .;
 		. = 0x020A4A38 - 0x02000000; OS_DisableInterrupts = .;
 		. = 0x020A4A4C - 0x02000000; OS_RestoreInterrupts = .;
 		. = 0x020A52C0 - 0x02000000; sub_20A52C0 = .;

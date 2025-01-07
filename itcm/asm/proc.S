@@ -437,8 +437,8 @@ _01FFC9A8:
 	bl sub_20A3CE8
 	mov r0, r4
 	bl OS_RestoreInterrupts
-	bl sub_20A3DBC
-	bl sub_20A3DB0
+	bl IC_InvalidateAll
+	bl DC_WaitWriteBufferEmpty
 	add r6, r6, r5
 	cmp r6, #0x8000
 	bhs _01FFCA00

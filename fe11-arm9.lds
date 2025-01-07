@@ -42,6 +42,8 @@ SECTIONS
 		src/code_02078808.o(.text);
 		asm/code_0207884C.o(.text);
 		asm/code_02078878.o(.text);
+		asm/OS_cache.o(.text);
+		asm/code_020A3DE4.o(.text);
 		asm/OS_system.o(.text);
 		src/sys.o(.text);
 		asm/code_020A4E90.o(.text);
