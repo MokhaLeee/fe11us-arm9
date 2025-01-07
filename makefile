@@ -28,17 +28,20 @@ ARMOBJCPY := arm-none-eabi-objcopy
 # ================
 # = BUILD CONFIG =
 # ================
-# -char signed -g -nolink -msgstyle gcc -d usa 
 
-MW_CFLAGS  := -i include -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa
-MW_ASFLAGS := -i include -proc arm5te
+INC_DIRS := include include/mw include/nitro-sdk
+MW_INC_FLAG  := $(foreach dir, $(INC_DIRS), -i $(dir))
+ARM_INC_FLAG := $(foreach dir, $(INC_DIRS), -I $(dir))
 
-ARM_ASFLAGS := -mcpu=arm9tdmi -I include
+MW_CFLAGS  := $(MW_INC_FLAG) -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa
+MW_ASFLAGS := $(MW_INC_FLAG) -proc arm5te
+
+ARM_ASFLAGS := -mcpu=arm9tdmi $(ARM_INC_FLAG)
 
 ARM_LDS := $(BUILD_NAME).lds
-C_SRCS := $(wildcard $(SRC_DIR)/*.c)
-ASM_SRCS := $(wildcard $(SRC_DIR)/*.S) $(wildcard $(ASM_DIR)/*.S)
-DATA_SRCS := $(wildcard $(DATA_DIR)/*.S)
+C_SRCS := $(shell find $(SRC_DIR) -name *.c)
+ASM_SRCS := $(shell find $(SRC_DIR) -name *.S) $(shell find $(ASM_DIR) -name *.S)
+DATA_SRCS := $(shell find $(DATA_DIR) -name *.c)
 
 # ===========
 # = Targets =

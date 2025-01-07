@@ -4365,12 +4365,12 @@ ARM_FUNC_START sub_20A4A24
 sub_20A4A24:
 .incbin "fe11-arm9-base.bin", 0xA4A24, 0xA4A38 - 0xA4A24
 
-ARM_FUNC_START lock_irqsave
-lock_irqsave:
+ARM_FUNC_START OS_DisableInterrupts
+OS_DisableInterrupts:
 .incbin "fe11-arm9-base.bin", 0xA4A38, 0xA4A4C - 0xA4A38
 
-ARM_FUNC_START unlock_irqrestore
-unlock_irqrestore:
+ARM_FUNC_START OS_RestoreInterrupts
+OS_RestoreInterrupts:
 .incbin "fe11-arm9-base.bin", 0xA4A4C, 0xA4A64 - 0xA4A4C
 
 ARM_FUNC_START sub_20A4A64
@@ -4545,7 +4545,7 @@ sub_20A4D1C: @ 0x020A4D1C
 	push {r4, r5, r6, r7, r8, sb, sl, lr}
 	mov r5, r0
 	mov sl, r1
-	bl lock_irqsave
+	bl OS_DisableInterrupts
 	ldr r4, _020A4D98 @ =0x0219E5D8
 	ldr r1, _020A4D9C @ =0x000001FF
 	ldr r2, [r4]
@@ -4573,7 +4573,7 @@ _020A4D50:
 	b _020A4D50
 _020A4D8C:
 	mov r0, sb
-	bl unlock_irqrestore
+	bl OS_RestoreInterrupts
 	pop {r4, r5, r6, r7, r8, sb, sl, pc}
 	.align 2, 0
 _020A4D98: .4byte 0x0219E5D8

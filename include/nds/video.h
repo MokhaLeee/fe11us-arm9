@@ -1,6 +1,6 @@
 #pragma once
 
-#include "types.h"
+#include "nitro/types.h"
 
 /**
  * Mainly copy from libnds in devkit

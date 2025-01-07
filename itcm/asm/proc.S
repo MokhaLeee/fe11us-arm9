@@ -431,12 +431,12 @@ _01FFC9A8:
 	ldr sb, [r0, #0x10]
 	ldr fp, [r0, #0x18]
 	ldr sl, [r0, #0x1c]
-	bl lock_irqsave
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl sub_20A3CF4
 	bl sub_20A3CE8
 	mov r0, r4
-	bl unlock_irqrestore
+	bl OS_RestoreInterrupts
 	bl sub_20A3DBC
 	bl sub_20A3DB0
 	add r6, r6, r5
@@ -530,7 +530,7 @@ sub_1FFCB04: @ 0x01FFCB04
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl lock_irqsave
+	bl OS_DisableInterrupts
 	mov r1, #0xc
 	mul r2, r7, r1
 	add r1, r2, #0xb0
@@ -539,7 +539,7 @@ sub_1FFCB04: @ 0x01FFCB04
 	add r1, r1, #0x4000000
 	str r5, [r1, #4]
 	str r4, [r1, #8]
-	bl unlock_irqrestore
+	bl OS_RestoreInterrupts
 	pop {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start sub_1FFCB44
@@ -549,7 +549,7 @@ sub_1FFCB44: @ 0x01FFCB44
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl lock_irqsave
+	bl OS_DisableInterrupts
 	mov r1, #0xc
 	mul r2, r7, r1
 	add r1, r2, #0xb0
@@ -569,7 +569,7 @@ sub_1FFCB44: @ 0x01FFCB44
 	str r2, [r3, #4]
 	str r1, [r3, #8]
 _01FFCBA4:
-	bl unlock_irqrestore
+	bl OS_RestoreInterrupts
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 _01FFCBAC: .4byte 0x040000B0

@@ -12,6 +12,8 @@
 . = 0x0219796C - BSS_START; unk_0219796C = .;
 . = 0x0219E5AC - BSS_START; unk_0219E5AC = .;
 . = 0x0219E5D8 - BSS_START; unk_0219E5D8 = .;
+. = 0x021A01EC - BSS_START; current_dir_pos = .;
+. = 0x021A01F8 - BSS_START; fs_init_flag = .;
 . = 0x021A23E0 - BSS_START; bss_end = .;
 
 /* idk */

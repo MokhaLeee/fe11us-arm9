@@ -1,6 +1,6 @@
 #pragma once
 
-#include "types.h"
+#include "nitro/types.h"
 
 //! values allowed for REG_IE and REG_IF
 enum IRQ_MASKS {

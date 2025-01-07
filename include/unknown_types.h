@@ -1,7 +1,7 @@
 #ifndef UNKNOWN_TYPES_H
 #define UNKNOWN_TYPES_H
 
-#include "types.h"
+#include "nitro/types.h"
 
 struct UnkStruct_Func_2000C7C {
     STRUCT_PAD(0x0000, 0x0854);

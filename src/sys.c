@@ -5,7 +5,7 @@ void hang(void)
 {
     while (TRUE)
     {
-        lock_irqsave();
+        OS_DisableInterrupts();
         WaitForInterrupt();
     }
 }

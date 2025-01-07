@@ -3,12 +3,14 @@
 
 #define ARM9
 
-#include "types.h"
+#include "nitro/types.h"
+
+#define BIT(n) (1 << (n))
+
 #include "nds/nds.h"
-#include "memmap.h"
 
 //! aligns a struct (and other types?) to m, making sure that the size of the struct is a multiple of m.
-#define ALIGN(m)	__attribute__((aligned (m)))
+// #define ALIGN(m)	__attribute__((aligned (m)))
 
 //! packs a struct (and other types?) so it won't include padding bytes.
 #define PACKED __attribute__ ((packed))

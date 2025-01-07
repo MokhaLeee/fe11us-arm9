@@ -1,10 +1,10 @@
-#ifndef FE11_MEMMAP_H
-#define FE11_MEMMAP_H
+#ifndef POKEDIAMOND_ARM9_MMAP_H
+#define POKEDIAMOND_ARM9_MMAP_H
 
+#include "nitro/types.h"
 #include "nitro/mmap_shared.h"
 
-// extern unsigned int SDK_AUTOLOAD_DTCM_START[];
-extern void * SDK_AUTOLOAD_DTCM_START;
+extern u32 SDK_AUTOLOAD_DTCM_START[];
 
 #define HW_MAIN_MEM_EX_SIZE     0x00800000
 #define HW_MAIN_MEM_DEBUGGER_OFFSET     0x00700000
@@ -99,4 +99,4 @@ extern void * SDK_AUTOLOAD_DTCM_START;
 #define HW_DTCM_SYSRV_OFS_INTR_VECTOR   0x3c
 #define HW_RESET_VECTOR         0xffff0000
 
-#endif // MEMMAP_H
+#endif //POKEDIAMOND_ARM9_MMAP_H

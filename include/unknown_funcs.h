@@ -1,7 +1,7 @@
 #ifndef UNKNOWN_FUNCS_H
 #define UNKNOWN_FUNCS_H
 
-#include "types.h"
+#include "nitro/types.h"
 
 /**
  * itcm
@@ -3772,8 +3772,8 @@ void sub_20A465C(void);
 // ??? sub_20A48EC
 // ??? sub_20A49DC
 // ??? sub_20A4A24
-void * lock_irqsave(void);
-void unlock_irqrestore(void *);
+// void * OS_DisableInterrupts(void);
+// void OS_EnableInterrupts(void *);
 // ??? sub_20A4A64
 // ??? sub_20A4A78
 // ??? sub_20A4A90
@@ -3914,9 +3914,9 @@ void sub_20A5824(void * buf, int a, int b);
 // ??? sub_20A7F6C
 // ??? sub_20A8180
 // ??? sub_20A8214
-// ??? sub_20A8258
+// ??? FSi_SendCommand
 // ??? sub_20A83FC
-// ??? sub_20A8428
+// ??? FS_FindArchive
 // ??? sub_20A8468
 // ??? sub_20A85A0
 // ??? sub_20A86D0
@@ -3924,16 +3924,16 @@ void sub_20A5824(void * buf, int a, int b);
 // ??? sub_20A891C
 // ??? sub_20A898C
 // ??? sub_20A89AC
-// ??? sub_20A8A30
-// ??? sub_20A8A58
-// ??? sub_20A8A80
-// ??? sub_20A8BC4
-// ??? sub_20A8C40
-// ??? sub_20A8C80
-// ??? sub_20A8CC8
-// ??? sub_20A8D38
-// ??? sub_20A8D80
-// ??? sub_20A8DBC
+// ??? FS_Init
+// ??? FS_InitFile
+// ??? FSi_FindPath
+// ??? FSi_ReadFileCore
+// ??? FS_ConvertPathToFileID
+// ??? FS_OpenFileDirect
+// ??? FS_OpenFileFast
+// ??? FS_OpenFile
+// ??? FS_CloseFile
+// ??? FS_WaitAsync
 // ??? sub_20A8E7C
 // ??? sub_20A8EC4
 // ??? sub_20A8ED4
@@ -3941,7 +3941,7 @@ void sub_20A8F40(const char * str);
 // ??? sub_20A8F98
 // ??? sub_20A8FBC
 // ??? sub_20A900C
-// ??? sub_20A9088
+// ??? FSi_InitRom
 // ??? sub_20A91D0
 // ??? sub_20A91F0
 // ??? sub_20A920C

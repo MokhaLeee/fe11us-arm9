@@ -1,5 +1,6 @@
 #include "global.h"
 #include "proc.h"
+#include "nitro-sdk/OS_system.h"
 
 struct Proc * Root_Proc(u32 root)
 {
@@ -37,7 +38,7 @@ void RunProcessScript(struct Proc * proc)
 
 struct Proc * AllocateProcess(void)
 {
-    void * var_0 = lock_irqsave();
+    OSIntrMode var_0 = OS_DisableInterrupts();
 
     struct Proc ** pAllocHead = data_02190ce0.unk_00;
     struct Proc * proc = *pAllocHead;
@@ -60,7 +61,7 @@ struct Proc * AllocateProcess(void)
 
     data_02190ce0.unk_00++;
 
-    unlock_irqrestore(var_0);
+    OS_RestoreInterrupts(var_0);
 
     return proc;
 }
@@ -70,7 +71,7 @@ void sub_1FFBDA4(struct Proc * proc)
     struct Proc ** pAllocHead;
     struct Proc * procHead;
 
-    void * var_0 = lock_irqsave();
+    OSIntrMode var_0 = OS_DisableInterrupts();
 
     data_02190ce0.unk_00--;
     procHead = *data_02190ce0.unk_00;
@@ -87,7 +88,7 @@ void sub_1FFBDA4(struct Proc * proc)
         *data_02190ce0.unk_00 = proc;
     }
 
-    unlock_irqrestore(var_0);
+    OS_RestoreInterrupts(var_0);
 }
 
 void InsertRootProcess(struct Proc * proc, s32 treeNum)
@@ -206,12 +207,12 @@ struct Proc * Proc_Start(struct ProcCmd * script, struct Proc * parent)
 
 struct Proc * sub_1FFBF90(struct ProcCmd * script, struct Proc * parent)
 {
-    void * var_0 = lock_irqsave();
+    OSIntrMode var_0 = OS_DisableInterrupts();
 
     struct Proc * proc = Proc_Start(script, parent);
     proc->proc_flags |= 4;
 
-    unlock_irqrestore(var_0);
+    OS_RestoreInterrupts(var_0);
     return proc;
 }
 

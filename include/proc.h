@@ -1,7 +1,7 @@
 #pragma once
 
 #include "global.h"
-#include "types.h"
+#include "nitro/types.h"
 
 struct Proc;
 typedef void * ProcPtr;

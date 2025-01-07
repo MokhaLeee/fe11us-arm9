@@ -4005,7 +4005,7 @@ sub_1FFB934: @ 0x01FFB934
 	ldr r4, [sb]
 	mov r6, r5
 	bic r8, r0, #3
-	bl lock_irqsave
+	bl OS_DisableInterrupts
 	mov r7, r0
 	cmp r4, #0
 	beq _01FFB98C
@@ -4032,7 +4032,7 @@ _01FFB98C:
 	mov r6, r0
 _01FFB9AC:
 	mov r0, r7
-	bl unlock_irqrestore
+	bl OS_RestoreInterrupts
 	mov r0, r6
 	pop {r3, r4, r5, r6, r7, r8, sb, pc}
 
@@ -4046,7 +4046,7 @@ sub_1FFB9BC: @ 0x01FFB9BC
 	ldr r4, [sb]
 	mov r6, r5
 	bic r8, r0, #3
-	bl lock_irqsave
+	bl OS_DisableInterrupts
 	mov r7, r0
 	cmp r4, #0
 	beq _01FFBA10
@@ -4072,7 +4072,7 @@ _01FFBA10:
 	mov r6, r0
 _01FFBA30:
 	mov r0, r7
-	bl unlock_irqrestore
+	bl OS_RestoreInterrupts
 	mov r0, r6
 	pop {r3, r4, r5, r6, r7, r8, sb, pc}
 
@@ -4089,7 +4089,7 @@ sub_1FFBA40: @ 0x01FFBA40
 	sub r0, r0, #1
 	mov fp, r5
 	and sb, r7, r0
-	bl lock_irqsave
+	bl OS_DisableInterrupts
 	mov r6, r0
 	cmp r4, #0
 	beq _01FFBABC
@@ -4122,7 +4122,7 @@ _01FFBABC:
 	mov fp, r0
 _01FFBADC:
 	mov r0, r6
-	bl unlock_irqrestore
+	bl OS_RestoreInterrupts
 	mov r0, fp
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
@@ -4139,7 +4139,7 @@ sub_1FFBAEC: @ 0x01FFBAEC
 	sub r0, r0, #1
 	mov fp, r5
 	and sb, r7, r0
-	bl lock_irqsave
+	bl OS_DisableInterrupts
 	mov r6, r0
 	cmp r4, #0
 	beq _01FFBB60
@@ -4170,7 +4170,7 @@ _01FFBB60:
 	mov fp, r0
 _01FFBB80:
 	mov r0, r6
-	bl unlock_irqrestore
+	bl OS_RestoreInterrupts
 	mov r0, fp
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
@@ -4180,7 +4180,7 @@ sub_1FFBB90: @ 0x01FFBB90
 	mov r7, r0
 	ldr r4, [r7]
 	mov r6, r1
-	bl lock_irqsave
+	bl OS_DisableInterrupts
 	mov r5, r0
 	cmp r4, #0
 	beq _01FFBBEC
@@ -4203,7 +4203,7 @@ _01FFBBE0:
 	bne _01FFBBB0
 _01FFBBEC:
 	mov r0, r5
-	bl unlock_irqrestore
+	bl OS_RestoreInterrupts
 	pop {r3, r4, r5, r6, r7, pc}
 
 .global gProcessCmdTable

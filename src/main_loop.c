@@ -1,5 +1,6 @@
 #include "global.h"
 #include "proc.h"
+#include "nitro-sdk/mmap.h"
 
 struct UnkStruct_Func_200EDD4 * sub_200EDD4(struct UnkStruct_Func_200EDD4 * unk)
 {
@@ -76,7 +77,7 @@ void sub_200EF04(void)
 
 	for (i = 0; i < 2; i++)
 	{
-		data_027e1268 = i == 0 ? SDK_AUTOLOAD_DTCM_START : unk_027E0004;
+		data_027e1268 = i == 0 ? (void *)SDK_AUTOLOAD_DTCM_START[0] : unk_027E0004;
 
 		sub_1FFA764();
 		sub_2010C84(NULL);
@@ -100,7 +101,7 @@ void sub_200EF04(void)
 
 	for (i = 0; i < 2; i++)
 	{
-		data_027e1268 = (i == 0) ? SDK_AUTOLOAD_DTCM_START : unk_027E0004;
+		data_027e1268 = (i == 0) ? (void *)SDK_AUTOLOAD_DTCM_START[0] : unk_027E0004;
 
 		sub_201C204();
 		sub_1FFA720();
