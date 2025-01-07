@@ -3981,8 +3981,8 @@ ARM_FUNC_START sub_20A2C84
 sub_20A2C84:
 .incbin "fe11-arm9-base.bin", 0xA2C84, 0xA2CFC - 0xA2C84
 
-ARM_FUNC_START sub_20A2CFC
-sub_20A2CFC:
+ARM_FUNC_START OSi_RemoveLinkFromQueue
+OSi_RemoveLinkFromQueue:
 .incbin "fe11-arm9-base.bin", 0xA2CFC, 0xA2D30 - 0xA2CFC
 
 ARM_FUNC_START sub_20A2D30
@@ -4001,8 +4001,8 @@ ARM_FUNC_START sub_20A2E14
 sub_20A2E14:
 .incbin "fe11-arm9-base.bin", 0xA2E14, 0xA2E5C - 0xA2E14
 
-ARM_FUNC_START sub_20A2E5C
-sub_20A2E5C:
+ARM_FUNC_START OSi_RescheduleThread
+OSi_RescheduleThread:
 .incbin "fe11-arm9-base.bin", 0xA2E5C, 0xA2F24 - 0xA2E5C
 
 ARM_FUNC_START sub_20A2F24
@@ -4049,8 +4049,8 @@ ARM_FUNC_START OS_SleepThread
 OS_SleepThread:
 .incbin "fe11-arm9-base.bin", 0xA3364, 0xA33B4 - 0xA3364
 
-ARM_FUNC_START sub_20A33B4
-sub_20A33B4:
+ARM_FUNC_START OS_WakeupThread
+OS_WakeupThread:
 .incbin "fe11-arm9-base.bin", 0xA33B4, 0xA341C - 0xA33B4
 
 ARM_FUNC_START sub_20A341C
@@ -4471,13 +4471,13 @@ sub_20A4B84:
 
 	arm_func_start sub_20A4C40
 sub_20A4C40: @ 0x020A4C40
-	ldr ip, _020A4C54 @ =sub_20A58B8
+	ldr ip, _020A4C54 @ =MI_CpuCopy8
 	mov r1, r0
 	ldr r0, _020A4C58 @ =0x027FFCF4
 	mov r2, #6
 	bx ip
 	.align 2, 0
-_020A4C54: .4byte sub_20A58B8
+_020A4C54: .4byte MI_CpuCopy8
 _020A4C58: .4byte 0x027FFCF4
 
 	arm_func_start sub_20A4C5C

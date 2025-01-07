@@ -407,7 +407,7 @@ sub_1FF8580: @ 0x01FF8580
 	ldr r0, [r0, #0x858]
 	mov r1, #0xff
 	mov r2, #0x80
-	bl sub_20A5824
+	bl MI_CpuFill8
 	add sp, sp, #0x20
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _01FF85A8:
@@ -557,7 +557,7 @@ sub_1FF87A0: @ 0x01FF87A0
 	ldr r0, [r0, #0x85c]
 	mov r1, #0xff
 	mov r2, #0x80
-	bl sub_20A5824
+	bl MI_CpuFill8
 	add sp, sp, #0x20
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _01FF87C8:
@@ -1089,11 +1089,11 @@ sub_1FF8F24: @ 0x01FF8F24
 	mov r1, #0
 	mov r2, #0x80
 	mov r4, r3
-	bl sub_20A5824
+	bl MI_CpuFill8
 	ldr r0, [r7, #0x85c]
 	mov r1, #0
 	mov r2, #0x80
-	bl sub_20A5824
+	bl MI_CpuFill8
 	add r2, sp, #0xc
 	stm sp, {r2, r5}
 	mov r0, r6
@@ -1232,11 +1232,11 @@ _01FF9128:
 	mov r1, #0
 	mov r2, #0x80
 	movne r5, #0
-	bl sub_20A5824
+	bl MI_CpuFill8
 	ldr r0, [r7, #0x85c]
 	mov r1, #0
 	mov r2, #0x80
-	bl sub_20A5824
+	bl MI_CpuFill8
 	ldr r1, [r6, #0x4c]
 	ldr r0, [sp, #0x2c]
 	ldr r2, [r1, #8]
@@ -1889,7 +1889,7 @@ sub_1FF9A34: @ 0x01FF9A34
 	ldr r3, [r3]
 	ldr r3, [r3, #0x30]
 	add r1, r3, r1
-	bl sub_20A58B8
+	bl MI_CpuCopy8
 	ldr r0, _01FF9A64 @ =data_027e1268
 	ldr r1, [r0]
 	ldrb r0, [r1, #0x3e]

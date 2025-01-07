@@ -108,7 +108,7 @@ sub_20C4D58: @ 0x020C4D58
 	ldr r3, [sp, #0x38]
 	str r3, [r4, #0x7c]
 	str r5, [r4]
-	bl sub_20A5824
+	bl MI_CpuFill8
 	mov r5, r4
 	ldr r1, _020C4F78 @ =0x005DC000
 	ldr r0, _020C4F8C @ =0x020C5178
@@ -175,7 +175,7 @@ _020C4F08:
 	mov r1, #0
 	mov r2, #0x300
 	str r4, [r3]
-	bl sub_20A5824
+	bl MI_CpuFill8
 	mov r6, #0
 	ldr r7, _020C4F90 @ =0x020EF600
 	mov r5, r6

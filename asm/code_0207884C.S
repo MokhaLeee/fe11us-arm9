@@ -87,12 +87,12 @@ _02078990: .4byte 0x0219796C
 
 	arm_func_start sub_2078994
 sub_2078994: @ 0x02078994
-	ldr ip, _020789A4 @ =sub_20A58B8
+	ldr ip, _020789A4 @ =MI_CpuCopy8
 	ldr r1, _020789A8 @ =0x02197978
 	mov r2, #0xe
 	bx ip
 	.align 2, 0
-_020789A4: .4byte sub_20A58B8
+_020789A4: .4byte MI_CpuCopy8
 _020789A8: .4byte 0x02197978
 
 	arm_func_start sub_20789AC

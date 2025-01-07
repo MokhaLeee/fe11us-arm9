@@ -93,12 +93,12 @@ ARM_FUNC_START sub_20A57F8
 sub_20A57F8:
 .incbin "fe11-arm9-base.bin", 0xA57F8, 0xA5824 - 0xA57F8
 
-ARM_FUNC_START sub_20A5824
-sub_20A5824:
+ARM_FUNC_START MI_CpuFill8
+MI_CpuFill8:
 .incbin "fe11-arm9-base.bin", 0xA5824, 0xA58B8 - 0xA5824
 
-ARM_FUNC_START sub_20A58B8
-sub_20A58B8:
+ARM_FUNC_START MI_CpuCopy8
+MI_CpuCopy8:
 .incbin "fe11-arm9-base.bin", 0xA58B8, 0xA59F8 - 0xA58B8
 
 ARM_FUNC_START sub_20A59F8
@@ -405,12 +405,12 @@ ARM_FUNC_START sub_20A721C
 sub_20A721C:
 .incbin "fe11-arm9-base.bin", 0xA721C, 0xA7334 - 0xA721C
 
-ARM_FUNC_START sub_20A7334
-sub_20A7334:
+ARM_FUNC_START FSi_ReleaseCommand
+FSi_ReleaseCommand:
 .incbin "fe11-arm9-base.bin", 0xA7334, 0xA7390 - 0xA7334
 
-ARM_FUNC_START sub_20A7390
-sub_20A7390:
+ARM_FUNC_START FSi_TranslateCommand
+FSi_TranslateCommand:
 .incbin "fe11-arm9-base.bin", 0xA7390, 0xA7520 - 0xA7390
 
 ARM_FUNC_START sub_20A7520
@@ -460,71 +460,3 @@ sub_20A7E90:
 ARM_FUNC_START sub_20A7EB8
 sub_20A7EB8:
 .incbin "fe11-arm9-base.bin", 0xA7EB8, 0xA7EC0 - 0xA7EB8
-
-ARM_FUNC_START sub_20A7EC0
-sub_20A7EC0:
-.incbin "fe11-arm9-base.bin", 0xA7EC0, 0xA7F18 - 0xA7EC0
-
-ARM_FUNC_START sub_20A7F18
-sub_20A7F18:
-.incbin "fe11-arm9-base.bin", 0xA7F18, 0xA7F34 - 0xA7F18
-
-ARM_FUNC_START sub_20A7F34
-sub_20A7F34:
-.incbin "fe11-arm9-base.bin", 0xA7F34, 0xA7F54 - 0xA7F34
-
-ARM_FUNC_START sub_20A7F54
-sub_20A7F54:
-.incbin "fe11-arm9-base.bin", 0xA7F54, 0xA7F6C - 0xA7F54
-
-ARM_FUNC_START sub_20A7F6C
-sub_20A7F6C:
-.incbin "fe11-arm9-base.bin", 0xA7F6C, 0xA8180 - 0xA7F6C
-
-ARM_FUNC_START sub_20A8180
-sub_20A8180:
-.incbin "fe11-arm9-base.bin", 0xA8180, 0xA8214 - 0xA8180
-
-ARM_FUNC_START FSi_ExecuteSyncCommand
-FSi_ExecuteSyncCommand:
-.incbin "fe11-arm9-base.bin", 0xA8214, 0xA8258 - 0xA8214
-
-ARM_FUNC_START FSi_SendCommand
-FSi_SendCommand:
-.incbin "fe11-arm9-base.bin", 0xA8258, 0xA83FC - 0xA8258
-
-ARM_FUNC_START FS_InitArchive
-FS_InitArchive:
-.incbin "fe11-arm9-base.bin", 0xA83FC, 0xA8428 - 0xA83FC
-
-ARM_FUNC_START FS_FindArchive
-FS_FindArchive:
-.incbin "fe11-arm9-base.bin", 0xA8428, 0xA8468 - 0xA8428
-
-ARM_FUNC_START FS_RegisterArchiveName
-FS_RegisterArchiveName:
-.incbin "fe11-arm9-base.bin", 0xA8468, 0xA85A0 - 0xA8468
-
-ARM_FUNC_START FS_LoadArchive
-FS_LoadArchive:
-.incbin "fe11-arm9-base.bin", 0xA85A0, 0xA86D0 - 0xA85A0
-
-ARM_FUNC_START FS_LoadArchiveTables
-FS_LoadArchiveTables:
-.incbin "fe11-arm9-base.bin", 0xA86D0, 0xA8880 - 0xA86D0
-
-ARM_FUNC_START sub_20A8880
-sub_20A8880:
-.incbin "fe11-arm9-base.bin", 0xA8880, 0xA891C - 0xA8880
-
-ARM_FUNC_START sub_20A891C
-sub_20A891C:
-.incbin "fe11-arm9-base.bin", 0xA891C, 0xA898C - 0xA891C
-
-ARM_FUNC_START FS_SetArchiveProc
-FS_SetArchiveProc:
-.incbin "fe11-arm9-base.bin", 0xA898C, 0xA89AC - 0xA898C
-
-ARM_FUNC_START FS_NotifyArchiveAsyncEnd
-FS_NotifyArchiveAsyncEnd:
-.incbin "fe11-arm9-base.bin", 0xA89AC, 0xA8A30 - 0xA89AC

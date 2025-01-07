@@ -44,6 +44,7 @@ SECTIONS
 		asm/code_02078878.o(.text);
 		src/sys.o(.text);
 		asm/code_020A4E90.o(.text);
+		src/lib/nitro/FS_archive.o(.text);
 		src/lib/nitro/FS_file.o(.text);
 		src/lib/nitro/FS_rom.o(.text);
 		asm/code_020A8D80.o(.text);

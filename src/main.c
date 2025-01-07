@@ -35,7 +35,7 @@ void sub_2000C7C(struct UnkStruct_Func_2000C7C * buf)
 
 void sub_2000D14(struct UnkStruct_Func_2000C7C * buf, int a)
 {
-    sub_20A5824(buf->unk_0854, a & 0xFF, 0x400);
+    MI_CpuFill8(buf->unk_0854, a & 0xFF, 0x400);
 }
 
 void sub_2000D2C(struct UnkStruct_Func_2000D2C * buf, int a, int b)
