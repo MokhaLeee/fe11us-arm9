@@ -34,6 +34,8 @@ SECTIONS
 		src/proc.o(.text);
 		asm/proc.o(.text);
 		asm/code.o(.text);
+		src/menu.o(.text);
+		asm/code_02034C44.o(.text);
 		src/unit.o(.text);
 		asm/unit.o(.text);
 		asm/code_0203DF78.o(.text);
@@ -49,6 +51,8 @@ SECTIONS
 
 		/* rodata */
 		data/rodata.o(.rodata);
+		src/menu.o(.data);
+		data/rodata_020D457C.o(.rodata);
 		src/unit.o(.data);
 		data/rodata_020D4900.o(.rodata);
 	}

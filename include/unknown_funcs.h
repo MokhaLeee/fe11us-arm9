@@ -469,11 +469,11 @@ void sub_20115D4(void);
 // ??? sub_201160C
 // ??? sub_2011650
 // ??? sub_20116A0
-// ??? sub_201177C
+void sub_201177C(const char * str, u32 a);
 // ??? sub_2011854
 // ??? sub_2011920
 // ??? sub_2011A30
-// ??? sub_2011A70
+void sub_2011A70(const char * str, int a, int b, int c);
 // ??? sub_2011AB4
 // ??? sub_2011BAC
 // ??? sub_2011CA4
@@ -1510,8 +1510,8 @@ void sub_2022F10(void);
 // ??? sub_20347B0
 // ??? sub_20347F0
 // ??? sub_2034838
-// ??? sub_2034930
-// ??? sub_2034C44
+void sub_2034930(int a, int b, int c);
+void sub_2034C44(int a, int b, int c);
 // ??? sub_2034D40
 // ??? sub_2034F74
 // ??? sub_2034FF8
@@ -3937,7 +3937,7 @@ void sub_20A5824(void * buf, int a, int b);
 // ??? sub_20A8E7C
 // ??? sub_20A8EC4
 // ??? sub_20A8ED4
-// ??? sub_20A8F40
+void sub_20A8F40(const char * str);
 // ??? sub_20A8F98
 // ??? sub_20A8FBC
 // ??? sub_20A900C

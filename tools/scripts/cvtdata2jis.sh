@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python3 tools/scripts/cvtdata2jis.py fe6-base.gba $1
+python3 tools/scripts/cvtdata2jis.py fe11-arm9.bin $1

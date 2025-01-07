@@ -113,4 +113,10 @@ struct UnkStruct_Func_200EDD4 {
     /* 04 */ u32 unk_04;
 };
 
+struct UnkStruct_027E1268 {
+    STRUCT_PAD(0x00, 0x1C);
+
+    /* 1C */ u32 unk_1C;
+};
+
 #endif // UNKNOWN_TYPES_H
