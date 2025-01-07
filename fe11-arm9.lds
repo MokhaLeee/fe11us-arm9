@@ -61,6 +61,7 @@ SECTIONS
 		src/string.o(.text);
 		asm/stdio.o(.text);
 		asm/code_020B6F3C.o(.text);
+		asm/RUNTIME_math.o(.text);
 		asm/RUNTIME_ieee_status.o(.text);
 		asm/RUNTIME_ARM_semihosted_console_io.o(.text);
 		asm/code_020C25EC.o(.text);
