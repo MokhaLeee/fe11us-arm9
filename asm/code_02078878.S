@@ -4189,8 +4189,8 @@ ARM_FUNC_START sub_20A3D20
 sub_20A3D20:
 .incbin "fe11-arm9-base.bin", 0xA3D20, 0xA3D54 - 0xA3D20
 
-ARM_FUNC_START sub_20A3D54
-sub_20A3D54:
+ARM_FUNC_START DC_InvalidateRange
+DC_InvalidateRange:
 .incbin "fe11-arm9-base.bin", 0xA3D54, 0xA3D70 - 0xA3D54
 
 ARM_FUNC_START sub_20A3D70
@@ -4209,8 +4209,8 @@ ARM_FUNC_START sub_20A3DBC
 sub_20A3DBC:
 .incbin "fe11-arm9-base.bin", 0xA3DBC, 0xA3DC8 - 0xA3DBC
 
-ARM_FUNC_START sub_20A3DC8
-sub_20A3DC8:
+ARM_FUNC_START IC_InvalidateRange
+IC_InvalidateRange:
 .incbin "fe11-arm9-base.bin", 0xA3DC8, 0xA3DE4 - 0xA3DC8
 
 ARM_FUNC_START sub_20A3DE4

@@ -47,6 +47,7 @@ SECTIONS
 		src/lib/nitro/FS_archive.o(.text);
 		src/lib/nitro/FS_file.o(.text);
 		src/lib/nitro/FS_rom.o(.text);
+		src/lib/nitro/FS_overlay.o(.text);
 		asm/code_020A8D80.o(.text);
 		src/string.o(.text);
 		asm/stdio.o(.text);

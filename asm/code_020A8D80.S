@@ -1,32 +1,8 @@
 .include "macros.inc"
 .section .text
 
-ARM_FUNC_START sub_20A91F0
-sub_20A91F0:
-.incbin "fe11-arm9-base.bin", 0xA91F0, 0xA920C - 0xA91F0
-
-ARM_FUNC_START sub_20A920C
-sub_20A920C:
-.incbin "fe11-arm9-base.bin", 0xA920C, 0xA9248 - 0xA920C
-
-ARM_FUNC_START sub_20A9248
-sub_20A9248:
-.incbin "fe11-arm9-base.bin", 0xA9248, 0xA9270 - 0xA9248
-
-ARM_FUNC_START sub_20A9270
-sub_20A9270:
-.incbin "fe11-arm9-base.bin", 0xA9270, 0xA9368 - 0xA9270
-
-ARM_FUNC_START sub_20A9368
-sub_20A9368:
-.incbin "fe11-arm9-base.bin", 0xA9368, 0xA9464 - 0xA9368
-
-ARM_FUNC_START sub_20A9464
-sub_20A9464:
-.incbin "fe11-arm9-base.bin", 0xA9464, 0xA94F4 - 0xA9464
-
-ARM_FUNC_START sub_20A94F4
-sub_20A94F4:
+ARM_FUNC_START FSi_CompareDigest
+FSi_CompareDigest:
 .incbin "fe11-arm9-base.bin", 0xA94F4, 0xA9588 - 0xA94F4
 
 ARM_FUNC_START sub_20A9588
@@ -73,8 +49,8 @@ ARM_FUNC_START sub_20A9F34
 sub_20A9F34:
 .incbin "fe11-arm9-base.bin", 0xA9F34, 0xAA130 - 0xA9F34
 
-ARM_FUNC_START sub_20AA130
-sub_20AA130:
+ARM_FUNC_START DGT_Hash2CalcHmac
+DGT_Hash2CalcHmac:
 .incbin "fe11-arm9-base.bin", 0xAA130, 0xAA1C4 - 0xAA130
 
 ARM_FUNC_START sub_20AA1C4

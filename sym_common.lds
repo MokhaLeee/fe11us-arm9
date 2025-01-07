@@ -16,6 +16,8 @@
 . = 0x021A01EC - BSS_START; current_dir_pos = .;
 . = 0x021A01F8 - BSS_START; fs_init_flag = .;
 . = 0x021A01FC - BSS_START; fsi_st = .;
+. = 0x021A0204 - BSS_START; fsi_ovt9 = .;
+. = 0x021A020C - BSS_START; fsi_ovt7 = .;
 . = 0x021A0214 - BSS_START; fsi_arc_rom = .;
 . = 0x021A23E0 - BSS_START; bss_end = .;
 

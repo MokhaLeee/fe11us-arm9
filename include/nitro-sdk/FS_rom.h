@@ -18,6 +18,9 @@ extern struct {
 	CARDRomRegion fsi_ovt7;
 } fsi_st;
 
+extern CARDRomRegion fsi_ovt9;
+extern CARDRomRegion fsi_ovt7;
+
 void FSi_OnRomReadDone(void * p_arc);
 FSResult FSi_ReadRomCallback(FSArchive * p_arc, void * dst, u32 src, u32 len);
 FSResult FSi_WriteDummyCallback(FSArchive * p_arc, const void *src, u32 dst, u32 len);
