@@ -4153,18 +4153,18 @@ ARM_FUNC_START sub_20A3AF8
 sub_20A3AF8:
 .incbin "fe11-arm9-base.bin", 0xA3AF8, 0xA3B10 - 0xA3AF8
 
-ARM_FUNC_START sub_20A3B10
-sub_20A3B10:
+ARM_FUNC_START OS_LockMutex
+OS_LockMutex:
 .incbin "fe11-arm9-base.bin", 0xA3B10, 0xA3B94 - 0xA3B10
 
-ARM_FUNC_START sub_20A3B94
-sub_20A3B94:
+ARM_FUNC_START OS_UnlockMutex
+OS_UnlockMutex:
 .incbin "fe11-arm9-base.bin", 0xA3B94, 0xA3BF0 - 0xA3B94
 
 ARM_FUNC_START sub_20A3BF0
 sub_20A3BF0:
 .incbin "fe11-arm9-base.bin", 0xA3BF0, 0xA3C2C - 0xA3BF0
 
-ARM_FUNC_START sub_20A3C2C
-sub_20A3C2C:
+ARM_FUNC_START OS_TryLockMutex
+OS_TryLockMutex:
 .incbin "fe11-arm9-base.bin", 0xA3C2C, 0xA3CA0 - 0xA3C2C

@@ -385,6 +385,6 @@ ARM_FUNC_START sub_20C4638
 sub_20C4638:
 .incbin "fe11-arm9-base.bin", 0xC4638, 0xC4684 - 0xC4638
 
-ARM_FUNC_START sub_20C4684
-sub_20C4684:
+ARM_FUNC_START _ExitProcess
+_ExitProcess:
 .incbin "fe11-arm9-base.bin", 0xC4684, 0xC4CDC - 0xC4684

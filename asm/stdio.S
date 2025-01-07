@@ -37,10 +37,10 @@ ARM_FUNC_START sub_20B7734
 sub_20B7734:
 .incbin "fe11-arm9-base.bin", 0xB7734, 0xB8268 - 0xB7734
 
-ARM_FUNC_START sub_20B8268
-sub_20B8268:
+ARM_FUNC_START abort
+abort:
 .incbin "fe11-arm9-base.bin", 0xB8268, 0xB828C - 0xB8268
 
-ARM_FUNC_START sub_20B828C
-sub_20B828C:
+ARM_FUNC_START exit
+exit:
 .incbin "fe11-arm9-base.bin", 0xB828C, 0xB82D8 - 0xB828C

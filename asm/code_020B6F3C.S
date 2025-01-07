@@ -1,8 +1,8 @@
 .include "macros.inc"
 .section .text
 
-ARM_FUNC_START sub_20B82D8
-sub_20B82D8:
+ARM_FUNC_START __exit
+__exit:
 .incbin "fe11-arm9-base.bin", 0xB82D8, 0xB8400 - 0xB82D8
 
 ARM_FUNC_START sub_20B8400
@@ -11,7 +11,11 @@ sub_20B8400:
 
 ARM_FUNC_START sub_20B8418
 sub_20B8418:
-.incbin "fe11-arm9-base.bin", 0xB8418, 0xB84CC - 0xB8418
+.incbin "fe11-arm9-base.bin", 0xB8418, 0xB848C - 0xB8418
+
+ARM_FUNC_START __msl_assertion_failed
+__msl_assertion_failed:
+.incbin "fe11-arm9-base.bin", 0xB848C, 0xB84CC - 0xB848C
 
 ARM_FUNC_START sub_20B84CC
 sub_20B84CC:
@@ -25,8 +29,8 @@ ARM_FUNC_START sub_20B8584
 sub_20B8584:
 .incbin "fe11-arm9-base.bin", 0xB8584, 0xB8834 - 0xB8584
 
-ARM_FUNC_START sub_20B8834
-sub_20B8834:
+ARM_FUNC_START fflush
+fflush:
 .incbin "fe11-arm9-base.bin", 0xB8834, 0xB891C - 0xB8834
 
 ARM_FUNC_START sub_20B891C
@@ -117,16 +121,16 @@ ARM_FUNC_START sub_20BAD98
 sub_20BAD98:
 .incbin "fe11-arm9-base.bin", 0xBAD98, 0xBADDC - 0xBAD98
 
-ARM_FUNC_START sub_20BADDC
-sub_20BADDC:
+ARM_FUNC_START printf
+printf:
 .incbin "fe11-arm9-base.bin", 0xBADDC, 0xBAEF4 - 0xBADDC
 
 ARM_FUNC_START sub_20BAEF4
 sub_20BAEF4:
 .incbin "fe11-arm9-base.bin", 0xBAEF4, 0xBB1DC - 0xBAEF4
 
-ARM_FUNC_START sub_20BB1DC
-sub_20BB1DC:
+ARM_FUNC_START raise
+raise:
 .incbin "fe11-arm9-base.bin", 0xBB1DC, 0xBB30C - 0xBB1DC
 
 ARM_FUNC_START sub_20BB30C
