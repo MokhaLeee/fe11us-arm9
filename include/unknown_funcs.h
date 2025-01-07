@@ -4,7 +4,7 @@
 #include "types.h"
 
 /**
- * dtcm
+ * itcm
  */
 
 void sub_1FF8000(void * unk1, u8 a, u8 b, int c, u8 d, int e);

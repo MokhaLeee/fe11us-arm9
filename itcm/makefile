@@ -14,13 +14,13 @@ ARMOBJCPY := arm-none-eabi-objcopy
 MW_CFLAGS  := -i ../include -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa
 ARM_ASFLAGS := -mcpu=arm9tdmi -I ../include
 
-ARM_LDS := dtcm.lds
+ARM_LDS := itcm.lds
 
 C_SRCS := $(wildcard $(SRC_DIR)/*.c)
 ASM_SRCS := $(wildcard $(SRC_DIR)/*.S) $(wildcard $(ASM_DIR)/*.S)
 DATA_SRCS := $(wildcard $(DATA_DIR)/*.S)
 
-ROM := dtcm.bin
+ROM := itcm.bin
 ELF := $(ROM:%.bin=%.elf)
 MAP := $(ROM:%.bin=%.map)
 
@@ -51,7 +51,7 @@ $(ROM): $(ELF)
 	@$(ARMOBJCPY) --strip-debug -O binary $< $@
 
 compare: $(ROM)
-	@python3 ../tools/scripts/fix_diff.py dtcm-base.bin dtcm.bin
+	@python3 ../tools/scripts/fix_diff.py itcm-base.bin itcm.bin
 
 CLEAN_FILES += $(ROM) $(ELF) $(MAP)
 

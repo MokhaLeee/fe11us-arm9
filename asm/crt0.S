@@ -66,7 +66,7 @@ _start: @ 0x02000800
 	ldr r0, [r1, #0x14]
 	bl sub_2000950
 
-	/* copy to dtcm (0x01FF8000) */
+	/* copy to itcm (0x01FF8000) */
 	bl do_autoload
 
 
@@ -302,12 +302,12 @@ nullsub_2: @ 0x02000B64
 
 .global _start_ModuleParams @ 0x02000B68
 _start_ModuleParams:
-	@ dtcm copy
+	@ itcm copy
 	.4byte SDK_AUTOLOAD_LIST
 	.4byte SDK_AUTOLOAD_LIST_END
-	.4byte dtcm_copy_start
+	.4byte itcm_copy_start
 
-	.4byte dtcm_copy_start	@ bss_start
+	.4byte itcm_copy_start	@ bss_start
 	.4byte bss_end
 	.4byte 0
 

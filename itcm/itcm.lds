@@ -2,13 +2,13 @@ OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
 OUTPUT_ARCH(arm)
 /* ENTRY(_start) */
 
-BSS_START = 0x020E3CA0; /* dtcm_copy_start */
+BSS_START = 0x020E3CA0; /* itcm_copy_start */
 
 SECTIONS
 {
 	. = 0x01FF8000;
 
-	dtcm : ALIGN(4)
+	itcm : ALIGN(4)
 	{
 		asm/code.o(.text);
 		src/proc.o(.text);

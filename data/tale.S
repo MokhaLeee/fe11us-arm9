@@ -12,8 +12,8 @@ ram_copy_start:
 
 .global SDK_AUTOLOAD_LIST
 SDK_AUTOLOAD_LIST:
-	.4byte 0x01FF8000	@ dtcm_copy_dest
-	.4byte 0x4CE0		@ dtcm_copy_size
+	.4byte 0x01FF8000	@ itcm_copy_dest
+	.4byte 0x4CE0		@ itcm_copy_size
 	.4byte 0x0
 	.4byte 0x027E0000
 	.4byte 0xE0

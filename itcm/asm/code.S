@@ -4208,4 +4208,4 @@ _01FFBBEC:
 
 .global gProcessCmdTable
 gProcessCmdTable: @ 0x01FFBBF8
-.incbin "dtcm-base.bin", 0x1FFBBF8 - 0x01FF8000, 0x1FFBC90 - 0x1FFBBF8
+.incbin "itcm-base.bin", 0x1FFBBF8 - 0x01FF8000, 0x1FFBC90 - 0x1FFBBF8

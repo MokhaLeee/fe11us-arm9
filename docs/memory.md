@@ -1,6 +1,6 @@
 copy function: 0x020009FC
 
-1. DTCM
+1. ITCM
 	- src = 0x020E3CA0
 	- dst = 0x01FF8000
 	- size = 0x4CE0
