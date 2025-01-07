@@ -108,19 +108,6 @@ $(ROM): $(ELF)
 	@$(ARMOBJCPY) --strip-debug -O binary $< $@
 
 # ===========
-# = runtime =
-# ===========
-
-RUNTIME_BUILD := $(BUILD_NAME).runtime
-
-$(RUNTIME_BUILD).elf: $(ALL_OBJS) $(ARM_LDS)
-	@echo "[LD]	$@"
-	@$(ARMLD) -T $(RUNTIME_BUILD).lds -Map $(RUNTIME_BUILD).map $(ALL_OBJS) -o $@
-
-runtime: fe11-arm9.runtime.elf
-CLEAN_FILES += fe11-arm9.runtime.elf fe11-arm9.runtime.map
-
-# ===========
 # = compare =
 # ===========
 
