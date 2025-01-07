@@ -1,8 +1,9 @@
 #include "global.h"
+#include "nitro-sdk/FS_file.h"
 
 void sub_2034930(int a, int b, int c)
 {
-	sub_20A8F40("/button");
+	FS_ChangeDir("/button");
 
 	switch (a) {
 	case 0:
@@ -96,7 +97,7 @@ void sub_2034930(int a, int b, int c)
 void sub_2034C44(int a, int b, int c)
 {
 	if (c != 0)
-		sub_20A8F40("/button");
+		FS_ChangeDir("/button");
 
 	switch (a) {
 	case 0:

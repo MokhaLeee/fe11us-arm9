@@ -163,3 +163,90 @@ BOOL FS_CloseFile(FSFile * p_file)
     p_file->stat &= ~(FS_FILE_STATUS_IS_FILE | FS_FILE_STATUS_IS_DIR);
     return TRUE;
 }
+
+BOOL FS_WaitAsync(FSFile * p_file)
+{
+    BOOL is_owner = FALSE;
+    OSIntrMode bak_par = OS_DisableInterrupts();
+    if (FS_IsBusy(p_file))
+    {
+        is_owner = !(p_file->stat & (FS_FILE_STATUS_SYNC | FS_FILE_STATUS_OPERATING));
+        if (is_owner)
+        {
+            p_file->stat |= FS_FILE_STATUS_SYNC;
+            do
+            {
+                OS_SleepThread(p_file->queue);
+            } while (!(p_file->stat & FS_FILE_STATUS_OPERATING));
+        }
+        else
+        {
+            do
+            {
+                OS_SleepThread(p_file->queue);
+            } while (FS_IsBusy(p_file));
+        }
+    }
+    (void)OS_RestoreInterrupts(bak_par);
+    if (is_owner)
+    {
+        return FSi_ExecuteSyncCommand(p_file);
+    }
+
+    return FS_IsSucceeded(p_file);
+}
+
+void FS_CancelFile(FSFile * p_file)
+{
+    BOOL busy;
+
+    OSIntrMode bak_par = OS_DisableInterrupts();
+
+    if (FS_IsBusy(p_file))
+    {
+        p_file->stat |= FS_FILE_STATUS_CANCEL;
+        p_file->arc->flag |= FS_ARCHIVE_FLAG_CANCELING;
+    }
+
+    (void)OS_RestoreInterrupts(bak_par);
+}
+
+int FS_ReadFile(FSFile * p_file, void * dst, s32 len)
+{
+    return FSi_ReadFileCore(p_file, dst, len, FALSE);
+}
+
+BOOL FS_SeekFile(FSFile * p_file, s32 offset, FSSeekFileMode origin)
+{
+    switch (origin)
+    {
+    case FS_SEEK_SET:
+        offset += p_file->prop.file.top;
+        break;
+    case FS_SEEK_CUR:
+        offset += p_file->prop.file.pos;
+        break;
+    case FS_SEEK_END:
+        offset += p_file->prop.file.bottom;
+        break;
+    default:
+        return FALSE;
+    }
+    if (offset < (s32)p_file->prop.file.top)
+        offset = (s32)p_file->prop.file.top;
+    if (offset > (s32)p_file->prop.file.bottom)
+        offset = (s32)p_file->prop.file.bottom;
+    p_file->prop.file.pos = (u32)offset;
+    return TRUE;
+}
+
+BOOL FS_ChangeDir(const char * path)
+{
+    FSDirPos pos;
+    FSFile dir;
+    FS_InitFile(&dir);
+    if (!FSi_FindPath(&dir, path, NULL, &pos))
+        return FALSE;
+    current_dir_pos = pos;
+    return TRUE;
+}

@@ -4045,8 +4045,8 @@ ARM_FUNC_START sub_20A3350
 sub_20A3350:
 .incbin "fe11-arm9-base.bin", 0xA3350, 0xA3364 - 0xA3350
 
-ARM_FUNC_START sub_20A3364
-sub_20A3364:
+ARM_FUNC_START OS_SleepThread
+OS_SleepThread:
 .incbin "fe11-arm9-base.bin", 0xA3364, 0xA33B4 - 0xA3364
 
 ARM_FUNC_START sub_20A33B4

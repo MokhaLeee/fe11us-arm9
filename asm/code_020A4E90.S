@@ -485,8 +485,8 @@ ARM_FUNC_START sub_20A8180
 sub_20A8180:
 .incbin "fe11-arm9-base.bin", 0xA8180, 0xA8214 - 0xA8180
 
-ARM_FUNC_START sub_20A8214
-sub_20A8214:
+ARM_FUNC_START FSi_ExecuteSyncCommand
+FSi_ExecuteSyncCommand:
 .incbin "fe11-arm9-base.bin", 0xA8214, 0xA8258 - 0xA8214
 
 ARM_FUNC_START FSi_SendCommand
@@ -525,6 +525,6 @@ ARM_FUNC_START sub_20A898C
 sub_20A898C:
 .incbin "fe11-arm9-base.bin", 0xA898C, 0xA89AC - 0xA898C
 
-ARM_FUNC_START sub_20A89AC
-sub_20A89AC:
+ARM_FUNC_START FS_NotifyArchiveAsyncEnd
+FS_NotifyArchiveAsyncEnd:
 .incbin "fe11-arm9-base.bin", 0xA89AC, 0xA8A30 - 0xA89AC

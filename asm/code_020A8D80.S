@@ -1,28 +1,8 @@
 .include "macros.inc"
 .section .text
 
-ARM_FUNC_START FS_WaitAsync
-FS_WaitAsync:
-.incbin "fe11-arm9-base.bin", 0xA8DBC, 0xA8E7C - 0xA8DBC
-
-ARM_FUNC_START sub_20A8E7C
-sub_20A8E7C:
-.incbin "fe11-arm9-base.bin", 0xA8E7C, 0xA8EC4 - 0xA8E7C
-
-ARM_FUNC_START sub_20A8EC4
-sub_20A8EC4:
-.incbin "fe11-arm9-base.bin", 0xA8EC4, 0xA8ED4 - 0xA8EC4
-
-ARM_FUNC_START sub_20A8ED4
-sub_20A8ED4:
-.incbin "fe11-arm9-base.bin", 0xA8ED4, 0xA8F40 - 0xA8ED4
-
-ARM_FUNC_START sub_20A8F40
-sub_20A8F40:
-.incbin "fe11-arm9-base.bin", 0xA8F40, 0xA8F98 - 0xA8F40
-
-ARM_FUNC_START sub_20A8F98
-sub_20A8F98:
+ARM_FUNC_START FSi_OnRomReadDone
+FSi_OnRomReadDone:
 .incbin "fe11-arm9-base.bin", 0xA8F98, 0xA8FBC - 0xA8F98
 
 ARM_FUNC_START sub_20A8FBC
@@ -577,8 +557,8 @@ ARM_FUNC_START sub_20AE384
 sub_20AE384:
 .incbin "fe11-arm9-base.bin", 0xAE384, 0xAE3D8 - 0xAE384
 
-ARM_FUNC_START sub_20AE3D8
-sub_20AE3D8:
+ARM_FUNC_START CARD_IsPulledOut
+CARD_IsPulledOut:
 .incbin "fe11-arm9-base.bin", 0xAE3D8, 0xAE3E8 - 0xAE3D8
 
 ARM_FUNC_START sub_20AE3E8
