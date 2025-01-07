@@ -42,8 +42,14 @@ SECTIONS
 		src/code_02078808.o(.text);
 		asm/code_0207884C.o(.text);
 		asm/code_02078878.o(.text);
+		asm/OS_system.o(.text);
 		src/sys.o(.text);
 		asm/code_020A4E90.o(.text);
+		asm/MI_memory.o(.text);
+		asm/code_020A59F8.o(.text);
+		asm/PXI_fifo.o(.text);
+		asm/FS_command.o(.text);
+		asm/FS_command_default.o(.text);
 		src/lib/nitro/FS_archive.o(.text);
 		src/lib/nitro/FS_file.o(.text);
 		src/lib/nitro/FS_rom.o(.text);
