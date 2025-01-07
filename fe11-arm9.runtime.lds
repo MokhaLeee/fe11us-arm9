@@ -27,23 +27,29 @@ SECTIONS
 	unk : ALIGN(4)
 	{
 		asm/itcm.o(.text);
-	} > itcm
+	}
 
 	. = 0x02000000;
 	main : ALIGN(4)
 	{
 		asm/arm9.o(.text);
-	} > ram
+	}
 
 	. = 0x021A23E0;
 	main : ALIGN(4)
 	{
 		asm/overlay0.o(.text);
-	} > ram
+	}
+
+	. = 0x021E3560;
+	main : ALIGN(4)
+	{
+		asm/overlay2.o(.text);
+	}
 
 	. = 0x02204C20;
 	main : ALIGN(4)
 	{
 		asm/overlay4.o(.text);
-	} > ram
+	}
 }
