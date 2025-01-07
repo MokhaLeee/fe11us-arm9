@@ -3949,8 +3949,8 @@ ARM_FUNC_START sub_20A2B68
 sub_20A2B68:
 .incbin "fe11-arm9-base.bin", 0xA2B68, 0xA2B70 - 0xA2B68
 
-ARM_FUNC_START sub_20A2B70
-sub_20A2B70:
+ARM_FUNC_START OS_GetLockID
+OS_GetLockID:
 .incbin "fe11-arm9-base.bin", 0xA2B70, 0xA2BC8 - 0xA2B70
 
 ARM_FUNC_START sub_20A2BC8

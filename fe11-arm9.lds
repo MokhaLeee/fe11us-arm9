@@ -45,6 +45,7 @@ SECTIONS
 		src/sys.o(.text);
 		asm/code_020A4E90.o(.text);
 		src/lib/nitro/FS_file.o(.text);
+		src/lib/nitro/FS_rom.o(.text);
 		asm/code_020A8D80.o(.text);
 		src/string.o(.text);
 		asm/stdio.o(.text);
@@ -57,6 +58,8 @@ SECTIONS
 		data/rodata_020D457C.o(.rodata);
 		src/unit.o(.data);
 		data/rodata_020D4900.o(.rodata);
+		src/lib/nitro/FS_rom.o(.data);
+		data/rodata_020DD69C.o(.rodata);
 	}
 
 	main_end = .;

@@ -1,26 +1,6 @@
 .include "macros.inc"
 .section .text
 
-ARM_FUNC_START FSi_OnRomReadDone
-FSi_OnRomReadDone:
-.incbin "fe11-arm9-base.bin", 0xA8F98, 0xA8FBC - 0xA8F98
-
-ARM_FUNC_START sub_20A8FBC
-sub_20A8FBC:
-.incbin "fe11-arm9-base.bin", 0xA8FBC, 0xA900C - 0xA8FBC
-
-ARM_FUNC_START sub_20A900C
-sub_20A900C:
-.incbin "fe11-arm9-base.bin", 0xA900C, 0xA9088 - 0xA900C
-
-ARM_FUNC_START FSi_InitRom
-FSi_InitRom:
-.incbin "fe11-arm9-base.bin", 0xA9088, 0xA91D0 - 0xA9088
-
-ARM_FUNC_START sub_20A91D0
-sub_20A91D0:
-.incbin "fe11-arm9-base.bin", 0xA91D0, 0xA91F0 - 0xA91D0
-
 ARM_FUNC_START sub_20A91F0
 sub_20A91F0:
 .incbin "fe11-arm9-base.bin", 0xA91F0, 0xA920C - 0xA91F0
@@ -441,12 +421,12 @@ ARM_FUNC_START sub_20AD244
 sub_20AD244:
 .incbin "fe11-arm9-base.bin", 0xAD244, 0xAD280 - 0xAD244
 
-ARM_FUNC_START sub_20AD280
-sub_20AD280:
+ARM_FUNC_START CARD_LockRom
+CARD_LockRom:
 .incbin "fe11-arm9-base.bin", 0xAD280, 0xAD29C - 0xAD280
 
-ARM_FUNC_START sub_20AD29C
-sub_20AD29C:
+ARM_FUNC_START CARD_UnlockRom
+CARD_UnlockRom:
 .incbin "fe11-arm9-base.bin", 0xAD29C, 0xAD2B8 - 0xAD29C
 
 ARM_FUNC_START sub_20AD2B8
@@ -521,12 +501,12 @@ ARM_FUNC_START sub_20ADF70
 sub_20ADF70:
 .incbin "fe11-arm9-base.bin", 0xADF70, 0xAE008 - 0xADF70
 
-ARM_FUNC_START sub_20AE008
-sub_20AE008:
+ARM_FUNC_START CARDi_ReadRom
+CARDi_ReadRom:
 .incbin "fe11-arm9-base.bin", 0xAE008, 0xAE100 - 0xAE008
 
-ARM_FUNC_START sub_20AE100
-sub_20AE100:
+ARM_FUNC_START CARD_Init
+CARD_Init:
 .incbin "fe11-arm9-base.bin", 0xAE100, 0xAE168 - 0xAE100
 
 ARM_FUNC_START sub_20AE168

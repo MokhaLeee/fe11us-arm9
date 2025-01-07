@@ -41,7 +41,7 @@ ARM_ASFLAGS := -mcpu=arm9tdmi $(ARM_INC_FLAG)
 ARM_LDS := $(BUILD_NAME).lds
 C_SRCS := $(shell find $(SRC_DIR) -name *.c)
 ASM_SRCS := $(shell find $(SRC_DIR) -name *.S) $(shell find $(ASM_DIR) -name *.S)
-DATA_SRCS := $(shell find $(DATA_DIR) -name *.c)
+DATA_SRCS := $(shell find $(DATA_DIR) -name *.S)
 
 # ===========
 # = Targets =

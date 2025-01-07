@@ -7,9 +7,16 @@
 #include "nitro/types.h"
 
 extern FSArchive fsi_arc_rom;
-extern s32 fsi_card_lock_id;
-extern CARDRomRegion fsi_ovt7;
-extern CARDRomRegion fsi_ovt9;
+// extern s32 fsi_card_lock_id;
+// extern CARDRomRegion fsi_ovt7;
+// extern CARDRomRegion fsi_ovt9;
+
+extern struct {
+	u32 card_lock_id;
+	u32 default_dma_no;
+	CARDRomRegion fsi_ovt9;
+	CARDRomRegion fsi_ovt7;
+} fsi_st;
 
 void FSi_OnRomReadDone(void * p_arc);
 FSResult FSi_ReadRomCallback(FSArchive * p_arc, void * dst, u32 src, u32 len);
