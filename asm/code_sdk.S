@@ -388,7 +388,3 @@ sub_20A2428:
 ARM_FUNC_START OS_WaitIrq
 OS_WaitIrq:
 .incbin "fe11-arm9-base.bin", 0xA2444, 0xA24BC - 0xA2444
-
-ARM_FUNC_START sub_20A24BC
-sub_20A24BC:
-.incbin "fe11-arm9-base.bin", 0xA24BC, 0xA25C4 - 0xA24BC

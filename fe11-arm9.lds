@@ -40,6 +40,7 @@ SECTIONS
 		asm/code_0207884C.o(.text);
 		asm/code_02078878.o(.text);
 		asm/code_sdk.o(.text);
+		asm/code_sdk_020A24BC.o(.text);
 		src/lib/nitro/OS_interrupt.o(.text);
 		src/lib/nitro/OS_interrupt_020A26F0_.o(.text);
 		src/lib/nitro/OS_interrupt_020A26F0.o(.text);
