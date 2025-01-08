@@ -1,7 +1,7 @@
 RUNTIME_BUILD := fe11-arm9.runtime
 CLEAN_FILES :=
 
-all: $(RUNTIME_BUILD).elf
+all: $(RUNTIME_BUILD).bin
 
 ASM_FILES    := $(wildcard asm/*.S)
 ASM_GENERATE := $(ASM_FILES:%.S=%.o)
@@ -14,7 +14,10 @@ CLEAN_FILES += $(ASM_GENERATE)
 $(RUNTIME_BUILD).elf: $(ASM_GENERATE) $(RUNTIME_BUILD).lds
 	arm-none-eabi-ld -T $(RUNTIME_BUILD).lds -Map $(RUNTIME_BUILD).map $(ASM_GENERATE) -o $@
 
-CLEAN_FILES += $(RUNTIME_BUILD).elf $(RUNTIME_BUILD).map
+%.bin: %.elf
+	arm-none-eabi-objcopy --strip-debug -O binary $< $@
+
+CLEAN_FILES += $(RUNTIME_BUILD).elf $(RUNTIME_BUILD).map $(RUNTIME_BUILD).bin
 
 clean:
 	rm -rf $(CLEAN_FILES)

@@ -1,6 +1,7 @@
 .vscode/
 *.o
 fe11-arm9.bin
+fe11-arm9.runtime.bin
 *.elf
 *.map
 *__pycache__
