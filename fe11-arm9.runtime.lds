@@ -5,8 +5,8 @@ ENTRY(_start)
 MEMORY
 {
 	itcm : ORIGIN = 0x01FF8000, LENGTH = 32K
-	ram  : ORIGIN = 0x02000000, LENGTH = 8M
-	shared_memory : ORIGIN = 0x03000000, LENGTH = 32K
+	ram  : ORIGIN = 0x02000000, LENGTH = 16M
+	shared_memory : ORIGIN = 0x03000000, LENGTH = 800K
 	io_ports : ORIGIN = 0x04000000, LENGTH = 32K
 	palette : ORIGIN = 0x05000000, LENGTH = 2K
 	bg_vram_a : ORIGIN = 0x06000000, LENGTH = 512K
@@ -27,29 +27,23 @@ SECTIONS
 	unk : ALIGN(4)
 	{
 		asm/itcm.o(.text);
-	}
+	} > itcm
 
 	. = 0x02000000;
+
 	main : ALIGN(4)
 	{
+		. = 0x000000;
 		asm/arm9.o(.text);
-	}
 
-	. = 0x021A23E0;
-	main : ALIGN(4)
-	{
+		. = 0x1A23E0;
 		asm/overlay0.o(.text);
-	}
 
-	. = 0x021E3560;
-	main : ALIGN(4)
-	{
+		. = 0x1E3560;
 		asm/overlay2.o(.text);
-	}
 
-	. = 0x02204C20;
-	main : ALIGN(4)
-	{
+		. = 0x204C20;
 		asm/overlay4.o(.text);
-	}
+	} > ram
+
 }
