@@ -91,13 +91,14 @@ _start: @ 0x02000800
 	cmp r1, r2
 	blt 1b
 
-	ldr r1, _0200092C @ =unk_027FFF9C
+	@ printf buffer
+	ldr r1, _0200092C @ =HW_COMPONENT_PARAM
 	str r0, [r1]
 
 	ldr r1, pr_SDK_AUTOLOAD_DTCM_START @ =0x027E0000
 	add r1, r1, #0x3fc0
-	add r1, r1, #0x3c
-	ldr r0, _02000930 @ =sub_1FFC6BC
+	add r1, r1, #0x3c @ HW_DTCM_SYSRV_OFS_INTR_VECTOR
+	ldr r0, _02000930 @ =OS_IrqHandler
 	str r0, [r1]
 
 	bl _fp_init
@@ -116,8 +117,8 @@ _0200091C: .4byte 0x00000800
 _02000920: .4byte 0x05000000
 _02000924: .4byte 0x07000000
 _02000928: .4byte _start_ModuleParams
-_0200092C: .4byte unk_027FFF9C
-_02000930: .4byte sub_1FFC6BC
+_0200092C: .4byte HW_COMPONENT_PARAM
+_02000930: .4byte OS_IrqHandler
 _pr_NitroMain: .4byte NitroMain
 _02000938: .4byte 0xFFFF0000
 

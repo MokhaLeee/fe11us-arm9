@@ -36,7 +36,7 @@ ARM_INC_FLAG := $(foreach dir, $(INC_DIRS), -I $(dir))
 MW_CFLAGS  := $(MW_INC_FLAG) -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa
 MW_ASFLAGS := $(MW_INC_FLAG) -proc arm5te
 
-ARM_ASFLAGS := -mcpu=arm9tdmi $(ARM_INC_FLAG)
+ARM_ASFLAGS := -mcpu=arm9tdmi
 
 ARM_LDS := $(BUILD_NAME).lds
 C_SRCS := $(shell find $(SRC_DIR) -name *.c)
@@ -93,11 +93,11 @@ CLEAN_DIRS += $(ALL_OBJS)
 
 %.o: %.c
 	@echo "[CC]	$@"
-	@$(MWCC) $(MW_CFLAGS) $< -o $@
+	@$(MWCC) $(MW_CFLAGS) $(MW_INC_FLAG) $< -o $@
 
 %.o: %.S
 	@echo "[AS]	$@"
-	@$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
+	@$(ARMAS) $(ARM_ASFLAGS) $(ARM_INC_FLAG) $< -o $@
 #	@$(MWAS) $(MW_ASFLAGS) $< -o $@
 
 $(ITCM_DIR)/itcm.o: $(ITCM_DIR)/itcm.S $(ITCM_DIR)/itcm.bin
@@ -137,3 +137,4 @@ clean:
 # = CFLAGS overrides =
 # ======================
 src/main_loop.o: MW_CFLAGS +=
+# src/lib/nitro/OS_interrupt.o: MW_CFLAGS := -O4,p -sym on -gccext,on -proc arm946e -msgstyle gcc -gccinc -fp soft -lang c99 -Cpp_exceptions off -inline on,noauto -interworking -DFS_IMPLEMENT -enum int

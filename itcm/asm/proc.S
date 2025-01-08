@@ -204,8 +204,8 @@ sub_1FFC668: @ 0x01FFC668
 	.align 2, 0
 _01FFC6B8: .4byte data_027e1268
 
-	arm_func_start sub_1FFC6BC
-sub_1FFC6BC: @ 0x01FFC6BC
+	arm_func_start OS_IrqHandler
+OS_IrqHandler: @ 0x01FFC6BC
 	stmdb sp!, {lr}
 	mov ip, #0x4000000
 	add ip, ip, #0x210
@@ -216,24 +216,24 @@ sub_1FFC6BC: @ 0x01FFC6BC
 	ands r1, r1, r2
 	ldmeq sp!, {pc}
 	mov r3, #-0x80000000
-_01FFC6E4:
+1:
 	.4byte 0xE16F0F11 @ clz r0, r1
 	bics r1, r1, r3, lsr r0
-	bne _01FFC6E4
+	bne 1b
 	lsr r1, r3, r0
 	str r1, [ip, #4]
 	rsbs r0, r0, #0x1f
-	ldr r1, _01FFC70C @ =0x027E0078
+	ldr r1, pr_OS_IRQTable @ =OS_IRQTable
 	ldr r0, [r1, r0, lsl #2]
-	ldr lr, _01FFC710 @ =sub_1FFC714
+	ldr lr, pr_OS_IrqHandler_ThreadSwitch @ =OS_IrqHandler_ThreadSwitch
 	bx r0
 	.align 2, 0
-_01FFC70C: .4byte 0x027E0078
-_01FFC710: .4byte sub_1FFC714
+pr_OS_IRQTable: .4byte OS_IRQTable
+pr_OS_IrqHandler_ThreadSwitch: .4byte OS_IrqHandler_ThreadSwitch
 
-	arm_func_start sub_1FFC714
-sub_1FFC714: @ 0x01FFC714
-	ldr ip, _01FFC860 @ =0x027E1BA0
+	arm_func_start OS_IrqHandler_ThreadSwitch
+OS_IrqHandler_ThreadSwitch: @ 0x01FFC714
+	ldr ip, pr_OSi_IrqThreadQueue @ =OSi_IrqThreadQueue
 	mov r3, #0
 	ldr ip, [ip]
 	mov r2, #1
@@ -248,14 +248,14 @@ _01FFC72C:
 	mov ip, r0
 	cmp ip, #0
 	bne _01FFC72C
-	ldr ip, _01FFC860 @ =0x027E1BA0
+	ldr ip, pr_OSi_IrqThreadQueue @ =OSi_IrqThreadQueue
 	str r3, [ip]
 	str r3, [ip, #4]
-	ldr ip, _01FFC864 @ =0x0219E294
+	ldr ip, pr_OSi_ThreadInfo @ =OSi_ThreadInfo
 	mov r1, #1
 	strh r1, [ip]
 _01FFC764:
-	ldr ip, _01FFC864 @ =0x0219E294
+	ldr ip, pr_OSi_ThreadInfo @ =OSi_ThreadInfo
 	ldrh r1, [ip]
 	cmp r1, #0
 	popeq {pc}
@@ -323,8 +323,8 @@ _01FFC7DC:
 	stmda sp!, {r0, r1, r2, r3, ip, lr}
 	ldm sp!, {pc}
 	.align 2, 0
-_01FFC860: .4byte 0x027E1BA0
-_01FFC864: .4byte 0x0219E294
+pr_OSi_IrqThreadQueue: .4byte OSi_IrqThreadQueue
+pr_OSi_ThreadInfo: .4byte OSi_ThreadInfo
 _01FFC868: .4byte 0x020AA610
 _01FFC86C: .4byte 0x020AA650
 

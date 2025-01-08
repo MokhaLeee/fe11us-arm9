@@ -6,3 +6,5 @@ fe11-arm9.bin
 *.map
 
 tools/mwccarm
+
+*__pycache__

@@ -38,6 +38,10 @@ SECTIONS
 		src/code_02078808.o(.text);
 		asm/code_0207884C.o(.text);
 		asm/code_02078878.o(.text);
+		src/lib/nitro/OS_interrupt.o(.text);
+		src/lib/nitro/OS_interrupt_020A26F0.o(.text);
+		src/lib/nitro/OS_interrupt_020A26F0_.o(.text);
+		asm/code_020A280C.o(.text);
 		asm/OS_cache.o(.text);
 		asm/code_020A3DE4.o(.text);
 		asm/OS_system.o(.text);

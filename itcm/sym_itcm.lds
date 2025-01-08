@@ -347,11 +347,11 @@
 . = 0x01FFC664; _01FFC664 = .;
 . = 0x01FFC668; sub_1FFC668 = .;
 . = 0x01FFC6B8; _01FFC6B8 = .;
-. = 0x01FFC6BC; sub_1FFC6BC = .;
+. = 0x01FFC6BC; OS_IrqHandler = .;
 . = 0x01FFC6E4; _01FFC6E4 = .;
 . = 0x01FFC70C; _01FFC70C = .;
 . = 0x01FFC710; _01FFC710 = .;
-. = 0x01FFC714; sub_1FFC714 = .;
+. = 0x01FFC714; OS_IrqHandler_ThreadSwitch = .;
 . = 0x01FFC72C; _01FFC72C = .;
 . = 0x01FFC764; _01FFC764 = .;
 . = 0x01FFC78C; _01FFC78C = .;

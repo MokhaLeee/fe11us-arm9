@@ -73,8 +73,8 @@ void sub_1FFA764(void);
 // ??? sub_1FFC5D4
 // ??? sub_1FFC614
 // ??? sub_1FFC668
-// ??? sub_1FFC6BC
-// ??? sub_1FFC714
+// ??? OS_IrqHandler
+// ??? OS_IrqHandler_ThreadSwitch
 // ??? sub_1FFC870
 // ??? sub_1FFC8A4
 // ??? sub_1FFC970
@@ -3648,13 +3648,13 @@ void sub_20A094C(void);
 // ??? sub_20A2428
 void sub_20A2444(int a, int b);
 // ??? sub_20A24BC
-// ??? sub_20A25C4
-void sub_20A25DC(u32 a, void (* func)(void));
-// ??? sub_20A2664
-// ??? sub_20A26F0
-// ??? sub_20A2738
-// ??? sub_20A2780
-void sub_20A27AC(int a);
+// ??? OS_InitIrqTable
+// void OS_SetIrqFunction(u32 a, void (* func)(void));
+// ??? OS_GetIrqFunction
+// ??? OSi_EnterDmaCallback
+// ??? OSi_EnterTimerCallback
+// ??? OS_SetIrqMask
+// void OS_EnableIrqMask(int a);
 // ??? sub_20A27DC
 // ??? sub_20A280C
 // ??? sub_20A2838

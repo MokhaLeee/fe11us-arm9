@@ -1,6 +1,7 @@
 #include "global.h"
 #include "proc.h"
 #include "nitro-sdk/mmap.h"
+#include "nitro-sdk/OS_interrupt.h"
 
 struct UnkStruct_Func_200EDD4 * sub_200EDD4(struct UnkStruct_Func_200EDD4 * unk)
 {
@@ -45,8 +46,8 @@ void sub_200EECC(void)
 {
 	int ime_old;
 
-	sub_20A25DC(1, sub_200F0F0);
-	sub_20A27AC(1);
+	OS_SetIrqFunction(1, sub_200F0F0);
+	OS_EnableIrqMask(1);
 
 	ime_old = REG_IME;
 	REG_IME = 1;
