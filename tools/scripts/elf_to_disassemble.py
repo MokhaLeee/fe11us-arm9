@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import sys
 import parse_elf
 
@@ -25,7 +27,7 @@ def main(args):
             continue
 
         if sym.is_func:
-            print(f'arm_func 0x{addr:08X} {sym.name}')
+            print(f'arm_func 0x{(addr - start):08X} {sym.name}')
 
 if __name__ == '__main__':
     main(sys.argv[1:])
