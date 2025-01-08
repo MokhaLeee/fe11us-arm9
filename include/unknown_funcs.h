@@ -75,10 +75,10 @@ void sub_1FFA764(void);
 // ??? sub_1FFC668
 // ??? OS_IrqHandler
 // ??? OS_IrqHandler_ThreadSwitch
-// ??? sub_1FFC870
-// ??? sub_1FFC8A4
-// ??? sub_1FFC970
-// ??? sub_1FFC984
+// ??? OSi_DoResetSystem
+// ??? OSi_DoBoot
+// ??? OSi_CpuClear32
+// ??? OSi_ReloadRomData
 // ??? sub_1FFCA2C
 // ??? sub_1FFCB04
 // ??? sub_1FFCB44
@@ -91,7 +91,7 @@ void sub_1FFA764(void);
  */
 
 // ??? sub_20000D4
-// ??? sub_20003BC
+// ??? SVC_WaitByLoop
 // ??? _start
 // ??? _memcpy
 // ??? MIi_UncompressBackward
@@ -397,7 +397,7 @@ void sub_200C49C(struct UnkStruct_Func_200EDD4 * unk);
 struct UnkStruct_Func_200EDD4 * sub_200EDD4(struct UnkStruct_Func_200EDD4 * unk);
 void sub_200EDF0(void);
 void sub_200EECC(void);
-void sub_200EF04(void);
+void InitSystem(void);
 void sub_200F028(void);
 void main_loop(void);
 void sub_200F0F0(void);
@@ -3554,10 +3554,10 @@ void sub_2070480(void);
 // ??? sub_209F3C0
 // ??? sub_209F3FC
 // ??? sub_209F4E0
-void sub_209F654(void);
-void sub_209F658(void);
+void FX_Init(void);
+void GX_Init(void);
 void sub_209F7D8(int a);
-void sub_209F80C(void);
+void GX_DispOff(void);
 void sub_209F848(void);
 // ??? sub_209F93C
 // ??? sub_209F99C
@@ -3646,7 +3646,7 @@ void sub_20A094C(void);
 // ??? sub_20A22F4
 // ??? sub_20A2358
 // ??? sub_20A2428
-void sub_20A2444(int a, int b);
+// void OS_WaitIrq(int a, int b);
 // ??? sub_20A24BC
 // ??? OS_InitIrqTable
 // void OS_SetIrqFunction(u32 a, void (* func)(void));
@@ -3655,10 +3655,10 @@ void sub_20A2444(int a, int b);
 // ??? OSi_EnterTimerCallback
 // ??? OS_SetIrqMask
 // void OS_EnableIrqMask(int a);
-// ??? sub_20A27DC
-// ??? sub_20A280C
-// ??? sub_20A2838
-// ??? sub_20A286C
+// ??? OS_DisableIrqMask
+// ??? OS_ResetRequestIrqMask
+// ??? OS_SetIrqStackChecker
+// ??? OS_InitLock
 // ??? sub_20A2938
 // ??? sub_20A2984
 // ??? sub_20A2994
@@ -3684,7 +3684,7 @@ void sub_20A2444(int a, int b);
 // ??? sub_20A2DB4
 // ??? sub_20A2E14
 // ??? OSi_RescheduleThread
-// ??? sub_20A2F24
+// ??? OS_InitThread
 // ??? sub_20A3080
 // ??? sub_20A317C
 // ??? sub_20A319C
@@ -3714,7 +3714,7 @@ void sub_20A2444(int a, int b);
 // ??? sub_20A37D0
 // ??? sub_20A381C
 // ??? sub_20A3860
-// ??? sub_20A3868
+// ??? OS_GetConsoleType
 // ??? sub_20A3880
 // ??? sub_20A38A8
 // ??? sub_20A393C
@@ -3735,42 +3735,42 @@ void sub_20A2444(int a, int b);
 // ??? IC_InvalidateAll
 // ??? IC_InvalidateRange
 // ??? sub_20A3DE4
-void sub_20A3E04(void);
-// ??? sub_20A3E4C
-// ??? sub_20A3F50
-// ??? sub_20A3FBC
-// ??? sub_20A3FD0
-// ??? sub_20A3FE4
-// ??? sub_20A40C8
-// ??? sub_20A4170
-// ??? sub_20A4184
-void sub_20A4198(void);
-void sub_20A41A8(void);
-// ??? sub_20A41B8
-// ??? sub_20A41CC
-// ??? sub_20A41DC
-// ??? sub_20A41EC
-// ??? sub_20A4200
-// ??? sub_20A4208
-// ??? sub_20A4210
-// ??? sub_20A42F4
-// ??? sub_20A4308
-// ??? sub_20A4398
-// ??? sub_20A4414
-void sub_20A4430(void);
-// ??? sub_20A44A8
-// ??? sub_20A4520
+void OS_Init(void);
+// ??? OS_InitArena
+// ??? OS_InitArenaEx
+// ??? OS_GetArenaHi
+// ??? OS_GetArenaLo
+// ??? OS_GetInitArenaHi
+// ??? OS_GetInitArenaLo
+// ??? OS_SetArenaHi
+// ??? OS_SetArenaLo
+void OS_EnableITCM(void);
+void OS_EnableDTCM(void);
+// ??? OS_GetDTCMAddress
+// ??? OS_EnableProtectionUnit
+// ??? OS_DisableProtectionUnit
+// ??? OS_SetDPermissionsForProtectionRegion
+// ??? OS_SetProtectionRegion1
+// ??? OS_SetProtectionRegion2
+// ??? OS_InitException
+// ??? OSi_GetAndDisplayContext
+// ??? OSi_SetExContext
+// ??? OSi_DisplayExContext
+// ??? OSi_SetTimerReserved
+void OS_InitTick(void);
+// ??? OS_IsTickAvailable
+// ??? OS_GetTick
 u16 GetTimer0Control(void);
-// ??? sub_20A45D0
-void sub_20A465C(void);
-// ??? sub_20A469C
-// ??? sub_20A46AC
-// ??? sub_20A46BC
-// ??? sub_20A47E8
-// ??? sub_20A4854
-// ??? sub_20A48DC
-// ??? sub_20A48EC
-// ??? sub_20A49DC
+// ??? OSi_SetTimer
+void OS_InitAlarm(void);
+// ??? OS_IsAlarmAvailable
+// ??? OS_CreateAlarm
+// ??? OSi_InsertAlarm
+// ??? OS_SetAlarm
+// ??? OS_CancelAlarm
+// ??? OSi_AlarmHandler
+// ??? OSi_ArrangeTimer
+// ??? OS_InitVAlarm
 
 /* OS_system */
 // ??? OS_EnableInterrupts
@@ -3778,22 +3778,22 @@ void sub_20A465C(void);
 // void OS_EnableInterrupts(void *);
 // ??? OS_DisableInterrupts_IrqAndFiq
 // ??? OS_RestoreInterrupts_IrqAndFiq
+// ??? OS_GetCpsrIrq
 // ??? OS_GetProcMode
 // ??? OS_SpinWait
 
-// ??? sub_20A4AA8
-void sub_20A4AB4(void);
-// ??? sub_20A4AD0
-// ??? sub_20A4B24
-// ??? sub_20A4B58
-// ??? sub_20A4B84
+void OS_WaitVBlankIntr(void);
+// ??? OS_InitReset
+// ??? OSi_CommonCallback
+// ??? OSi_SendToPxi
+// ??? OS_ResetSystem
 // ??? sub_20A4C40
 // ??? sub_20A4C5C
-// ??? CountLeadingZeros
-// ??? sub_20A4CE8
-// ??? sub_20A4D1C
+// ??? OsCountZeroBits
+// ??? OSi_InitVramExclusive
+// ??? OSi_TryLockVram
 // ??? sub_20A4DA4
-void hang(void);
+void OS_Terminate(void);
 void WaitForInterrupt(void);
 // ??? sub_20A4E90
 // ??? sub_20A4EA0
@@ -3802,7 +3802,7 @@ void WaitForInterrupt(void);
 // ??? sub_20A4FFC
 // ??? sub_20A50C0
 // ??? sub_20A5158
-// ??? sub_20A51C0
+// ??? MI_StopDma
 // ??? sub_20A523C
 // ??? sub_20A52C0
 // ??? sub_20A5314
@@ -3827,7 +3827,7 @@ void mem_fill(int val, void * dst, int size);
 // ??? sub_20A5CDC
 // ??? sub_20A5D48
 // ??? sub_20A5DB0
-// ??? sub_20A5E24
+// ??? MI_Init
 // ??? sub_20A5E3C
 // ??? sub_20A5E5C
 // ??? sub_20A5E84
@@ -3892,9 +3892,9 @@ void mem_fill(int val, void * dst, int size);
 // ??? sub_20A6FA8
 // ??? sub_20A6FDC
 // ??? PXI_InitFifo
-// ??? sub_20A7124
-// ??? sub_20A7170
-// ??? PXIi_GetFromFifo
+// ??? PXI_SetFifoRecvCallback
+// ??? PXI_IsCallbackReady
+// ??? PXI_SendWordByFifo
 // ??? PXIi_HandlerRecvFifoNotEmpty
 // ??? FSi_ReleaseCommand
 // ??? FSi_TranslateCommand
@@ -3991,7 +3991,7 @@ void mem_fill(int val, void * dst, int size);
 // ??? sub_20AB5FC
 // ??? sub_20AB638
 // ??? sub_20AB680
-void sub_20AB6C0(void);
+void PM_Init(void);
 // ??? sub_20AB764
 // ??? sub_20AB82C
 // ??? sub_20AB8C0
@@ -4230,7 +4230,7 @@ void sub_20AD244(int a);
 // ??? sub_20B6424
 // ??? sub_20B6448
 // ??? sub_20B6498
-// ??? sub_20B64E0
+// ??? CTRDG_Init
 // ??? sub_20B6594
 // ??? sub_20B6788
 // ??? sub_20B67B4

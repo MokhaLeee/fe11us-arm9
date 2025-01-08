@@ -69,7 +69,7 @@ ARM_FUNC_START sub_20C19C0
 sub_20C19C0:
 .incbin "fe11-arm9-base.bin", 0xC19C0, 0xC1B70 - 0xC19C0
 
-ARM_FUNC_START sub_20C1B70
+ARM_FUNC_START sub_20C1B70 @ some div
 sub_20C1B70:
 .incbin "fe11-arm9-base.bin", 0xC1B70, 0xC1B7C - 0xC1B70
 

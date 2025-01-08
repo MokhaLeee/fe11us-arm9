@@ -3,6 +3,7 @@ OUTPUT_ARCH(arm)
 ENTRY(_start)
 
 BSS_START = 0x020E3CA0; /* itcm_copy_start */
+SDK_IRQ_STACKSIZE = 0x800;
 
 SECTIONS
 {
@@ -38,12 +39,27 @@ SECTIONS
 		src/code_02078808.o(.text);
 		asm/code_0207884C.o(.text);
 		asm/code_02078878.o(.text);
+		asm/code_sdk.o(.text);
 		src/lib/nitro/OS_interrupt.o(.text);
-		src/lib/nitro/OS_interrupt_020A26F0.o(.text);
 		src/lib/nitro/OS_interrupt_020A26F0_.o(.text);
+		src/lib/nitro/OS_interrupt_020A26F0.o(.text);
 		asm/code_020A280C.o(.text);
 		asm/OS_cache.o(.text);
-		asm/code_020A3DE4.o(.text);
+		src/lib/nitro/OS_init.o(.text);
+		src/lib/nitro/OS_arena.o(.text);
+		src/lib/nitro/OS_arena_.o(.text);
+		src/lib/nitro/OS_tcm.o(.text);
+		src/lib/nitro/OS_protectionUnit.o(.text);
+		src/lib/nitro/OS_protectionRegion.o(.text);
+		src/lib/nitro/OS_exception.o(.text);
+		src/lib/nitro/OS_timer.o(.text);
+		src/lib/nitro/OS_tick.o(.text);
+		src/lib/nitro/OS_alarm.o(.text);
+		src/lib/nitro/OS_valarm.o(.text);
+		src/lib/nitro/OS_system.o(.text);
+		src/lib/nitro/OS_reset.o(.text);
+		asm/code_020A4C40.o(.text);
+		src/lib/nitro/OS_vramExclusive.o(.text);
 		asm/OS_system.o(.text);
 		src/sys.o(.text);
 		asm/code_020A4E90.o(.text);

@@ -29,8 +29,8 @@ ARM_FUNC_START sub_20A5158
 sub_20A5158:
 .incbin "fe11-arm9-base.bin", 0xA5158, 0xA51C0 - 0xA5158
 
-ARM_FUNC_START sub_20A51C0
-sub_20A51C0:
+ARM_FUNC_START MI_StopDma
+MI_StopDma:
 .incbin "fe11-arm9-base.bin", 0xA51C0, 0xA523C - 0xA51C0
 
 ARM_FUNC_START sub_20A523C

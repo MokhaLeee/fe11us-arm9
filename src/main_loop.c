@@ -13,19 +13,19 @@ struct UnkStruct_Func_200EDD4 * sub_200EDD4(struct UnkStruct_Func_200EDD4 * unk)
 
 void sub_200EDF0(void)
 {
-	sub_20A3E04();
-	sub_20A4430();
-	sub_20A465C();
-	sub_209F654();
+	OS_Init();
+	OS_InitTick();
+	OS_InitAlarm();
+	FX_Init();
 
 	unk_20DD67C = 0xFFFFFFFF;
 
-	sub_209F658();
-	sub_209F80C();
+	GX_Init();
+	GX_DispOff();
 
 	REG_DISPCNT_SUB &= ~MODE_0_2D;
 
-	sub_20AB6C0();
+	PM_Init();
 	sub_20A0480(0x1FF);
 
 	mem_fill(0, VRAM, 0xA4000);
@@ -38,8 +38,8 @@ void sub_200EDF0(void)
 	REG_EXMEMCNT |= ARM7_MAIN_RAM_PRIORITY;
 	REG_POWERCNT &= ~BIT(15); // disp_swap
 
-	sub_20A4198();
-	sub_20A41A8();
+	OS_EnableITCM();
+	OS_EnableDTCM();
 }
 
 void sub_200EECC(void)
@@ -54,7 +54,7 @@ void sub_200EECC(void)
 	sub_209F7D8(1);
 }
 
-void sub_200EF04(void)
+void InitSystem(void)
 {
 	void * tmp;
 	int i;
@@ -113,7 +113,7 @@ void sub_200EF04(void)
 
 void sub_200F028(void)
 {
-	sub_20A4AB4();
+	OS_WaitVBlankIntr();
 	sub_209F848();
 
 	REG_DISPCNT_SUB |= MODE_0_2D;
@@ -145,5 +145,5 @@ void main_loop(void)
 	gMainLoopBlocked = 0;
 
 	sub_2070480();
-	sub_20A2444(1, 1);
+	OS_WaitIrq(1, 1);
 }

@@ -9,16 +9,16 @@ ARM_FUNC_START PXI_InitFifo
 PXI_InitFifo:
 .incbin "fe11-arm9-base.bin", 0xA7024, 0xA7124 - 0xA7024
 
-ARM_FUNC_START sub_20A7124
-sub_20A7124:
+ARM_FUNC_START PXI_SetFifoRecvCallback
+PXI_SetFifoRecvCallback:
 .incbin "fe11-arm9-base.bin", 0xA7124, 0xA7170 - 0xA7124
 
-ARM_FUNC_START sub_20A7170
-sub_20A7170:
+ARM_FUNC_START PXI_IsCallbackReady
+PXI_IsCallbackReady:
 .incbin "fe11-arm9-base.bin", 0xA7170, 0xA7194 - 0xA7170
 
-ARM_FUNC_START PXIi_GetFromFifo
-PXIi_GetFromFifo:
+ARM_FUNC_START PXI_SendWordByFifo
+PXI_SendWordByFifo:
 .incbin "fe11-arm9-base.bin", 0xA7194, 0xA721C - 0xA7194
 
 ARM_FUNC_START PXIi_HandlerRecvFifoNotEmpty

@@ -328,8 +328,8 @@ pr_OSi_ThreadInfo: .4byte OSi_ThreadInfo
 _01FFC868: .4byte 0x020AA610
 _01FFC86C: .4byte 0x020AA650
 
-	arm_func_start sub_1FFC870
-sub_1FFC870: @ 0x01FFC870
+	arm_func_start OSi_DoResetSystem
+OSi_DoResetSystem: @ 0x01FFC870
 	push {r3, lr}
 	ldr r0, _01FFC89C @ =0x0219E5D4
 _01FFC878:
@@ -339,15 +339,15 @@ _01FFC878:
 	ldr r0, _01FFC8A0 @ =0x04000208
 	mov r1, #0
 	strh r1, [r0]
-	bl sub_1FFC984
-	bl sub_1FFC8A4
+	bl OSi_ReloadRomData
+	bl OSi_DoBoot
 	pop {r3, pc}
 	.align 2, 0
 _01FFC89C: .4byte 0x0219E5D4
 _01FFC8A0: .4byte 0x04000208
 
-	arm_func_start sub_1FFC8A4
-sub_1FFC8A4: @ 0x01FFC8A4
+	arm_func_start OSi_DoBoot
+OSi_DoBoot: @ 0x01FFC8A4
 	mov ip, #0x4000000
 	str ip, [ip, #0x208]
 	ldr r1, _01FFC950 @ =0x027E0000
@@ -368,16 +368,16 @@ _01FFC8C4:
 	ldr r4, [r3]
 	ldr r1, _01FFC95C @ =0x027FFD80
 	mov r2, #0x80
-	bl sub_1FFC970
+	bl OSi_CpuClear32
 	str r4, [r3]
 	ldr r1, _01FFC960 @ =0x027FFF80
 	mov r2, #0x18
-	bl sub_1FFC970
+	bl OSi_CpuClear32
 	ldr r1, _01FFC964 @ =0x027FFF98
 	strh r0, [r1]
 	ldr r1, _01FFC968 @ =0x027FFF9C
 	mov r2, #0x64
-	bl sub_1FFC970
+	bl OSi_CpuClear32
 	ldr r1, _01FFC954 @ =0x04000180
 _01FFC91C:
 	ldrh r0, [r1]
@@ -403,17 +403,17 @@ _01FFC964: .4byte 0x027FFF98
 _01FFC968: .4byte 0x027FFF9C
 _01FFC96C: .4byte 0x027FFE00
 
-	arm_func_start sub_1FFC970
-sub_1FFC970: @ 0x01FFC970
+	arm_func_start OSi_CpuClear32
+OSi_CpuClear32: @ 0x01FFC970
 	add ip, r1, r2
-_01FFC974:
+1:
 	cmp r1, ip
 	stmlt r1!, {r0}
-	blt _01FFC974
+	blt 1b
 	bx lr
 
-	arm_func_start sub_1FFC984
-sub_1FFC984: @ 0x01FFC984
+	arm_func_start OSi_ReloadRomData
+OSi_ReloadRomData: @ 0x01FFC984
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	ldr r1, _01FFCA24 @ =0x027FFC2C
 	ldr r5, [r1]

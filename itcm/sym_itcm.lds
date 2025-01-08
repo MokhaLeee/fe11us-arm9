@@ -362,11 +362,11 @@
 . = 0x01FFC864; _01FFC864 = .;
 . = 0x01FFC868; _01FFC868 = .;
 . = 0x01FFC86C; _01FFC86C = .;
-. = 0x01FFC870; sub_1FFC870 = .;
+. = 0x01FFC870; OSi_DoResetSystem = .;
 . = 0x01FFC878; _01FFC878 = .;
 . = 0x01FFC89C; _01FFC89C = .;
 . = 0x01FFC8A0; _01FFC8A0 = .;
-. = 0x01FFC8A4; sub_1FFC8A4 = .;
+. = 0x01FFC8A4; OSi_DoBoot = .;
 . = 0x01FFC8C4; _01FFC8C4 = .;
 . = 0x01FFC91C; _01FFC91C = .;
 . = 0x01FFC950; _01FFC950 = .;
@@ -377,9 +377,9 @@
 . = 0x01FFC964; _01FFC964 = .;
 . = 0x01FFC968; _01FFC968 = .;
 . = 0x01FFC96C; _01FFC96C = .;
-. = 0x01FFC970; sub_1FFC970 = .;
+. = 0x01FFC970; OSi_CpuClear32 = .;
 . = 0x01FFC974; _01FFC974 = .;
-. = 0x01FFC984; sub_1FFC984 = .;
+. = 0x01FFC984; OSi_ReloadRomData = .;
 . = 0x01FFC9A8; _01FFC9A8 = .;
 . = 0x01FFCA00; _01FFCA00 = .;
 . = 0x01FFCA24; _01FFCA24 = .;

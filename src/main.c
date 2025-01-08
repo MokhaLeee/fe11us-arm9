@@ -3,7 +3,7 @@
 
 void NitroMain(void)
 {
-    sub_200EF04();
+    InitSystem();
     sub_200F028();
     sub_2022F10();
     sub_20AD244(0x14);

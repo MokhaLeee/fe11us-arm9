@@ -44,3 +44,7 @@ IC_InvalidateAll:
 ARM_FUNC_START IC_InvalidateRange
 IC_InvalidateRange:
 .incbin "fe11-arm9-base.bin", 0xA3DC8, 0xA3DE4 - 0xA3DC8
+
+ARM_FUNC_START sub_20A3DE4
+sub_20A3DE4:
+.incbin "fe11-arm9-base.bin", 0xA3DE4, 0xA3E04 - 0xA3DE4

@@ -133,8 +133,8 @@ ARM_FUNC_START sub_20AB680
 sub_20AB680:
 .incbin "fe11-arm9-base.bin", 0xAB680, 0xAB6C0 - 0xAB680
 
-ARM_FUNC_START sub_20AB6C0
-sub_20AB6C0:
+ARM_FUNC_START PM_Init
+PM_Init:
 .incbin "fe11-arm9-base.bin", 0xAB6C0, 0xAB764 - 0xAB6C0
 
 ARM_FUNC_START sub_20AB764
@@ -1089,8 +1089,8 @@ ARM_FUNC_START sub_20B6498
 sub_20B6498:
 .incbin "fe11-arm9-base.bin", 0xB6498, 0xB64E0 - 0xB6498
 
-ARM_FUNC_START sub_20B64E0
-sub_20B64E0:
+ARM_FUNC_START CTRDG_Init
+CTRDG_Init:
 .incbin "fe11-arm9-base.bin", 0xB64E0, 0xB6594 - 0xB64E0
 
 ARM_FUNC_START sub_20B6594

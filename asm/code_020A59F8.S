@@ -29,8 +29,8 @@ ARM_FUNC_START sub_20A5DB0
 sub_20A5DB0:
 .incbin "fe11-arm9-base.bin", 0xA5DB0, 0xA5E24 - 0xA5DB0
 
-ARM_FUNC_START sub_20A5E24
-sub_20A5E24:
+ARM_FUNC_START MI_Init
+MI_Init:
 .incbin "fe11-arm9-base.bin", 0xA5E24, 0xA5E3C - 0xA5E24
 
 ARM_FUNC_START sub_20A5E3C

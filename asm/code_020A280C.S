@@ -1,28 +1,9 @@
 .include "macros.inc"
 .section .text
 
-ARM_FUNC_START OS_SetIrqMask
-OS_SetIrqMask:
-.incbin "fe11-arm9-base.bin", 0xA2780, 0xA27AC - 0xA2780
 
-ARM_FUNC_START OS_EnableIrqMask
-OS_EnableIrqMask:
-.incbin "fe11-arm9-base.bin", 0xA27AC, 0xA27DC - 0xA27AC
-
-ARM_FUNC_START sub_20A27DC
-sub_20A27DC:
-.incbin "fe11-arm9-base.bin", 0xA27DC, 0xA280C - 0xA27DC
-
-ARM_FUNC_START sub_20A280C
-sub_20A280C:
-.incbin "fe11-arm9-base.bin", 0xA280C, 0xA2838 - 0xA280C
-
-ARM_FUNC_START sub_20A2838
-sub_20A2838:
-.incbin "fe11-arm9-base.bin", 0xA2838, 0xA286C - 0xA2838
-
-ARM_FUNC_START sub_20A286C
-sub_20A286C:
+ARM_FUNC_START OS_InitLock
+OS_InitLock:
 .incbin "fe11-arm9-base.bin", 0xA286C, 0xA2938 - 0xA286C
 
 ARM_FUNC_START sub_20A2938
@@ -125,8 +106,8 @@ ARM_FUNC_START OSi_RescheduleThread
 OSi_RescheduleThread:
 .incbin "fe11-arm9-base.bin", 0xA2E5C, 0xA2F24 - 0xA2E5C
 
-ARM_FUNC_START sub_20A2F24
-sub_20A2F24:
+ARM_FUNC_START OS_InitThread
+OS_InitThread:
 .incbin "fe11-arm9-base.bin", 0xA2F24, 0xA3080 - 0xA2F24
 
 ARM_FUNC_START sub_20A3080
@@ -245,8 +226,8 @@ ARM_FUNC_START sub_20A3860
 sub_20A3860:
 .incbin "fe11-arm9-base.bin", 0xA3860, 0xA3868 - 0xA3860
 
-ARM_FUNC_START sub_20A3868
-sub_20A3868:
+ARM_FUNC_START OS_GetConsoleType
+OS_GetConsoleType:
 .incbin "fe11-arm9-base.bin", 0xA3868, 0xA3880 - 0xA3868
 
 ARM_FUNC_START sub_20A3880

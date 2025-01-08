@@ -1,7 +1,7 @@
 #include "global.h"
 #include "sys.h"
 
-void hang(void)
+void OS_Terminate(void)
 {
     while (TRUE)
     {

@@ -70,8 +70,6 @@ OSIrqFunction OS_GetIrqFunction(OSIrqMask intrBit)
     return 0;
 }
 
-
-
 #if 0
 
 OSIrqMask OS_SetIrqMask(OSIrqMask mask)
