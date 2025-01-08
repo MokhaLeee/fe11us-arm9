@@ -3,3 +3,4 @@
 fe11-arm9.bin
 *.elf
 *.map
+*__pycache__
