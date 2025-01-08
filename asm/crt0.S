@@ -97,7 +97,7 @@ _start: @ 0x02000800
 	ldr r1, pr_SDK_AUTOLOAD_DTCM_START @ =0x027E0000
 	add r1, r1, #0x3fc0
 	add r1, r1, #0x3c
-	ldr r0, _02000930 @ =unk_01FFC6BC
+	ldr r0, _02000930 @ =sub_1FFC6BC
 	str r0, [r1]
 
 	bl _fp_init
@@ -117,7 +117,7 @@ _02000920: .4byte 0x05000000
 _02000924: .4byte 0x07000000
 _02000928: .4byte _start_ModuleParams
 _0200092C: .4byte unk_027FFF9C
-_02000930: .4byte unk_01FFC6BC
+_02000930: .4byte sub_1FFC6BC
 _pr_NitroMain: .4byte NitroMain
 _02000938: .4byte 0xFFFF0000
 

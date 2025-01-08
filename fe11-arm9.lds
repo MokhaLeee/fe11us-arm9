@@ -8,11 +8,7 @@ SECTIONS
 {
 	itcm : ALIGN(4)
 	{
-		. = 0x01FF8000; sub_1FF8000 = .;
-		. = 0x01FFA720; sub_1FFA720 = .;
-		. = 0x01FFA764; sub_1FFA764 = .;
-		. = 0x01FFC390; Proc_Run = .;
-		. = 0x01FFC6BC; unk_01FFC6BC = .;
+		INCLUDE "itcm/sym_itcm.lds"
 	}
 
 	. = 0x02000000;
