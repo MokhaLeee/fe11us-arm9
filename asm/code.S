@@ -389,8 +389,8 @@ ARM_FUNC_START func_0201D9F4
 func_0201D9F4:
 .incbin "fe11-arm9-base.bin", 0x1D9F4, 0x1DA48 - 0x1D9F4
 
-ARM_FUNC_START func_0201DA48
-func_0201DA48:
+ARM_FUNC_START func_0201da48
+func_0201da48:
 .incbin "fe11-arm9-base.bin", 0x1DA48, 0x1DA98 - 0x1DA48
 
 ARM_FUNC_START func_0201DA98

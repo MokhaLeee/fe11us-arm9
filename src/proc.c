@@ -2,6 +2,8 @@
 #include "proc.h"
 #include "nitro-sdk/OS_thread.h"
 
+#pragma force_active on
+
 void Proc_Init(void)
 {
     struct Proc * it = gProcArray;
@@ -703,3 +705,260 @@ BOOL func_02019734(struct Proc * proc)
 
     return TRUE;
 }
+
+BOOL ProcCmd_Goto(struct Proc * proc)
+{
+    Proc_Goto(proc, proc->proc_scrCur->dataImm, 0);
+    proc->proc_scrCur++;
+    return TRUE;
+}
+
+BOOL ProcCmd_GotoIfYes(struct Proc * proc)
+{
+    BOOL (*func)(struct Proc *) = proc->proc_scrCur->dataPtr;
+
+    if (func == NULL || func(proc))
+    {
+        Proc_Goto(proc, proc->proc_scrCur->dataImm, 0);
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL ProcCmd_GotoIfNo(struct Proc * proc)
+{
+    BOOL (*func)(struct Proc *) = proc->proc_scrCur->dataPtr;
+
+    if (func == NULL || !func(proc))
+    {
+        Proc_Goto(proc, proc->proc_scrCur->dataImm, 0);
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL ProcCmd_Jump(struct Proc * proc)
+{
+    Proc_GotoScript(proc, proc->proc_scrCur->dataPtr);
+    return TRUE;
+}
+
+void SleepRepeatFunc(struct Proc * proc)
+{
+    proc->proc_sleepTime--;
+
+    if (proc->proc_sleepTime != 0)
+    {
+        return;
+    }
+
+    Proc_Break(proc, 0);
+
+    return;
+}
+
+BOOL ProcCmd_Sleep(struct Proc * proc)
+{
+    if (proc->proc_scrCur->dataImm != 0)
+    {
+        proc->proc_sleepTime = proc->proc_scrCur->dataImm;
+        proc->proc_idleCb = SleepRepeatFunc;
+    }
+
+    proc->proc_scrCur++;
+
+    return FALSE;
+}
+
+BOOL ProcCmd_Mark(struct Proc * proc)
+{
+    proc->proc_mark = proc->proc_scrCur->dataImm;
+    proc->proc_scrCur++;
+    return TRUE;
+}
+
+BOOL func_020198c4(struct Proc * proc)
+{
+    if (!func_02019190(proc, proc->proc_scrCur->dataImm))
+    {
+        return FALSE;
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL func_020198f8(struct Proc * proc)
+{
+    if (!func_02019190(proc, proc->proc_scrCur->dataImm))
+    {
+        return FALSE;
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL func_0201992c(struct Proc * proc)
+{
+    func_02019230(proc, proc->proc_scrCur->dataImm);
+    proc->proc_scrCur++;
+    return TRUE;
+}
+
+BOOL func_02019954(struct Proc * proc)
+{
+    proc->proc_scrCur++;
+    return TRUE;
+}
+
+BOOL func_02019968(struct Proc * proc)
+{
+    u8 flag = ((u32)proc->proc_scrCur->dataPtr) & 2 ? 1 : 0;
+
+    if (!(((u32)proc->proc_scrCur->dataPtr) & 1))
+    {
+        func_0201D9A0(proc, proc->proc_scrCur->dataImm, flag);
+    }
+    else
+    {
+        func_0201da48(proc, proc->proc_scrCur->dataImm, flag);
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL func_020199b8(struct Proc * proc)
+{
+    u8 flag = ((u32)proc->proc_scrCur->dataPtr) & 2 ? 1 : 0;
+
+    if (!(((u32)proc->proc_scrCur->dataPtr) & 1))
+    {
+        func_0201D9F4(proc, proc->proc_scrCur->dataImm, flag);
+    }
+    else
+    {
+        func_0201DA98(proc, proc->proc_scrCur->dataImm, flag);
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL func_02019a08(struct Proc * proc)
+{
+    u8 flag = ((u32)proc->proc_scrCur->dataPtr) & 2 ? 1 : 0;
+
+    if (!(((u32)proc->proc_scrCur->dataPtr) & 1))
+    {
+        func_0201D728(proc, proc->proc_scrCur->dataImm, flag);
+    }
+    else
+    {
+        func_0201D7C8(proc, proc->proc_scrCur->dataImm, flag);
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL func_02019a58(struct Proc * proc)
+{
+    u8 flag = ((u32)proc->proc_scrCur->dataPtr) & 2 ? 1 : 0;
+
+    if (!(((u32)proc->proc_scrCur->dataPtr) & 1))
+    {
+        func_0201D778(proc, proc->proc_scrCur->dataImm, flag);
+    }
+    else
+    {
+        func_0201D814(proc, proc->proc_scrCur->dataImm, flag);
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL func_02019aa8(struct Proc * proc)
+{
+    u8 flag = ((u32)proc->proc_scrCur->dataPtr) & 2 ? 1 : 0;
+
+    if (!(((u32)proc->proc_scrCur->dataPtr) & 1))
+    {
+        func_0201D860(proc, proc->proc_scrCur->dataImm, flag);
+    }
+    else
+    {
+        func_0201D900(proc, proc->proc_scrCur->dataImm, flag);
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL func_02019af8(struct Proc * proc)
+{
+    u8 flag = ((u32)proc->proc_scrCur->dataPtr) & 2 ? 1 : 0;
+
+    if (!(((u32)proc->proc_scrCur->dataPtr) & 1))
+    {
+        func_0201D8B0(proc, proc->proc_scrCur->dataImm, flag);
+    }
+    else
+    {
+        func_0201D950(proc, proc->proc_scrCur->dataImm, flag);
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL ProcCmd_Overlay(struct Proc * proc)
+{
+    if (proc->proc_scrCur->dataPtr != 0)
+    {
+        func_0200F20C(proc->proc_scrCur->dataImm);
+    }
+    else
+    {
+        func_0200F24C(proc->proc_scrCur->dataImm);
+    }
+
+    proc->proc_scrCur++;
+
+    return TRUE;
+}
+
+BOOL func_02019b84(struct Proc * proc)
+{
+    func_0200F28C(proc->proc_scrCur->dataImm);
+    proc->proc_scrCur++;
+    return TRUE;
+}
+
+void func_02019bac(struct Proc * proc)
+{
+    proc->proc_funcTable->unk_08(proc);
+    return;
+}
+
+void func_02019bc0(struct Proc * proc)
+{
+    proc->proc_funcTable->unk_0C(proc);
+    return;
+}
+
+#pragma force_active reset

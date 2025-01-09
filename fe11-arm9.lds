@@ -29,7 +29,6 @@ SECTIONS
 		src/main_loop.o(.text);
 		asm/code_0200F0F0.o(.text);
 		src/proc.o(.text);
-		asm/proc.o(.text);
 		asm/code.o(.text);
 		src/menu.o(.text);
 		asm/code_02034C44.o(.text);

@@ -2,6 +2,7 @@
 #define UNKNOWN_FUNCS_H
 
 #include "nitro/types.h"
+#include "proc.h"
 
 /**
  * itcm
@@ -402,9 +403,9 @@ void func_0200F028(void);
 void main_loop(void);
 void func_0200F0F0(void);
 void func_0200F1E8(void);
-// ??? func_0200F20C
-// ??? func_0200F24C
-// ??? func_0200F28C
+void func_0200F20C(u32 overlayId);
+void func_0200F24C(u32 overlayId);
+void func_0200F28C(u32 overlayId);
 // ??? func_0200F2F8
 // ??? func_0200F308
 // ??? func_0200F318
@@ -806,7 +807,7 @@ void func_02015FB4(void);
 // ??? func_02019A58
 // ??? func_02019AA8
 // ??? func_02019AF8
-// ??? func_02019B48
+// ??? ProcCmd_Overlay
 // ??? func_02019B84
 void func_02019BD4(void);
 void func_02019C30(void);
@@ -896,18 +897,18 @@ void func_0201C204(void);
 // ??? func_0201C8A0
 // ??? func_0201CC84
 // ??? func_0201D370
-// ??? func_0201D728
-// ??? func_0201D778
-// ??? func_0201D7C8
-// ??? func_0201D814
-// ??? func_0201D860
-// ??? func_0201D8B0
-// ??? func_0201D900
-// ??? func_0201D950
-// ??? func_0201D9A0
-// ??? func_0201D9F4
-// ??? func_0201DA48
-// ??? func_0201DA98
+void func_0201D728(struct Proc * proc, u16 data, u32 flag);
+void func_0201D778(struct Proc * proc, u16 data, u32 flag);
+void func_0201D7C8(struct Proc * proc, u16 data, u32 flag);
+void func_0201D814(struct Proc * proc, u16 data, u32 flag);
+void func_0201D860(struct Proc * proc, u16 data, u32 flag);
+void func_0201D8B0(struct Proc * proc, u16 data, u32 flag);
+void func_0201D900(struct Proc * proc, u16 data, u32 flag);
+void func_0201D950(struct Proc * proc, u16 data, u32 flag);
+void func_0201D9A0(struct Proc * proc, u16 data, u32 flag);
+void func_0201D9F4(struct Proc * proc, u16 data, u32 flag);
+void func_0201da48(struct Proc * proc, u16 data, u32 flag);
+void func_0201DA98(struct Proc * proc, u16 data, u32 flag);
 // ??? func_0201DAE8
 // ??? func_0201DB24
 // ??? func_0201DB38
