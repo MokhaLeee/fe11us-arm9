@@ -12,10 +12,6 @@
 . = 0x0219796C - BSS_START; unk_0219796C = .;
 . = 0x0219E20C - BSS_START; OSi_IrqCallbackInfo = .;
 . = 0x0219E294 - BSS_START; OSi_ThreadInfo = .;
-
-. = 0x0219E4EC - BSS_START;
-src/lib/nitro/OS_arena.o(.bss);
-
 . = 0x0219E5AC - BSS_START; unk_0219E5AC = .;
 . = 0x0219E5D8 - BSS_START; unk_0219E5D8 = .;
 . = 0x021A01E8 - BSS_START; fs_arch_st = .;
