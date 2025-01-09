@@ -124,26 +124,26 @@ typedef enum {
 } GXVRamOBJExtPltt;
 
 typedef enum {
-    GX_VRAM_SUB_BG_NONE = 0x0000,
-    GX_VRAM_SUB_BG_128_C = GX_VRAM_C,
-    GX_VRAM_SUB_BG_32_H = GX_VRAM_H,
-    GX_VRAM_SUB_BG_48_HI = GX_VRAM_H | GX_VRAM_I
+    GX_VRAM_func_0BG_NONE = 0x0000,
+    GX_VRAM_func_0BG_128_C = GX_VRAM_C,
+    GX_VRAM_func_0BG_32_H = GX_VRAM_H,
+    GX_VRAM_func_0BG_48_HI = GX_VRAM_H | GX_VRAM_I
 } GXVRamSubBG;
 
 typedef enum {
-    GX_VRAM_SUB_OBJ_NONE = 0x0000,
-    GX_VRAM_SUB_OBJ_128_D = GX_VRAM_D,
-    GX_VRAM_SUB_OBJ_16_I = GX_VRAM_I
+    GX_VRAM_func_0OBJ_NONE = 0x0000,
+    GX_VRAM_func_0OBJ_128_D = GX_VRAM_D,
+    GX_VRAM_func_0OBJ_16_I = GX_VRAM_I
 } GXVRamSubOBJ;
 
 typedef enum {
-    GX_VRAM_SUB_BGEXTPLTT_NONE = 0x0000,
-    GX_VRAM_SUB_BGEXTPLTT_0123_H = GX_VRAM_H
+    GX_VRAM_func_0BGEXTPLTT_NONE = 0x0000,
+    GX_VRAM_func_0BGEXTPLTT_0123_H = GX_VRAM_H
 } GXVRamSubBGExtPltt;
 
 typedef enum {
-    GX_VRAM_SUB_OBJEXTPLTT_NONE = 0x0000,
-    GX_VRAM_SUB_OBJEXTPLTT_0_I = GX_VRAM_I
+    GX_VRAM_func_0OBJEXTPLTT_NONE = 0x0000,
+    GX_VRAM_func_0OBJEXTPLTT_0_I = GX_VRAM_I
 } GXVRamSubOBJExtPltt;
 
 //some of the symbols don't match what the function does

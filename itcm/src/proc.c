@@ -66,7 +66,7 @@ struct Proc * AllocateProcess(void)
     return proc;
 }
 
-void sub_1FFBDA4(struct Proc * proc)
+void func_01FFBDA4(struct Proc * proc)
 {
     struct Proc ** pAllocHead;
     struct Proc * procHead;
@@ -205,7 +205,7 @@ struct Proc * Proc_Start(struct ProcCmd * script, struct Proc * parent)
     return Proc_StartExt(script, parent, data_027e1268);
 }
 
-struct Proc * sub_1FFBF90(struct ProcCmd * script, struct Proc * parent)
+struct Proc * func_01FFBF90(struct ProcCmd * script, struct Proc * parent)
 {
     OSIntrMode var_0 = OS_DisableInterrupts();
 
@@ -216,7 +216,7 @@ struct Proc * sub_1FFBF90(struct ProcCmd * script, struct Proc * parent)
     return proc;
 }
 
-void sub_1FFBFD0(struct Proc * proc)
+void func_01FFBFD0(struct Proc * proc)
 {
     proc->proc_flags &= ~4;
     return;
@@ -242,7 +242,7 @@ struct Proc * Proc_StartBlocking(struct ProcCmd * script, struct Proc * parent)
     return Proc_StartBlockingExt(script, parent, data_027e1268);
 }
 
-struct Proc * sub_1FFC030(struct ProcCmd * script, struct Proc * parent)
+struct Proc * func_01FFC030(struct ProcCmd * script, struct Proc * parent)
 {
     if (parent == 0)
     {
@@ -257,31 +257,31 @@ struct Proc * sub_1FFC030(struct ProcCmd * script, struct Proc * parent)
     return Proc_StartBlocking(script, parent);
 }
 
-void sub_1FFC068(struct Proc * proc)
+void func_01FFC068(struct Proc * proc)
 {
     if (proc->proc_prev != NULL)
     {
-        sub_1FFC068(proc->proc_prev);
+        func_01FFC068(proc->proc_prev);
     }
 
     if (proc->proc_child != NULL)
     {
-        sub_1FFC068(proc->proc_child);
+        func_01FFC068(proc->proc_child);
     }
 
     proc->proc_flags |= 1;
 }
 
-void sub_1FFC0A0(struct Proc * proc)
+void func_01FFC0A0(struct Proc * proc)
 {
     if (proc->proc_prev != NULL)
     {
-        sub_1FFC0A0(proc->proc_prev);
+        func_01FFC0A0(proc->proc_prev);
     }
 
     if (proc->proc_child != NULL)
     {
-        sub_1FFC0A0(proc->proc_child);
+        func_01FFC0A0(proc->proc_child);
     }
 
     if (proc->proc_flags & 0x80)
@@ -291,7 +291,7 @@ void sub_1FFC0A0(struct Proc * proc)
 
     proc->proc_flags |= 0x80;
 
-    sub_1FFBDA4(proc);
+    func_01FFBDA4(proc);
 }
 
 void ClearProc(struct Proc * proc)
@@ -351,13 +351,13 @@ void Proc_End(struct Proc * proc)
     }
 
     UnlinkProc(proc);
-    sub_1FFC068(proc);
+    func_01FFC068(proc);
 
     _bkp = REG_IME;
     REG_IME = ime;
 
     ClearProc(proc);
-    sub_1FFC0A0(proc);
+    func_01FFC0A0(proc);
 }
 
 void RunProcessRecursive(struct Proc * proc)
@@ -425,7 +425,7 @@ _01ffc2d4:
     }
 }
 
-void sub_1FFC2F4(struct Proc * proc)
+void func_01FFC2F4(struct Proc * proc)
 {
     void * unk;
 
@@ -438,7 +438,7 @@ void sub_1FFC2F4(struct Proc * proc)
 
     if (proc->proc_prev != NULL)
     {
-        sub_1FFC2F4(proc->proc_prev);
+        func_01FFC2F4(proc->proc_prev);
     }
 
     proc->proc_flags &= ~0x10;
@@ -460,14 +460,14 @@ void sub_1FFC2F4(struct Proc * proc)
 
     if (proc->proc_child != NULL)
     {
-        sub_1FFC2F4(proc->proc_child);
+        func_01FFC2F4(proc->proc_child);
     }
 }
 
 void Proc_Run(u32 treeNum)
 {
     RunProcessRecursive(Root_Proc(treeNum));
-    sub_1FFC2F4(Root_Proc(treeNum));
+    func_01FFC2F4(Root_Proc(treeNum));
 }
 
 void Proc_Break(struct Proc * proc, s32 arg_1)
@@ -490,7 +490,7 @@ void Proc_Break(struct Proc * proc, s32 arg_1)
     }
 }
 
-void sub_1FFC3F4(struct Proc * proc)
+void func_01FFC3F4(struct Proc * proc)
 {
     proc->proc_scrCur--;
 }

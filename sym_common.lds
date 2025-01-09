@@ -24,8 +24,8 @@
 . = 0x021A23E0 - BSS_START; bss_end = .;
 
 /* idk */
-. = 0x021A4804 - BSS_START; sub_21A4804 = .;
-. = 0x021A8274 - BSS_START; sub_21A8274 = .;
+. = 0x021A4804 - BSS_START; func_021A4804 = .;
+. = 0x021A8274 - BSS_START; func_021A8274 = .;
 
 . = 0x021E3324 - BSS_START; unk_021E3324 = .;
 . = 0x021E3328 - BSS_START; unk_021E3328 = .;

@@ -13,10 +13,10 @@ struct GX_State
     u16     bgExtPltt;
     u16     objExtPltt;
 
-    u16     sub_bg;
-    u16     sub_obj;
-    u16     sub_bgExtPltt;
-    u16     sub_objExtPltt;
+    u16     func_0bg;
+    u16     func_0obj;
+    u16     func_0bgExtPltt;
+    u16     func_0objExtPltt;
 };
 
 void GX_InitGXState();

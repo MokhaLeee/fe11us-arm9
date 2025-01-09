@@ -153,7 +153,7 @@ GXBGScrOffset;
 
 typedef enum
 {
-    GX_DISP_SELECT_SUB_MAIN = 0,
+    GX_DISP_SELECT_func_0MAIN = 0,
     GX_DISP_SELECT_MAIN_SUB = 1
 }
 GXDispSelect;

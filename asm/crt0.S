@@ -296,8 +296,8 @@ ARM_FUNC_START NitroStartUp
 NitroStartUp: @ 0x02000B60
 	bx lr
 
-ARM_FUNC_START nullsub_2
-nullsub_2: @ 0x02000B64
+ARM_FUNC_START nullfunc_02
+nullfunc_02: @ 0x02000B64
 	bx lr
 
 .global _start_ModuleParams @ 0x02000B68

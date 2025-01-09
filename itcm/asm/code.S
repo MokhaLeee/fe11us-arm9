@@ -1,8 +1,8 @@
 .include "macros.inc"
 .section .text
 
-	arm_func_start sub_1FF8000
-sub_1FF8000: @ 0x01FF8000
+	arm_func_start func_01FF8000
+func_01FF8000: @ 0x01FF8000
 	push {r3, r4, r5, r6, r7, r8, sb, lr}
 	mov r8, r0
 	mov r7, #0
@@ -26,13 +26,13 @@ sub_1FF8000: @ 0x01FF8000
 	mov r5, r1
 	mov r4, r2
 	strh r6, [r0, #0x6c]
-	bl sub_21A4804
+	bl func_021A4804
 	cmp r0, #0
 	beq _01FF80A0
 	mov r6, r7
 _01FF806C:
 	mov r0, r6
-	bl sub_2021410
+	bl func_02021410
 	ldrb r0, [r0, #0x756]
 	cmp r0, #0xe
 	bne _01FF8094
@@ -48,7 +48,7 @@ _01FF8094:
 _01FF80A0:
 	mov r0, r8
 	mvn r1, #0
-	bl sub_2000D14
+	bl func_02000D14
 	ldr r0, [r8, #0x850]
 	mov r3, #0x20
 	strb r5, [r0]
@@ -105,7 +105,7 @@ _01FF814C:
 	beq _01FF8180
 	mov r0, r8
 	mov r1, r6
-	bl sub_1FF82B4
+	bl func_01FF82B4
 _01FF8180:
 	ldr r0, [r8, #0x84c]
 	ldrb r0, [r0, #2]
@@ -113,7 +113,7 @@ _01FF8180:
 	beq _01FF819C
 	mov r0, r8
 	mov r1, r5
-	bl sub_1FF82B4
+	bl func_01FF82B4
 _01FF819C:
 	ldr r0, [r8, #0x84c]
 	ldrb r0, [r0, #2]
@@ -121,7 +121,7 @@ _01FF819C:
 	beq _01FF81B8
 	mov r0, r8
 	mov r1, r4
-	bl sub_1FF82B4
+	bl func_01FF82B4
 _01FF81B8:
 	ldr r0, [r8, #0x84c]
 	ldrb r0, [r0, #2]
@@ -129,7 +129,7 @@ _01FF81B8:
 	beq _01FF81D4
 	mov r0, r8
 	mov r1, sb
-	bl sub_1FF82B4
+	bl func_01FF82B4
 _01FF81D4:
 	ldr r0, [r8, #0x84c]
 	add r3, r0, #4
@@ -146,8 +146,8 @@ _01FF81FC:
 	.byte 0xF8, 0x83, 0xBD, 0xE8
 _01FF8200: .4byte 0x02197254
 
-	arm_func_start sub_1FF8204
-sub_1FF8204: @ 0x01FF8204
+	arm_func_start func_01FF8204
+func_01FF8204: @ 0x01FF8204
 	push {r4, r5, r6, lr}
 	sub sp, sp, #8
 	ldr ip, _01FF8254 @ =0x021E3328
@@ -164,15 +164,15 @@ sub_1FF8204: @ 0x01FF8204
 	str lr, [sp]
 	and r2, r2, #0xff
 	str ip, [sp, #4]
-	bl sub_1FF8000
+	bl func_01FF8000
 	str r6, [r4, #0x860]
 	add sp, sp, #8
 	pop {r4, r5, r6, pc}
 	.align 2, 0
 _01FF8254: .4byte 0x021E3328
 
-	arm_func_start sub_1FF8258
-sub_1FF8258: @ 0x01FF8258
+	arm_func_start func_01FF8258
+func_01FF8258: @ 0x01FF8258
 	push {r4, r5, r6, lr}
 	sub sp, sp, #8
 	ldr r4, _01FF82B0 @ =0x021E3328
@@ -191,15 +191,15 @@ sub_1FF8258: @ 0x01FF8258
 	and r1, r1, #0xff
 	and r2, r2, #0xff
 	stm sp, {r5, ip}
-	bl sub_1FF8000
+	bl func_01FF8000
 	str r6, [r4, #0x860]
 	add sp, sp, #8
 	pop {r4, r5, r6, pc}
 	.align 2, 0
 _01FF82B0: .4byte 0x021E3328
 
-	arm_func_start sub_1FF82B4
-sub_1FF82B4: @ 0x01FF82B4
+	arm_func_start func_01FF82B4
+func_01FF82B4: @ 0x01FF82B4
 	push {r3, r4, r5, r6, r7, r8, sb, lr}
 	mov r7, r1
 	mov r8, r0
@@ -288,7 +288,7 @@ _01FF83A4:
 	ldr r0, [r0]
 	ldr r0, [r0, #0x20]
 	ldr r0, [r0, #0xe8]
-	bl sub_2038248
+	bl func_02038248
 	ldr r1, [r8, #0x864]
 	ldrsb sb, [r1, r0]
 _01FF83F4:
@@ -368,7 +368,7 @@ _01FF8500:
 	mov r0, r8
 	mov r1, r5
 	mov r2, r4
-	bl sub_2001770
+	bl func_02001770
 	cmp r0, #0
 	popge {r3, r4, r5, r6, r7, r8, sb, pc}
 _01FF8520:
@@ -398,8 +398,8 @@ _01FF8574: .4byte 0x02197254
 _01FF8578: .4byte 0x021974D8
 _01FF857C: .4byte 0x021E3324
 
-	arm_func_start sub_1FF8580
-sub_1FF8580: @ 0x01FF8580
+	arm_func_start func_01FF8580
+func_01FF8580: @ 0x01FF8580
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x20
 	cmp r2, #0xff
@@ -548,8 +548,8 @@ _01FF8768:
 	.align 2, 0
 _01FF879C: .4byte 0x021E3328
 
-	arm_func_start sub_1FF87A0
-sub_1FF87A0: @ 0x01FF87A0
+	arm_func_start func_01FF87A0
+func_01FF87A0: @ 0x01FF87A0
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x20
 	cmp r2, #0xff
@@ -698,8 +698,8 @@ _01FF8988:
 	.align 2, 0
 _01FF89BC: .4byte 0x021E3328
 
-	arm_func_start sub_1FF89C0
-sub_1FF89C0: @ 0x01FF89C0
+	arm_func_start func_01FF89C0
+func_01FF89C0: @ 0x01FF89C0
 	push {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x24
 	mov r4, r0
@@ -713,12 +713,12 @@ sub_1FF89C0: @ 0x01FF89C0
 	mov r2, r3
 	ldr r3, [sp, #0x4c]
 	mov r0, r4
-	bl sub_1FF8580
+	bl func_01FF8580
 	ldr r1, [sp]
 	ldr r3, [sp, #0x4c]
 	mov r0, r4
 	mov r2, r5
-	bl sub_1FF87A0
+	bl func_01FF87A0
 	add sp, sp, #0x24
 	pop {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _01FF8A14:
@@ -872,8 +872,8 @@ _01FF8C04:
 	.align 2, 0
 _01FF8C38: .4byte 0x021E3328
 
-	arm_func_start sub_1FF8C3C
-sub_1FF8C3C: @ 0x01FF8C3C
+	arm_func_start func_01FF8C3C
+func_01FF8C3C: @ 0x01FF8C3C
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x10
 	mov sl, r0
@@ -894,15 +894,15 @@ _01FF8C7C:
 	mov r0, sl
 	mov r1, r6
 	mov r2, #1
-	bl sub_203CB6C
+	bl func_0203CB6C
 	cmp r0, #0
 	beq _01FF8D4C
 	mov r0, r8
-	bl sub_203DF8C
+	bl func_0203DF8C
 	mov r7, r0
 	mov r1, sl
 	ldrb sb, [r7, #0x19]
-	bl sub_2038E0C
+	bl func_02038E0C
 	ldr r2, [r7, #0x24]
 	ldr r1, [r7, #0x28]
 	and r2, r2, #0x10
@@ -963,8 +963,8 @@ _01FF8D4C:
 	add sp, sp, #0x10
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
-	arm_func_start sub_1FF8D88
-sub_1FF8D88: @ 0x01FF8D88
+	arm_func_start func_01FF8D88
+func_01FF8D88: @ 0x01FF8D88
 	push {r3, lr}
 	sub sp, sp, #0x10
 	ldrb ip, [sp, #0x18]
@@ -974,12 +974,12 @@ sub_1FF8D88: @ 0x01FF8D88
 	str r2, [sp, #0xc]
 	ldrsb r2, [r1, #0x6e]
 	ldrsb r3, [r1, #0x6f]
-	bl sub_1FF8E50
+	bl func_01FF8E50
 	add sp, sp, #0x10
 	pop {r3, pc}
 
-	arm_func_start sub_1FF8DB8
-sub_1FF8DB8: @ 0x01FF8DB8
+	arm_func_start func_01FF8DB8
+func_01FF8DB8: @ 0x01FF8DB8
 	push {r4, lr}
 	sub sp, sp, #0x10
 	ldrb r4, [sp, #0x18]
@@ -990,10 +990,10 @@ sub_1FF8DB8: @ 0x01FF8DB8
 	str r2, [sp, #0xc]
 	ldrsb r2, [r4, #0x6e]
 	ldrsb r3, [r4, #0x6f]
-	bl sub_1FF8E50
+	bl func_01FF8E50
 	mov r0, r4
 	mov r1, #0x8000000
-	bl sub_203C810
+	bl func_0203C810
 	cmp r0, #0
 	addeq sp, sp, #0x10
 	popeq {r4, pc}
@@ -1020,8 +1020,8 @@ sub_1FF8DB8: @ 0x01FF8DB8
 _01FF8E48: .4byte 0x021E3324
 _01FF8E4C: .4byte 0x021E3328
 
-	arm_func_start sub_1FF8E50
-sub_1FF8E50: @ 0x01FF8E50
+	arm_func_start func_01FF8E50
+func_01FF8E50: @ 0x01FF8E50
 	push {r3, r4, r5, r6, r7, r8, sb, lr}
 	sub sp, sp, #8
 	ldr r5, [sp, #0x28]
@@ -1034,12 +1034,12 @@ sub_1FF8E50: @ 0x01FF8E50
 	ldrb r4, [sb, #0x874]
 	bne _01FF8E88
 	mov r0, r8
-	bl sub_203C77C
+	bl func_0203C77C
 	mov r5, r0
 _01FF8E88:
 	mov r0, r8
 	mov r1, #0x8000000
-	bl sub_203C810
+	bl func_0203C810
 	cmp r0, #0
 	ldr r1, [r8, #0x4c]
 	ldr r0, [sp, #0x2c]
@@ -1056,7 +1056,7 @@ _01FF8E88:
 	ldrb r3, [r1, #0x28]
 	and r1, r7, #0xff
 	and r2, r6, #0xff
-	bl sub_1FF8000
+	bl func_01FF8000
 	ldrb r0, [sp, #0x30]
 	cmp r0, #0
 	ldreqb r0, [sp, #0x34]
@@ -1072,14 +1072,14 @@ _01FF8E88:
 	mov r0, sb
 	mov r1, r8
 	str r5, [sp]
-	bl sub_1FF8F24
+	bl func_01FF8F24
 _01FF8F18:
 	strb r4, [sb, #0x874]
 	add sp, sp, #8
 	pop {r3, r4, r5, r6, r7, r8, sb, pc}
 
-	arm_func_start sub_1FF8F24
-sub_1FF8F24: @ 0x01FF8F24
+	arm_func_start func_01FF8F24
+func_01FF8F24: @ 0x01FF8F24
 	push {r4, r5, r6, r7, lr}
 	sub sp, sp, #0x1c
 	mov r7, r0
@@ -1101,7 +1101,7 @@ sub_1FF8F24: @ 0x01FF8F24
 	str r4, [sp, #8]
 	add r2, sp, #0x10
 	add r3, sp, #0x14
-	bl sub_1FF8C3C
+	bl func_01FF8C3C
 	ldr r3, [sp, #0x10]
 	cmp r3, #0
 	ldrne r0, [sp, #0xc]
@@ -1113,7 +1113,7 @@ sub_1FF8F24: @ 0x01FF8F24
 	str r1, [sp, #4]
 	ldr r1, [sp, #0x18]
 	ldr r2, [sp, #0x14]
-	bl sub_1FF89C0
+	bl func_01FF89C0
 	add sp, sp, #0x1c
 	pop {r4, r5, r6, r7, pc}
 _01FF8FB4:
@@ -1123,7 +1123,7 @@ _01FF8FB4:
 	ldrb r3, [sp, #0x30]
 	ldr r1, [sp, #0x18]
 	mov r0, r7
-	bl sub_1FF8580
+	bl func_01FF8580
 	add sp, sp, #0x1c
 	pop {r4, r5, r6, r7, pc}
 _01FF8FD8:
@@ -1134,12 +1134,12 @@ _01FF8FD8:
 	ldrb r3, [sp, #0x30]
 	ldr r1, [sp, #0x14]
 	mov r0, r7
-	bl sub_1FF87A0
+	bl func_01FF87A0
 	add sp, sp, #0x1c
 	pop {r4, r5, r6, r7, pc}
 
-	arm_func_start sub_1FF9000
-sub_1FF9000: @ 0x01FF9000
+	arm_func_start func_01FF9000
+func_01FF9000: @ 0x01FF9000
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #8
 	mov r5, #0
@@ -1154,15 +1154,15 @@ _01FF9028:
 	mov r0, sl
 	mov r1, r6
 	mov r2, #1
-	bl sub_203CB6C
+	bl func_0203CB6C
 	cmp r0, #0
 	beq _01FF90B0
 	mov r0, sb
-	bl sub_203DF8C
+	bl func_0203DF8C
 	mov r7, r0
 	mov r1, sl
 	ldrb r8, [r7, #0x19]
-	bl sub_2038E0C
+	bl func_02038E0C
 	ldr r2, [r7, #0x24]
 	ldr r1, [r7, #0x28]
 	and r2, r2, #0x10
@@ -1198,19 +1198,19 @@ _01FF90B0:
 	add sp, sp, #8
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
-	arm_func_start sub_1FF90D8
-sub_1FF90D8: @ 0x01FF90D8
+	arm_func_start func_01FF90D8
+func_01FF90D8: @ 0x01FF90D8
 	push {r3, lr}
 	sub sp, sp, #8
 	stm sp, {r2, r3}
 	ldrsb r2, [r1, #0x6e]
 	ldrsb r3, [r1, #0x6f]
-	bl sub_1FF90F8
+	bl func_01FF90F8
 	add sp, sp, #8
 	pop {r3, pc}
 
-	arm_func_start sub_1FF90F8
-sub_1FF90F8: @ 0x01FF90F8
+	arm_func_start func_01FF90F8
+func_01FF90F8: @ 0x01FF90F8
 	push {r3, r4, r5, r6, r7, lr}
 	sub sp, sp, #0x10
 	ldr r5, [sp, #0x28]
@@ -1221,12 +1221,12 @@ sub_1FF90F8: @ 0x01FF90F8
 	ldrb r4, [r7, #0x874]
 	bne _01FF9128
 	mov r0, r6
-	bl sub_203C77C
+	bl func_0203C77C
 	mov r5, r0
 _01FF9128:
 	mov r0, r6
 	mov r1, #0x8000000
-	bl sub_203C810
+	bl func_0203C810
 	cmp r0, #0
 	ldr r0, [r7, #0x858]
 	mov r1, #0
@@ -1251,22 +1251,22 @@ _01FF9128:
 	ldrb r3, [r0, #0x28]
 	ldrb r2, [r6, #0x6f]
 	mov r0, r7
-	bl sub_1FF8000
+	bl func_01FF8000
 	mov r0, r6
 	add r1, sp, #0xc
 	add r2, sp, #8
-	bl sub_1FF9000
+	bl func_01FF9000
 	ldr r1, [sp, #0xc]
 	ldr r2, [sp, #8]
 	mov r0, r7
 	mov r3, #0
-	bl sub_1FF87A0
+	bl func_01FF87A0
 	strb r4, [r7, #0x874]
 	add sp, sp, #0x10
 	pop {r3, r4, r5, r6, r7, pc}
 
-	arm_func_start sub_1FF91C8
-sub_1FF91C8: @ 0x01FF91C8
+	arm_func_start func_01FF91C8
+func_01FF91C8: @ 0x01FF91C8
 	push {r3, r4, r5, r6, r7, r8, sb, lr}
 	ldr r2, _01FF92FC @ =0x021E3328
 	ldr r3, [r2]
@@ -1354,8 +1354,8 @@ _01FF92DC:
 	.align 2, 0
 _01FF92FC: .4byte 0x021E3328
 
-	arm_func_start sub_1FF9300
-sub_1FF9300: @ 0x01FF9300
+	arm_func_start func_01FF9300
+func_01FF9300: @ 0x01FF9300
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #8
 	mov r6, r1
@@ -1364,7 +1364,7 @@ sub_1FF9300: @ 0x01FF9300
 	str r2, [sp]
 	mov r5, r3
 	ldr r4, [sp, #0x30]
-	bl sub_2000D14
+	bl func_02000D14
 	ldrb r0, [r7, #0x870]
 	sub r1, r6, r4
 	ldrb r2, [r7, #0x871]
@@ -1433,8 +1433,8 @@ _01FF9400:
 	add sp, sp, #8
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
-	arm_func_start sub_1FF9420
-sub_1FF9420: @ 0x01FF9420
+	arm_func_start func_01FF9420
+func_01FF9420: @ 0x01FF9420
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x20
 	mov r4, r2
@@ -1449,7 +1449,7 @@ sub_1FF9420: @ 0x01FF9420
 	ldreqsb fp, [r6, #0x6f]
 	mov r0, r5
 	mvn r1, #0
-	bl sub_2000D14
+	bl func_02000D14
 	add r1, sp, #0x10
 	str r1, [sp]
 	mov r0, #1
@@ -1460,7 +1460,7 @@ sub_1FF9420: @ 0x01FF9420
 	add r3, sp, #0x18
 	mov r0, r6
 	str r7, [sp, #8]
-	bl sub_1FF8C3C
+	bl func_01FF8C3C
 	ldr r2, [sp, #0x14]
 	cmp r2, #0
 	addeq sp, sp, #0x20
@@ -1538,8 +1538,8 @@ _01FF9584:
 	add sp, sp, #0x20
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
-	arm_func_start sub_1FF95A4
-sub_1FF95A4: @ 0x01FF95A4
+	arm_func_start func_01FF95A4
+func_01FF95A4: @ 0x01FF95A4
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x20
 	mov r4, r2
@@ -1554,7 +1554,7 @@ sub_1FF95A4: @ 0x01FF95A4
 	ldreqsb fp, [r6, #0x6f]
 	mov r0, r5
 	mvn r1, #0
-	bl sub_2000D14
+	bl func_02000D14
 	add r1, sp, #0x10
 	str r1, [sp]
 	mov r0, #0
@@ -1565,7 +1565,7 @@ sub_1FF95A4: @ 0x01FF95A4
 	add r3, sp, #0x18
 	mov r0, r6
 	str r7, [sp, #8]
-	bl sub_1FF8C3C
+	bl func_01FF8C3C
 	ldr r2, [sp, #0x10]
 	cmp r2, #0
 	addeq sp, sp, #0x20
@@ -1643,8 +1643,8 @@ _01FF9708:
 	add sp, sp, #0x20
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
-	arm_func_start sub_1FF9728
-sub_1FF9728: @ 0x01FF9728
+	arm_func_start func_01FF9728
+func_01FF9728: @ 0x01FF9728
 	push {r3, lr}
 	cmp r2, #0
 	mov lr, #0
@@ -1659,26 +1659,26 @@ _01FF9738:
 	blt _01FF9738
 	pop {r3, pc}
 
-	arm_func_start sub_1FF9758
-sub_1FF9758: @ 0x01FF9758
-	ldr ip, _01FF9768 @ =sub_1FF9728
+	arm_func_start func_01FF9758
+func_01FF9758: @ 0x01FF9758
+	ldr ip, _01FF9768 @ =func_01FF9728
 	ldr r0, [r0, #0x858]
 	mov r2, #0x80
 	bx ip
 	.align 2, 0
-_01FF9768: .4byte sub_1FF9728
+_01FF9768: .4byte func_01FF9728
 
-	arm_func_start sub_1FF976C
-sub_1FF976C: @ 0x01FF976C
-	ldr ip, _01FF977C @ =sub_1FF9728
+	arm_func_start func_01FF976C
+func_01FF976C: @ 0x01FF976C
+	ldr ip, _01FF977C @ =func_01FF9728
 	ldr r0, [r0, #0x85c]
 	mov r2, #0x80
 	bx ip
 	.align 2, 0
-_01FF977C: .4byte sub_1FF9728
+_01FF977C: .4byte func_01FF9728
 
-	arm_func_start sub_1FF9780
-sub_1FF9780: @ 0x01FF9780
+	arm_func_start func_01FF9780
+func_01FF9780: @ 0x01FF9780
 	andeq r0, r0, r0, lsl #2
 	andeq r0, r0, r0, lsl #8
 	andeq r1, r0, r0
@@ -1688,8 +1688,8 @@ sub_1FF9780: @ 0x01FF9780
 	andeq r1, r0, r0
 	andeq r2, r0, r0
 
-	arm_func_start sub_1FF97A0
-sub_1FF97A0: @ 0x01FF97A0
+	arm_func_start func_01FF97A0
+func_01FF97A0: @ 0x01FF97A0
 	cmp r0, #5
 	addls pc, pc, r0, lsl #2
 	b _01FF97EC
@@ -1703,8 +1703,8 @@ _01FF97EC:
 	mov r0, #0
 	bx lr
 
-	arm_func_start sub_1FF97F4
-sub_1FF97F4: @ 0x01FF97F4
+	arm_func_start func_01FF97F4
+func_01FF97F4: @ 0x01FF97F4
 	cmp r0, #1
 	beq _01FF9810
 	cmp r0, #2
@@ -1733,8 +1733,8 @@ _01FF9848:
 	mov r0, #0
 	bx lr
 
-	arm_func_start sub_1FF9850
-sub_1FF9850: @ 0x01FF9850
+	arm_func_start func_01FF9850
+func_01FF9850: @ 0x01FF9850
 	cmp r0, #3
 	beq _01FF9864
 	cmp r0, #5
@@ -1756,12 +1756,12 @@ _01FF988C:
 	mov r0, #0
 	bx lr
 
-	arm_func_start sub_1FF9894
-sub_1FF9894: @ 0x01FF9894
+	arm_func_start func_01FF9894
+func_01FF9894: @ 0x01FF9894
 	push {r3, r4, r5, lr}
 	mov r5, r0
 	mov r4, r1
-	bl sub_1FF97A0
+	bl func_01FF97A0
 	cmp r0, #0
 	beq _01FF98D4
 	ldr r0, _01FF993C @ =data_027e1268
@@ -1777,11 +1777,11 @@ sub_1FF9894: @ 0x01FF9894
 _01FF98D4:
 	mov r0, r5
 	mov r1, r4
-	bl sub_1FF97F4
+	bl func_01FF97F4
 	cmp r0, #0
 	beq _01FF9910
 	ldr r0, _01FF993C @ =data_027e1268
-	ldr r1, _01FF9944 @ =sub_1FF9780
+	ldr r1, _01FF9944 @ =func_01FF9780
 	ldr r0, [r0]
 	ldr r0, [r0]
 	add r0, r0, r4, lsl #1
@@ -1792,7 +1792,7 @@ _01FF98D4:
 	pop {r3, r4, r5, pc}
 _01FF9910:
 	ldr r0, _01FF993C @ =data_027e1268
-	ldr r1, _01FF9944 @ =sub_1FF9780
+	ldr r1, _01FF9944 @ =func_01FF9780
 	ldr r0, [r0]
 	ldr r0, [r0]
 	add r0, r0, r4, lsl #1
@@ -1805,10 +1805,10 @@ _01FF9910:
 	.align 2, 0
 _01FF993C: .4byte data_027e1268
 _01FF9940: .4byte 0x01FF9790
-_01FF9944: .4byte sub_1FF9780
+_01FF9944: .4byte func_01FF9780
 
-	arm_func_start sub_1FF9948
-sub_1FF9948: @ 0x01FF9948
+	arm_func_start func_01FF9948
+func_01FF9948: @ 0x01FF9948
 	push {r4, lr}
 	ldr r1, _01FF9994 @ =data_027e1268
 	mov r4, r0
@@ -1819,7 +1819,7 @@ sub_1FF9948: @ 0x01FF9948
 	lsl r0, r0, #0x1d
 	lsr r0, r0, #0x1d
 	and r0, r0, #0xff
-	bl sub_1FF9894
+	bl func_01FF9894
 	ldr r1, _01FF9994 @ =data_027e1268
 	mov r2, r0
 	ldr r1, [r1]
@@ -1831,8 +1831,8 @@ sub_1FF9948: @ 0x01FF9948
 	.align 2, 0
 _01FF9994: .4byte data_027e1268
 
-	arm_func_start sub_1FF9998
-sub_1FF9998: @ 0x01FF9998
+	arm_func_start func_01FF9998
+func_01FF9998: @ 0x01FF9998
 	push {r3, lr}
 	ldr r3, _01FF99C8 @ =data_027e1268
 	ldr r3, [r3]
@@ -1848,8 +1848,8 @@ sub_1FF9998: @ 0x01FF9998
 	.align 2, 0
 _01FF99C8: .4byte data_027e1268
 
-	arm_func_start sub_1FF99CC
-sub_1FF99CC: @ 0x01FF99CC
+	arm_func_start func_01FF99CC
+func_01FF99CC: @ 0x01FF99CC
 	push {r3, lr}
 	ldr r3, _01FF99FC @ =0x027E0000
 	ldr r3, [r3]
@@ -1865,8 +1865,8 @@ sub_1FF99CC: @ 0x01FF99CC
 	.align 2, 0
 _01FF99FC: .4byte 0x027E0000
 
-	arm_func_start sub_1FF9A00
-sub_1FF9A00: @ 0x01FF9A00
+	arm_func_start func_01FF9A00
+func_01FF9A00: @ 0x01FF9A00
 	push {r3, lr}
 	ldr r3, _01FF9A30 @ =0x027E0004
 	ldr r3, [r3]
@@ -1882,8 +1882,8 @@ sub_1FF9A00: @ 0x01FF9A00
 	.align 2, 0
 _01FF9A30: .4byte 0x027E0004
 
-	arm_func_start sub_1FF9A34
-sub_1FF9A34: @ 0x01FF9A34
+	arm_func_start func_01FF9A34
+func_01FF9A34: @ 0x01FF9A34
 	push {r3, lr}
 	ldr r3, _01FF9A64 @ =data_027e1268
 	ldr r3, [r3]
@@ -1899,8 +1899,8 @@ sub_1FF9A34: @ 0x01FF9A34
 	.align 2, 0
 _01FF9A64: .4byte data_027e1268
 
-	arm_func_start sub_1FF9A68
-sub_1FF9A68: @ 0x01FF9A68
+	arm_func_start func_01FF9A68
+func_01FF9A68: @ 0x01FF9A68
 	cmp r1, #0
 	moveq r1, #0x5000000
 	ldrne r1, _01FF9A84 @ =0x05000400
@@ -1912,8 +1912,8 @@ sub_1FF9A68: @ 0x01FF9A68
 _01FF9A84: .4byte 0x05000400
 _01FF9A88: .4byte MIi_CpuCopyFast
 
-	arm_func_start sub_1FF9A8C
-sub_1FF9A8C: @ 0x01FF9A8C
+	arm_func_start func_01FF9A8C
+func_01FF9A8C: @ 0x01FF9A8C
 	push {r4, r5, r6, lr}
 	ldr r3, _01FF9AF0 @ =data_027e1268
 	mov r5, r1
@@ -1937,14 +1937,14 @@ sub_1FF9A8C: @ 0x01FF9A8C
 	mov r0, r6
 	mov r3, r4
 	and r1, r1, #0xff
-	bl sub_1FF9A68
+	bl func_01FF9A68
 	pop {r4, r5, r6, pc}
 	.align 2, 0
 _01FF9AF0: .4byte data_027e1268
 _01FF9AF4: .4byte 0x027E0000
 
-	arm_func_start sub_1FF9AF8
-sub_1FF9AF8: @ 0x01FF9AF8
+	arm_func_start func_01FF9AF8
+func_01FF9AF8: @ 0x01FF9AF8
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	ldr r0, _01FF9C78 @ =data_027e1268
 	mov r7, #0
@@ -1988,7 +1988,7 @@ _01FF9B58:
 	lsl r0, r0, #0x1d
 	lsr r0, r0, #0x1d
 	and r0, r0, #0xff
-	bl sub_1FF9894
+	bl func_01FF9894
 	cmp sl, #0
 	mov r2, r0
 	moveq r1, #0
@@ -2031,7 +2031,7 @@ _01FF9BF0:
 	mov r2, #0
 	ldr r0, [r0, #0x30]
 	mov r3, #0x400
-	bl sub_1FF9A68
+	bl func_01FF9A68
 _01FF9C44:
 	ldr r1, _01FF9C78 @ =data_027e1268
 	add r7, r7, #1
@@ -2052,8 +2052,8 @@ _01FF9C7C: .4byte 0x027E0000
 _01FF9C80: .4byte 0x027E0004
 _01FF9C84: .4byte 0x027E0008
 
-	arm_func_start sub_1FF9C88
-sub_1FF9C88: @ 0x01FF9C88
+	arm_func_start func_01FF9C88
+func_01FF9C88: @ 0x01FF9C88
 	push {r4, r5, r6, lr}
 	ldr r0, _01FFA1F8 @ =0x027E0008
 	ldr r0, [r0]
@@ -2075,10 +2075,10 @@ sub_1FF9C88: @ 0x01FF9C88
 	cmp r1, r0
 	bgt _01FF9D34
 	mov r0, #0
-	bl sub_200F2F8
+	bl func_0200F2F8
 	cmp r0, #0
 	beq _01FF9D34
-	bl sub_21A8274
+	bl func_021A8274
 	cmp r0, #0
 	beq _01FF9D34
 	ldr r0, _01FFA1F8 @ =0x027E0008
@@ -2234,7 +2234,7 @@ _01FF9F2C:
 	lsrs r0, r0, #0x1f
 	beq _01FF9F50
 	ldrh r0, [r3, #0x38]
-	bl sub_20A1478
+	bl func_020A1478
 	b _01FF9F8C
 _01FF9F50:
 	ldr r0, _01FFA1FC @ =0x027E0000
@@ -2418,8 +2418,8 @@ _01FFA20C: .4byte 0x000001FF
 _01FFA210: .4byte 0x04000010
 _01FFA214: .4byte 0x04000014
 
-	arm_func_start sub_1FFA218
-sub_1FFA218: @ 0x01FFA218
+	arm_func_start func_01FFA218
+func_01FFA218: @ 0x01FFA218
 	push {r4, r5, r6, lr}
 	ldr r0, _01FFA674 @ =0x027E000C
 	ldr r0, [r0]
@@ -2710,8 +2710,8 @@ _01FFA684: .4byte 0x000001FF
 _01FFA688: .4byte 0x04001010
 _01FFA68C: .4byte 0x0400106C
 
-	arm_func_start sub_1FFA690
-sub_1FFA690: @ 0x01FFA690
+	arm_func_start func_01FFA690
+func_01FFA690: @ 0x01FFA690
 	push {r3, lr}
 	ldr r0, _01FFA718 @ =0x027E0008
 	ldr r0, [r0]
@@ -2750,16 +2750,16 @@ sub_1FFA690: @ 0x01FFA690
 _01FFA718: .4byte 0x027E0008
 _01FFA71C: .4byte 0x04000004
 
-	arm_func_start sub_1FFA720
-sub_1FFA720: @ 0x01FFA720
+	arm_func_start func_01FFA720
+func_01FFA720: @ 0x01FFA720
 	push {r3, lr}
-	bl sub_1FFA690
-	bl sub_1FF9C88
-	bl sub_1FFA218
+	bl func_01FFA690
+	bl func_01FF9C88
+	bl func_01FFA218
 	pop {r3, pc}
 
-	arm_func_start sub_1FFA734
-sub_1FFA734: @ 0x01FFA734
+	arm_func_start func_01FFA734
+func_01FFA734: @ 0x01FFA734
 	ldr r2, _01FFA744 @ =0x027E0058
 	add r0, r1, r0, lsl #2
 	ldrb r0, [r2, r0, lsl #1]
@@ -2767,8 +2767,8 @@ sub_1FFA734: @ 0x01FFA734
 	.align 2, 0
 _01FFA744: .4byte 0x027E0058
 
-	arm_func_start sub_1FFA748
-sub_1FFA748: @ 0x01FFA748
+	arm_func_start func_01FFA748
+func_01FFA748: @ 0x01FFA748
 	add r0, r1, r0, lsl #2
 	lsl r1, r0, #1
 	ldr r0, _01FFA760 @ =0x027E0058
@@ -2778,8 +2778,8 @@ sub_1FFA748: @ 0x01FFA748
 	.align 2, 0
 _01FFA760: .4byte 0x027E0058
 
-	arm_func_start sub_1FFA764
-sub_1FFA764: @ 0x01FFA764
+	arm_func_start func_01FFA764
+func_01FFA764: @ 0x01FFA764
 	ldr r1, _01FFA78C @ =data_027e1268
 	mov r3, #0
 	ldr r2, [r1]
@@ -2794,8 +2794,8 @@ sub_1FFA764: @ 0x01FFA764
 _01FFA78C: .4byte data_027e1268
 _01FFA790: .4byte MIi_CpuClearFast
 
-	arm_func_start sub_1FFA794
-sub_1FFA794: @ 0x01FFA794
+	arm_func_start func_01FFA794
+func_01FFA794: @ 0x01FFA794
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	ldr r6, _01FFA818 @ =data_027e1268
 	mov sl, #0
@@ -2822,7 +2822,7 @@ _01FFA7C0:
 	movne r1, fp
 	mov r2, #0x400
 	bl MIi_CpuCopyFast
-	bl sub_1FFA764
+	bl func_01FFA764
 	add sl, sl, #1
 	cmp sl, #2
 	blt _01FFA7C0
@@ -2836,8 +2836,8 @@ _01FFA81C: .4byte 0x07000400
 _01FFA820: .4byte 0x027E0004
 _01FFA824: .4byte 0x027E0000
 
-	arm_func_start sub_1FFA828
-sub_1FFA828: @ 0x01FFA828
+	arm_func_start func_01FFA828
+func_01FFA828: @ 0x01FFA828
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	ldr lr, _01FFA968 @ =data_027e1268
 	cmp r3, #0
@@ -2926,8 +2926,8 @@ _01FFA968: .4byte data_027e1268
 _01FFA96C: .4byte 0x000001FF
 _01FFA970: .4byte 0x000003FF
 
-	arm_func_start sub_1FFA974
-sub_1FFA974: @ 0x01FFA974
+	arm_func_start func_01FFA974
+func_01FFA974: @ 0x01FFA974
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x18
 	ldr r5, _01FFABD0 @ =data_027e1268
@@ -2955,7 +2955,7 @@ sub_1FFA974: @ 0x01FFA974
 	asr r4, r0, #0x10
 	and r0, r2, #0xff
 	and r1, r1, #0xff
-	bl sub_1FFA748
+	bl func_01FFA748
 	adds r0, r4, r0
 	addmi sp, sp, #0x18
 	popmi {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
@@ -3017,7 +3017,7 @@ _01FFAAA0:
 	and r0, r0, #0xff
 	asr r1, r1, #0xe
 	and r1, r1, #0xff
-	bl sub_1FFA748
+	bl func_01FFA748
 	adds r0, r7, r0
 	bmi _01FFAAE4
 	cmp r7, #0xc0
@@ -3089,8 +3089,8 @@ _01FFABD0: .4byte data_027e1268
 _01FFABD4: .4byte 0x000001FF
 _01FFABD8: .4byte 0x000003FF
 
-	arm_func_start sub_1FFABDC
-sub_1FFABDC: @ 0x01FFABDC
+	arm_func_start func_01FFABDC
+func_01FFABDC: @ 0x01FFABDC
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x10
 	ldr r6, _01FFADB4 @ =data_027e1268
@@ -3159,7 +3159,7 @@ _01FFAC84:
 	asrne r2, r2, #0x10
 	rsb r2, r2, #0
 	lsl r4, r2, #0x10
-	bl sub_1FFA734
+	bl func_01FFA734
 	rsb r1, r0, r4, asr #16
 	ldr r2, [r6]
 	ldrh r0, [r8, #2]
@@ -3217,8 +3217,8 @@ _01FFADB4: .4byte data_027e1268
 _01FFADB8: .4byte 0x000001FF
 _01FFADBC: .4byte 0x000003FF
 
-	arm_func_start sub_1FFADC0
-sub_1FFADC0: @ 0x01FFADC0
+	arm_func_start func_01FFADC0
+func_01FFADC0: @ 0x01FFADC0
 	push {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x24
 	ldr sb, _01FFB080 @ =data_027e1268
@@ -3246,7 +3246,7 @@ sub_1FFADC0: @ 0x01FFADC0
 	asr r4, r0, #0x10
 	and r0, r2, #0xff
 	and r1, r1, #0xff
-	bl sub_1FFA748
+	bl func_01FFA748
 	adds r0, r4, r0
 	addmi sp, sp, #0x24
 	popmi {r4, r5, r6, r7, r8, sb, sl, fp, pc}
@@ -3311,7 +3311,7 @@ _01FFAEF0:
 	asr r1, r1, #0xe
 	and r1, r1, #0xff
 	str r1, [sp, #8]
-	bl sub_1FFA748
+	bl func_01FFA748
 	adds r0, r7, r0
 	bmi _01FFAF3C
 	cmp r7, #0xc0
@@ -3344,7 +3344,7 @@ _01FFAF44:
 	lsl r7, r0, #0x10
 	ldr r0, [sp, #4]
 	ldr r1, [sp, #8]
-	bl sub_1FFA734
+	bl func_01FFA734
 	rsb r0, r0, r7, asr #16
 	lsl r0, r0, #0x10
 	ldr r2, [sb]
@@ -3405,8 +3405,8 @@ _01FFB080: .4byte data_027e1268
 _01FFB084: .4byte 0x000001FF
 _01FFB088: .4byte 0x000003FF
 
-	arm_func_start sub_1FFB08C
-sub_1FFB08C: @ 0x01FFB08C
+	arm_func_start func_01FFB08C
+func_01FFB08C: @ 0x01FFB08C
 	push {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0xc
 	ldr r6, _01FFB258 @ =data_027e1268
@@ -3462,7 +3462,7 @@ _01FFB130:
 	rsb r2, r3, #0
 	and r1, r1, #0xff
 	lsl r4, r2, #0x10
-	bl sub_1FFA748
+	bl func_01FFA748
 	ldr r1, [r6]
 	rsb r0, r0, r4, asr #16
 	ldrh r2, [r8]
@@ -3530,8 +3530,8 @@ _01FFB258: .4byte data_027e1268
 _01FFB25C: .4byte 0x000001FF
 _01FFB260: .4byte 0x000003FF
 
-	arm_func_start sub_1FFB264
-sub_1FFB264: @ 0x01FFB264
+	arm_func_start func_01FFB264
+func_01FFB264: @ 0x01FFB264
 	push {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x1c
 	ldr r4, _01FFB568 @ =data_027e1268
@@ -3560,7 +3560,7 @@ sub_1FFB264: @ 0x01FFB264
 	asr r4, r0, #0x10
 	and r0, r2, #0xff
 	and r1, r1, #0xff
-	bl sub_1FFA748
+	bl func_01FFA748
 	adds r0, r4, r0
 	addmi sp, sp, #0x1c
 	popmi {r4, r5, r6, r7, r8, sb, sl, fp, pc}
@@ -3628,7 +3628,7 @@ _01FFB3A4:
 	lsl r8, r0, #0x10
 	mov r0, r7
 	mov r1, r6
-	bl sub_1FFA748
+	bl func_01FFA748
 	rsb r0, r0, r8, asr #16
 	lsl r1, r0, #0x10
 	ldr r0, [sp, #0x10]
@@ -3640,7 +3640,7 @@ _01FFB3A4:
 	add r2, r3, r2
 	lsl r2, r2, #0x10
 	asr r8, r2, #0x10
-	bl sub_1FFA748
+	bl func_01FFA748
 	adds r0, r8, r0
 	bmi _01FFB420
 	cmp r8, #0xc0
@@ -3659,7 +3659,7 @@ _01FFB428:
 	rsb r0, r0, #0
 	lsl r8, r0, #0x10
 	mov r0, r7
-	bl sub_1FFA748
+	bl func_01FFA748
 	rsb r0, r0, r8, asr #16
 	lsl r0, r0, #0x10
 	add r1, sl, r0, asr #16
@@ -3735,8 +3735,8 @@ _01FFB568: .4byte data_027e1268
 _01FFB56C: .4byte 0x000001FF
 _01FFB570: .4byte 0x000003FF
 
-	arm_func_start sub_1FFB574
-sub_1FFB574: @ 0x01FFB574
+	arm_func_start func_01FFB574
+func_01FFB574: @ 0x01FFB574
 	push {r4, lr}
 	ldr ip, _01FFB5D8 @ =data_027e1268
 	lsl r0, r0, #4
@@ -3765,8 +3765,8 @@ sub_1FFB574: @ 0x01FFB574
 	.align 2, 0
 _01FFB5D8: .4byte data_027e1268
 
-	arm_func_start sub_1FFB5DC
-sub_1FFB5DC: @ 0x01FFB5DC
+	arm_func_start func_01FFB5DC
+func_01FFB5DC: @ 0x01FFB5DC
 	push {r4, lr}
 	add r4, r1, #0x10
 	add r0, r4, r3
@@ -3849,8 +3849,8 @@ _01FFB6FC:
 	add r0, r0, #0x10
 	pop {r4, pc}
 
-	arm_func_start sub_1FFB718
-sub_1FFB718: @ 0x01FFB718
+	arm_func_start func_01FFB718
+func_01FFB718: @ 0x01FFB718
 	push {r3, r4, r5, lr}
 	ldr r4, [r1, #8]
 	add ip, r2, r3
@@ -3920,11 +3920,11 @@ _01FFB7A0:
 	add r0, r0, #0x10
 	pop {r3, r4, r5, pc}
 _01FFB824:
-	bl sub_1FFB5DC
+	bl func_01FFB5DC
 	pop {r3, r4, r5, pc}
 
-	arm_func_start sub_1FFB82C
-sub_1FFB82C: @ 0x01FFB82C
+	arm_func_start func_01FFB82C
+func_01FFB82C: @ 0x01FFB82C
 	ldm r1, {r0, r3}
 	cmp r0, #0
 	ldrneb r2, [r0, #0xe]
@@ -4028,7 +4028,7 @@ _01FFB98C:
 	mov r1, r5
 	mov r2, r8
 	mov r3, #4
-	bl sub_1FFB5DC
+	bl func_01FFB5DC
 	mov r6, r0
 _01FFB9AC:
 	mov r0, r7
@@ -4036,8 +4036,8 @@ _01FFB9AC:
 	mov r0, r6
 	pop {r3, r4, r5, r6, r7, r8, sb, pc}
 
-	arm_func_start sub_1FFB9BC
-sub_1FFB9BC: @ 0x01FFB9BC
+	arm_func_start func_01FFB9BC
+func_01FFB9BC: @ 0x01FFB9BC
 	push {r3, r4, r5, r6, r7, r8, sb, lr}
 	mov sb, r0
 	mov r8, r1
@@ -4068,7 +4068,7 @@ _01FFBA10:
 	mov r1, r5
 	mov r2, r8
 	mov r3, #4
-	bl sub_1FFB718
+	bl func_01FFB718
 	mov r6, r0
 _01FFBA30:
 	mov r0, r7
@@ -4076,8 +4076,8 @@ _01FFBA30:
 	mov r0, r6
 	pop {r3, r4, r5, r6, r7, r8, sb, pc}
 
-	arm_func_start sub_1FFBA40
-sub_1FFBA40: @ 0x01FFBA40
+	arm_func_start func_01FFBA40
+func_01FFBA40: @ 0x01FFBA40
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	mov sl, r0
 	mov r8, r2
@@ -4118,7 +4118,7 @@ _01FFBABC:
 	mov r1, r5
 	mov r2, sb
 	mov r3, r8
-	bl sub_1FFB5DC
+	bl func_01FFB5DC
 	mov fp, r0
 _01FFBADC:
 	mov r0, r6
@@ -4126,8 +4126,8 @@ _01FFBADC:
 	mov r0, fp
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
-	arm_func_start sub_1FFBAEC
-sub_1FFBAEC: @ 0x01FFBAEC
+	arm_func_start func_01FFBAEC
+func_01FFBAEC: @ 0x01FFBAEC
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	mov sl, r0
 	mov r8, r2
@@ -4166,7 +4166,7 @@ _01FFBB60:
 	mov r1, r5
 	mov r2, sb
 	mov r3, r8
-	bl sub_1FFB718
+	bl func_01FFB718
 	mov fp, r0
 _01FFBB80:
 	mov r0, r6
@@ -4174,8 +4174,8 @@ _01FFBB80:
 	mov r0, fp
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
-	arm_func_start sub_1FFBB90
-sub_1FFBB90: @ 0x01FFBB90
+	arm_func_start func_01FFBB90
+func_01FFBB90: @ 0x01FFBB90
 	push {r3, r4, r5, r6, r7, lr}
 	mov r7, r0
 	ldr r4, [r7]
@@ -4195,7 +4195,7 @@ _01FFBBB0:
 	bne _01FFBBE0
 	mov r0, r7
 	mov r1, r4
-	bl sub_1FFB82C
+	bl func_01FFB82C
 	b _01FFBBEC
 _01FFBBE0:
 	ldr r4, [r4, #4]

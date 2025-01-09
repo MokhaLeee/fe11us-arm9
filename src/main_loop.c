@@ -3,15 +3,15 @@
 #include "nitro-sdk/mmap.h"
 #include "nitro-sdk/OS_interrupt.h"
 
-struct UnkStruct_Func_200EDD4 * sub_200EDD4(struct UnkStruct_Func_200EDD4 * unk)
+struct UnkStruct_Func_200EDD4 * func_0200EDD4(struct UnkStruct_Func_200EDD4 * unk)
 {
-	sub_200C49C(unk);
-	sub_20115A4(unk);
+	func_0200C49C(unk);
+	func_020115A4(unk);
 
 	return unk;
 }
 
-void sub_200EDF0(void)
+void func_0200EDF0(void)
 {
 	OS_Init();
 	OS_InitTick();
@@ -42,11 +42,11 @@ void sub_200EDF0(void)
 	OS_EnableDTCM();
 }
 
-void sub_200EECC(void)
+void func_0200EECC(void)
 {
 	int ime_old;
 
-	OS_SetIrqFunction(1, sub_200F0F0);
+	OS_SetIrqFunction(1, func_0200F0F0);
 	OS_EnableIrqMask(1);
 
 	ime_old = REG_IME;
@@ -64,15 +64,15 @@ void InitSystem(void)
 	gMainLoopBlocked = 0;
 	unk_27E125C = 0;
 
-	sub_200EDF0();
-	sub_20120F4();
-	sub_2012124();
-	sub_20100AC();
-	sub_201032C();
-	sub_200F3B8();
-	sub_200FCDC();
-	sub_200F1E8();
-	sub_200F350(1);
+	func_0200EDF0();
+	func_020120F4();
+	func_02012124();
+	func_020100AC();
+	func_0201032C();
+	func_0200F3B8();
+	func_0200FCDC();
+	func_0200F1E8();
+	func_0200F350(1);
 
 	tmp = data_027e1268;
 
@@ -80,23 +80,23 @@ void InitSystem(void)
 	{
 		data_027e1268 = i == 0 ? (void *)SDK_AUTOLOAD_DTCM_START[0] : unk_027E0004;
 
-		sub_1FFA764();
-		sub_2010C84(NULL);
+		func_01FFA764();
+		func_02010C84(NULL);
 	}
 
 	data_027e1268 = tmp;
 
-	sub_2019BD4();
-	sub_2011458();
-	sub_20115D4();
-	sub_2015BD0();
+	func_02019BD4();
+	func_02011458();
+	func_020115D4();
+	func_02015BD0();
 	Proc_Init();
-	sub_201BC28();
-	sub_200EECC();
-	sub_201F3DC();
+	func_0201BC28();
+	func_0200EECC();
+	func_0201F3DC();
 	RTC_Init();
-	sub_201FF20();
-	sub_20217B4();
+	func_0201FF20();
+	func_020217B4();
 
 	tmp = data_027e1268;
 
@@ -104,14 +104,14 @@ void InitSystem(void)
 	{
 		data_027e1268 = (i == 0) ? (void *)SDK_AUTOLOAD_DTCM_START[0] : unk_027E0004;
 
-		sub_201C204();
-		sub_1FFA720();
+		func_0201C204();
+		func_01FFA720();
 	}
 
 	data_027e1268 = tmp;
 }
 
-void sub_200F028(void)
+void func_0200F028(void)
 {
 	OS_WaitVBlankIntr();
 	GX_DispOn();
@@ -124,13 +124,13 @@ void main_loop(void)
 	if (gMainLoopBlocked == 0)
 		return;
 
-	sub_2070468();
+	func_02070468();
 	gClock++;
 
-	sub_201018C();
-	sub_2010398();
-	sub_2015FB4();
-	sub_201079C();
+	func_0201018C();
+	func_02010398();
+	func_02015FB4();
+	func_0201079C();
 
 	Proc_Run(5);
 	Proc_Run(6);
@@ -141,9 +141,9 @@ void main_loop(void)
 	Proc_Run(11);
 	Proc_Run(12);
 
-	sub_2019C30();
+	func_02019C30();
 	gMainLoopBlocked = 0;
 
-	sub_2070480();
+	func_02070480();
 	OS_WaitIrq(1, 1);
 }

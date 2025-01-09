@@ -1,8 +1,8 @@
 .include "macros.inc"
 .section .text
 
-	arm_func_start sub_1FFC404
-sub_1FFC404: @ 0x01FFC404
+	arm_func_start func_01FFC404
+func_01FFC404: @ 0x01FFC404
 	push {r3, r4, r5, r6, r7, lr}
 	ldr r5, _01FFC4E0 @ =data_027e1268
 	ldr r4, [sp, #0x18]
@@ -65,8 +65,8 @@ _01FFC4C8:
 	.align 2, 0
 _01FFC4E0: .4byte data_027e1268
 
-	arm_func_start sub_1FFC4E4
-sub_1FFC4E4: @ 0x01FFC4E4
+	arm_func_start func_01FFC4E4
+func_01FFC4E4: @ 0x01FFC4E4
 	push {r3, r4, r5, r6, r7, lr}
 	ldr r4, _01FFC5D0 @ =data_027e1268
 	ldr lr, [sp, #0x20]
@@ -134,8 +134,8 @@ _01FFC5B8:
 	.align 2, 0
 _01FFC5D0: .4byte data_027e1268
 
-	arm_func_start sub_1FFC5D4
-sub_1FFC5D4: @ 0x01FFC5D4
+	arm_func_start func_01FFC5D4
+func_01FFC5D4: @ 0x01FFC5D4
 	push {r3, r4, r5, lr}
 	ldr lr, _01FFC610 @ =data_027e1268
 	mov ip, #0x14
@@ -145,7 +145,7 @@ sub_1FFC5D4: @ 0x01FFC5D4
 	ldrb r4, [r4, #0x41]
 	mla r5, r4, ip, r5
 	str lr, [sp]
-	bl sub_1FFC404
+	bl func_01FFC404
 	ldrb r0, [r5, #0x12]
 	bic r0, r0, #0xf
 	orr r0, r0, #1
@@ -154,8 +154,8 @@ sub_1FFC5D4: @ 0x01FFC5D4
 	.align 2, 0
 _01FFC610: .4byte data_027e1268
 
-	arm_func_start sub_1FFC614
-sub_1FFC614: @ 0x01FFC614
+	arm_func_start func_01FFC614
+func_01FFC614: @ 0x01FFC614
 	push {r4, r5, r6, r7, lr}
 	sub sp, sp, #0xc
 	ldr ip, _01FFC664 @ =data_027e1268
@@ -169,7 +169,7 @@ sub_1FFC614: @ 0x01FFC614
 	mla r4, r6, r4, r7
 	stm sp, {r5, lr}
 	str ip, [sp, #8]
-	bl sub_1FFC4E4
+	bl func_01FFC4E4
 	ldrb r0, [r4, #0x12]
 	bic r0, r0, #0xf
 	orr r0, r0, #1
@@ -179,8 +179,8 @@ sub_1FFC614: @ 0x01FFC614
 	.align 2, 0
 _01FFC664: .4byte data_027e1268
 
-	arm_func_start sub_1FFC668
-sub_1FFC668: @ 0x01FFC668
+	arm_func_start func_01FFC668
+func_01FFC668: @ 0x01FFC668
 	push {r4, r5, r6, r7, lr}
 	sub sp, sp, #0xc
 	ldr ip, _01FFC6B8 @ =data_027e1268
@@ -194,7 +194,7 @@ sub_1FFC668: @ 0x01FFC668
 	mla r4, r6, r4, r7
 	stm sp, {r5, lr}
 	str ip, [sp, #8]
-	bl sub_1FFC4E4
+	bl func_01FFC4E4
 	ldrb r0, [r4, #0x12]
 	bic r0, r0, #0xf
 	orr r0, r0, #2
@@ -433,8 +433,8 @@ _01FFC9A8:
 	ldr sl, [r0, #0x1c]
 	bl OS_DisableInterrupts
 	mov r4, r0
-	bl sub_20A3CF4
-	bl sub_20A3CE8
+	bl func_020A3CF4
+	bl func_020A3CE8
 	mov r0, r4
 	bl OS_RestoreInterrupts
 	bl IC_InvalidateAll
@@ -587,8 +587,8 @@ MIi_DmaSetParams_noInt: @ 0x01FFCBB4
 	str r3, [r0, #8]
 	bx lr
 
-	arm_func_start sub_1FFCBD8
-sub_1FFCBD8: @ 0x01FFCBD8
+	arm_func_start func_01FFCBD8
+func_01FFCBD8: @ 0x01FFCBD8
 	push {r3, lr}
 	mov ip, #0xc
 	mul lr, r0, ip
@@ -617,8 +617,8 @@ _01FFCC24:
 _01FFCC34: .4byte 0x040000B0
 _01FFCC38: .4byte 0x81400001
 
-	arm_func_start sub_1FFCC3C
-sub_1FFCC3C: @ 0x01FFCC3C
+	arm_func_start func_01FFCC3C
+func_01FFCC3C: @ 0x01FFCC3C
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	movs r8, r2
 	mov sl, r0

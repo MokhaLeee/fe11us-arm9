@@ -111,8 +111,8 @@ typedef enum {
 	VRAM_C_ARM7					= 2,					//!< maps vram c to ARM7 workram slot 0.
 	VRAM_C_ARM7_0x06000000 		= 2 | VRAM_OFFSET(0),	//!< maps vram c to ARM7 workram slot 0.
 	VRAM_C_ARM7_0x06020000 		= 2 | VRAM_OFFSET(1),	//!< maps vram c to ARM7 workram slot 1.
-	VRAM_C_SUB_BG				= 4,					//!< maps vram c to sub engine background slot 0.
-	VRAM_C_SUB_BG_0x06200000	= 4 | VRAM_OFFSET(0),	//!< maps vram c to sub engine background slot 0.
+	VRAM_C_func_0BG				= 4,					//!< maps vram c to sub engine background slot 0.
+	VRAM_C_func_0BG_0x06200000	= 4 | VRAM_OFFSET(0),	//!< maps vram c to sub engine background slot 0.
 	VRAM_C_TEXTURE				= 3 | VRAM_OFFSET(2),	//!< maps vram c to 3d texture slot 2.
 	VRAM_C_TEXTURE_SLOT0		= 3 | VRAM_OFFSET(0),	//!< maps vram c to 3d texture slot 0.
 	VRAM_C_TEXTURE_SLOT1		= 3 | VRAM_OFFSET(1),	//!< maps vram c to 3d texture slot 1.
@@ -131,7 +131,7 @@ typedef enum {
 	VRAM_D_ARM7 				= 2 | VRAM_OFFSET(1),	//!< maps vram d to ARM7 workram slot 1.
 	VRAM_D_ARM7_0x06000000 		= 2 | VRAM_OFFSET(0),	//!< maps vram d to ARM7 workram slot 0.
 	VRAM_D_ARM7_0x06020000 		= 2 | VRAM_OFFSET(1),	//!< maps vram d to ARM7 workram slot 1.
-	VRAM_D_SUB_SPRITE  			= 4,					//!< maps vram d to sub engine sprites slot 0.
+	VRAM_D_func_0SPRITE  			= 4,					//!< maps vram d to sub engine sprites slot 0.
 	VRAM_D_TEXTURE 				= 3 | VRAM_OFFSET(3),	//!< maps vram d to 3d texture slot 3.
 	VRAM_D_TEXTURE_SLOT0		= 3 | VRAM_OFFSET(0),	//!< maps vram d to 3d texture slot 0.
 	VRAM_D_TEXTURE_SLOT1 		= 3 | VRAM_OFFSET(1),	//!< maps vram d to 3d texture slot 1.
@@ -199,16 +199,16 @@ typedef enum {
 //! Allowed VRAM bank H modes
 typedef enum {
 	VRAM_H_LCD						= 0,	//!< maps vram h to lcd.
-	VRAM_H_SUB_BG					= 1,	//!< maps vram h to sub engine background first 2 parts of slot 0.
-	VRAM_H_SUB_BG_EXT_PALETTE		= 2,	//!< maps vram h to sub engine background extended palette.
+	VRAM_H_func_0BG					= 1,	//!< maps vram h to sub engine background first 2 parts of slot 0.
+	VRAM_H_func_0BG_EXT_PALETTE		= 2,	//!< maps vram h to sub engine background extended palette.
 } VRAM_H_TYPE;
 
 //! Allowed VRAM bank I modes
 typedef enum {
 	VRAM_I_LCD						= 0,	//!< maps vram i to lcd.
-	VRAM_I_SUB_BG_0x06208000		= 1,	//!< maps vram i to sub engine background thirth part of slot 0.
-	VRAM_I_SUB_SPRITE				= 2,	//!< maps vram i to sub engine sprites.
-	VRAM_I_SUB_SPRITE_EXT_PALETTE	= 3,	//!< maps vram i to sub engine sprites extended palette.
+	VRAM_I_func_0BG_0x06208000		= 1,	//!< maps vram i to sub engine background thirth part of slot 0.
+	VRAM_I_func_0SPRITE				= 2,	//!< maps vram i to sub engine sprites.
+	VRAM_I_func_0SPRITE_EXT_PALETTE	= 3,	//!< maps vram i to sub engine sprites extended palette.
 }VRAM_I_TYPE;
 
 /** \brief  an array of 256 15-bit RGB values*/
@@ -367,19 +367,19 @@ typedef enum
 #define WIN_OUT        (*(vu16*)0x0400004A)
 
 // Window 0
-#define SUB_WIN0_X0    (*(vu8*)0x04001041)
-#define SUB_WIN0_X1    (*(vu8*)0x04001040)
-#define SUB_WIN0_Y0    (*(vu8*)0x04001045)
-#define SUB_WIN0_Y1    (*(vu8*)0x04001044)
+#define func_0WIN0_X0    (*(vu8*)0x04001041)
+#define func_0WIN0_X1    (*(vu8*)0x04001040)
+#define func_0WIN0_Y0    (*(vu8*)0x04001045)
+#define func_0WIN0_Y1    (*(vu8*)0x04001044)
 
 // Window 1
-#define SUB_WIN1_X0    (*(vu8*)0x04001043)
-#define SUB_WIN1_X1    (*(vu8*)0x04001042)
-#define SUB_WIN1_Y0    (*(vu8*)0x04001047)
-#define SUB_WIN1_Y1    (*(vu8*)0x04001046)
+#define func_0WIN1_X0    (*(vu8*)0x04001043)
+#define func_0WIN1_X1    (*(vu8*)0x04001042)
+#define func_0WIN1_Y0    (*(vu8*)0x04001047)
+#define func_0WIN1_Y1    (*(vu8*)0x04001046)
 
-#define SUB_WIN_IN     (*(vu16*)0x04001048)
-#define SUB_WIN_OUT    (*(vu16*)0x0400104A)
+#define func_0WIN_IN     (*(vu16*)0x04001048)
+#define func_0WIN_OUT    (*(vu16*)0x0400104A)
 
 #define	REG_MOSAIC		(*(vu16*)0x0400004C)
 #define	REG_MOSAIC_SUB	(*(vu16*)0x0400104C)

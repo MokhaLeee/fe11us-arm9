@@ -52,7 +52,7 @@ struct Proc * Proc_Find(struct ProcCmd * script)
     return NULL;
 }
 
-struct Proc * sub_2018D40(struct ProcCmd * script)
+struct Proc * func_02018D40(struct ProcCmd * script)
 {
     struct Proc ** it;
 
@@ -72,7 +72,7 @@ struct Proc * sub_2018D40(struct ProcCmd * script)
     return NULL;
 }
 
-struct Proc * sub_2018D9C(struct ProcCmd * script, struct Proc * proc)
+struct Proc * func_02018D9C(struct ProcCmd * script, struct Proc * proc)
 {
     struct Proc ** it;
 
@@ -95,7 +95,7 @@ struct Proc * sub_2018D9C(struct ProcCmd * script, struct Proc * proc)
     return NULL;
 }
 
-struct Proc * sub_2018DF4(struct ProcCmd * script, struct Proc * proc)
+struct Proc * func_02018DF4(struct ProcCmd * script, struct Proc * proc)
 {
     struct Proc ** it;
 
@@ -118,7 +118,7 @@ struct Proc * sub_2018DF4(struct ProcCmd * script, struct Proc * proc)
     return NULL;
 }
 
-struct Proc * sub_2018E4C(u32 mark)
+struct Proc * func_02018E4C(u32 mark)
 {
     struct Proc ** it;
 
@@ -135,7 +135,7 @@ struct Proc * sub_2018E4C(u32 mark)
     return NULL;
 }
 
-struct Proc * sub_2018E90(struct ProcCmd * script, u32 mark)
+struct Proc * func_02018E90(struct ProcCmd * script, u32 mark)
 {
     struct Proc ** it;
 
@@ -198,13 +198,13 @@ void Proc_SetEndFunc(struct Proc * proc, ProcFunc func)
     return;
 }
 
-void sub_2018F54(struct Proc * proc, void * unk_14)
+void func_02018F54(struct Proc * proc, void * unk_14)
 {
     proc->unk_14 = unk_14;
     return;
 }
 
-void * sub_2018F5C(struct Proc * proc)
+void * func_02018F5C(struct Proc * proc)
 {
     return proc->unk_14;
 }
@@ -225,7 +225,7 @@ void Proc_ForEach(struct ProcCmd * script, ProcFunc func)
     return;
 }
 
-void sub_2018FA4(struct ProcCmd * script, ProcFunc func)
+void func_02018FA4(struct ProcCmd * script, ProcFunc func)
 {
     struct Proc * it = gProcArray;
     s32 i;
@@ -247,9 +247,9 @@ void Proc_BreakEach(struct ProcCmd * script)
     Proc_ForEach(script, (ProcFunc)Proc_Break); // Possible bug - mismatched function declaration
 }
 
-void sub_201900C(struct ProcCmd * script)
+void func_0201900C(struct ProcCmd * script)
 {
-    sub_2018FA4(script, (ProcFunc)Proc_Break); // Possible bug - mismatched function declaration
+    func_02018FA4(script, (ProcFunc)Proc_Break); // Possible bug - mismatched function declaration
 }
 
 void Proc_EndEach(struct ProcCmd * script)
@@ -257,9 +257,9 @@ void Proc_EndEach(struct ProcCmd * script)
     Proc_ForEach(script, Proc_End);
 }
 
-void sub_2019034(struct ProcCmd * script)
+void func_02019034(struct ProcCmd * script)
 {
-    sub_2018FA4(script, Proc_End);
+    func_02018FA4(script, Proc_End);
 }
 
 void Proc_EndEachMarked(u32 mark)
@@ -302,12 +302,12 @@ BOOL IsProcLocked(struct Proc * proc)
     return proc->proc_lockCnt != 0;
 }
 
-struct ProcCmd * sub_20190C4(struct Proc * proc)
+struct ProcCmd * func_020190C4(struct Proc * proc)
 {
     return proc->proc_script;
 }
 
-struct Proc * sub_20190CC(struct Proc * proc)
+struct Proc * func_020190CC(struct Proc * proc)
 {
     if (IsRootProcess(proc->proc_parent))
     {
@@ -317,7 +317,7 @@ struct Proc * sub_20190CC(struct Proc * proc)
     return proc->proc_parent;
 }
 
-void sub_20190EC(struct Proc * proc)
+void func_020190EC(struct Proc * proc)
 {
     if (IsRootProcess(proc->proc_parent))
     {
@@ -330,7 +330,7 @@ void sub_20190EC(struct Proc * proc)
     return;
 }
 
-void sub_2019124(struct Proc * proc)
+void func_02019124(struct Proc * proc)
 {
     if (IsRootProcess(proc->proc_parent))
     {
@@ -348,7 +348,7 @@ void sub_2019124(struct Proc * proc)
     return;
 }
 
-void sub_2019164(struct Proc * proc)
+void func_02019164(struct Proc * proc)
 {
     if (IsRootProcess(proc->proc_parent))
     {
@@ -365,7 +365,7 @@ struct Proc * Proc_GetChild(struct Proc * proc)
     return proc->proc_child;
 }
 
-BOOL sub_2019190(struct Proc * proc, u32 flags)
+BOOL func_02019190(struct Proc * proc, u32 flags)
 {
     struct Proc ** it;
 
@@ -401,7 +401,7 @@ BOOL sub_2019190(struct Proc * proc, u32 flags)
     return TRUE;
 }
 
-BOOL sub_2019230(struct Proc * proc, u32 flags)
+BOOL func_02019230(struct Proc * proc, u32 flags)
 {
     struct Proc ** it;
 
@@ -437,7 +437,7 @@ BOOL sub_2019230(struct Proc * proc, u32 flags)
     return TRUE;
 }
 
-void sub_20192D0(struct Proc * proc)
+void func_020192D0(struct Proc * proc)
 {
     proc->unk_58--;
 
@@ -451,7 +451,7 @@ void sub_20192D0(struct Proc * proc)
     return;
 }
 
-void sub_20192F4(struct Proc * proc)
+void func_020192F4(struct Proc * proc)
 {
     proc->unk_38(proc);
     Proc_End(proc);
@@ -509,7 +509,7 @@ BOOL ProcCmd_SetEndFunc(struct Proc * proc)
 
 BOOL func_020193b4(struct Proc * proc)
 {
-    sub_2018F54(proc, proc->proc_scrCur->dataPtr);
+    func_02018F54(proc, proc->proc_scrCur->dataPtr);
     proc->proc_scrCur++;
     return TRUE;
 }
@@ -605,7 +605,7 @@ BOOL func_0201951c(struct Proc * proc)
         if (!OS_IsThreadTerminated(proc->unk_2c))
             return FALSE;
 
-        sub_1FFBB90(&data_027e1b9c, proc->unk_2c);
+        func_01FFBB90(&data_027e1b9c, proc->unk_2c);
 
         proc->unk_2c = 0;
         proc->proc_flags &= ~0x40;
@@ -672,11 +672,11 @@ BOOL ProcCmd_SpawnChildInTree(struct Proc * proc)
     return TRUE;
 }
 
-BOOL sub_20196F8(struct Proc * proc)
+BOOL func_020196F8(struct Proc * proc)
 {
     if (proc->proc_scrCur->dataImm != 0)
     {
-        sub_2019034(proc->proc_scrCur->dataPtr);
+        func_02019034(proc->proc_scrCur->dataPtr);
     }
     else
     {
@@ -688,11 +688,11 @@ BOOL sub_20196F8(struct Proc * proc)
     return TRUE;
 }
 
-BOOL sub_2019734(struct Proc * proc)
+BOOL func_02019734(struct Proc * proc)
 {
     if (proc->proc_scrCur->dataImm != 0)
     {
-        sub_201900C(proc->proc_scrCur->dataPtr);
+        func_0201900C(proc->proc_scrCur->dataPtr);
     }
     else
     {

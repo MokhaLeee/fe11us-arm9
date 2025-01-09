@@ -4,20 +4,20 @@
 void NitroMain(void)
 {
     InitSystem();
-    sub_200F028();
-    sub_2022F10();
+    func_0200F028();
+    func_02022F10();
     CARD_SetThreadPriority(0x14);
 
     while (1)
         main_loop();
 }
 
-void * sub_2000C70(void)
+void * func_02000C70(void)
 {
     return &unk_027E00E0;
 }
 
-void sub_2000C7C(struct UnkStruct_Func_2000C7C * buf)
+void func_02000C7C(struct UnkStruct_Func_2000C7C * buf)
 {
     buf->unk_086E = unk_021E3328->unk_20;
     buf->unk_086F = unk_021E3328->unk_22;
@@ -33,25 +33,25 @@ void sub_2000C7C(struct UnkStruct_Func_2000C7C * buf)
     buf->unk_0860 = unk_021E3328->unk_28;
 }
 
-void sub_2000D14(struct UnkStruct_Func_2000C7C * buf, int a)
+void func_02000D14(struct UnkStruct_Func_2000C7C * buf, int a)
 {
     MI_CpuFill8(buf->unk_0854, a & 0xFF, 0x400);
 }
 
-void sub_2000D2C(struct UnkStruct_Func_2000D2C * buf, int a, int b)
+void func_02000D2C(struct UnkStruct_Func_2000D2C * buf, int a, int b)
 {
     int tmp1, tmp2, tmp3, tmp4;
     struct UnkStruct_021E3328 * unk0 = unk_021E3328;
     struct UnkStruct_021E3328_00_04_00 * unk1 = unk0->unk_04->unk_00;
     
-    tmp1 = sub_203C77C(unk1);
-    if (sub_203C810(unk1, 0x8000000))
+    tmp1 = func_0203C77C(unk1);
+    if (func_0203C810(unk1, 0x8000000))
         tmp1 = 0;
 
-    tmp2 = sub_2001770(buf, a, b);
+    tmp2 = func_02001770(buf, a, b);
     if (tmp2 >= 0)
     {
-        sub_2001BAC(buf, tmp2);
+        func_02001BAC(buf, tmp2);
         return;
     }
 
@@ -65,7 +65,7 @@ void sub_2000D2C(struct UnkStruct_Func_2000D2C * buf, int a, int b)
 
     if ((tmp4 + tmp3) == 1)
     {
-        int tmp_r0 = sub_20016E8(buf, unk1, a, b);
+        int tmp_r0 = func_020016E8(buf, unk1, a, b);
 
         if ((buf->unk_47 + tmp_r0) <= tmp1)
         {
@@ -94,7 +94,7 @@ void sub_2000D2C(struct UnkStruct_Func_2000D2C * buf, int a, int b)
 
     unk_021E3328->unk_08->unk_0854 = unk_021E3328->unk_08->unk_0C78;
 
-    sub_1FF8000(
+    func_01FF8000(
         unk_021E3328->unk_08,
         buf->unk_42,
         buf->unk_43,
@@ -105,7 +105,7 @@ void sub_2000D2C(struct UnkStruct_Func_2000D2C * buf, int a, int b)
 
     if (unk_021E3328->unk_08->unk_0854[a | (b << 5)] >= 0)
     {
-        sub_2001820(buf, a, b, 1);
+        func_02001820(buf, a, b, 1);
         unk_021E3328->unk_08->unk_0854 = unk_021E3328->unk_08->unk_0878;
     }
     else
@@ -113,11 +113,11 @@ void sub_2000D2C(struct UnkStruct_Func_2000D2C * buf, int a, int b)
         unk_021E3328->unk_08->unk_0854 = unk_021E3328->unk_08->unk_0878;
         buf->unk_47 = 0;
         buf->unk_46 = 0;
-        sub_2001820(buf, a, b, 1);
+        func_02001820(buf, a, b, 1);
     }
 }
 
-int sub_2000F18(struct UnkStruct_Func_2000D2C * buf, int a, int b, int c)
+int func_02000F18(struct UnkStruct_Func_2000D2C * buf, int a, int b, int c)
 {
     int tmp4;
     void * tmp1 = unk_021E3328->unk_04->unk_00;
@@ -146,7 +146,7 @@ int sub_2000F18(struct UnkStruct_Func_2000D2C * buf, int a, int b, int c)
     {
         int tmp_0 = c == 0 ? 1 : 0;
         int tmp_1 = c == 1 ? 1 : 0;
-        int ret = sub_2039088(tmp1, buf->unk_42, buf->unk_43, tmp4, tmp_0, tmp_1, -1);
+        int ret = func_02039088(tmp1, buf->unk_42, buf->unk_43, tmp4, tmp_0, tmp_1, -1);
 
         if (ret < 0)
             return 0;
