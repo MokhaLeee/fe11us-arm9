@@ -11,6 +11,8 @@ SECTIONS
 	itcm : ALIGN(4)
 	{
 		asm/code.o(.text);
+		src/proc_.o(.text);
+		asm/proc_.o(.text);
 		src/proc.o(.data);
 		src/proc.o(.text);
 		asm/proc.o(.text);

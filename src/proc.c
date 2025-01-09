@@ -4,6 +4,8 @@
 
 #pragma force_active on
 
+void * Proc_AllocThreadTask(void * unk, int a);
+
 void Proc_Init(void)
 {
     struct Proc * it = gProcArray;
@@ -618,7 +620,7 @@ BOOL func_0201951c(struct Proc * proc)
     }
 
     func = proc->proc_scrCur->dataPtr;
-    thread = Proc_AllocThread(&data_027e1b9c, 0x10c0);
+    thread = Proc_AllocThreadTask(&data_027e1b9c, 0x10c0);
     OS_CreateThread(thread, (void *)func, proc, ((void *)thread) + 0x10c0, 0x1000, 0x13);
 
     libfunc_unk_20A374C(thread, func_020194fc);

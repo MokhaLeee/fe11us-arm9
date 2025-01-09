@@ -11,8 +11,12 @@ ARMAS     := arm-none-eabi-as
 ARMLD     := arm-none-eabi-ld
 ARMOBJCPY := arm-none-eabi-objcopy
 
-MW_CFLAGS  := -i ../include -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa
-ARM_ASFLAGS := -mcpu=arm9tdmi -I ../include
+INC_DIRS := ../include ../include/mw ../include/nitro-sdk
+MW_INC_FLAG  := $(foreach dir, $(INC_DIRS), -i $(dir))
+ARM_INC_FLAG := $(foreach dir, $(INC_DIRS), -I $(dir))
+
+MW_CFLAGS  := -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa
+ARM_ASFLAGS := -mcpu=arm9tdmi
 
 ARM_LDS := itcm.lds
 
@@ -35,11 +39,11 @@ CLEAN_DIRS += $(ALL_OBJS)
 
 %.o: %.c
 	@echo "[CC]	$@"
-	@$(MWCC) $(MW_CFLAGS) $< -o $@
+	@$(MWCC) $(MW_CFLAGS) $(MW_INC_FLAG) $< -o $@
 
 %.o: %.S
 	@echo "[AS]	$@"
-	@$(ARMAS) $(ARM_ASFLAGS) $(INC_FLAG) $< -o $@
+	@$(ARMAS) $(ARM_ASFLAGS) $(ARM_INC_FLAG) $< -o $@
 #	$(MWAS) $(MW_ASFLAGS) $< -o $@
 
 $(ELF): $(ALL_OBJS) $(ARM_LDS)

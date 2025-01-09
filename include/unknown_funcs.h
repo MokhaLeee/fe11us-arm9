@@ -61,7 +61,7 @@ void func_01FFA764(void);
 // ??? func_01FFB5DC
 // ??? func_01FFB718
 // ??? func_01FFB82C
-void * Proc_AllocThread(void * unk, int a);
+// void * Proc_AllocThreadTask(void * unk, int a);
 // ??? func_01FFB9BC
 // ??? func_01FFBA40
 // ??? func_01FFBAEC

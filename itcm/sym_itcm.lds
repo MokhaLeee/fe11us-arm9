@@ -279,7 +279,7 @@
 . = 0x01FFB878; _01FFB878 = .;
 . = 0x01FFB8BC; _01FFB8BC = .;
 . = 0x01FFB8FC; _01FFB8FC = .;
-. = 0x01FFB934; Proc_AllocThread = .;
+. = 0x01FFB934; Proc_AllocThreadTask = .;
 . = 0x01FFB964; _01FFB964 = .;
 . = 0x01FFB980; _01FFB980 = .;
 . = 0x01FFB98C; _01FFB98C = .;
