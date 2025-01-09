@@ -10,7 +10,7 @@ def main(args):
 
 	with open(src_file, "r") as f:
 		for line in f.readlines():
-			inst = line.strip()[14:]
+			inst = line.strip()[13:]
 
 			print(inst)
 

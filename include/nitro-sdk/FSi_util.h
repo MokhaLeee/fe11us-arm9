@@ -5,6 +5,8 @@
 
 #define ALIGN_BYTE(n, a) (((u32)(n) + ALIGN_MASK(a)) & ~ALIGN_MASK(a))
 
+#define ALIGN_BYTE__(n, a) (((u32)(n) + ALIGN_MASK(a)) & ~(a))
+
 #define BIT_MASK(a) ((u32)((1 << (a)) - 1))
 
 static inline BOOL FSi_IsSlash(u32 c)
