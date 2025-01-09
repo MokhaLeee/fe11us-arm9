@@ -1,28 +1,59 @@
 #include "global.h"
-#include "proc.h"
-#include "nitro-sdk/FS_file.h"
-#include "nitro-sdk/FS_archive.h"
 #include "nitro-sdk/FSi_util.h"
 #include "nitro-sdk/OS_thread.h"
+#include "thread_task.h"
 
-#define ALIGN_BYTE_AUTO(n, a) (((u32)(n) + (a) - 1) & -(a))
-#define ALIGN_MEMORY_AUTO(pr) (ALIGN_BYTE_AUTO((u32)(pr) + sizeof(*(pr)), aligned) - ((u32)(pr) + sizeof(*(pr))))
+#if 0
+void UnlinkThreadTask(struct ProcThreadList ** _unused_, struct ProcThreadList * task)
+{
+	struct ProcThreadList * pre  = task->pre;
+	struct ProcThreadList * next = task->next;
 
-#define ALIGN_BYTE_AUTO2(n, a) (((u32)(n) + (a)) & -(a))
-#define ALIGN_MEMORY_AUTO2(pr) (ALIGN_BYTE_AUTO2((u32)(pr) + sizeof(*(pr)), aligned) - ((u32)(pr) + sizeof(*(pr))))
+	if (pre == NULL || pre->free != FALSE)
+	{
+		if (next != NULL && next->free == FALSE)
+		{
+			task->free = TRUE;
+			task->size += task->unk_0C;
+			task->unk_0C = 0;
+			task->unk_0F = 0;
+		}
+		else
+		{
+			task->free = TRUE;
+			task->next = next->next;
 
+			if (next->next)
+				next->pre = task;
 
+			task->size += next->size + 0x10;
+			task->unk_0C = 0;
+			task->unk_0F = 0;
+		}
+	}
+	else
+	{
+		if (next != NULL && next->free == FALSE)
+		{
+			pre->next = next;
 
-struct ProcThreadList {
-	struct ProcThreadList * pre;
-	struct ProcThreadList * next;
-	u32 size;
-	u8 unk_0C, unk_0D;
-	u8 free;
-};
+			if (next)
+				next->pre = pre;
 
-OSThread * func_01FFB5DC(struct ProcThreadList ** head, struct ProcThreadList * free_task, u32 size, int);
-OSThread * func_01FFB718(struct ProcThreadList ** head, struct ProcThreadList * free_task, u32 size, int);
+			pre->size += task->unk_0C + task->size + 0x10;
+		}
+		else
+		{
+			pre->next = next->next;
+
+			if (pre->next)
+				pre->next->pre = next->next;
+
+			pre->size += next->size + task->size + 0x20 + task->unk_0C + pre->size;
+		}
+	}
+}
+#endif
 
 OSThread * Proc_AllocThreadTask(struct ProcThreadList ** head, u32 size)
 {

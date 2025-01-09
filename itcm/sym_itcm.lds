@@ -275,7 +275,7 @@
 . = 0x01FFB718; func_01FFB718 = .;
 . = 0x01FFB7A0; _01FFB7A0 = .;
 . = 0x01FFB824; _01FFB824 = .;
-. = 0x01FFB82C; func_01FFB82C = .;
+. = 0x01FFB82C; UnlinkThreadTask = .;
 . = 0x01FFB878; _01FFB878 = .;
 . = 0x01FFB8BC; _01FFB8BC = .;
 . = 0x01FFB8FC; _01FFB8FC = .;

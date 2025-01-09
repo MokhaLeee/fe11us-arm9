@@ -5,6 +5,7 @@
 #pragma force_active on
 
 void * Proc_AllocThreadTask(void * unk, int a);
+void func_01FFBB90(void *, void *);
 
 void Proc_Init(void)
 {

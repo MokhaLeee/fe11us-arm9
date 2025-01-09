@@ -60,12 +60,12 @@ void func_01FFA764(void);
 // ??? func_01FFB574
 // ??? func_01FFB5DC
 // ??? func_01FFB718
-// ??? func_01FFB82C
+// ??? UnlinkThreadTask
 // void * Proc_AllocThreadTask(void * unk, int a);
 // ??? func_01FFB9BC
 // ??? func_01FFBA40
 // ??? func_01FFBAEC
-void func_01FFBB90(void *, void *);
+// void func_01FFBB90(void *, void *);
 
 /* proc.h */
 

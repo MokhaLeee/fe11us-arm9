@@ -48,35 +48,3 @@ _01FFBB80:
 	bl OS_RestoreInterrupts
 	mov r0, fp
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start func_01FFBB90
-func_01FFBB90: @ 0x01FFBB90
-	push {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	ldr r4, [r7]
-	mov r6, r1
-	bl OS_DisableInterrupts
-	mov r5, r0
-	cmp r4, #0
-	beq _01FFBBEC
-_01FFBBB0:
-	ldrb r0, [r4, #0xe]
-	cmp r0, #0
-	bne _01FFBBE0
-	ldrh r0, [r4, #0xc]
-	add r1, r4, #0x10
-	add r0, r1, r0
-	cmp r0, r6
-	bne _01FFBBE0
-	mov r0, r7
-	mov r1, r4
-	bl func_01FFB82C
-	b _01FFBBEC
-_01FFBBE0:
-	ldr r4, [r4, #4]
-	cmp r4, #0
-	bne _01FFBBB0
-_01FFBBEC:
-	mov r0, r5
-	bl OS_RestoreInterrupts
-	pop {r3, r4, r5, r6, r7, pc}

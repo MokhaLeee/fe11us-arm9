@@ -3923,8 +3923,8 @@ _01FFB824:
 	bl func_01FFB5DC
 	pop {r3, r4, r5, pc}
 
-	arm_func_start func_01FFB82C
-func_01FFB82C: @ 0x01FFB82C
+	arm_func_start UnlinkThreadTask
+UnlinkThreadTask: @ 0x01FFB82C
 	ldm r1, {r0, r3}
 	cmp r0, #0
 	ldrneb r2, [r0, #0xe]

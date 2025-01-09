@@ -2,6 +2,8 @@
 #define NITRO_FSI_UTIL_H_
 
 #include "CARD_common.h"
+#include "nitro-sdk/FS_file.h"
+#include "nitro-sdk/FS_archive.h"
 
 #define ALIGN_BYTE(n, a) (((u32)(n) + ALIGN_MASK(a)) & ~ALIGN_MASK(a))
 
