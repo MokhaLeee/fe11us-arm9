@@ -3624,7 +3624,7 @@ void libfunc_unk_20A094C(void);
 // ??? func_020A1378
 // ??? func_020A1418
 // ??? func_020A1448
-// ??? func_020A1478
+// ??? CTRDG_SetPulledOutCallback
 // ??? func_020A1488
 // ??? func_020A151C
 // ??? func_020A1580

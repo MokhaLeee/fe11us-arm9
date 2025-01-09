@@ -2234,7 +2234,7 @@ _01FF9F2C:
 	lsrs r0, r0, #0x1f
 	beq _01FF9F50
 	ldrh r0, [r3, #0x38]
-	bl func_020A1478
+	bl GXi_NopClearFifo128_
 	b _01FF9F8C
 _01FF9F50:
 	ldr r0, _01FFA1FC @ =0x027E0000
@@ -4205,7 +4205,3 @@ _01FFBBEC:
 	mov r0, r5
 	bl OS_RestoreInterrupts
 	pop {r3, r4, r5, r6, r7, pc}
-
-.global gProcessCmdTable
-gProcessCmdTable: @ 0x01FFBBF8
-.incbin "itcm-base.bin", 0x1FFBBF8 - 0x01FF8000, 0x1FFBC90 - 0x1FFBBF8

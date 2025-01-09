@@ -433,8 +433,8 @@ _01FFC9A8:
 	ldr sl, [r0, #0x1c]
 	bl OS_DisableInterrupts
 	mov r4, r0
-	bl func_020A3CF4
-	bl func_020A3CE8
+	bl DC_FlushAll
+	bl DC_StoreAll
 	mov r0, r4
 	bl OS_RestoreInterrupts
 	bl IC_InvalidateAll

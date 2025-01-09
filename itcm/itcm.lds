@@ -11,6 +11,7 @@ SECTIONS
 	itcm : ALIGN(4)
 	{
 		asm/code.o(.text);
+		src/proc.o(.data);
 		src/proc.o(.text);
 		asm/proc.o(.text);
 	}
@@ -19,33 +20,7 @@ SECTIONS
 
 	main_mem : ALIGN(4)
 	{
-		. = 0x02000D14 - 0x02000000; func_02000D14 = .;
-		. = 0x02001770 - 0x02000000; func_02001770 = .;
-		. = 0x0200F2F8 - 0x02000000; func_0200F2F8 = .;
-		. = 0x02021410 - 0x02000000; func_02021410 = .;
-		. = 0x02038248 - 0x02000000; func_02038248 = .;
-		. = 0x02038E0C - 0x02000000; func_02038E0C = .;
-		. = 0x0203C77C - 0x02000000; func_0203C77C = .;
-		. = 0x0203C810 - 0x02000000; func_0203C810 = .;
-		. = 0x0203CB6C - 0x02000000; func_0203CB6C = .;
-		. = 0x0203DF8C - 0x02000000; func_0203DF8C = .;
-		. = 0x0209F7A4 - 0x02000000; GX_HBlankIntr = .;
-		. = 0x0209F7D8 - 0x02000000; GX_VBlankIntr = .;
-		. = 0x0209F890 - 0x02000000; GX_SetGraphicsMode = .;
-		. = 0x0209F8F8 - 0x02000000; GXS_SetGraphicsMode = .;
-		. = 0x0209F914 - 0x02000000; GXx_SetMasterBrightness_ = .;
-		. = 0x020A1478 - 0x02000000; func_020A1478 = .;
-		. = 0x020A3CE8 - 0x02000000; func_020A3CE8 = .;
-		. = 0x020A3CF4 - 0x02000000; func_020A3CF4 = .;
-		. = 0x020A3DB0 - 0x02000000; DC_WaitWriteBufferEmpty = .;
-		. = 0x020A3DBC - 0x02000000; IC_InvalidateAll = .;
-		. = 0x020A4A38 - 0x02000000; OS_DisableInterrupts = .;
-		. = 0x020A4A4C - 0x02000000; OS_RestoreInterrupts = .;
-		. = 0x020A52C0 - 0x02000000; MIi_CheckDma0SourceAddress = .;
-		. = 0x020A5734 - 0x02000000; MIi_CpuClearFast = .;
-		. = 0x020A5780 - 0x02000000; MIi_CpuCopyFast = .;
-		. = 0x020A5824 - 0x02000000; MI_CpuFill8 = .;
-		. = 0x020A58B8 - 0x02000000; MI_CpuCopy8 = .;
+		INCLUDE "sym_mainram.lds"
 	}
 
 	. = BSS_START;
