@@ -1,6 +1,6 @@
 #include "global.h"
 
-char * strcpy(char * dst, const char * src)
+char * STD_CopyString(char * dst, const char * src)
 {
 	char * _dst = dst;
 
@@ -11,7 +11,7 @@ char * strcpy(char * dst, const char * src)
 	return _dst;
 }
 
-int _strncpy(char * dst, const char * src, int n)
+int STD_CopyLStringZeroFill(char * dst, const char * src, int n)
 {
 	int _n;
 	const char * _src = src;
@@ -25,10 +25,10 @@ int _strncpy(char * dst, const char * src, int n)
 	}
 
 	dst[_n] = '\0';
-	return strlen(src);
+	return STD_GetStringLength(src);
 }
 
-int strncpy(char * dst, const char * src, int n)
+int STD_CopyLString(char * dst, const char * src, int n)
 {
 	int _n;
 	const char * _src = src;
@@ -45,10 +45,10 @@ int strncpy(char * dst, const char * src, int n)
 		if (n != 0)
 			dst[_n] = '\0';
 
-	return strlen(src);
+	return STD_GetStringLength(src);
 }
 
-char * strstr(char * haystack, const char * needle)
+char * STD_SearchString(char * haystack, const char * needle)
 {
 	int n, ret;
 	const char * _haystack;
@@ -67,7 +67,7 @@ char * strstr(char * haystack, const char * needle)
 	return 0;
 }
 
-int strlen(const char * s)
+int STD_GetStringLength(const char * s)
 {
 	int len;
 
@@ -77,16 +77,16 @@ int strlen(const char * s)
 	return len;
 }
 
-const char * strcat(char * dst, const char * src)
+const char * STD_ConcatenateString(char * dst, const char * src)
 {
-	int end = strlen(dst);
+	int end = STD_GetStringLength(dst);
 
-	strcpy(dst + end, src);
+	STD_CopyString(dst + end, src);
 
 	return dst;
 }
 
-int strcmp(const char *s1, const char *s2)
+int STD_CompareString(const char *s1, const char *s2)
 {
 	while (*s1 == *s2 && *s1 != '\0')
 		s1++, s2++;
@@ -94,7 +94,7 @@ int strcmp(const char *s1, const char *s2)
 	return *s1 - *s2;
 }
 
-int strncmp(const char *s1, const char *s2, int n)
+int STD_CompareNString(const char *s1, const char *s2, int n)
 {
 	int _n;
 

@@ -3,7 +3,7 @@
 #include "DGT_dgt.h"
 #include "OS_cache.h"
 #include "OS_system.h"
-#include "OS_printf.h"
+#include "OS_vsnprintf.h"
 #include "MI_memory.h"
 #include "MI_uncompress.h"
 #include "FS_rom.h"

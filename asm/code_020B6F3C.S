@@ -11,7 +11,11 @@ sub_20B8400:
 
 ARM_FUNC_START sub_20B8418
 sub_20B8418:
-.incbin "fe11-arm9-base.bin", 0xB8418, 0xB848C - 0xB8418
+.incbin "fe11-arm9-base.bin", 0xB8418, 0xB8480 - 0xB8418
+
+ARM_FUNC_START abs
+abs:
+.incbin "fe11-arm9-base.bin", 0xB8480, 0xB848C - 0xB8480
 
 ARM_FUNC_START __msl_assertion_failed
 __msl_assertion_failed:
@@ -45,84 +49,88 @@ ARM_FUNC_START sub_20B89E8
 sub_20B89E8:
 .incbin "fe11-arm9-base.bin", 0xB89E8, 0xB8A64 - 0xB89E8
 
-ARM_FUNC_START sub_20B8A64
-sub_20B8A64:
+ARM_FUNC_START __mbtowc_noconv
+__mbtowc_noconv:
 .incbin "fe11-arm9-base.bin", 0xB8A64, 0xB8A9C - 0xB8A64
 
-ARM_FUNC_START sub_20B8A9C
-sub_20B8A9C:
+ARM_FUNC_START __wctomb_noconv
+__wctomb_noconv:
 .incbin "fe11-arm9-base.bin", 0xB8A9C, 0xB8AB0 - 0xB8A9C
 
-ARM_FUNC_START sub_20B8AB0
-sub_20B8AB0:
+ARM_FUNC_START wctomb
+wctomb:
 .incbin "fe11-arm9-base.bin", 0xB8AB0, 0xB8ACC - 0xB8AB0
 
 ARM_FUNC_START sub_20B8ACC
 sub_20B8ACC:
 .incbin "fe11-arm9-base.bin", 0xB8ACC, 0xB8B44 - 0xB8ACC
 
-ARM_FUNC_START sub_20B8B44
-sub_20B8B44:
+ARM_FUNC_START memcpy
+memcpy:
 .incbin "fe11-arm9-base.bin", 0xB8B44, 0xB8B64 - 0xB8B44
 
-ARM_FUNC_START sub_20B8B64
-sub_20B8B64:
-.incbin "fe11-arm9-base.bin", 0xB8B64, 0xB8BC4 - 0xB8B64
+ARM_FUNC_START memmove
+memmove:
+.incbin "fe11-arm9-base.bin", 0xB8B64, 0xB8BB0 - 0xB8B64
 
-ARM_FUNC_START sub_20B8BC4
-sub_20B8BC4:
+ARM_FUNC_START memset
+memset:
+.incbin "fe11-arm9-base.bin", 0xB8BB0, 0xB8BC4 - 0xB8BB0
+
+ARM_FUNC_START memchr
+memchr:
 .incbin "fe11-arm9-base.bin", 0xB8BC4, 0xB8BF0 - 0xB8BC4
 
 ARM_FUNC_START sub_20B8BF0
 sub_20B8BF0:
 .incbin "fe11-arm9-base.bin", 0xB8BF0, 0xB8C1C - 0xB8BF0
 
-ARM_FUNC_START sub_20B8C1C
-sub_20B8C1C:
+ARM_FUNC_START memcmp
+memcmp:
 .incbin "fe11-arm9-base.bin", 0xB8C1C, 0xB8C5C - 0xB8C1C
 
-ARM_FUNC_START sub_20B8C5C
-sub_20B8C5C:
+ARM_FUNC_START __fill_mem
+__fill_mem:
 .incbin "fe11-arm9-base.bin", 0xB8C5C, 0xB8D0C - 0xB8C5C
 
-ARM_FUNC_START sub_20B8D0C
-sub_20B8D0C:
+ARM_FUNC_START parse_format
+parse_format:
 .incbin "fe11-arm9-base.bin", 0xB8D0C, 0xB929C - 0xB8D0C
 
-ARM_FUNC_START sub_20B929C
-sub_20B929C:
+ARM_FUNC_START long2str
+long2str:
 .incbin "fe11-arm9-base.bin", 0xB929C, 0xB94E8 - 0xB929C
 
 ARM_FUNC_START sub_20B94E8
 sub_20B94E8:
 .incbin "fe11-arm9-base.bin", 0xB94E8, 0xB97E4 - 0xB94E8
 
-ARM_FUNC_START sub_20B97E4
-sub_20B97E4:
+ARM_FUNC_START double2hex
+double2hex:
 .incbin "fe11-arm9-base.bin", 0xB97E4, 0xB9CC0 - 0xB97E4
 
-ARM_FUNC_START sub_20B9CC0
-sub_20B9CC0:
+ARM_FUNC_START round_decimal
+round_decimal:
 .incbin "fe11-arm9-base.bin", 0xB9CC0, 0xB9DE4 - 0xB9CC0
 
-ARM_FUNC_START sub_20B9DE4
-sub_20B9DE4:
+ARM_FUNC_START float2str
+float2str:
 .incbin "fe11-arm9-base.bin", 0xB9DE4, 0xBA548 - 0xB9DE4
 
-ARM_FUNC_START sub_20BA548
-sub_20BA548:
+ARM_FUNC_START __pformatter
+__pformatter:
 .incbin "fe11-arm9-base.bin", 0xBA548, 0xBAD6C - 0xBA548
 
 ARM_FUNC_START sub_20BAD6C
 sub_20BAD6C:
 .incbin "fe11-arm9-base.bin", 0xBAD6C, 0xBAD98 - 0xBAD6C
 
-ARM_FUNC_START sub_20BAD98
-sub_20BAD98:
+ARM_FUNC_START __StringWrite
+__StringWrite:
 .incbin "fe11-arm9-base.bin", 0xBAD98, 0xBADDC - 0xBAD98
 
-ARM_FUNC_START printf
-printf:
+ARM_FUNC_START vsnprintf
+vsnprintf:
 .incbin "fe11-arm9-base.bin", 0xBADDC, 0xBAEF4 - 0xBADDC
 
 ARM_FUNC_START sub_20BAEF4

@@ -4249,20 +4249,20 @@ void sub_20AD244(int a);
 // ??? sub_20B6B84
 // ??? sub_20B6BAC
 // ??? sub_20B6BD4
-char * strcpy(char * dest, const char * src);
-int _strncpy(char * dst, const char * src, int n);
-int strncpy(char * dst, const char * src, int n);
-char * strstr(char * haystack, const char * needle);
-int strlen(const char * s);
-const char * strcat(char * dst, const char * src);
-int strcmp(const char *s1, const char *s2);
-int strncmp(const char *s1, const char *s2, int n);
-// ??? sub_20B6EC0
-// ??? sub_20B6EE8
-// ??? _vfprintf_r
-// ??? sub_20B7658
-// ??? sub_20B7688
-// ??? sub_20B76DC
+char * STD_CopyString(char * dest, const char * src);
+int STD_CopyLStringZeroFill(char * dst, const char * src, int n);
+int STD_CopyLString(char * dst, const char * src, int n);
+char * STD_SearchString(char * haystack, const char * needle);
+int STD_GetStringLength(const char * s);
+const char * STD_ConcatenateString(char * dst, const char * src);
+int STD_CompareString(const char *s1, const char *s2);
+int STD_CompareNString(const char *s1, const char *s2, int n);
+// ??? STDi_IsSpace
+// ??? STDi_FillBitset
+// ??? STD_TVSScanf
+// ??? string_put_char
+// ??? string_fill_char
+// ??? string_put_string
 // ??? sub_20B7734
 // ??? abort
 // ??? exit
@@ -4277,26 +4277,26 @@ int strncmp(const char *s1, const char *s2, int n);
 // ??? sub_20B891C
 // ??? sub_20B89A4
 // ??? sub_20B89E8
-// ??? sub_20B8A64
-// ??? sub_20B8A9C
-// ??? sub_20B8AB0
+// ??? __mbtowc_noconv
+// ??? __wctomb_noconv
+// ??? wctomb
 // ??? sub_20B8ACC
-// ??? sub_20B8B44
-// ??? sub_20B8B64
-// ??? sub_20B8BC4
+// ??? memcpy
+// ??? memmove
+// ??? memchr
 // ??? sub_20B8BF0
-// ??? sub_20B8C1C
-// ??? sub_20B8C5C
-// ??? sub_20B8D0C
-// ??? sub_20B929C
+// ??? memcmp
+// ??? __fill_mem
+// ??? parse_format
+// ??? long2str
 // ??? sub_20B94E8
-// ??? sub_20B97E4
-// ??? sub_20B9CC0
-// ??? sub_20B9DE4
-// ??? sub_20BA548
+// ??? double2hex
+// ??? round_decimal
+// ??? float2str
+// ??? __pformatter
 // ??? sub_20BAD6C
-// ??? sub_20BAD98
-// ??? printf
+// ??? __StringWrite
+// ??? vsnprintf
 // ??? sub_20BAEF4
 // ??? raise
 // ??? sub_20BB30C

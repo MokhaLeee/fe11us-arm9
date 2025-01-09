@@ -5,7 +5,7 @@
 #include "CARD_rom.h"
 #include "CARD_common.h"
 #include "MB_mb.h"
-#include "OS_printf.h"
+#include "OS_vsnprintf.h"
 #include "code32.h"
 
 // port from https://github.com/pret/pokediamond/blob/master/arm9/lib/NitroSDK/src/FS_rom.c

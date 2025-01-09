@@ -91,7 +91,7 @@ _start: @ 0x02000800
 	cmp r1, r2
 	blt 1b
 
-	@ printf buffer
+	@ vsnprintf buffer
 	ldr r1, _0200092C @ =HW_COMPONENT_PARAM
 	str r0, [r1]
 
