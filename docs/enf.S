@@ -3674,8 +3674,8 @@ ARM_FUNC_START MB_UpdateGameInfoMember
 MB_UpdateGameInfoMember:
 .incbin "fe11-arm9-base.bin", 0xB3604, 0xB3674 - 0xB3604
 
-ARM_FUNC_START mySTD_GetStringLength
-mySTD_GetStringLength:
+ARM_FUNC_START mystrlen
+mystrlen:
 .incbin "fe11-arm9-base.bin", 0xB3674, 0xB369C - 0xB3674
 
 ARM_FUNC_START MB_AddGameInfo
@@ -4098,48 +4098,48 @@ ARM_FUNC_START __StringWrite
 __StringWrite:
 .incbin "fe11-arm9-base.bin", 0xBAD98, 0xBAEF4 - 0xBAD98
 
-ARM_FUNC_START vsnvsnprintf
-vsnvsnprintf:
+ARM_FUNC_START vsnprintf
+vsnprintf:
 .incbin "fe11-arm9-base.bin", 0xBAEF4, 0xBAF84 - 0xBAEF4
 
-ARM_FUNC_START STD_TSScanf
-STD_TSScanf:
+ARM_FUNC_START sprintf
+sprintf:
 .incbin "fe11-arm9-base.bin", 0xBAF84, 0xBB148 - 0xBAF84
 
 ARM_FUNC_START CTRDG_SetPulledOutCallback
 CTRDG_SetPulledOutCallback:
 .incbin "fe11-arm9-base.bin", 0xBB148, 0xBB30C - 0xBB148
 
-ARM_FUNC_START STD_GetStringLength
-STD_GetStringLength:
+ARM_FUNC_START strlen
+strlen:
 .incbin "fe11-arm9-base.bin", 0xBB30C, 0xBB328 - 0xBB30C
 
-ARM_FUNC_START STD_CopyString
-STD_CopyString:
+ARM_FUNC_START strcpy
+strcpy:
 .incbin "fe11-arm9-base.bin", 0xBB328, 0xBB3F0 - 0xBB328
 
-ARM_FUNC_START STD_CopyLString
-STD_CopyLString:
+ARM_FUNC_START strncpy
+strncpy:
 .incbin "fe11-arm9-base.bin", 0xBB3F0, 0xBB440 - 0xBB3F0
 
-ARM_FUNC_START STD_ConcatenateString
-STD_ConcatenateString:
+ARM_FUNC_START strcat
+strcat:
 .incbin "fe11-arm9-base.bin", 0xBB440, 0xBB470 - 0xBB440
 
-ARM_FUNC_START STD_CompareString
-STD_CompareString:
+ARM_FUNC_START strcmp
+strcmp:
 .incbin "fe11-arm9-base.bin", 0xBB470, 0xBB584 - 0xBB470
 
-ARM_FUNC_START STD_CompareNString
-STD_CompareNString:
+ARM_FUNC_START strncmp
+strncmp:
 .incbin "fe11-arm9-base.bin", 0xBB584, 0xBB5B8 - 0xBB584
 
 ARM_FUNC_START strchr
 strchr:
 .incbin "fe11-arm9-base.bin", 0xBB5B8, 0xBB5F4 - 0xBB5B8
 
-ARM_FUNC_START STD_SearchString
-STD_SearchString:
+ARM_FUNC_START strstr
+strstr:
 .incbin "fe11-arm9-base.bin", 0xBB5F4, 0xBC98C - 0xBB5F4
 
 ARM_FUNC_START G3CS_Nop
