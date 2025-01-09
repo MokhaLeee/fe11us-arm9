@@ -165,7 +165,7 @@ _020C4F08:
 	mov r0, r7
 	mov r1, r4
 	mov r2, r6
-	bl sub_20A56BC
+	bl MIi_CpuClear16
 	add r4, r4, #0x1a
 	cmp r4, r5
 	blo _020C4F08
@@ -184,7 +184,7 @@ _020C4F50:
 	mov r0, r5
 	mov r1, r7
 	mov r2, r4
-	bl sub_20A56BC
+	bl MIi_CpuClear16
 	add r6, r6, #1
 	cmp r6, #0x40
 	add r7, r7, #0x1a

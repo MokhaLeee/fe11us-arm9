@@ -26,14 +26,14 @@ void sub_200EDF0(void)
 	REG_DISPCNT_SUB &= ~MODE_0_2D;
 
 	PM_Init();
-	sub_20A0480(0x1FF);
+	GX_SetBankForLCDC(0x1FF);
 
-	mem_fill(0, VRAM, 0xA4000);
+	MIi_CpuClearFast(0, VRAM, 0xA4000);
 	sub_20A094C();
-	mem_fill(0xC0, OAM, 0x400);
-	mem_fill(0x0, BG_PALETTE, 0x400);
-	mem_fill(0xC0, OAM_SUB, 0x400);
-	mem_fill(0x0, BG_PALETTE_SUB, 0x400);
+	MIi_CpuClearFast(0xC0, OAM, 0x400);
+	MIi_CpuClearFast(0x0, BG_PALETTE, 0x400);
+	MIi_CpuClearFast(0xC0, OAM_SUB, 0x400);
+	MIi_CpuClearFast(0x0, BG_PALETTE_SUB, 0x400);
 
 	REG_EXMEMCNT |= ARM7_MAIN_RAM_PRIORITY;
 	REG_POWERCNT &= ~BIT(15); // disp_swap
@@ -51,7 +51,7 @@ void sub_200EECC(void)
 
 	ime_old = REG_IME;
 	REG_IME = 1;
-	sub_209F7D8(1);
+	GX_VBlankIntr(1);
 }
 
 void InitSystem(void)
@@ -114,7 +114,7 @@ void InitSystem(void)
 void sub_200F028(void)
 {
 	OS_WaitVBlankIntr();
-	sub_209F848();
+	GX_DispOn();
 
 	REG_DISPCNT_SUB |= MODE_0_2D;
 }

@@ -29,11 +29,11 @@ SECTIONS
 		. = 0x0203C810 - 0x02000000; sub_203C810 = .;
 		. = 0x0203CB6C - 0x02000000; sub_203CB6C = .;
 		. = 0x0203DF8C - 0x02000000; sub_203DF8C = .;
-		. = 0x0209F7A4 - 0x02000000; sub_209F7A4 = .;
-		. = 0x0209F7D8 - 0x02000000; sub_209F7D8 = .;
-		. = 0x0209F890 - 0x02000000; sub_209F890 = .;
-		. = 0x0209F8F8 - 0x02000000; sub_209F8F8 = .;
-		. = 0x0209F914 - 0x02000000; sub_209F914 = .;
+		. = 0x0209F7A4 - 0x02000000; GX_HBlankIntr = .;
+		. = 0x0209F7D8 - 0x02000000; GX_VBlankIntr = .;
+		. = 0x0209F890 - 0x02000000; GX_SetGraphicsMode = .;
+		. = 0x0209F8F8 - 0x02000000; GXS_SetGraphicsMode = .;
+		. = 0x0209F914 - 0x02000000; GXx_SetMasterBrightness_ = .;
 		. = 0x020A1478 - 0x02000000; sub_20A1478 = .;
 		. = 0x020A3CE8 - 0x02000000; sub_20A3CE8 = .;
 		. = 0x020A3CF4 - 0x02000000; sub_20A3CF4 = .;
@@ -41,9 +41,9 @@ SECTIONS
 		. = 0x020A3DBC - 0x02000000; IC_InvalidateAll = .;
 		. = 0x020A4A38 - 0x02000000; OS_DisableInterrupts = .;
 		. = 0x020A4A4C - 0x02000000; OS_RestoreInterrupts = .;
-		. = 0x020A52C0 - 0x02000000; sub_20A52C0 = .;
-		. = 0x020A5734 - 0x02000000; mem_fill = .;
-		. = 0x020A5780 - 0x02000000; sub_20A5780 = .;
+		. = 0x020A52C0 - 0x02000000; MIi_CheckDma0SourceAddress = .;
+		. = 0x020A5734 - 0x02000000; MIi_CpuClearFast = .;
+		. = 0x020A5780 - 0x02000000; MIi_CpuCopyFast = .;
 		. = 0x020A5824 - 0x02000000; MI_CpuFill8 = .;
 		. = 0x020A58B8 - 0x02000000; MI_CpuCopy8 = .;
 	}

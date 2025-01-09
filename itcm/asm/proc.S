@@ -422,7 +422,7 @@ OSi_ReloadRomData: @ 0x01FFC984
 	mov r0, r5
 	add r1, r1, #0x1d4
 	mov r2, #0x160
-	bl sub_1FFCA2C
+	bl OSi_ReadCardRom32
 _01FFC9A8:
 	ldr r0, _01FFCA28 @ =0x027FFE20
 	ldr r6, [r0]
@@ -450,18 +450,18 @@ _01FFCA00:
 	mov r0, r6
 	mov r1, r7
 	mov r2, r8
-	bl sub_1FFCA2C
+	bl OSi_ReadCardRom32
 	mov r1, fp
 	mov r2, sl
 	add r0, sb, r5
-	bl sub_1FFCA2C
+	bl OSi_ReadCardRom32
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
 _01FFCA24: .4byte 0x027FFC2C
 _01FFCA28: .4byte 0x027FFE20
 
-	arm_func_start sub_1FFCA2C
-sub_1FFCA2C: @ 0x01FFCA2C
+	arm_func_start OSi_ReadCardRom32
+OSi_ReadCardRom32: @ 0x01FFCA2C
 	push {r3, r4, r5, r6, r7, r8, sb, lr}
 	ldr r4, _01FFCAF0 @ =0x027FFE60
 	ldr r3, _01FFCAF4 @ =0x000001FF
@@ -523,8 +523,8 @@ _01FFCAF8: .4byte 0x040001A4
 _01FFCAFC: .4byte 0x040001A1
 _01FFCB00: .4byte 0x04100010
 
-	arm_func_start sub_1FFCB04
-sub_1FFCB04: @ 0x01FFCB04
+	arm_func_start MIi_DmaSetParams
+MIi_DmaSetParams: @ 0x01FFCB04
 	push {r3, r4, r5, r6, r7, lr}
 	mov r7, r0
 	mov r6, r1
@@ -542,8 +542,8 @@ sub_1FFCB04: @ 0x01FFCB04
 	bl OS_RestoreInterrupts
 	pop {r3, r4, r5, r6, r7, pc}
 
-	arm_func_start sub_1FFCB44
-sub_1FFCB44: @ 0x01FFCB44
+	arm_func_start MIi_DmaSetParams_wait
+MIi_DmaSetParams_wait: @ 0x01FFCB44
 	push {r3, r4, r5, r6, r7, lr}
 	mov r7, r0
 	mov r6, r1
@@ -575,8 +575,8 @@ _01FFCBA4:
 _01FFCBAC: .4byte 0x040000B0
 _01FFCBB0: .4byte 0x81400001
 
-	arm_func_start sub_1FFCBB4
-sub_1FFCBB4: @ 0x01FFCBB4
+	arm_func_start MIi_DmaSetParams_noInt
+MIi_DmaSetParams_noInt: @ 0x01FFCBB4
 	mov ip, #0xc
 	mul ip, r0, ip
 	add r0, ip, #0xb0
@@ -625,7 +625,7 @@ sub_1FFCC3C: @ 0x01FFCC3C
 	mov sb, r1
 	popeq {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	mov r3, #0
-	bl sub_20A52C0
+	bl MIi_CheckDma0SourceAddress
 	add r0, sl, sl, lsl #1
 	add r0, r0, #2
 	lsl r0, r0, #2
@@ -648,7 +648,7 @@ _01FFCC8C:
 	mov r1, sb
 	mov r2, fp
 	orr r3, r4, r7, lsr #2
-	bl sub_1FFCB04
+	bl MIi_DmaSetParams
 	subs r8, r8, r7
 	add sb, sb, r7
 	bne _01FFCC8C

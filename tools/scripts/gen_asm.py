@@ -17,7 +17,6 @@ def main(args):
 
                 cur_offset = eval(f"0x{func[3:]}") - 0x02000000
 
-
                 if pre is not None:
                     print(f".incbin \"fe11-arm9-base.bin\", 0x{pre:05X}, 0x{cur_offset:05X} - 0x{pre:05X}")
                     print("")

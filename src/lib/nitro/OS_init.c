@@ -6,7 +6,7 @@
 
 extern void CTRDG_Init(void);
 extern void PM_Init(void);
-extern void sub_20A3DE4(void);
+extern void OSi_WaitVCount0(void);
 
 void OS_Init(void)
 {
@@ -25,5 +25,5 @@ void OS_Init(void)
     CTRDG_Init();
     CARD_Init();
     PM_Init();
-	sub_20A3DE4();
+	OSi_WaitVCount0();
 }

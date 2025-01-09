@@ -1,8 +1,8 @@
 .include "macros.inc"
 .section .text
 
-	arm_func_start sub_20A4C40
-sub_20A4C40: @ 0x020A4C40
+	arm_func_start OS_GetMacAddress
+OS_GetMacAddress: @ 0x020A4C40
 	ldr ip, _020A4C54 @ =MI_CpuCopy8
 	mov r1, r0
 	ldr r0, _020A4C58 @ =0x027FFCF4
@@ -12,8 +12,8 @@ sub_20A4C40: @ 0x020A4C40
 _020A4C54: .4byte MI_CpuCopy8
 _020A4C58: .4byte 0x027FFCF4
 
-	arm_func_start sub_20A4C5C
-sub_20A4C5C: @ 0x020A4C5C
+	arm_func_start OS_GetOwnerInfo
+OS_GetOwnerInfo: @ 0x020A4C5C
 	push {r4, lr}
 	ldr ip, _020A4CDC @ =0x027FFC80
 	mov r4, r0
@@ -36,12 +36,12 @@ sub_20A4C5C: @ 0x020A4C5C
 	strh r3, [r4, #0x1a]
 	ldrb r3, [ip, #0x50]
 	strh r3, [r4, #0x52]
-	bl sub_20A56D4
+	bl MIi_CpuCopy16
 	ldr r0, _020A4CDC @ =0x027FFC80
 	add r1, r4, #0x1c
 	add r0, r0, #0x1c
 	mov r2, #0x34
-	bl sub_20A56D4
+	bl MIi_CpuCopy16
 	mov r0, #0
 	strh r0, [r4, #0x18]
 	strh r0, [r4, #0x50]

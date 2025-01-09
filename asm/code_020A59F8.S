@@ -1,8 +1,12 @@
 .include "macros.inc"
 .section .text
 
-ARM_FUNC_START sub_20A59F8
-sub_20A59F8:
+ARM_FUNC_START MI_Zero36B
+MI_Zero36B:
+.incbin "fe11-arm9-base.bin", 0xA59E8, 0xA59F8 - 0xA59E8
+
+ARM_FUNC_START MI_SwapWord
+MI_SwapWord:
 .incbin "fe11-arm9-base.bin", 0xA59F8, 0xA5A00 - 0xA59F8
 
 ARM_FUNC_START sub_20A5A00

@@ -384,7 +384,7 @@
 . = 0x01FFCA00; _01FFCA00 = .;
 . = 0x01FFCA24; _01FFCA24 = .;
 . = 0x01FFCA28; _01FFCA28 = .;
-. = 0x01FFCA2C; sub_1FFCA2C = .;
+. = 0x01FFCA2C; OSi_ReadCardRom32 = .;
 . = 0x01FFCA50; _01FFCA50 = .;
 . = 0x01FFCA84; _01FFCA84 = .;
 . = 0x01FFCAB0; _01FFCAB0 = .;
@@ -395,12 +395,12 @@
 . = 0x01FFCAF8; _01FFCAF8 = .;
 . = 0x01FFCAFC; _01FFCAFC = .;
 . = 0x01FFCB00; _01FFCB00 = .;
-. = 0x01FFCB04; sub_1FFCB04 = .;
-. = 0x01FFCB44; sub_1FFCB44 = .;
+. = 0x01FFCB04; MIi_DmaSetParams = .;
+. = 0x01FFCB44; MIi_DmaSetParams_wait = .;
 . = 0x01FFCBA4; _01FFCBA4 = .;
 . = 0x01FFCBAC; _01FFCBAC = .;
 . = 0x01FFCBB0; _01FFCBB0 = .;
-. = 0x01FFCBB4; sub_1FFCBB4 = .;
+. = 0x01FFCBB4; MIi_DmaSetParams_noInt = .;
 . = 0x01FFCBD8; sub_1FFCBD8 = .;
 . = 0x01FFCC24; _01FFCC24 = .;
 . = 0x01FFCC34; _01FFCC34 = .;

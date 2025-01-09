@@ -1826,7 +1826,7 @@ sub_1FF9948: @ 0x01FF9948
 	mov r0, #0
 	add r1, r1, r4, lsl #2
 	ldr r1, [r1, #0x20]
-	bl mem_fill
+	bl MIi_CpuClearFast
 	pop {r4, pc}
 	.align 2, 0
 _01FF9994: .4byte data_027e1268
@@ -1838,7 +1838,7 @@ sub_1FF9998: @ 0x01FF9998
 	ldr r3, [r3]
 	ldr r3, [r3, #0x30]
 	add r1, r3, r1
-	bl sub_20A5780
+	bl MIi_CpuCopyFast
 	ldr r0, _01FF99C8 @ =data_027e1268
 	ldr r1, [r0]
 	ldrb r0, [r1, #0x3e]
@@ -1855,7 +1855,7 @@ sub_1FF99CC: @ 0x01FF99CC
 	ldr r3, [r3]
 	ldr r3, [r3, #0x30]
 	add r1, r3, r1
-	bl sub_20A5780
+	bl MIi_CpuCopyFast
 	ldr r0, _01FF99FC @ =0x027E0000
 	ldr r1, [r0]
 	ldrb r0, [r1, #0x3e]
@@ -1872,7 +1872,7 @@ sub_1FF9A00: @ 0x01FF9A00
 	ldr r3, [r3]
 	ldr r3, [r3, #0x30]
 	add r1, r3, r1
-	bl sub_20A5780
+	bl MIi_CpuCopyFast
 	ldr r0, _01FF9A30 @ =0x027E0004
 	ldr r1, [r0]
 	ldrb r0, [r1, #0x3e]
@@ -1904,13 +1904,13 @@ sub_1FF9A68: @ 0x01FF9A68
 	cmp r1, #0
 	moveq r1, #0x5000000
 	ldrne r1, _01FF9A84 @ =0x05000400
-	ldr ip, _01FF9A88 @ =sub_20A5780
+	ldr ip, _01FF9A88 @ =MIi_CpuCopyFast
 	add r1, r1, r2
 	mov r2, r3
 	bx ip
 	.align 2, 0
 _01FF9A84: .4byte 0x05000400
-_01FF9A88: .4byte sub_20A5780
+_01FF9A88: .4byte MIi_CpuCopyFast
 
 	arm_func_start sub_1FF9A8C
 sub_1FF9A8C: @ 0x01FF9A8C
@@ -1922,7 +1922,7 @@ sub_1FF9A8C: @ 0x01FF9A8C
 	ldr r1, [r1, #0x30]
 	mov r4, r2
 	add r1, r1, r5
-	bl sub_20A5780
+	bl MIi_CpuCopyFast
 	ldr r1, _01FF9AF0 @ =data_027e1268
 	ldr r0, _01FF9AF4 @ =0x027E0000
 	ldr r1, [r1]
@@ -2009,7 +2009,7 @@ _01FF9BC8:
 	lsl r3, r3, #0x13
 	lsr r3, r3, #0x1b
 	add r1, r1, r3, lsl #11
-	bl sub_20A5780
+	bl MIi_CpuCopyFast
 _01FF9BF0:
 	add r6, r6, #1
 	cmp r6, #4
@@ -2063,7 +2063,7 @@ sub_1FF9C88: @ 0x01FF9C88
 	lsl r2, r1, #0x1c
 	lsr r1, r3, #0x1d
 	lsr r2, r2, #0x1f
-	bl sub_209F890
+	bl GX_SetGraphicsMode
 	ldr r0, _01FFA1F8 @ =0x027E0008
 	ldr r1, [r0]
 	ldrh r0, [r1]
@@ -2095,7 +2095,7 @@ sub_1FF9C88: @ 0x01FF9C88
 	add r0, r2, #0x6c
 	mov r1, #0
 	str r3, [r2]
-	bl sub_209F914
+	bl GXx_SetMasterBrightness_
 	b _01FF9E24
 _01FF9D34:
 	ldr r0, _01FFA1F8 @ =0x027E0008
@@ -2151,14 +2151,14 @@ _01FF9D34:
 	asr r1, r0, #4
 	ldr r0, _01FFA200 @ =0x0400006C
 	add r1, r1, r3
-	bl sub_209F914
+	bl GXx_SetMasterBrightness_
 	b _01FF9E24
 _01FF9E10:
 	ldr r1, _01FFA1F8 @ =0x027E0008
 	add r0, r2, #0x6c
 	ldr r1, [r1]
 	ldrsb r1, [r1, #0x50]
-	bl sub_209F914
+	bl GXx_SetMasterBrightness_
 _01FF9E24:
 	ldr r0, _01FFA1F8 @ =0x027E0008
 	ldr r1, [r0]
@@ -2426,7 +2426,7 @@ sub_1FFA218: @ 0x01FFA218
 	ldrh r0, [r0]
 	lsl r0, r0, #0x1d
 	lsr r0, r0, #0x1d
-	bl sub_209F8F8
+	bl GXS_SetGraphicsMode
 	ldr r0, _01FFA674 @ =0x027E000C
 	ldr r0, [r0]
 	ldrh r1, [r0]
@@ -2694,12 +2694,12 @@ _01FFA3C8:
 	asr r1, r0, #4
 	ldr r0, _01FFA68C @ =0x0400106C
 	add r1, r1, r2
-	bl sub_209F914
+	bl GXx_SetMasterBrightness_
 	pop {r4, r5, r6, pc}
 _01FFA664:
 	ldrsb r1, [r1, #0x50]
 	add r0, r0, #0x5c
-	bl sub_209F914
+	bl GXx_SetMasterBrightness_
 	pop {r4, r5, r6, pc}
 	.align 2, 0
 _01FFA674: .4byte 0x027E000C
@@ -2720,7 +2720,7 @@ sub_1FFA690: @ 0x01FFA690
 	lsrs r0, r0, #0x1f
 	movne r0, #1
 	moveq r0, #0
-	bl sub_209F7D8
+	bl GX_VBlankIntr
 	ldr r0, _01FFA718 @ =0x027E0008
 	ldr r0, [r0]
 	ldrh r0, [r0, #4]
@@ -2728,7 +2728,7 @@ sub_1FFA690: @ 0x01FFA690
 	lsrs r0, r0, #0x1f
 	movne r0, #1
 	moveq r0, #0
-	bl sub_209F7A4
+	bl GX_HBlankIntr
 	ldr r0, _01FFA718 @ =0x027E0008
 	ldr r1, _01FFA71C @ =0x04000004
 	ldr r0, [r0]
@@ -2783,7 +2783,7 @@ sub_1FFA764: @ 0x01FFA764
 	ldr r1, _01FFA78C @ =data_027e1268
 	mov r3, #0
 	ldr r2, [r1]
-	ldr ip, _01FFA790 @ =mem_fill
+	ldr ip, _01FFA790 @ =MIi_CpuClearFast
 	strb r3, [r2, #0x40]
 	ldr r1, [r1]
 	mov r0, #0xc0
@@ -2792,7 +2792,7 @@ sub_1FFA764: @ 0x01FFA764
 	bx ip
 	.align 2, 0
 _01FFA78C: .4byte data_027e1268
-_01FFA790: .4byte mem_fill
+_01FFA790: .4byte MIi_CpuClearFast
 
 	arm_func_start sub_1FFA794
 sub_1FFA794: @ 0x01FFA794
@@ -2821,7 +2821,7 @@ _01FFA7C0:
 	ldr r0, [r2, #0x34]
 	movne r1, fp
 	mov r2, #0x400
-	bl sub_20A5780
+	bl MIi_CpuCopyFast
 	bl sub_1FFA764
 	add sl, sl, #1
 	cmp sl, #2

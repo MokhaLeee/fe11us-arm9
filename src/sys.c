@@ -6,11 +6,11 @@ void OS_Terminate(void)
     while (TRUE)
     {
         OS_DisableInterrupts();
-        WaitForInterrupt();
+        OS_Halt();
     }
 }
 
-asm void WaitForInterrupt(void)
+asm void OS_Halt(void)
 {
     mov r0, #0
     // System Control Coprocessor command: Wait For Interrupt
