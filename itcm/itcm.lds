@@ -51,6 +51,6 @@ SECTIONS
 	. = BSS_START;
 	BSS : ALIGN(4)
 	{
-		INCLUDE "sym_common.lds"
+		INCLUDE "../sym_common.lds"
 	}
 }

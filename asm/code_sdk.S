@@ -3075,52 +3075,52 @@ ARM_FUNC_START PM_AppendPostSleepCallback
 PM_AppendPostSleepCallback:
 .incbin "fe11-arm9-base.bin", 0xAC250, 0xAC268 - 0xAC250
 
-ARM_FUNC_START libfunc_unk_20AC268
-libfunc_unk_20AC268:
+ARM_FUNC_START PM_DeletePreSleepCallback
+PM_DeletePreSleepCallback:
 .incbin "fe11-arm9-base.bin", 0xAC268, 0xAC280 - 0xAC268
 
-ARM_FUNC_START libfunc_unk_20AC280
-libfunc_unk_20AC280:
+ARM_FUNC_START PM_DeletePostSleepCallback
+PM_DeletePostSleepCallback:
 .incbin "fe11-arm9-base.bin", 0xAC280, 0xAC298 - 0xAC280
 
-ARM_FUNC_START libfunc_unk_20AC298
-libfunc_unk_20AC298:
+ARM_FUNC_START RTC_Init
+RTC_Init:
 .incbin "fe11-arm9-base.bin", 0xAC298, 0xAC304 - 0xAC298
 
-ARM_FUNC_START libfunc_unk_20AC304
-libfunc_unk_20AC304:
+ARM_FUNC_START RTC_GetDateAsync
+RTC_GetDateAsync:
 .incbin "fe11-arm9-base.bin", 0xAC304, 0xAC374 - 0xAC304
 
-ARM_FUNC_START libfunc_unk_20AC374
-libfunc_unk_20AC374:
+ARM_FUNC_START RTC_GetDate
+RTC_GetDate:
 .incbin "fe11-arm9-base.bin", 0xAC374, 0xAC3AC - 0xAC374
 
-ARM_FUNC_START libfunc_unk_20AC3AC
-libfunc_unk_20AC3AC:
+ARM_FUNC_START RTC_GetTimeAsync
+RTC_GetTimeAsync:
 .incbin "fe11-arm9-base.bin", 0xAC3AC, 0xAC420 - 0xAC3AC
 
-ARM_FUNC_START libfunc_unk_20AC420
-libfunc_unk_20AC420:
+ARM_FUNC_START RTC_GetTime
+RTC_GetTime:
 .incbin "fe11-arm9-base.bin", 0xAC420, 0xAC458 - 0xAC420
 
-ARM_FUNC_START libfunc_unk_20AC458
-libfunc_unk_20AC458:
+ARM_FUNC_START RTC_GetDateTimeAsync
+RTC_GetDateTimeAsync:
 .incbin "fe11-arm9-base.bin", 0xAC458, 0xAC4D4 - 0xAC458
 
 ARM_FUNC_START libfunc_unk_20AC4D4
 libfunc_unk_20AC4D4:
 .incbin "fe11-arm9-base.bin", 0xAC4D4, 0xAC50C - 0xAC4D4
 
-ARM_FUNC_START libfunc_unk_20AC50C
-libfunc_unk_20AC50C:
+ARM_FUNC_START RtcCommonCallback
+RtcCommonCallback:
 .incbin "fe11-arm9-base.bin", 0xAC50C, 0xACA5C - 0xAC50C
 
 ARM_FUNC_START libfunc_unk_20ACA5C
 libfunc_unk_20ACA5C:
 .incbin "fe11-arm9-base.bin", 0xACA5C, 0xACACC - 0xACA5C
 
-ARM_FUNC_START libfunc_unk_20ACACC
-libfunc_unk_20ACACC:
+ARM_FUNC_START RtcGetResultCallback
+RtcGetResultCallback:
 .incbin "fe11-arm9-base.bin", 0xACACC, 0xACADC - 0xACACC
 
 ARM_FUNC_START libfunc_unk_20ACADC

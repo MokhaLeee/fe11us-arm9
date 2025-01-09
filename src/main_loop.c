@@ -94,7 +94,7 @@ void InitSystem(void)
 	sub_201BC28();
 	sub_200EECC();
 	sub_201F3DC();
-	libfunc_unk_20AC298();
+	RTC_Init();
 	sub_201FF20();
 	sub_20217B4();
 

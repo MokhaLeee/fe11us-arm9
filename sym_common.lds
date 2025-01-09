@@ -41,6 +41,7 @@
 . = 0x027E1260 - BSS_START; gClock = .;
 . = 0x027E1264 - BSS_START; unk_27E1264 = .;
 . = 0x027E1268 - BSS_START; data_027e1268 = .;
+. = 0x027E1B9C - BSS_START; data_027e1b9c = .;
 . = 0x027E1BA0 - BSS_START; OSi_IrqThreadQueue = .;
 . = 0x027FFC00 - BSS_START; g_nds_bios_ram_h = .;
 . = 0x027FFF9C - BSS_START; HW_COMPONENT_PARAM = .;

@@ -60,11 +60,11 @@ void sub_1FFA764(void);
 // ??? sub_1FFB5DC
 // ??? sub_1FFB718
 // ??? sub_1FFB82C
-// ??? sub_1FFB934
+void * Proc_AllocThread(void * unk, int a);
 // ??? sub_1FFB9BC
 // ??? sub_1FFBA40
 // ??? sub_1FFBAEC
-// ??? sub_1FFBB90
+void sub_1FFBB90(void *, void *);
 
 /* proc.h */
 
@@ -768,12 +768,12 @@ void sub_2015FB4(void);
 // ??? sub_2018FA4
 // ??? Proc_BreakEach
 // ??? sub_201900C
-// ??? sub_2019020
+// ??? Proc_EndEach
 // ??? sub_2019034
-// ??? sub_2019048
-// ??? sub_2019090
-// ??? sub_20190A0
-// ??? sub_20190B0
+// ??? Proc_EndEachMarked
+// ??? Proc_Lock
+// ??? Proc_Release
+// ??? IsProcLocked
 // ??? sub_20190C4
 // ??? sub_20190CC
 // ??? sub_20190EC
@@ -782,11 +782,11 @@ void sub_2015FB4(void);
 // ??? sub_2019230
 // ??? sub_2019310
 // ??? sub_201951C
-// ??? sub_2019620
-// ??? sub_2019640
-// ??? sub_2019674
-// ??? sub_20196A0
-// ??? sub_20196CC
+// ??? ProcCmd_Repeat
+// ??? ProcCmd_WhileExists
+// ??? ProcCmd_SpawnChild
+// ??? ProcCmd_SpawnLockChild
+// ??? ProcCmd_SpawnChildInTree
 // ??? sub_20196F8
 // ??? sub_2019734
 // ??? sub_2019770
@@ -3686,7 +3686,6 @@ void libfunc_unk_20A094C(void);
 // ??? OSi_RemoveThreadFromList
 // ??? OSi_RescheduleThread
 // ??? OS_InitThread
-// ??? OS_CreateThread
 // ??? OS_ExitThread
 // ??? OSi_ExitThread_ArgSpecified
 // ??? OSi_ExitThread
@@ -3694,19 +3693,20 @@ void libfunc_unk_20A094C(void);
 // ??? OS_DestroyThread
 // ??? OSi_CancelThreadAlarmForSleep
 // ??? OS_JoinThread
-// ??? OS_IsThreadTerminated
+// void OS_CreateThread(void *thread, void (*func) (void *), void *arg, void *stack, u32 stackSize, u32 prio);
 // ??? OS_SleepThread
 // ??? OS_WakeupThread
-// ??? OS_WakeupThreadDirect
+// void OS_WakeupThreadDirect(void * thread);
 // ??? OS_SelectThread
 // ??? OS_RescheduleThread
 // ??? OS_YieldThread
 // ??? OS_SetThreadPriority
 // ??? OS_GetThreadPriority
 // ??? OS_Sleep
-// ??? OSi_SleepAlarmCallback
+// void OSi_SleepAlarmCallback(void *arg);
 // ??? OSi_IdleThreadProc
 // ??? OS_DisableScheduler
+// void libfunc_unk_20A374C(void * thread, void * func);
 // ??? OS_EnableScheduler
 // ??? sub_20A374C
 // ??? OS_SetThreadDestructor
@@ -4022,7 +4022,7 @@ void PM_Init(void);
 // ??? PM_AppendPostSleepCallback
 // ??? sub_20AC268
 // ??? sub_20AC280
-void libfunc_unk_20AC298(void);
+void RTC_Init(void);
 // ??? sub_20AC304
 // ??? sub_20AC374
 // ??? sub_20AC3AC

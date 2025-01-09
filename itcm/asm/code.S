@@ -3995,8 +3995,8 @@ _01FFB8FC:
 	str r1, [r0, #8]
 	bx lr
 
-	arm_func_start sub_1FFB934
-sub_1FFB934: @ 0x01FFB934
+	arm_func_start Proc_AllocThread
+Proc_AllocThread: @ 0x01FFB934
 	push {r3, r4, r5, r6, r7, r8, sb, lr}
 	mov sb, r0
 	mov r8, r1

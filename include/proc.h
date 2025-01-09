@@ -77,7 +77,7 @@ struct Proc
     /* 20 */ struct Proc * proc_next;
     /* 24 */ struct Proc * proc_prev;
     /* 28 */ void * unk_28; // maybe child?
-    /* 2C */ void * unk_2c;
+    /* 2C */ void * unk_2c; // thread
     /* 30 */ s16 proc_sleepTime;
     /* 32 */ u16 proc_flags;
     /* 34 */ u8 proc_mark;
@@ -127,3 +127,11 @@ extern BOOL (* gProcessCmdTable[])(struct Proc *);
 extern struct Proc * gProcTreeRootArray[14];
 extern struct Proc * gProcAllocList[0x80 + 1];
 extern struct Proc gProcArray[0x80];
+
+extern u8 data_027e1b9c[];
+
+extern u32 data_020ce6ec;
+extern struct ProcCmd ProcScr_020ce6f0[];
+extern struct ProcCmd ProcScr_020ce710[];
+extern struct ProcCmd ProcScr_020ce730[];
+extern struct ProcCmd ProcScr_020ce750[];
