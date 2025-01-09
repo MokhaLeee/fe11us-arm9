@@ -3,7 +3,7 @@
 #include "FSi_util.h"
 #include "MI_memory.h"
 #include "MI_byteAccess.h"
-#include "OS_vsnprintf.h"
+#include "OS_printf.h"
 
 extern struct {
 	FSArchive * arc_list;
