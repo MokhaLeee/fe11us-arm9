@@ -241,8 +241,8 @@ ARM_FUNC_START IsRootProcess
 IsRootProcess:
 .incbin "itcm-base.bin", 0x03CA0, 0x03CB0 - 0x03CA0
 
-ARM_FUNC_START sub_1FFBCB0
-sub_1FFBCB0:
+ARM_FUNC_START RunProcessScript
+RunProcessScript:
 .incbin "itcm-base.bin", 0x03CB0, 0x03D3C - 0x03CB0
 
 ARM_FUNC_START AllocateProcess
@@ -253,20 +253,20 @@ ARM_FUNC_START sub_1FFBDA4
 sub_1FFBDA4:
 .incbin "itcm-base.bin", 0x03DA4, 0x03DF4 - 0x03DA4
 
-ARM_FUNC_START sub_1FFBDF4
-sub_1FFBDF4:
+ARM_FUNC_START InsertRootProcess
+InsertRootProcess:
 .incbin "itcm-base.bin", 0x03DF4, 0x03E1C - 0x03DF4
 
-ARM_FUNC_START sub_1FFBE1C
-sub_1FFBE1C:
+ARM_FUNC_START InsertChildProcess
+InsertChildProcess:
 .incbin "itcm-base.bin", 0x03E1C, 0x03E3C - 0x03E1C
 
 ARM_FUNC_START UnlinkProc
 UnlinkProc:
 .incbin "itcm-base.bin", 0x03E3C, 0x03EB4 - 0x03E3C
 
-ARM_FUNC_START sub_1FFBEB4
-sub_1FFBEB4:
+ARM_FUNC_START Proc_StartExt
+Proc_StartExt:
 .incbin "itcm-base.bin", 0x03EB4, 0x03F78 - 0x03EB4
 
 ARM_FUNC_START Proc_Start
@@ -281,8 +281,8 @@ ARM_FUNC_START sub_1FFBFD0
 sub_1FFBFD0:
 .incbin "itcm-base.bin", 0x03FD0, 0x03FE0 - 0x03FD0
 
-ARM_FUNC_START sub_1FFBFE0
-sub_1FFBFE0:
+ARM_FUNC_START Proc_StartBlockingExt
+Proc_StartBlockingExt:
 .incbin "itcm-base.bin", 0x03FE0, 0x04018 - 0x03FE0
 
 ARM_FUNC_START Proc_StartBlocking
@@ -301,16 +301,16 @@ ARM_FUNC_START sub_1FFC0A0
 sub_1FFC0A0:
 .incbin "itcm-base.bin", 0x040A0, 0x040E8 - 0x040A0
 
-ARM_FUNC_START sub_1FFC0E8
-sub_1FFC0E8:
+ARM_FUNC_START ClearProc
+ClearProc:
 .incbin "itcm-base.bin", 0x040E8, 0x04174 - 0x040E8
 
-ARM_FUNC_START sub_1FFC174
-sub_1FFC174:
+ARM_FUNC_START Proc_End
+Proc_End:
 .incbin "itcm-base.bin", 0x04174, 0x041E8 - 0x04174
 
-ARM_FUNC_START sub_1FFC1E8
-sub_1FFC1E8:
+ARM_FUNC_START RunProcessRecursive
+RunProcessRecursive:
 .incbin "itcm-base.bin", 0x041E8, 0x042F4 - 0x041E8
 
 ARM_FUNC_START sub_1FFC2F4
@@ -321,8 +321,8 @@ ARM_FUNC_START Proc_Run
 Proc_Run:
 .incbin "itcm-base.bin", 0x04390, 0x043B0 - 0x04390
 
-ARM_FUNC_START sub_1FFC3B0
-sub_1FFC3B0:
+ARM_FUNC_START Proc_Break
+Proc_Break:
 .incbin "itcm-base.bin", 0x043B0, 0x043F4 - 0x043B0
 
 ARM_FUNC_START sub_1FFC3F4
@@ -349,44 +349,44 @@ ARM_FUNC_START sub_1FFC668
 sub_1FFC668:
 .incbin "itcm-base.bin", 0x04668, 0x046BC - 0x04668
 
-ARM_FUNC_START sub_1FFC6BC
-sub_1FFC6BC:
+ARM_FUNC_START OS_IrqHandler
+OS_IrqHandler:
 .incbin "itcm-base.bin", 0x046BC, 0x04714 - 0x046BC
 
-ARM_FUNC_START sub_1FFC714
-sub_1FFC714:
+ARM_FUNC_START OS_IrqHandler_ThreadSwitch
+OS_IrqHandler_ThreadSwitch:
 .incbin "itcm-base.bin", 0x04714, 0x04870 - 0x04714
 
-ARM_FUNC_START sub_1FFC870
-sub_1FFC870:
+ARM_FUNC_START OSi_DoResetSystem
+OSi_DoResetSystem:
 .incbin "itcm-base.bin", 0x04870, 0x048A4 - 0x04870
 
-ARM_FUNC_START sub_1FFC8A4
-sub_1FFC8A4:
+ARM_FUNC_START OSi_DoBoot
+OSi_DoBoot:
 .incbin "itcm-base.bin", 0x048A4, 0x04970 - 0x048A4
 
-ARM_FUNC_START sub_1FFC970
-sub_1FFC970:
+ARM_FUNC_START OSi_CpuClear32
+OSi_CpuClear32:
 .incbin "itcm-base.bin", 0x04970, 0x04984 - 0x04970
 
-ARM_FUNC_START sub_1FFC984
-sub_1FFC984:
+ARM_FUNC_START OSi_ReloadRomData
+OSi_ReloadRomData:
 .incbin "itcm-base.bin", 0x04984, 0x04A2C - 0x04984
 
-ARM_FUNC_START sub_1FFCA2C
-sub_1FFCA2C:
+ARM_FUNC_START OSi_ReadCardRom32
+OSi_ReadCardRom32:
 .incbin "itcm-base.bin", 0x04A2C, 0x04B04 - 0x04A2C
 
-ARM_FUNC_START sub_1FFCB04
-sub_1FFCB04:
+ARM_FUNC_START MIi_DmaSetParams
+MIi_DmaSetParams:
 .incbin "itcm-base.bin", 0x04B04, 0x04B44 - 0x04B04
 
-ARM_FUNC_START sub_1FFCB44
-sub_1FFCB44:
+ARM_FUNC_START MIi_DmaSetParams_wait
+MIi_DmaSetParams_wait:
 .incbin "itcm-base.bin", 0x04B44, 0x04BB4 - 0x04B44
 
-ARM_FUNC_START sub_1FFCBB4
-sub_1FFCBB4:
+ARM_FUNC_START MIi_DmaSetParams_noInt
+MIi_DmaSetParams_noInt:
 .incbin "itcm-base.bin", 0x04BB4, 0x04BD8 - 0x04BB4
 
 ARM_FUNC_START sub_1FFCBD8
