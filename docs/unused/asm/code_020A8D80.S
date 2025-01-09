@@ -289,8 +289,8 @@ ARM_FUNC_START sub_20AC280
 sub_20AC280:
 .incbin "fe11-arm9-base.bin", 0xAC280, 0xAC298 - 0xAC280
 
-ARM_FUNC_START sub_20AC298
-sub_20AC298:
+ARM_FUNC_START libfunc_unk_20AC298
+libfunc_unk_20AC298:
 .incbin "fe11-arm9-base.bin", 0xAC298, 0xAC304 - 0xAC298
 
 ARM_FUNC_START sub_20AC304
@@ -1245,8 +1245,8 @@ ARM_FUNC_START sub_20B6B84
 sub_20B6B84:
 .incbin "fe11-arm9-base.bin", 0xB6B84, 0xB6BAC - 0xB6B84
 
-ARM_FUNC_START sub_20B6BAC
-sub_20B6BAC:
+ARM_FUNC_START libfunc_unk_20B6BAC
+libfunc_unk_20B6BAC:
 .incbin "fe11-arm9-base.bin", 0xB6BAC, 0xB6BD4 - 0xB6BAC
 
 ARM_FUNC_START sub_20B6BD4

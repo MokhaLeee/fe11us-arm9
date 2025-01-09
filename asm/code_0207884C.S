@@ -57,7 +57,7 @@ _02078924:
 	mov r1, r7
 	mov r2, r4
 	add r0, r8, #0x500
-	bl sub_20B6BAC
+	bl libfunc_unk_20B6BAC
 	add r1, r8, r5, lsl #8
 	strh r0, [r1, #0xfe]
 _0207893C:

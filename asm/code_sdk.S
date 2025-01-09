@@ -19,12 +19,12 @@ ARM_FUNC_START SndSetMonoFlag
 SndSetMonoFlag:
 .incbin "fe11-arm9-base.bin", 0x980B0, 0x980D0 - 0x980B0
 
-ARM_FUNC_START sub_20980D0
-sub_20980D0:
+ARM_FUNC_START libfunc_unk_20980D0
+libfunc_unk_20980D0:
 .incbin "fe11-arm9-base.bin", 0x980D0, 0x98108 - 0x980D0
 
-ARM_FUNC_START sub_2098108
-sub_2098108:
+ARM_FUNC_START libfunc_unk_2098108
+libfunc_unk_2098108:
 .incbin "fe11-arm9-base.bin", 0x98108, 0x98114 - 0x98108
 
 ARM_FUNC_START SndLockChannel
@@ -71,16 +71,16 @@ ARM_FUNC_START SndPlayerCreateHeap
 SndPlayerCreateHeap:
 .incbin "fe11-arm9-base.bin", 0x982A0, 0x98334 - 0x982A0
 
-ARM_FUNC_START sub_02098334
-sub_02098334:
+ARM_FUNC_START libfunc_unk_02098334
+libfunc_unk_02098334:
 .incbin "fe11-arm9-base.bin", 0x98334, 0x98344 - 0x98334
 
-ARM_FUNC_START sub_2098334
-sub_2098334:
+ARM_FUNC_START libfunc_unk_2098334
+libfunc_unk_2098334:
 .incbin "fe11-arm9-base.bin", 0x98344, 0x98354 - 0x98344
 
-ARM_FUNC_START sub_2098354
-sub_2098354:
+ARM_FUNC_START libfunc_unk_2098354
+libfunc_unk_2098354:
 .incbin "fe11-arm9-base.bin", 0x98354, 0x98360 - 0x98354
 
 ARM_FUNC_START SndHandleReleaseSeq
@@ -139,8 +139,8 @@ ARM_FUNC_START SndPlayerAllocSeqPlayer
 SndPlayerAllocSeqPlayer:
 .incbin "fe11-arm9-base.bin", 0x98750, 0x987E8 - 0x98750
 
-ARM_FUNC_START sub_20987E8
-sub_20987E8:
+ARM_FUNC_START libfunc_unk_20987E8
+libfunc_unk_20987E8:
 .incbin "fe11-arm9-base.bin", 0x987E8, 0x987F4 - 0x987E8
 
 ARM_FUNC_START SndPlayerStartSeq
@@ -171,16 +171,16 @@ ARM_FUNC_START InsertPrioList
 InsertPrioList:
 .incbin "fe11-arm9-base.bin", 0x989A4, 0x989F8 - 0x989A4
 
-ARM_FUNC_START sub_20989F8
-sub_20989F8:
+ARM_FUNC_START libfunc_unk_20989F8
+libfunc_unk_20989F8:
 .incbin "fe11-arm9-base.bin", 0x989F8, 0x98A30 - 0x989F8
 
 ARM_FUNC_START AllocSeqPlayer
 AllocSeqPlayer:
 .incbin "fe11-arm9-base.bin", 0x98A30, 0x98A98 - 0x98A30
 
-ARM_FUNC_START sub_2098A98
-sub_2098A98:
+ARM_FUNC_START libfunc_unk_2098A98
+libfunc_unk_2098A98:
 .incbin "fe11-arm9-base.bin", 0x98A98, 0x98B1C - 0x98A98
 
 ARM_FUNC_START PlayerHeapDisposeCallback
@@ -199,16 +199,16 @@ ARM_FUNC_START SndStrmAllocChannel
 SndStrmAllocChannel:
 .incbin "fe11-arm9-base.bin", 0x98C44, 0x98CA4 - 0x98C44
 
-ARM_FUNC_START sub_2098CA4
-sub_2098CA4:
+ARM_FUNC_START libfunc_unk_2098CA4
+libfunc_unk_2098CA4:
 .incbin "fe11-arm9-base.bin", 0x98CA4, 0x98CCC - 0x98CA4
 
 ARM_FUNC_START SndStrmSetup
 SndStrmSetup:
 .incbin "fe11-arm9-base.bin", 0x98CCC, 0x98E6C - 0x98CCC
 
-ARM_FUNC_START sub_2098E6C
-sub_2098E6C:
+ARM_FUNC_START libfunc_unk_2098E6C
+libfunc_unk_2098E6C:
 .incbin "fe11-arm9-base.bin", 0x98E6C, 0x98EC0 - 0x98E6C
 
 ARM_FUNC_START SndStrmStop
@@ -227,12 +227,12 @@ ARM_FUNC_START SndStrmSetChannelPan
 SndStrmSetChannelPan:
 .incbin "fe11-arm9-base.bin", 0x98F9C, 0x98FCC - 0x98F9C
 
-ARM_FUNC_START sub_2098FCC
-sub_2098FCC:
+ARM_FUNC_START libfunc_unk_2098FCC
+libfunc_unk_2098FCC:
 .incbin "fe11-arm9-base.bin", 0x98FCC, 0x99040 - 0x98FCC
 
-ARM_FUNC_START sub_2099040
-sub_2099040:
+ARM_FUNC_START libfunc_unk_2099040
+libfunc_unk_2099040:
 .incbin "fe11-arm9-base.bin", 0x99040, 0x99070 - 0x99040
 
 ARM_FUNC_START AlarmCallback
@@ -283,12 +283,12 @@ ARM_FUNC_START SndCaptureEndSleep
 SndCaptureEndSleep:
 .incbin "fe11-arm9-base.bin", 0x99820, 0x998A4 - 0x99820
 
-ARM_FUNC_START sub_20998A4
-sub_20998A4:
+ARM_FUNC_START libfunc_unk_20998A4
+libfunc_unk_20998A4:
 .incbin "fe11-arm9-base.bin", 0x998A4, 0x99990 - 0x998A4
 
-ARM_FUNC_START sub_2099990
-sub_2099990:
+ARM_FUNC_START libfunc_unk_2099990
+libfunc_unk_2099990:
 .incbin "fe11-arm9-base.bin", 0x99990, 0x99A10 - 0x99990
 
 ARM_FUNC_START SndArcSetup
@@ -299,8 +299,8 @@ ARM_FUNC_START SndArcSetCurrent
 SndArcSetCurrent:
 .incbin "fe11-arm9-base.bin", 0x99CAC, 0x99CC4 - 0x99CAC
 
-ARM_FUNC_START sub_2099CC4
-sub_2099CC4:
+ARM_FUNC_START libfunc_unk_2099CC4
+libfunc_unk_2099CC4:
 .incbin "fe11-arm9-base.bin", 0x99CC4, 0x99CD4 - 0x99CC4
 
 ARM_FUNC_START SndArcGetSeqInfo
@@ -343,8 +343,8 @@ ARM_FUNC_START SndArcGetFileSize
 SndArcGetFileSize:
 .incbin "fe11-arm9-base.bin", 0x9A01C, 0x9A044 - 0x9A01C
 
-ARM_FUNC_START sub_209A044
-sub_209A044:
+ARM_FUNC_START libfunc_unk_209A044
+libfunc_unk_209A044:
 .incbin "fe11-arm9-base.bin", 0x9A044, 0x9A10C - 0x9A044
 
 ARM_FUNC_START SndArcGetFileID
@@ -359,8 +359,8 @@ ARM_FUNC_START SndArcSetFileAddress
 SndArcSetFileAddress:
 .incbin "fe11-arm9-base.bin", 0x9A154, 0x9A170 - 0x9A154
 
-ARM_FUNC_START sub_209A170
-sub_209A170:
+ARM_FUNC_START libfunc_unk_209A170
+libfunc_unk_209A170:
 .incbin "fe11-arm9-base.bin", 0x9A170, 0x9A1A8 - 0x9A170
 
 ARM_FUNC_START SndHeapCreate
@@ -391,8 +391,8 @@ ARM_FUNC_START SndHeapGetCurrentLevel
 SndHeapGetCurrentLevel:
 .incbin "fe11-arm9-base.bin", 0x9A474, 0x9A480 - 0x9A474
 
-ARM_FUNC_START sub_209A480
-sub_209A480:
+ARM_FUNC_START libfunc_unk_209A480
+libfunc_unk_209A480:
 .incbin "fe11-arm9-base.bin", 0x9A480, 0x9A490 - 0x9A480
 
 ARM_FUNC_START InitHeap
@@ -403,12 +403,12 @@ ARM_FUNC_START NewSection
 NewSection:
 .incbin "fe11-arm9-base.bin", 0x9A4C4, 0x9A500 - 0x9A4C4
 
-ARM_FUNC_START sub_209A500
-sub_209A500:
+ARM_FUNC_START libfunc_unk_209A500
+libfunc_unk_209A500:
 .incbin "fe11-arm9-base.bin", 0x9A500, 0x9A520 - 0x9A500
 
-ARM_FUNC_START sub_209A520
-sub_209A520:
+ARM_FUNC_START libfunc_unk_209A520
+libfunc_unk_209A520:
 .incbin "fe11-arm9-base.bin", 0x9A520, 0x9A538 - 0x9A520
 
 ARM_FUNC_START SndArcLoadSeq
@@ -419,12 +419,12 @@ ARM_FUNC_START SndArcLoadSeqEx
 SndArcLoadSeqEx:
 .incbin "fe11-arm9-base.bin", 0x9A564, 0x9A588 - 0x9A564
 
-ARM_FUNC_START sub_209A588
-sub_209A588:
+ARM_FUNC_START libfunc_unk_209A588
+libfunc_unk_209A588:
 .incbin "fe11-arm9-base.bin", 0x9A588, 0x9A68C - 0x9A588
 
-ARM_FUNC_START sub_209A68C
-sub_209A68C:
+ARM_FUNC_START libfunc_unk_209A68C
+libfunc_unk_209A68C:
 .incbin "fe11-arm9-base.bin", 0x9A68C, 0x9A710 - 0x9A68C
 
 ARM_FUNC_START SndArcLoadSeqArc
@@ -443,20 +443,20 @@ ARM_FUNC_START SndArcLoadFile
 SndArcLoadFile:
 .incbin "fe11-arm9-base.bin", 0x9A93C, 0x9A9DC - 0x9A93C
 
-ARM_FUNC_START sub_209A9DC
-sub_209A9DC:
+ARM_FUNC_START libfunc_unk_209A9DC
+libfunc_unk_209A9DC:
 .incbin "fe11-arm9-base.bin", 0x9A9DC, 0x9AA48 - 0x9A9DC
 
-ARM_FUNC_START sub_209AA48
-sub_209AA48:
+ARM_FUNC_START libfunc_unk_209AA48
+libfunc_unk_209AA48:
 .incbin "fe11-arm9-base.bin", 0x9AA48, 0x9AAB4 - 0x9AA48
 
-ARM_FUNC_START sub_209AAB4
-sub_209AAB4:
+ARM_FUNC_START libfunc_unk_209AAB4
+libfunc_unk_209AAB4:
 .incbin "fe11-arm9-base.bin", 0x9AAB4, 0x9AB20 - 0x9AAB4
 
-ARM_FUNC_START sub_209AB20
-sub_209AB20:
+ARM_FUNC_START libfunc_unk_209AB20
+libfunc_unk_209AB20:
 .incbin "fe11-arm9-base.bin", 0x9AB20, 0x9AB8C - 0x9AB20
 
 ARM_FUNC_START LoadWaveArcTable
@@ -543,8 +543,8 @@ ARM_FUNC_START SndArcStrmMoveVolume
 SndArcStrmMoveVolume:
 .incbin "fe11-arm9-base.bin", 0x9B514, 0x9B548 - 0x9B514
 
-ARM_FUNC_START sub_209B548
-sub_209B548:
+ARM_FUNC_START libfunc_unk_209B548
+libfunc_unk_209B548:
 .incbin "fe11-arm9-base.bin", 0x9B548, 0x9B554 - 0x9B548
 
 ARM_FUNC_START SndStrmHandleRelease
@@ -631,8 +631,8 @@ ARM_FUNC_START SetupStreamFunction
 SetupStreamFunction:
 .incbin "fe11-arm9-base.bin", 0x9C838, 0x9C8B8 - 0x9C838
 
-ARM_FUNC_START sub_209C8B8
-sub_209C8B8:
+ARM_FUNC_START libfunc_unk_209C8B8
+libfunc_unk_209C8B8:
 .incbin "fe11-arm9-base.bin", 0x9C8B8, 0x9C92C - 0x9C8B8
 
 ARM_FUNC_START CloseFileStream
@@ -663,8 +663,8 @@ ARM_FUNC_START SndCaptureStartOutputEffect
 SndCaptureStartOutputEffect:
 .incbin "fe11-arm9-base.bin", 0x9CA20, 0x9CA74 - 0x9CA20
 
-ARM_FUNC_START sub_209CA74
-sub_209CA74:
+ARM_FUNC_START libfunc_unk_209CA74
+libfunc_unk_209CA74:
 .incbin "fe11-arm9-base.bin", 0x9CA74, 0x9CA9C - 0x9CA74
 
 ARM_FUNC_START SndCaptureChangeOutputEffect
@@ -755,8 +755,8 @@ ARM_FUNC_START FndInitHeapHead
 FndInitHeapHead:
 .incbin "fe11-arm9-base.bin", 0x9D2E8, 0x9D364 - 0x9D2E8
 
-ARM_FUNC_START sub_209D364
-sub_209D364:
+ARM_FUNC_START libfunc_unk_209D364
+libfunc_unk_209D364:
 .incbin "fe11-arm9-base.bin", 0x9D364, 0x9D37C - 0x9D364
 
 ARM_FUNC_START GetRegionOfMBlock
@@ -835,8 +835,8 @@ ARM_FUNC_START FndCreateFrmHeapEx
 FndCreateFrmHeapEx:
 .incbin "fe11-arm9-base.bin", 0x9DA60, 0x9DA98 - 0x9DA60
 
-ARM_FUNC_START sub_209DA98
-sub_209DA98:
+ARM_FUNC_START libfunc_unk_209DA98
+libfunc_unk_209DA98:
 .incbin "fe11-arm9-base.bin", 0x9DA98, 0x9DAA4 - 0x9DA98
 
 ARM_FUNC_START FndAllocFromFrmHeapEx
@@ -895,8 +895,8 @@ ARM_FUNC_START MTX_Concat43
 MTX_Concat43:
 .incbin "fe11-arm9-base.bin", 0x9E45C, 0x9E730 - 0x9E45C
 
-ARM_FUNC_START sub_209E730
-sub_209E730:
+ARM_FUNC_START libfunc_unk_209E730
+libfunc_unk_209E730:
 .incbin "fe11-arm9-base.bin", 0x9E730, 0x9E838 - 0x9E730
 
 ARM_FUNC_START MTX_Identity44_
@@ -911,8 +911,8 @@ ARM_FUNC_START MTX_Concat44
 MTX_Concat44:
 .incbin "fe11-arm9-base.bin", 0x9E898, 0x9F048 - 0x9E898
 
-ARM_FUNC_START sub_209F048
-sub_209F048:
+ARM_FUNC_START libfunc_unk_209F048
+libfunc_unk_209F048:
 .incbin "fe11-arm9-base.bin", 0x9F048, 0x9F250 - 0x9F048
 
 ARM_FUNC_START FX_Div
@@ -1087,40 +1087,40 @@ ARM_FUNC_START disableBankForX_
 disableBankForX_:
 .incbin "fe11-arm9-base.bin", 0xA07AC, 0xA08B4 - 0xA07AC
 
-ARM_FUNC_START sub_20A08B4
-sub_20A08B4:
+ARM_FUNC_START libfunc_unk_20A08B4
+libfunc_unk_20A08B4:
 .incbin "fe11-arm9-base.bin", 0xA08B4, 0xA08D8 - 0xA08B4
 
-ARM_FUNC_START sub_20A08D8
-sub_20A08D8:
+ARM_FUNC_START libfunc_unk_20A08D8
+libfunc_unk_20A08D8:
 .incbin "fe11-arm9-base.bin", 0xA08D8, 0xA08FC - 0xA08D8
 
-ARM_FUNC_START sub_20A08FC
-sub_20A08FC:
+ARM_FUNC_START libfunc_unk_20A08FC
+libfunc_unk_20A08FC:
 .incbin "fe11-arm9-base.bin", 0xA08FC, 0xA0910 - 0xA08FC
 
-ARM_FUNC_START sub_20A0910
-sub_20A0910:
+ARM_FUNC_START libfunc_unk_20A0910
+libfunc_unk_20A0910:
 .incbin "fe11-arm9-base.bin", 0xA0910, 0xA094C - 0xA0910
 
-ARM_FUNC_START sub_20A094C
-sub_20A094C:
+ARM_FUNC_START libfunc_unk_20A094C
+libfunc_unk_20A094C:
 .incbin "fe11-arm9-base.bin", 0xA094C, 0xA0960 - 0xA094C
 
-ARM_FUNC_START sub_20A0960
-sub_20A0960:
+ARM_FUNC_START libfunc_unk_20A0960
+libfunc_unk_20A0960:
 .incbin "fe11-arm9-base.bin", 0xA0960, 0xA0974 - 0xA0960
 
-ARM_FUNC_START sub_20A0974
-sub_20A0974:
+ARM_FUNC_START libfunc_unk_20A0974
+libfunc_unk_20A0974:
 .incbin "fe11-arm9-base.bin", 0xA0974, 0xA0988 - 0xA0974
 
-ARM_FUNC_START sub_20A0988
-sub_20A0988:
+ARM_FUNC_START libfunc_unk_20A0988
+libfunc_unk_20A0988:
 .incbin "fe11-arm9-base.bin", 0xA0988, 0xA09B0 - 0xA0988
 
-ARM_FUNC_START sub_20A09B0
-sub_20A09B0:
+ARM_FUNC_START libfunc_unk_20A09B0
+libfunc_unk_20A09B0:
 .incbin "fe11-arm9-base.bin", 0xA09B0, 0xA09D8 - 0xA09B0
 
 ARM_FUNC_START GX_GetSizeOfX_
@@ -1535,12 +1535,12 @@ ARM_FUNC_START OS_InitLock
 OS_InitLock:
 .incbin "fe11-arm9-base.bin", 0xA286C, 0xA2938 - 0xA286C
 
-ARM_FUNC_START sub_20A2938
-sub_20A2938:
+ARM_FUNC_START libfunc_unk_20A2938
+libfunc_unk_20A2938:
 .incbin "fe11-arm9-base.bin", 0xA2938, 0xA2984 - 0xA2938
 
-ARM_FUNC_START sub_20A2984
-sub_20A2984:
+ARM_FUNC_START libfunc_unk_20A2984
+libfunc_unk_20A2984:
 .incbin "fe11-arm9-base.bin", 0xA2984, 0xA2994 - 0xA2984
 
 ARM_FUNC_START OSi_DoUnlockByWord
@@ -1559,8 +1559,8 @@ ARM_FUNC_START OS_UnlockCartridge
 OS_UnlockCartridge:
 .incbin "fe11-arm9-base.bin", 0xA2A84, 0xA2AA4 - 0xA2A84
 
-ARM_FUNC_START sub_20A2AA4
-sub_20A2AA4:
+ARM_FUNC_START libfunc_unk_20A2AA4
+libfunc_unk_20A2AA4:
 .incbin "fe11-arm9-base.bin", 0xA2AA4, 0xA2AB0 - 0xA2AA4
 
 ARM_FUNC_START OS_TryLockCartridge
@@ -1603,16 +1603,16 @@ ARM_FUNC_START OS_SPrintf
 OS_SPrintf:
 .incbin "fe11-arm9-base.bin", 0xA2BF8, 0xA2C20 - 0xA2BF8
 
-ARM_FUNC_START sub_20A2C20
-sub_20A2C20:
+ARM_FUNC_START libfunc_unk_20A2C20
+libfunc_unk_20A2C20:
 .incbin "fe11-arm9-base.bin", 0xA2C20, 0xA2C38 - 0xA2C20
 
-ARM_FUNC_START sub_20A2C38
-sub_20A2C38:
+ARM_FUNC_START libfunc_unk_20A2C38
+libfunc_unk_20A2C38:
 .incbin "fe11-arm9-base.bin", 0xA2C38, 0xA2C60 - 0xA2C38
 
-ARM_FUNC_START sub_20A2C60
-sub_20A2C60:
+ARM_FUNC_START libfunc_unk_20A2C60
+libfunc_unk_20A2C60:
 .incbin "fe11-arm9-base.bin", 0xA2C60, 0xA2C6C - 0xA2C60
 
 ARM_FUNC_START OSi_GetUnusedThreadId
@@ -1743,8 +1743,8 @@ ARM_FUNC_START OS_EnableScheduler
 OS_EnableScheduler:
 .incbin "fe11-arm9-base.bin", 0xA3718, 0xA374C - 0xA3718
 
-ARM_FUNC_START sub_20A374C
-sub_20A374C:
+ARM_FUNC_START libfunc_unk_20A374C
+libfunc_unk_20A374C:
 .incbin "fe11-arm9-base.bin", 0xA374C, 0xA3754 - 0xA374C
 
 ARM_FUNC_START OS_SetThreadDestructor
@@ -1767,8 +1767,8 @@ ARM_FUNC_START OS_LoadContext
 OS_LoadContext:
 .incbin "fe11-arm9-base.bin", 0xA381C, 0xA3860 - 0xA381C
 
-ARM_FUNC_START sub_20A3860
-sub_20A3860:
+ARM_FUNC_START libfunc_unk_20A3860
+libfunc_unk_20A3860:
 .incbin "fe11-arm9-base.bin", 0xA3860, 0xA3868 - 0xA3860
 
 ARM_FUNC_START OS_GetConsoleType
@@ -2087,8 +2087,8 @@ ARM_FUNC_START OSi_TryLockVram
 OSi_TryLockVram:
 .incbin "fe11-arm9-base.bin", 0xA4D1C, 0xA4DA4 - 0xA4D1C
 
-ARM_FUNC_START sub_20A4DA4
-sub_20A4DA4:
+ARM_FUNC_START libfunc_unk_20A4DA4
+libfunc_unk_20A4DA4:
 .incbin "fe11-arm9-base.bin", 0xA4DA4, 0xA4E74 - 0xA4DA4
 
 ARM_FUNC_START OS_Terminate
@@ -2219,12 +2219,12 @@ ARM_FUNC_START MI_SwapWord
 MI_SwapWord:
 .incbin "fe11-arm9-base.bin", 0xA59F8, 0xA5A00 - 0xA59F8
 
-ARM_FUNC_START sub_20A5A00
-sub_20A5A00:
+ARM_FUNC_START libfunc_unk_20A5A00
+libfunc_unk_20A5A00:
 .incbin "fe11-arm9-base.bin", 0xA5A00, 0xA5AE0 - 0xA5A00
 
-ARM_FUNC_START sub_20A5AE0
-sub_20A5AE0:
+ARM_FUNC_START libfunc_unk_20A5AE0
+libfunc_unk_20A5AE0:
 .incbin "fe11-arm9-base.bin", 0xA5AE0, 0xA5C04 - 0xA5AE0
 
 ARM_FUNC_START MI_UncompressHuffman
@@ -2463,8 +2463,8 @@ ARM_FUNC_START SNDi_InitSharedWork
 SNDi_InitSharedWork:
 .incbin "fe11-arm9-base.bin", 0xA6B38, 0xA6BB4 - 0xA6B38
 
-ARM_FUNC_START sub_20A6BB4
-sub_20A6BB4:
+ARM_FUNC_START libfunc_unk_20A6BB4
+libfunc_unk_20A6BB4:
 .incbin "fe11-arm9-base.bin", 0xA6BB4, 0xA6C24 - 0xA6BB4
 
 ARM_FUNC_START SND_AssignWaveArc
@@ -2487,8 +2487,8 @@ ARM_FUNC_START SND_GetNextInstData
 SND_GetNextInstData:
 .incbin "fe11-arm9-base.bin", 0xA6DF0, 0xA6FA0 - 0xA6DF0
 
-ARM_FUNC_START sub_20A6FA0
-sub_20A6FA0:
+ARM_FUNC_START libfunc_unk_20A6FA0
+libfunc_unk_20A6FA0:
 .incbin "fe11-arm9-base.bin", 0xA6FA0, 0xA6FA8 - 0xA6FA0
 
 ARM_FUNC_START SND_SetWaveDataAddress
@@ -2915,8 +2915,8 @@ ARM_FUNC_START MIC_StopAutoSampling
 MIC_StopAutoSampling:
 .incbin "fe11-arm9-base.bin", 0xAB338, 0xAB370 - 0xAB338
 
-ARM_FUNC_START sub_20AB370
-sub_20AB370:
+ARM_FUNC_START libfunc_unk_20AB370
+libfunc_unk_20AB370:
 .incbin "fe11-arm9-base.bin", 0xAB370, 0xAB380 - 0xAB370
 
 ARM_FUNC_START MicCommonCallback
@@ -2939,16 +2939,16 @@ ARM_FUNC_START MicWaitBusy
 MicWaitBusy:
 .incbin "fe11-arm9-base.bin", 0xAB5E4, 0xAB5FC - 0xAB5E4
 
-ARM_FUNC_START sub_20AB5FC
-sub_20AB5FC:
+ARM_FUNC_START libfunc_unk_20AB5FC
+libfunc_unk_20AB5FC:
 .incbin "fe11-arm9-base.bin", 0xAB5FC, 0xAB638 - 0xAB5FC
 
-ARM_FUNC_START sub_20AB638
-sub_20AB638:
+ARM_FUNC_START libfunc_unk_20AB638
+libfunc_unk_20AB638:
 .incbin "fe11-arm9-base.bin", 0xAB638, 0xAB680 - 0xAB638
 
-ARM_FUNC_START sub_20AB680
-sub_20AB680:
+ARM_FUNC_START libfunc_unk_20AB680
+libfunc_unk_20AB680:
 .incbin "fe11-arm9-base.bin", 0xAB680, 0xAB6C0 - 0xAB680
 
 ARM_FUNC_START PM_Init
@@ -2959,96 +2959,96 @@ ARM_FUNC_START PMi_CommonCallback
 PMi_CommonCallback:
 .incbin "fe11-arm9-base.bin", 0xAB764, 0xAB82C - 0xAB764
 
-ARM_FUNC_START sub_20AB82C
-sub_20AB82C:
+ARM_FUNC_START libfunc_unk_20AB82C
+libfunc_unk_20AB82C:
 .incbin "fe11-arm9-base.bin", 0xAB82C, 0xAB8C0 - 0xAB82C
 
-ARM_FUNC_START sub_20AB8C0
-sub_20AB8C0:
+ARM_FUNC_START libfunc_unk_20AB8C0
+libfunc_unk_20AB8C0:
 .incbin "fe11-arm9-base.bin", 0xAB8C0, 0xAB920 - 0xAB8C0
 
-ARM_FUNC_START sub_20AB920
-sub_20AB920:
+ARM_FUNC_START libfunc_unk_20AB920
+libfunc_unk_20AB920:
 .incbin "fe11-arm9-base.bin", 0xAB920, 0xAB98C - 0xAB920
 
-ARM_FUNC_START sub_20AB98C
-sub_20AB98C:
+ARM_FUNC_START libfunc_unk_20AB98C
+libfunc_unk_20AB98C:
 .incbin "fe11-arm9-base.bin", 0xAB98C, 0xAB9B4 - 0xAB98C
 
-ARM_FUNC_START sub_20AB9B4
-sub_20AB9B4:
+ARM_FUNC_START libfunc_unk_20AB9B4
+libfunc_unk_20AB9B4:
 .incbin "fe11-arm9-base.bin", 0xAB9B4, 0xABA14 - 0xAB9B4
 
-ARM_FUNC_START sub_20ABA14
-sub_20ABA14:
+ARM_FUNC_START libfunc_unk_20ABA14
+libfunc_unk_20ABA14:
 .incbin "fe11-arm9-base.bin", 0xABA14, 0xABA3C - 0xABA14
 
-ARM_FUNC_START sub_20ABA3C
-sub_20ABA3C:
+ARM_FUNC_START libfunc_unk_20ABA3C
+libfunc_unk_20ABA3C:
 .incbin "fe11-arm9-base.bin", 0xABA3C, 0xABA90 - 0xABA3C
 
-ARM_FUNC_START sub_20ABA90
-sub_20ABA90:
+ARM_FUNC_START libfunc_unk_20ABA90
+libfunc_unk_20ABA90:
 .incbin "fe11-arm9-base.bin", 0xABA90, 0xABAB8 - 0xABA90
 
 ARM_FUNC_START PM_SetBackLightAsync
 PM_SetBackLightAsync:
 .incbin "fe11-arm9-base.bin", 0xABAB8, 0xABB34 - 0xABAB8
 
-ARM_FUNC_START sub_20ABB34
-sub_20ABB34:
+ARM_FUNC_START libfunc_unk_20ABB34
+libfunc_unk_20ABB34:
 .incbin "fe11-arm9-base.bin", 0xABB34, 0xABB5C - 0xABB34
 
 ARM_FUNC_START PM_ForceToPowerOffAsync
 PM_ForceToPowerOffAsync:
 .incbin "fe11-arm9-base.bin", 0xABB5C, 0xABC08 - 0xABB5C
 
-ARM_FUNC_START sub_20ABC08
-sub_20ABC08:
+ARM_FUNC_START libfunc_unk_20ABC08
+libfunc_unk_20ABC08:
 .incbin "fe11-arm9-base.bin", 0xABC08, 0xABC30 - 0xABC08
 
-ARM_FUNC_START sub_20ABC30
-sub_20ABC30:
+ARM_FUNC_START libfunc_unk_20ABC30
+libfunc_unk_20ABC30:
 .incbin "fe11-arm9-base.bin", 0xABC30, 0xABC48 - 0xABC30
 
-ARM_FUNC_START sub_20ABC48
-sub_20ABC48:
+ARM_FUNC_START libfunc_unk_20ABC48
+libfunc_unk_20ABC48:
 .incbin "fe11-arm9-base.bin", 0xABC48, 0xABC74 - 0xABC48
 
 ARM_FUNC_START PM_SetAmpGain
 PM_SetAmpGain:
 .incbin "fe11-arm9-base.bin", 0xABC74, 0xABC8C - 0xABC74
 
-ARM_FUNC_START sub_20ABC8C
-sub_20ABC8C:
+ARM_FUNC_START libfunc_unk_20ABC8C
+libfunc_unk_20ABC8C:
 .incbin "fe11-arm9-base.bin", 0xABC8C, 0xABCE8 - 0xABC8C
 
 ARM_FUNC_START PMi_SendPxiData
 PMi_SendPxiData:
 .incbin "fe11-arm9-base.bin", 0xABCE8, 0xABD14 - 0xABCE8
 
-ARM_FUNC_START sub_20ABD14
-sub_20ABD14:
+ARM_FUNC_START libfunc_unk_20ABD14
+libfunc_unk_20ABD14:
 .incbin "fe11-arm9-base.bin", 0xABD14, 0xABF54 - 0xABD14
 
-ARM_FUNC_START sub_20ABF54
-sub_20ABF54:
+ARM_FUNC_START libfunc_unk_20ABF54
+libfunc_unk_20ABF54:
 .incbin "fe11-arm9-base.bin", 0xABF54, 0xAC04C - 0xABF54
 
-ARM_FUNC_START sub_20AC04C
-sub_20AC04C:
+ARM_FUNC_START libfunc_unk_20AC04C
+libfunc_unk_20AC04C:
 .incbin "fe11-arm9-base.bin", 0xAC04C, 0xAC06C - 0xAC04C
 
 ARM_FUNC_START PM_GetLCDPower
 PM_GetLCDPower:
 .incbin "fe11-arm9-base.bin", 0xAC06C, 0xAC088 - 0xAC06C
 
-ARM_FUNC_START sub_20AC088
-sub_20AC088:
+ARM_FUNC_START libfunc_unk_20AC088
+libfunc_unk_20AC088:
 .incbin "fe11-arm9-base.bin", 0xAC088, 0xAC0F8 - 0xAC088
 
-ARM_FUNC_START sub_20AC0F8
-sub_20AC0F8:
+ARM_FUNC_START libfunc_unk_20AC0F8
+libfunc_unk_20AC0F8:
 .incbin "fe11-arm9-base.bin", 0xAC0F8, 0xAC168 - 0xAC0F8
 
 ARM_FUNC_START PMi_PrependList
@@ -3075,56 +3075,56 @@ ARM_FUNC_START PM_AppendPostSleepCallback
 PM_AppendPostSleepCallback:
 .incbin "fe11-arm9-base.bin", 0xAC250, 0xAC268 - 0xAC250
 
-ARM_FUNC_START sub_20AC268
-sub_20AC268:
+ARM_FUNC_START libfunc_unk_20AC268
+libfunc_unk_20AC268:
 .incbin "fe11-arm9-base.bin", 0xAC268, 0xAC280 - 0xAC268
 
-ARM_FUNC_START sub_20AC280
-sub_20AC280:
+ARM_FUNC_START libfunc_unk_20AC280
+libfunc_unk_20AC280:
 .incbin "fe11-arm9-base.bin", 0xAC280, 0xAC298 - 0xAC280
 
-ARM_FUNC_START sub_20AC298
-sub_20AC298:
+ARM_FUNC_START libfunc_unk_20AC298
+libfunc_unk_20AC298:
 .incbin "fe11-arm9-base.bin", 0xAC298, 0xAC304 - 0xAC298
 
-ARM_FUNC_START sub_20AC304
-sub_20AC304:
+ARM_FUNC_START libfunc_unk_20AC304
+libfunc_unk_20AC304:
 .incbin "fe11-arm9-base.bin", 0xAC304, 0xAC374 - 0xAC304
 
-ARM_FUNC_START sub_20AC374
-sub_20AC374:
+ARM_FUNC_START libfunc_unk_20AC374
+libfunc_unk_20AC374:
 .incbin "fe11-arm9-base.bin", 0xAC374, 0xAC3AC - 0xAC374
 
-ARM_FUNC_START sub_20AC3AC
-sub_20AC3AC:
+ARM_FUNC_START libfunc_unk_20AC3AC
+libfunc_unk_20AC3AC:
 .incbin "fe11-arm9-base.bin", 0xAC3AC, 0xAC420 - 0xAC3AC
 
-ARM_FUNC_START sub_20AC420
-sub_20AC420:
+ARM_FUNC_START libfunc_unk_20AC420
+libfunc_unk_20AC420:
 .incbin "fe11-arm9-base.bin", 0xAC420, 0xAC458 - 0xAC420
 
-ARM_FUNC_START sub_20AC458
-sub_20AC458:
+ARM_FUNC_START libfunc_unk_20AC458
+libfunc_unk_20AC458:
 .incbin "fe11-arm9-base.bin", 0xAC458, 0xAC4D4 - 0xAC458
 
-ARM_FUNC_START sub_20AC4D4
-sub_20AC4D4:
+ARM_FUNC_START libfunc_unk_20AC4D4
+libfunc_unk_20AC4D4:
 .incbin "fe11-arm9-base.bin", 0xAC4D4, 0xAC50C - 0xAC4D4
 
-ARM_FUNC_START sub_20AC50C
-sub_20AC50C:
+ARM_FUNC_START libfunc_unk_20AC50C
+libfunc_unk_20AC50C:
 .incbin "fe11-arm9-base.bin", 0xAC50C, 0xACA5C - 0xAC50C
 
-ARM_FUNC_START sub_20ACA5C
-sub_20ACA5C:
+ARM_FUNC_START libfunc_unk_20ACA5C
+libfunc_unk_20ACA5C:
 .incbin "fe11-arm9-base.bin", 0xACA5C, 0xACACC - 0xACA5C
 
-ARM_FUNC_START sub_20ACACC
-sub_20ACACC:
+ARM_FUNC_START libfunc_unk_20ACACC
+libfunc_unk_20ACACC:
 .incbin "fe11-arm9-base.bin", 0xACACC, 0xACADC - 0xACACC
 
-ARM_FUNC_START sub_20ACADC
-sub_20ACADC:
+ARM_FUNC_START libfunc_unk_20ACADC
+libfunc_unk_20ACADC:
 .incbin "fe11-arm9-base.bin", 0xACADC, 0xACAF4 - 0xACADC
 
 ARM_FUNC_START RTCi_ReadRawDateTimeAsync
@@ -3155,8 +3155,8 @@ ARM_FUNC_START RTCi_ConvertTimeToSecond
 RTCi_ConvertTimeToSecond:
 .incbin "fe11-arm9-base.bin", 0xACBF0, 0xACC08 - 0xACBF0
 
-ARM_FUNC_START sub_20ACC08
-sub_20ACC08:
+ARM_FUNC_START libfunc_unk_20ACC08
+libfunc_unk_20ACC08:
 .incbin "fe11-arm9-base.bin", 0xACC08, 0xACC64 - 0xACC08
 
 ARM_FUNC_START RTC_ConvertDayToDate
@@ -3187,20 +3187,20 @@ ARM_FUNC_START CARDi_UnlockResource
 CARDi_UnlockResource:
 .incbin "fe11-arm9-base.bin", 0xACFEC, 0xAD078 - 0xACFEC
 
-ARM_FUNC_START sub_20AD078
-sub_20AD078:
+ARM_FUNC_START libfunc_unk_20AD078
+libfunc_unk_20AD078:
 .incbin "fe11-arm9-base.bin", 0xAD078, 0xAD188 - 0xAD078
 
-ARM_FUNC_START sub_20AD188
-sub_20AD188:
+ARM_FUNC_START libfunc_unk_20AD188
+libfunc_unk_20AD188:
 .incbin "fe11-arm9-base.bin", 0xAD188, 0xAD198 - 0xAD188
 
 ARM_FUNC_START CARD_CheckEnabled
 CARD_CheckEnabled:
 .incbin "fe11-arm9-base.bin", 0xAD198, 0xAD1B0 - 0xAD198
 
-ARM_FUNC_START sub_20AD1B0
-sub_20AD1B0:
+ARM_FUNC_START libfunc_unk_20AD1B0
+libfunc_unk_20AD1B0:
 .incbin "fe11-arm9-base.bin", 0xAD1B0, 0xAD1C0 - 0xAD1B0
 
 ARM_FUNC_START CARDi_WaitAsync
@@ -3231,16 +3231,16 @@ ARM_FUNC_START MB_CommStartSending
 MB_CommStartSending:
 .incbin "fe11-arm9-base.bin", 0xAD2B8, 0xAD2C8 - 0xAD2B8
 
-ARM_FUNC_START sub_20AD2C8
-sub_20AD2C8:
+ARM_FUNC_START libfunc_unk_20AD2C8
+libfunc_unk_20AD2C8:
 .incbin "fe11-arm9-base.bin", 0xAD2C8, 0xAD2F0 - 0xAD2C8
 
-ARM_FUNC_START sub_20AD2F0
-sub_20AD2F0:
+ARM_FUNC_START libfunc_unk_20AD2F0
+libfunc_unk_20AD2F0:
 .incbin "fe11-arm9-base.bin", 0xAD2F0, 0xAD638 - 0xAD2F0
 
-ARM_FUNC_START sub_20AD638
-sub_20AD638:
+ARM_FUNC_START libfunc_unk_20AD638
+libfunc_unk_20AD638:
 .incbin "fe11-arm9-base.bin", 0xAD638, 0xAD828 - 0xAD638
 
 ARM_FUNC_START CARDi_RequestStreamCommand
@@ -3259,12 +3259,12 @@ ARM_FUNC_START CARD_IdentifyBackup
 CARD_IdentifyBackup:
 .incbin "fe11-arm9-base.bin", 0xAD938, 0xADA70 - 0xAD938
 
-ARM_FUNC_START sub_20ADA70
-sub_20ADA70:
+ARM_FUNC_START libfunc_unk_20ADA70
+libfunc_unk_20ADA70:
 .incbin "fe11-arm9-base.bin", 0xADA70, 0xADA7C - 0xADA70
 
-ARM_FUNC_START sub_20ADA7C
-sub_20ADA7C:
+ARM_FUNC_START libfunc_unk_20ADA7C
+libfunc_unk_20ADA7C:
 .incbin "fe11-arm9-base.bin", 0xADA7C, 0xADA88 - 0xADA7C
 
 ARM_FUNC_START CARDi_ReadFromCache
@@ -3283,12 +3283,12 @@ ARM_FUNC_START CARDi_OnReadCard
 CARDi_OnReadCard:
 .incbin "fe11-arm9-base.bin", 0xADBC8, 0xADC98 - 0xADBC8
 
-ARM_FUNC_START sub_20ADC98
-sub_20ADC98:
+ARM_FUNC_START libfunc_unk_20ADC98
+libfunc_unk_20ADC98:
 .incbin "fe11-arm9-base.bin", 0xADC98, 0xADE24 - 0xADC98
 
-ARM_FUNC_START sub_20ADE24
-sub_20ADE24:
+ARM_FUNC_START libfunc_unk_20ADE24
+libfunc_unk_20ADE24:
 .incbin "fe11-arm9-base.bin", 0xADE24, 0xADF14 - 0xADE24
 
 ARM_FUNC_START CARDi_ReadRomIDCore
@@ -3307,20 +3307,20 @@ ARM_FUNC_START CARD_Init
 CARD_Init:
 .incbin "fe11-arm9-base.bin", 0xAE100, 0xAE168 - 0xAE100
 
-ARM_FUNC_START sub_20AE168
-sub_20AE168:
+ARM_FUNC_START libfunc_unk_20AE168
+libfunc_unk_20AE168:
 .incbin "fe11-arm9-base.bin", 0xAE168, 0xAE174 - 0xAE168
 
-ARM_FUNC_START sub_20AE174
-sub_20AE174:
+ARM_FUNC_START libfunc_unk_20AE174
+libfunc_unk_20AE174:
 .incbin "fe11-arm9-base.bin", 0xAE174, 0xAE180 - 0xAE174
 
 ARM_FUNC_START CARDi_OnFifoRecv
 CARDi_OnFifoRecv:
 .incbin "fe11-arm9-base.bin", 0xAE180, 0xAE1B4 - 0xAE180
 
-ARM_FUNC_START sub_20AE1B4
-sub_20AE1B4:
+ARM_FUNC_START libfunc_unk_20AE1B4
+libfunc_unk_20AE1B4:
 .incbin "fe11-arm9-base.bin", 0xAE1B4, 0xAE204 - 0xAE1B4
 
 ARM_FUNC_START CARDi_Request
@@ -3347,8 +3347,8 @@ ARM_FUNC_START CARDi_CheckPulledOutCore
 CARDi_CheckPulledOutCore:
 .incbin "fe11-arm9-base.bin", 0xAE474, 0xAE4D4 - 0xAE474
 
-ARM_FUNC_START sub_20AE4D4
-sub_20AE4D4:
+ARM_FUNC_START libfunc_unk_20AE4D4
+libfunc_unk_20AE4D4:
 .incbin "fe11-arm9-base.bin", 0xAE4D4, 0xAE524 - 0xAE4D4
 
 ARM_FUNC_START WM_Init
@@ -3379,8 +3379,8 @@ ARM_FUNC_START WMi_SendCommandDirect
 WMi_SendCommandDirect:
 .incbin "fe11-arm9-base.bin", 0xAE8C0, 0xAE930 - 0xAE8C0
 
-ARM_FUNC_START sub_20AE930
-sub_20AE930:
+ARM_FUNC_START libfunc_unk_20AE930
+libfunc_unk_20AE930:
 .incbin "fe11-arm9-base.bin", 0xAE930, 0xAE940 - 0xAE930
 
 ARM_FUNC_START WMi_CheckInitialized
@@ -3395,16 +3395,16 @@ ARM_FUNC_START WMi_CheckStateEx
 WMi_CheckStateEx:
 .incbin "fe11-arm9-base.bin", 0xAE9A4, 0xAEA38 - 0xAE9A4
 
-ARM_FUNC_START sub_20AEA38
-sub_20AEA38:
+ARM_FUNC_START libfunc_unk_20AEA38
+libfunc_unk_20AEA38:
 .incbin "fe11-arm9-base.bin", 0xAEA38, 0xAEDE0 - 0xAEA38
 
 ARM_FUNC_START WmClearFifoRecvFlag
 WmClearFifoRecvFlag:
 .incbin "fe11-arm9-base.bin", 0xAEDE0, 0xAEDFC - 0xAEDE0
 
-ARM_FUNC_START sub_20AEDFC
-sub_20AEDFC:
+ARM_FUNC_START libfunc_unk_20AEDFC
+libfunc_unk_20AEDFC:
 .incbin "fe11-arm9-base.bin", 0xAEDFC, 0xAEE20 - 0xAEDFC
 
 ARM_FUNC_START WM_GetAID
@@ -3423,8 +3423,8 @@ ARM_FUNC_START WM_SetPortCallback
 WM_SetPortCallback:
 .incbin "fe11-arm9-base.bin", 0xAEEC4, 0xAEF9C - 0xAEEC4
 
-ARM_FUNC_START sub_20AEF9C
-sub_20AEF9C:
+ARM_FUNC_START libfunc_unk_20AEF9C
+libfunc_unk_20AEF9C:
 .incbin "fe11-arm9-base.bin", 0xAEF9C, 0xAEFE8 - 0xAEF9C
 
 ARM_FUNC_START WM_GetMPSendBufferSize
@@ -3455,12 +3455,12 @@ ARM_FUNC_START WM_GetDispersionScanPeriod
 WM_GetDispersionScanPeriod:
 .incbin "fe11-arm9-base.bin", 0xAF33C, 0xAF528 - 0xAF33C
 
-ARM_FUNC_START sub_20AF528
-sub_20AF528:
+ARM_FUNC_START libfunc_unk_20AF528
+libfunc_unk_20AF528:
 .incbin "fe11-arm9-base.bin", 0xAF528, 0xAF59C - 0xAF528
 
-ARM_FUNC_START sub_20AF59C
-sub_20AF59C:
+ARM_FUNC_START libfunc_unk_20AF59C
+libfunc_unk_20AF59C:
 .incbin "fe11-arm9-base.bin", 0xAF59C, 0xAF610 - 0xAF59C
 
 ARM_FUNC_START WM_Disable
@@ -3475,12 +3475,12 @@ ARM_FUNC_START WM_PowerOff
 WM_PowerOff:
 .incbin "fe11-arm9-base.bin", 0xAF690, 0xAF6D0 - 0xAF690
 
-ARM_FUNC_START sub_20AF6D0
-sub_20AF6D0:
+ARM_FUNC_START libfunc_unk_20AF6D0
+libfunc_unk_20AF6D0:
 .incbin "fe11-arm9-base.bin", 0xAF6D0, 0xAF6E0 - 0xAF6D0
 
-ARM_FUNC_START sub_20AF6E0
-sub_20AF6E0:
+ARM_FUNC_START libfunc_unk_20AF6E0
+libfunc_unk_20AF6E0:
 .incbin "fe11-arm9-base.bin", 0xAF6E0, 0xAF740 - 0xAF6E0
 
 ARM_FUNC_START WM_Reset
@@ -3523,12 +3523,12 @@ ARM_FUNC_START WM_Disconnect
 WM_Disconnect:
 .incbin "fe11-arm9-base.bin", 0xAFCD8, 0xAFDC0 - 0xAFCD8
 
-ARM_FUNC_START sub_20AFDC0
-sub_20AFDC0:
+ARM_FUNC_START libfunc_unk_20AFDC0
+libfunc_unk_20AFDC0:
 .incbin "fe11-arm9-base.bin", 0xAFDC0, 0xAFF30 - 0xAFDC0
 
-ARM_FUNC_START sub_20AFF30
-sub_20AFF30:
+ARM_FUNC_START libfunc_unk_20AFF30
+libfunc_unk_20AFF30:
 .incbin "fe11-arm9-base.bin", 0xAFF30, 0xB003C - 0xAFF30
 
 ARM_FUNC_START WM_SetMPParameter
@@ -3539,8 +3539,8 @@ ARM_FUNC_START WM_SetMPFrequency
 WM_SetMPFrequency:
 .incbin "fe11-arm9-base.bin", 0xB00B0, 0xB00F4 - 0xB00B0
 
-ARM_FUNC_START sub_20B00F4
-sub_20B00F4:
+ARM_FUNC_START libfunc_unk_20B00F4
+libfunc_unk_20B00F4:
 .incbin "fe11-arm9-base.bin", 0xB00F4, 0xB0224 - 0xB00F4
 
 ARM_FUNC_START WM_EndMP
@@ -3631,8 +3631,8 @@ ARM_FUNC_START MB_CommResponseRequest
 MB_CommResponseRequest:
 .incbin "fe11-arm9-base.bin", 0xB1430, 0xB1510 - 0xB1430
 
-ARM_FUNC_START sub_20B1510
-sub_20B1510:
+ARM_FUNC_START libfunc_unk_20B1510
+libfunc_unk_20B1510:
 .incbin "fe11-arm9-base.bin", 0xB1510, 0xB155C - 0xB1510
 
 ARM_FUNC_START MBi_CommChangeParentStateCallbackOnl
@@ -3659,8 +3659,8 @@ ARM_FUNC_START MBi_CommParentSendDLFileInfo
 MBi_CommParentSendDLFileInfo:
 .incbin "fe11-arm9-base.bin", 0xB1FF4, 0xB218C - 0xB1FF4
 
-ARM_FUNC_START sub_20B218C
-sub_20B218C:
+ARM_FUNC_START libfunc_unk_20B218C
+libfunc_unk_20B218C:
 .incbin "fe11-arm9-base.bin", 0xB218C, 0xB2230 - 0xB218C
 
 ARM_FUNC_START MBi_CommParentSendBlock
@@ -3683,8 +3683,8 @@ ARM_FUNC_START IsChildAidValid
 IsChildAidValid:
 .incbin "fe11-arm9-base.bin", 0xB26D8, 0xB26F4 - 0xB26D8
 
-ARM_FUNC_START sub_20B26F4
-sub_20B26F4:
+ARM_FUNC_START libfunc_unk_20B26F4
+libfunc_unk_20B26F4:
 .incbin "fe11-arm9-base.bin", 0xB26F4, 0xB270C - 0xB26F4
 
 ARM_FUNC_START MB_GetSegmentLength
@@ -3771,16 +3771,16 @@ ARM_FUNC_START MBi_InitSendFixedBeacon
 MBi_InitSendFixedBeacon:
 .incbin "fe11-arm9-base.bin", 0xB385C, 0xB38B0 - 0xB385C
 
-ARM_FUNC_START sub_20B38B0
-sub_20B38B0:
+ARM_FUNC_START libfunc_unk_20B38B0
+libfunc_unk_20B38B0:
 .incbin "fe11-arm9-base.bin", 0xB38B0, 0xB3A2C - 0xB38B0
 
 ARM_FUNC_START MBi_InitSendVolatBeacon
 MBi_InitSendVolatBeacon:
 .incbin "fe11-arm9-base.bin", 0xB3A2C, 0xB3A5C - 0xB3A2C
 
-ARM_FUNC_START sub_20B3A5C
-sub_20B3A5C:
+ARM_FUNC_START libfunc_unk_20B3A5C
+libfunc_unk_20B3A5C:
 .incbin "fe11-arm9-base.bin", 0xB3A5C, 0xB3CD0 - 0xB3A5C
 
 ARM_FUNC_START changeScanChannel
@@ -3799,252 +3799,252 @@ ARM_FUNC_START MBi_EndCommon
 MBi_EndCommon:
 .incbin "fe11-arm9-base.bin", 0xB3DF0, 0xB3E34 - 0xB3DF0
 
-ARM_FUNC_START sub_20B3E34
-sub_20B3E34:
+ARM_FUNC_START libfunc_unk_20B3E34
+libfunc_unk_20B3E34:
 .incbin "fe11-arm9-base.bin", 0xB3E34, 0xB468C - 0xB3E34
 
 ARM_FUNC_START MBi_ChildPortCallback
 MBi_ChildPortCallback:
 .incbin "fe11-arm9-base.bin", 0xB468C, 0xB46FC - 0xB468C
 
-ARM_FUNC_START sub_20B46FC
-sub_20B46FC:
+ARM_FUNC_START libfunc_unk_20B46FC
+libfunc_unk_20B46FC:
 .incbin "fe11-arm9-base.bin", 0xB46FC, 0xB4F28 - 0xB46FC
 
-ARM_FUNC_START sub_20B4F28
-sub_20B4F28:
+ARM_FUNC_START libfunc_unk_20B4F28
+libfunc_unk_20B4F28:
 .incbin "fe11-arm9-base.bin", 0xB4F28, 0xB5174 - 0xB4F28
 
-ARM_FUNC_START sub_20B5174
-sub_20B5174:
+ARM_FUNC_START libfunc_unk_20B5174
+libfunc_unk_20B5174:
 .incbin "fe11-arm9-base.bin", 0xB5174, 0xB527C - 0xB5174
 
-ARM_FUNC_START sub_20B527C
-sub_20B527C:
+ARM_FUNC_START libfunc_unk_20B527C
+libfunc_unk_20B527C:
 .incbin "fe11-arm9-base.bin", 0xB527C, 0xB5350 - 0xB527C
 
-ARM_FUNC_START sub_20B5350
-sub_20B5350:
+ARM_FUNC_START libfunc_unk_20B5350
+libfunc_unk_20B5350:
 .incbin "fe11-arm9-base.bin", 0xB5350, 0xB5558 - 0xB5350
 
-ARM_FUNC_START sub_20B5558
-sub_20B5558:
+ARM_FUNC_START libfunc_unk_20B5558
+libfunc_unk_20B5558:
 .incbin "fe11-arm9-base.bin", 0xB5558, 0xB559C - 0xB5558
 
-ARM_FUNC_START sub_20B559C
-sub_20B559C:
+ARM_FUNC_START libfunc_unk_20B559C
+libfunc_unk_20B559C:
 .incbin "fe11-arm9-base.bin", 0xB559C, 0xB57F8 - 0xB559C
 
-ARM_FUNC_START sub_20B57F8
-sub_20B57F8:
+ARM_FUNC_START libfunc_unk_20B57F8
+libfunc_unk_20B57F8:
 .incbin "fe11-arm9-base.bin", 0xB57F8, 0xB5808 - 0xB57F8
 
-ARM_FUNC_START sub_20B5808
-sub_20B5808:
+ARM_FUNC_START libfunc_unk_20B5808
+libfunc_unk_20B5808:
 .incbin "fe11-arm9-base.bin", 0xB5808, 0xB5854 - 0xB5808
 
-ARM_FUNC_START sub_20B5854
-sub_20B5854:
+ARM_FUNC_START libfunc_unk_20B5854
+libfunc_unk_20B5854:
 .incbin "fe11-arm9-base.bin", 0xB5854, 0xB5934 - 0xB5854
 
-ARM_FUNC_START sub_20B5934
-sub_20B5934:
+ARM_FUNC_START libfunc_unk_20B5934
+libfunc_unk_20B5934:
 .incbin "fe11-arm9-base.bin", 0xB5934, 0xB5948 - 0xB5934
 
-ARM_FUNC_START sub_20B5948
-sub_20B5948:
+ARM_FUNC_START libfunc_unk_20B5948
+libfunc_unk_20B5948:
 .incbin "fe11-arm9-base.bin", 0xB5948, 0xB595C - 0xB5948
 
-ARM_FUNC_START sub_20B595C
-sub_20B595C:
+ARM_FUNC_START libfunc_unk_20B595C
+libfunc_unk_20B595C:
 .incbin "fe11-arm9-base.bin", 0xB595C, 0xB59BC - 0xB595C
 
-ARM_FUNC_START sub_20B59BC
-sub_20B59BC:
+ARM_FUNC_START libfunc_unk_20B59BC
+libfunc_unk_20B59BC:
 .incbin "fe11-arm9-base.bin", 0xB59BC, 0xB59DC - 0xB59BC
 
-ARM_FUNC_START sub_20B59DC
-sub_20B59DC:
+ARM_FUNC_START libfunc_unk_20B59DC
+libfunc_unk_20B59DC:
 .incbin "fe11-arm9-base.bin", 0xB59DC, 0xB5A14 - 0xB59DC
 
-ARM_FUNC_START sub_20B5A14
-sub_20B5A14:
+ARM_FUNC_START libfunc_unk_20B5A14
+libfunc_unk_20B5A14:
 .incbin "fe11-arm9-base.bin", 0xB5A14, 0xB5A28 - 0xB5A14
 
-ARM_FUNC_START sub_20B5A28
-sub_20B5A28:
+ARM_FUNC_START libfunc_unk_20B5A28
+libfunc_unk_20B5A28:
 .incbin "fe11-arm9-base.bin", 0xB5A28, 0xB5A90 - 0xB5A28
 
-ARM_FUNC_START sub_20B5A90
-sub_20B5A90:
+ARM_FUNC_START libfunc_unk_20B5A90
+libfunc_unk_20B5A90:
 .incbin "fe11-arm9-base.bin", 0xB5A90, 0xB5B28 - 0xB5A90
 
-ARM_FUNC_START sub_20B5B28
-sub_20B5B28:
+ARM_FUNC_START libfunc_unk_20B5B28
+libfunc_unk_20B5B28:
 .incbin "fe11-arm9-base.bin", 0xB5B28, 0xB5C40 - 0xB5B28
 
-ARM_FUNC_START sub_20B5C40
-sub_20B5C40:
+ARM_FUNC_START libfunc_unk_20B5C40
+libfunc_unk_20B5C40:
 .incbin "fe11-arm9-base.bin", 0xB5C40, 0xB5CC0 - 0xB5C40
 
-ARM_FUNC_START sub_20B5CC0
-sub_20B5CC0:
+ARM_FUNC_START libfunc_unk_20B5CC0
+libfunc_unk_20B5CC0:
 .incbin "fe11-arm9-base.bin", 0xB5CC0, 0xB5CDC - 0xB5CC0
 
-ARM_FUNC_START sub_20B5CDC
-sub_20B5CDC:
+ARM_FUNC_START libfunc_unk_20B5CDC
+libfunc_unk_20B5CDC:
 .incbin "fe11-arm9-base.bin", 0xB5CDC, 0xB5CF0 - 0xB5CDC
 
-ARM_FUNC_START sub_20B5CF0
-sub_20B5CF0:
+ARM_FUNC_START libfunc_unk_20B5CF0
+libfunc_unk_20B5CF0:
 .incbin "fe11-arm9-base.bin", 0xB5CF0, 0xB5D08 - 0xB5CF0
 
-ARM_FUNC_START sub_20B5D08
-sub_20B5D08:
+ARM_FUNC_START libfunc_unk_20B5D08
+libfunc_unk_20B5D08:
 .incbin "fe11-arm9-base.bin", 0xB5D08, 0xB5E6C - 0xB5D08
 
-ARM_FUNC_START sub_20B5E6C
-sub_20B5E6C:
+ARM_FUNC_START libfunc_unk_20B5E6C
+libfunc_unk_20B5E6C:
 .incbin "fe11-arm9-base.bin", 0xB5E6C, 0xB5EB4 - 0xB5E6C
 
-ARM_FUNC_START sub_20B5EB4
-sub_20B5EB4:
+ARM_FUNC_START libfunc_unk_20B5EB4
+libfunc_unk_20B5EB4:
 .incbin "fe11-arm9-base.bin", 0xB5EB4, 0xB5EE4 - 0xB5EB4
 
-ARM_FUNC_START sub_20B5EE4
-sub_20B5EE4:
+ARM_FUNC_START libfunc_unk_20B5EE4
+libfunc_unk_20B5EE4:
 .incbin "fe11-arm9-base.bin", 0xB5EE4, 0xB5F04 - 0xB5EE4
 
-ARM_FUNC_START sub_20B5F04
-sub_20B5F04:
+ARM_FUNC_START libfunc_unk_20B5F04
+libfunc_unk_20B5F04:
 .incbin "fe11-arm9-base.bin", 0xB5F04, 0xB5F48 - 0xB5F04
 
-ARM_FUNC_START sub_20B5F48
-sub_20B5F48:
+ARM_FUNC_START libfunc_unk_20B5F48
+libfunc_unk_20B5F48:
 .incbin "fe11-arm9-base.bin", 0xB5F48, 0xB5FCC - 0xB5F48
 
-ARM_FUNC_START sub_20B5FCC
-sub_20B5FCC:
+ARM_FUNC_START libfunc_unk_20B5FCC
+libfunc_unk_20B5FCC:
 .incbin "fe11-arm9-base.bin", 0xB5FCC, 0xB60E8 - 0xB5FCC
 
-ARM_FUNC_START sub_20B60E8
-sub_20B60E8:
+ARM_FUNC_START libfunc_unk_20B60E8
+libfunc_unk_20B60E8:
 .incbin "fe11-arm9-base.bin", 0xB60E8, 0xB6174 - 0xB60E8
 
-ARM_FUNC_START sub_20B6174
-sub_20B6174:
+ARM_FUNC_START libfunc_unk_20B6174
+libfunc_unk_20B6174:
 .incbin "fe11-arm9-base.bin", 0xB6174, 0xB61C8 - 0xB6174
 
-ARM_FUNC_START sub_20B61C8
-sub_20B61C8:
+ARM_FUNC_START libfunc_unk_20B61C8
+libfunc_unk_20B61C8:
 .incbin "fe11-arm9-base.bin", 0xB61C8, 0xB6200 - 0xB61C8
 
-ARM_FUNC_START sub_20B6200
-sub_20B6200:
+ARM_FUNC_START libfunc_unk_20B6200
+libfunc_unk_20B6200:
 .incbin "fe11-arm9-base.bin", 0xB6200, 0xB6228 - 0xB6200
 
-ARM_FUNC_START sub_20B6228
-sub_20B6228:
+ARM_FUNC_START libfunc_unk_20B6228
+libfunc_unk_20B6228:
 .incbin "fe11-arm9-base.bin", 0xB6228, 0xB6240 - 0xB6228
 
-ARM_FUNC_START sub_20B6240
-sub_20B6240:
+ARM_FUNC_START libfunc_unk_20B6240
+libfunc_unk_20B6240:
 .incbin "fe11-arm9-base.bin", 0xB6240, 0xB634C - 0xB6240
 
-ARM_FUNC_START sub_20B634C
-sub_20B634C:
+ARM_FUNC_START libfunc_unk_20B634C
+libfunc_unk_20B634C:
 .incbin "fe11-arm9-base.bin", 0xB634C, 0xB6394 - 0xB634C
 
-ARM_FUNC_START sub_20B6394
-sub_20B6394:
+ARM_FUNC_START libfunc_unk_20B6394
+libfunc_unk_20B6394:
 .incbin "fe11-arm9-base.bin", 0xB6394, 0xB63C8 - 0xB6394
 
-ARM_FUNC_START sub_20B63C8
-sub_20B63C8:
+ARM_FUNC_START libfunc_unk_20B63C8
+libfunc_unk_20B63C8:
 .incbin "fe11-arm9-base.bin", 0xB63C8, 0xB6424 - 0xB63C8
 
-ARM_FUNC_START sub_20B6424
-sub_20B6424:
+ARM_FUNC_START libfunc_unk_20B6424
+libfunc_unk_20B6424:
 .incbin "fe11-arm9-base.bin", 0xB6424, 0xB6448 - 0xB6424
 
-ARM_FUNC_START sub_20B6448
-sub_20B6448:
+ARM_FUNC_START libfunc_unk_20B6448
+libfunc_unk_20B6448:
 .incbin "fe11-arm9-base.bin", 0xB6448, 0xB6498 - 0xB6448
 
-ARM_FUNC_START sub_20B6498
-sub_20B6498:
+ARM_FUNC_START libfunc_unk_20B6498
+libfunc_unk_20B6498:
 .incbin "fe11-arm9-base.bin", 0xB6498, 0xB64E0 - 0xB6498
 
 ARM_FUNC_START CTRDG_Init
 CTRDG_Init:
 .incbin "fe11-arm9-base.bin", 0xB64E0, 0xB6594 - 0xB64E0
 
-ARM_FUNC_START sub_20B6594
-sub_20B6594:
+ARM_FUNC_START libfunc_unk_20B6594
+libfunc_unk_20B6594:
 .incbin "fe11-arm9-base.bin", 0xB6594, 0xB6788 - 0xB6594
 
-ARM_FUNC_START sub_20B6788
-sub_20B6788:
+ARM_FUNC_START libfunc_unk_20B6788
+libfunc_unk_20B6788:
 .incbin "fe11-arm9-base.bin", 0xB6788, 0xB67B4 - 0xB6788
 
-ARM_FUNC_START sub_20B67B4
-sub_20B67B4:
+ARM_FUNC_START libfunc_unk_20B67B4
+libfunc_unk_20B67B4:
 .incbin "fe11-arm9-base.bin", 0xB67B4, 0xB6810 - 0xB67B4
 
-ARM_FUNC_START sub_20B6810
-sub_20B6810:
+ARM_FUNC_START libfunc_unk_20B6810
+libfunc_unk_20B6810:
 .incbin "fe11-arm9-base.bin", 0xB6810, 0xB6838 - 0xB6810
 
-ARM_FUNC_START sub_20B6838
-sub_20B6838:
+ARM_FUNC_START libfunc_unk_20B6838
+libfunc_unk_20B6838:
 .incbin "fe11-arm9-base.bin", 0xB6838, 0xB68C4 - 0xB6838
 
-ARM_FUNC_START sub_20B68C4
-sub_20B68C4:
+ARM_FUNC_START libfunc_unk_20B68C4
+libfunc_unk_20B68C4:
 .incbin "fe11-arm9-base.bin", 0xB68C4, 0xB68D8 - 0xB68C4
 
-ARM_FUNC_START sub_20B68D8
-sub_20B68D8:
+ARM_FUNC_START libfunc_unk_20B68D8
+libfunc_unk_20B68D8:
 .incbin "fe11-arm9-base.bin", 0xB68D8, 0xB69C8 - 0xB68D8
 
-ARM_FUNC_START sub_20B69C8
-sub_20B69C8:
+ARM_FUNC_START libfunc_unk_20B69C8
+libfunc_unk_20B69C8:
 .incbin "fe11-arm9-base.bin", 0xB69C8, 0xB6A0C - 0xB69C8
 
-ARM_FUNC_START sub_20B6A0C
-sub_20B6A0C:
+ARM_FUNC_START libfunc_unk_20B6A0C
+libfunc_unk_20B6A0C:
 .incbin "fe11-arm9-base.bin", 0xB6A0C, 0xB6A4C - 0xB6A0C
 
-ARM_FUNC_START sub_20B6A4C
-sub_20B6A4C:
+ARM_FUNC_START libfunc_unk_20B6A4C
+libfunc_unk_20B6A4C:
 .incbin "fe11-arm9-base.bin", 0xB6A4C, 0xB6A84 - 0xB6A4C
 
-ARM_FUNC_START sub_20B6A84
-sub_20B6A84:
+ARM_FUNC_START libfunc_unk_20B6A84
+libfunc_unk_20B6A84:
 .incbin "fe11-arm9-base.bin", 0xB6A84, 0xB6AC8 - 0xB6A84
 
-ARM_FUNC_START sub_20B6AC8
-sub_20B6AC8:
+ARM_FUNC_START libfunc_unk_20B6AC8
+libfunc_unk_20B6AC8:
 .incbin "fe11-arm9-base.bin", 0xB6AC8, 0xB6B08 - 0xB6AC8
 
-ARM_FUNC_START sub_20B6B08
-sub_20B6B08:
+ARM_FUNC_START libfunc_unk_20B6B08
+libfunc_unk_20B6B08:
 .incbin "fe11-arm9-base.bin", 0xB6B08, 0xB6B48 - 0xB6B08
 
-ARM_FUNC_START sub_20B6B48
-sub_20B6B48:
+ARM_FUNC_START libfunc_unk_20B6B48
+libfunc_unk_20B6B48:
 .incbin "fe11-arm9-base.bin", 0xB6B48, 0xB6B84 - 0xB6B48
 
-ARM_FUNC_START sub_20B6B84
-sub_20B6B84:
+ARM_FUNC_START libfunc_unk_20B6B84
+libfunc_unk_20B6B84:
 .incbin "fe11-arm9-base.bin", 0xB6B84, 0xB6BAC - 0xB6B84
 
-ARM_FUNC_START sub_20B6BAC
-sub_20B6BAC:
+ARM_FUNC_START libfunc_unk_20B6BAC
+libfunc_unk_20B6BAC:
 .incbin "fe11-arm9-base.bin", 0xB6BAC, 0xB6BD4 - 0xB6BAC
 
-ARM_FUNC_START sub_20B6BD4
-sub_20B6BD4:
+ARM_FUNC_START libfunc_unk_20B6BD4
+libfunc_unk_20B6BD4:
 .incbin "fe11-arm9-base.bin", 0xB6BD4, 0xB6C98 - 0xB6BD4
 
 ARM_FUNC_START STD_CopyString
@@ -4107,8 +4107,8 @@ ARM_FUNC_START string_put_string
 string_put_string:
 .incbin "fe11-arm9-base.bin", 0xB76DC, 0xB7734 - 0xB76DC
 
-ARM_FUNC_START sub_20B7734
-sub_20B7734:
+ARM_FUNC_START libfunc_unk_20B7734
+libfunc_unk_20B7734:
 .incbin "fe11-arm9-base.bin", 0xB7734, 0xB8268 - 0xB7734
 
 ARM_FUNC_START abort
@@ -4123,12 +4123,12 @@ ARM_FUNC_START __exit
 __exit:
 .incbin "fe11-arm9-base.bin", 0xB82D8, 0xB8400 - 0xB82D8
 
-ARM_FUNC_START sub_20B8400
-sub_20B8400:
+ARM_FUNC_START libfunc_unk_20B8400
+libfunc_unk_20B8400:
 .incbin "fe11-arm9-base.bin", 0xB8400, 0xB8418 - 0xB8400
 
-ARM_FUNC_START sub_20B8418
-sub_20B8418:
+ARM_FUNC_START libfunc_unk_20B8418
+libfunc_unk_20B8418:
 .incbin "fe11-arm9-base.bin", 0xB8418, 0xB8480 - 0xB8418
 
 ARM_FUNC_START abs
@@ -4139,32 +4139,32 @@ ARM_FUNC_START __msl_assertion_failed
 __msl_assertion_failed:
 .incbin "fe11-arm9-base.bin", 0xB848C, 0xB84CC - 0xB848C
 
-ARM_FUNC_START sub_20B84CC
-sub_20B84CC:
+ARM_FUNC_START libfunc_unk_20B84CC
+libfunc_unk_20B84CC:
 .incbin "fe11-arm9-base.bin", 0xB84CC, 0xB84FC - 0xB84CC
 
-ARM_FUNC_START sub_20B84FC
-sub_20B84FC:
+ARM_FUNC_START libfunc_unk_20B84FC
+libfunc_unk_20B84FC:
 .incbin "fe11-arm9-base.bin", 0xB84FC, 0xB8584 - 0xB84FC
 
-ARM_FUNC_START sub_20B8584
-sub_20B8584:
+ARM_FUNC_START libfunc_unk_20B8584
+libfunc_unk_20B8584:
 .incbin "fe11-arm9-base.bin", 0xB8584, 0xB8834 - 0xB8584
 
 ARM_FUNC_START fflush
 fflush:
 .incbin "fe11-arm9-base.bin", 0xB8834, 0xB891C - 0xB8834
 
-ARM_FUNC_START sub_20B891C
-sub_20B891C:
+ARM_FUNC_START libfunc_unk_20B891C
+libfunc_unk_20B891C:
 .incbin "fe11-arm9-base.bin", 0xB891C, 0xB89A4 - 0xB891C
 
-ARM_FUNC_START sub_20B89A4
-sub_20B89A4:
+ARM_FUNC_START libfunc_unk_20B89A4
+libfunc_unk_20B89A4:
 .incbin "fe11-arm9-base.bin", 0xB89A4, 0xB89E8 - 0xB89A4
 
-ARM_FUNC_START sub_20B89E8
-sub_20B89E8:
+ARM_FUNC_START libfunc_unk_20B89E8
+libfunc_unk_20B89E8:
 .incbin "fe11-arm9-base.bin", 0xB89E8, 0xB8A64 - 0xB89E8
 
 ARM_FUNC_START __mbtowc_noconv
@@ -4179,8 +4179,8 @@ ARM_FUNC_START wctomb
 wctomb:
 .incbin "fe11-arm9-base.bin", 0xB8AB0, 0xB8ACC - 0xB8AB0
 
-ARM_FUNC_START sub_20B8ACC
-sub_20B8ACC:
+ARM_FUNC_START libfunc_unk_20B8ACC
+libfunc_unk_20B8ACC:
 .incbin "fe11-arm9-base.bin", 0xB8ACC, 0xB8B44 - 0xB8ACC
 
 ARM_FUNC_START memcpy
@@ -4199,8 +4199,8 @@ ARM_FUNC_START memchr
 memchr:
 .incbin "fe11-arm9-base.bin", 0xB8BC4, 0xB8BF0 - 0xB8BC4
 
-ARM_FUNC_START sub_20B8BF0
-sub_20B8BF0:
+ARM_FUNC_START libfunc_unk_20B8BF0
+libfunc_unk_20B8BF0:
 .incbin "fe11-arm9-base.bin", 0xB8BF0, 0xB8C1C - 0xB8BF0
 
 ARM_FUNC_START memcmp
@@ -4219,8 +4219,8 @@ ARM_FUNC_START long2str
 long2str:
 .incbin "fe11-arm9-base.bin", 0xB929C, 0xB94E8 - 0xB929C
 
-ARM_FUNC_START sub_20B94E8
-sub_20B94E8:
+ARM_FUNC_START libfunc_unk_20B94E8
+libfunc_unk_20B94E8:
 .incbin "fe11-arm9-base.bin", 0xB94E8, 0xB97E4 - 0xB94E8
 
 ARM_FUNC_START double2hex
@@ -4239,16 +4239,16 @@ ARM_FUNC_START __pformatter
 __pformatter:
 .incbin "fe11-arm9-base.bin", 0xBA548, 0xBAD6C - 0xBA548
 
-ARM_FUNC_START sub_20BAD6C
-sub_20BAD6C:
+ARM_FUNC_START libfunc_unk_20BAD6C
+libfunc_unk_20BAD6C:
 .incbin "fe11-arm9-base.bin", 0xBAD6C, 0xBAD98 - 0xBAD6C
 
 ARM_FUNC_START __StringWrite
 __StringWrite:
 .incbin "fe11-arm9-base.bin", 0xBAD98, 0xBADDC - 0xBAD98
 
-ARM_FUNC_START sub_20BADDC
-sub_20BADDC:
+ARM_FUNC_START libfunc_unk_20BADDC
+libfunc_unk_20BADDC:
 .incbin "fe11-arm9-base.bin", 0xBADDC, 0xBAEF4 - 0xBADDC
 
 ARM_FUNC_START vsnprintf
@@ -4259,8 +4259,8 @@ ARM_FUNC_START sprintf
 sprintf:
 .incbin "fe11-arm9-base.bin", 0xBAF84, 0xBB148 - 0xBAF84
 
-ARM_FUNC_START sub_20BB148
-sub_20BB148:
+ARM_FUNC_START libfunc_unk_20BB148
+libfunc_unk_20BB148:
 .incbin "fe11-arm9-base.bin", 0xBB148, 0xBB1DC - 0xBB148
 
 ARM_FUNC_START raise
@@ -4299,44 +4299,44 @@ ARM_FUNC_START strstr
 strstr:
 .incbin "fe11-arm9-base.bin", 0xBB5F4, 0xBB660 - 0xBB5F4
 
-ARM_FUNC_START sub_20BB660
-sub_20BB660:
+ARM_FUNC_START libfunc_unk_20BB660
+libfunc_unk_20BB660:
 .incbin "fe11-arm9-base.bin", 0xBB660, 0xBC8AC - 0xBB660
 
-ARM_FUNC_START sub_20BC8AC
-sub_20BC8AC:
+ARM_FUNC_START libfunc_unk_20BC8AC
+libfunc_unk_20BC8AC:
 .incbin "fe11-arm9-base.bin", 0xBC8AC, 0xBC99C - 0xBC8AC
 
-ARM_FUNC_START sub_20BC99C
-sub_20BC99C:
+ARM_FUNC_START libfunc_unk_20BC99C
+libfunc_unk_20BC99C:
 .incbin "fe11-arm9-base.bin", 0xBC99C, 0xBCD84 - 0xBC99C
 
-ARM_FUNC_START sub_20BCD84
-sub_20BCD84:
+ARM_FUNC_START libfunc_unk_20BCD84
+libfunc_unk_20BCD84:
 .incbin "fe11-arm9-base.bin", 0xBCD84, 0xBCE1C - 0xBCD84
 
-ARM_FUNC_START sub_20BCE1C
-sub_20BCE1C:
+ARM_FUNC_START libfunc_unk_20BCE1C
+libfunc_unk_20BCE1C:
 .incbin "fe11-arm9-base.bin", 0xBCE1C, 0xBCEE4 - 0xBCE1C
 
-ARM_FUNC_START sub_20BCEE4
-sub_20BCEE4:
+ARM_FUNC_START libfunc_unk_20BCEE4
+libfunc_unk_20BCEE4:
 .incbin "fe11-arm9-base.bin", 0xBCEE4, 0xBCEF8 - 0xBCEE4
 
-ARM_FUNC_START sub_20BCEF8
-sub_20BCEF8:
+ARM_FUNC_START libfunc_unk_20BCEF8
+libfunc_unk_20BCEF8:
 .incbin "fe11-arm9-base.bin", 0xBCEF8, 0xBCF6C - 0xBCEF8
 
-ARM_FUNC_START sub_20BCF6C
-sub_20BCF6C:
+ARM_FUNC_START libfunc_unk_20BCF6C
+libfunc_unk_20BCF6C:
 .incbin "fe11-arm9-base.bin", 0xBCF6C, 0xBCF88 - 0xBCF6C
 
-ARM_FUNC_START sub_20BCF88
-sub_20BCF88:
+ARM_FUNC_START libfunc_unk_20BCF88
+libfunc_unk_20BCF88:
 .incbin "fe11-arm9-base.bin", 0xBCF88, 0xBCFA8 - 0xBCF88
 
-ARM_FUNC_START sub_20BCFA8
-sub_20BCFA8:
+ARM_FUNC_START libfunc_unk_20BCFA8
+libfunc_unk_20BCFA8:
 .incbin "fe11-arm9-base.bin", 0xBCFA8, 0xBE130 - 0xBCFA8
 
 ARM_FUNC_START copysign
@@ -4355,8 +4355,8 @@ ARM_FUNC_START ldexp
 ldexp:
 .incbin "fe11-arm9-base.bin", 0xBE234, 0xBE480 - 0xBE234
 
-ARM_FUNC_START sub_20BE480
-sub_20BE480:
+ARM_FUNC_START libfunc_unk_20BE480
+libfunc_unk_20BE480:
 .incbin "fe11-arm9-base.bin", 0xBE480, 0xBE48C - 0xBE480
 
 ARM_FUNC_START __must_round
@@ -4379,24 +4379,24 @@ ARM_FUNC_START __timesdec
 __timesdec:
 .incbin "fe11-arm9-base.bin", 0xBE654, 0xBE7D8 - 0xBE654
 
-ARM_FUNC_START sub_20BE7D8
-sub_20BE7D8:
+ARM_FUNC_START libfunc_unk_20BE7D8
+libfunc_unk_20BE7D8:
 .incbin "fe11-arm9-base.bin", 0xBE7D8, 0xBE874 - 0xBE7D8
 
 ARM_FUNC_START __two_exp
 __two_exp:
 .incbin "fe11-arm9-base.bin", 0xBE874, 0xBEBF8 - 0xBE874
 
-ARM_FUNC_START sub_20BEBF8
-sub_20BEBF8:
+ARM_FUNC_START libfunc_unk_20BEBF8
+libfunc_unk_20BEBF8:
 .incbin "fe11-arm9-base.bin", 0xBEBF8, 0xBECD8 - 0xBEBF8
 
-ARM_FUNC_START sub_20BECD8
-sub_20BECD8:
+ARM_FUNC_START libfunc_unk_20BECD8
+libfunc_unk_20BECD8:
 .incbin "fe11-arm9-base.bin", 0xBECD8, 0xBEDB8 - 0xBECD8
 
-ARM_FUNC_START sub_20BEDB8
-sub_20BEDB8:
+ARM_FUNC_START libfunc_unk_20BEDB8
+libfunc_unk_20BEDB8:
 .incbin "fe11-arm9-base.bin", 0xBEDB8, 0xBF05C - 0xBEDB8
 
 ARM_FUNC_START __num2dec_internal
@@ -4407,8 +4407,8 @@ ARM_FUNC_START __num2dec
 __num2dec:
 .incbin "fe11-arm9-base.bin", 0xBF1DC, 0xBF284 - 0xBF1DC
 
-ARM_FUNC_START sub_20BF284
-sub_20BF284:
+ARM_FUNC_START libfunc_unk_20BF284
+libfunc_unk_20BF284:
 .incbin "fe11-arm9-base.bin", 0xBF284, 0xBF8A8 - 0xBF284
 
 ARM_FUNC_START __msl_generic_count_bits64
@@ -4423,92 +4423,92 @@ ARM_FUNC_START __fpclassifyd
 __fpclassifyd:
 .incbin "fe11-arm9-base.bin", 0xBF950, 0xBF9C0 - 0xBF950
 
-ARM_FUNC_START sub_20BF9C0
-sub_20BF9C0:
+ARM_FUNC_START libfunc_unk_20BF9C0
+libfunc_unk_20BF9C0:
 .incbin "fe11-arm9-base.bin", 0xBF9C0, 0xBF9EC - 0xBF9C0
 
-ARM_FUNC_START sub_20BF9EC
-sub_20BF9EC:
+ARM_FUNC_START libfunc_unk_20BF9EC
+libfunc_unk_20BF9EC:
 .incbin "fe11-arm9-base.bin", 0xBF9EC, 0xBFA7C - 0xBF9EC
 
-ARM_FUNC_START sub_20BFA7C
-sub_20BFA7C:
+ARM_FUNC_START libfunc_unk_20BFA7C
+libfunc_unk_20BFA7C:
 .incbin "fe11-arm9-base.bin", 0xBFA7C, 0xBFAFC - 0xBFA7C
 
-ARM_FUNC_START sub_20BFAFC
-sub_20BFAFC:
+ARM_FUNC_START libfunc_unk_20BFAFC
+libfunc_unk_20BFAFC:
 .incbin "fe11-arm9-base.bin", 0xBFAFC, 0xBFB14 - 0xBFAFC
 
-ARM_FUNC_START sub_20BFB14
-sub_20BFB14:
+ARM_FUNC_START libfunc_unk_20BFB14
+libfunc_unk_20BFB14:
 .incbin "fe11-arm9-base.bin", 0xBFB14, 0xBFB3C - 0xBFB14
 
-ARM_FUNC_START sub_20BFB3C
-sub_20BFB3C:
+ARM_FUNC_START libfunc_unk_20BFB3C
+libfunc_unk_20BFB3C:
 .incbin "fe11-arm9-base.bin", 0xBFB3C, 0xBFB4C - 0xBFB3C
 
-ARM_FUNC_START sub_20BFB4C
-sub_20BFB4C:
+ARM_FUNC_START libfunc_unk_20BFB4C
+libfunc_unk_20BFB4C:
 .incbin "fe11-arm9-base.bin", 0xBFB4C, 0xBFB8C - 0xBFB4C
 
-ARM_FUNC_START sub_20BFB8C
-sub_20BFB8C:
+ARM_FUNC_START libfunc_unk_20BFB8C
+libfunc_unk_20BFB8C:
 .incbin "fe11-arm9-base.bin", 0xBFB8C, 0xBFBAC - 0xBFB8C
 
-ARM_FUNC_START sub_20BFBAC
-sub_20BFBAC:
+ARM_FUNC_START libfunc_unk_20BFBAC
+libfunc_unk_20BFBAC:
 .incbin "fe11-arm9-base.bin", 0xBFBAC, 0xBFBC4 - 0xBFBAC
 
-ARM_FUNC_START sub_20BFBC4
-sub_20BFBC4:
+ARM_FUNC_START libfunc_unk_20BFBC4
+libfunc_unk_20BFBC4:
 .incbin "fe11-arm9-base.bin", 0xBFBC4, 0xBFBCC - 0xBFBC4
 
-ARM_FUNC_START sub_20BFBCC
-sub_20BFBCC:
+ARM_FUNC_START libfunc_unk_20BFBCC
+libfunc_unk_20BFBCC:
 .incbin "fe11-arm9-base.bin", 0xBFBCC, 0xBFDD0 - 0xBFBCC
 
-ARM_FUNC_START sub_20BFDD0
-sub_20BFDD0:
+ARM_FUNC_START libfunc_unk_20BFDD0
+libfunc_unk_20BFDD0:
 .incbin "fe11-arm9-base.bin", 0xBFDD0, 0xC017C - 0xBFDD0
 
-ARM_FUNC_START sub_20C017C
-sub_20C017C:
+ARM_FUNC_START libfunc_unk_20C017C
+libfunc_unk_20C017C:
 .incbin "fe11-arm9-base.bin", 0xC017C, 0xC01C4 - 0xC017C
 
-ARM_FUNC_START sub_20C01C4
-sub_20C01C4:
+ARM_FUNC_START libfunc_unk_20C01C4
+libfunc_unk_20C01C4:
 .incbin "fe11-arm9-base.bin", 0xC01C4, 0xC01E8 - 0xC01C4
 
-ARM_FUNC_START sub_20C01E8
-sub_20C01E8:
+ARM_FUNC_START libfunc_unk_20C01E8
+libfunc_unk_20C01E8:
 .incbin "fe11-arm9-base.bin", 0xC01E8, 0xC0200 - 0xC01E8
 
-ARM_FUNC_START sub_20C0200
-sub_20C0200:
+ARM_FUNC_START libfunc_unk_20C0200
+libfunc_unk_20C0200:
 .incbin "fe11-arm9-base.bin", 0xC0200, 0xC0220 - 0xC0200
 
-ARM_FUNC_START sub_20C0220
-sub_20C0220:
+ARM_FUNC_START libfunc_unk_20C0220
+libfunc_unk_20C0220:
 .incbin "fe11-arm9-base.bin", 0xC0220, 0xC0238 - 0xC0220
 
-ARM_FUNC_START sub_20C0238
-sub_20C0238:
+ARM_FUNC_START libfunc_unk_20C0238
+libfunc_unk_20C0238:
 .incbin "fe11-arm9-base.bin", 0xC0238, 0xC0258 - 0xC0238
 
-ARM_FUNC_START sub_20C0258
-sub_20C0258:
+ARM_FUNC_START libfunc_unk_20C0258
+libfunc_unk_20C0258:
 .incbin "fe11-arm9-base.bin", 0xC0258, 0xC0270 - 0xC0258
 
-ARM_FUNC_START sub_20C0270
-sub_20C0270:
+ARM_FUNC_START libfunc_unk_20C0270
+libfunc_unk_20C0270:
 .incbin "fe11-arm9-base.bin", 0xC0270, 0xC0290 - 0xC0270
 
-ARM_FUNC_START sub_20C0290
-sub_20C0290:
+ARM_FUNC_START libfunc_unk_20C0290
+libfunc_unk_20C0290:
 .incbin "fe11-arm9-base.bin", 0xC0290, 0xC02C0 - 0xC0290
 
-ARM_FUNC_START sub_20C02C0
-sub_20C02C0:
+ARM_FUNC_START libfunc_unk_20C02C0
+libfunc_unk_20C02C0:
 .incbin "fe11-arm9-base.bin", 0xC02C0, 0xC02EC - 0xC02C0
 
 ARM_FUNC_START _dadd
@@ -4523,20 +4523,20 @@ ARM_FUNC_START _d_dtoull
 _d_dtoull:
 .incbin "fe11-arm9-base.bin", 0xC0708, 0xC0794 - 0xC0708
 
-ARM_FUNC_START sub_20C0794
-sub_20C0794:
+ARM_FUNC_START libfunc_unk_20C0794
+libfunc_unk_20C0794:
 .incbin "fe11-arm9-base.bin", 0xC0794, 0xC07D4 - 0xC0794
 
-ARM_FUNC_START sub_20C07D4
-sub_20C07D4:
+ARM_FUNC_START libfunc_unk_20C07D4
+libfunc_unk_20C07D4:
 .incbin "fe11-arm9-base.bin", 0xC07D4, 0xC0810 - 0xC07D4
 
 ARM_FUNC_START _d_mul
 _d_mul:
 .incbin "fe11-arm9-base.bin", 0xC0810, 0xC0B74 - 0xC0810
 
-ARM_FUNC_START sub_20C0B74
-sub_20C0B74:
+ARM_FUNC_START libfunc_unk_20C0B74
+libfunc_unk_20C0B74:
 .incbin "fe11-arm9-base.bin", 0xC0B74, 0xC0D10 - 0xC0B74
 
 ARM_FUNC_START _drsb
@@ -4547,52 +4547,52 @@ ARM_FUNC_START _dsub
 _dsub:
 .incbin "fe11-arm9-base.bin", 0xC0D28, 0xC0D38 - 0xC0D28
 
-ARM_FUNC_START __dsub_start
-__dsub_start:
+ARM_FUNC_START __dlibfunc_unk_start
+__dlibfunc_unk_start:
 .incbin "fe11-arm9-base.bin", 0xC0D38, 0xC1300 - 0xC0D38
 
-ARM_FUNC_START sub_20C1300
-sub_20C1300:
+ARM_FUNC_START libfunc_unk_20C1300
+libfunc_unk_20C1300:
 .incbin "fe11-arm9-base.bin", 0xC1300, 0xC1398 - 0xC1300
 
-ARM_FUNC_START sub_20C1398
-sub_20C1398:
+ARM_FUNC_START libfunc_unk_20C1398
+libfunc_unk_20C1398:
 .incbin "fe11-arm9-base.bin", 0xC1398, 0xC143C - 0xC1398
 
-ARM_FUNC_START sub_20C143C
-sub_20C143C:
+ARM_FUNC_START libfunc_unk_20C143C
+libfunc_unk_20C143C:
 .incbin "fe11-arm9-base.bin", 0xC143C, 0xC14D8 - 0xC143C
 
-ARM_FUNC_START sub_20C14D8
-sub_20C14D8:
+ARM_FUNC_START libfunc_unk_20C14D8
+libfunc_unk_20C14D8:
 .incbin "fe11-arm9-base.bin", 0xC14D8, 0xC1564 - 0xC14D8
 
-ARM_FUNC_START sub_20C1564
-sub_20C1564:
+ARM_FUNC_START libfunc_unk_20C1564
+libfunc_unk_20C1564:
 .incbin "fe11-arm9-base.bin", 0xC1564, 0xC16A8 - 0xC1564
 
-ARM_FUNC_START sub_20C16A8
-sub_20C16A8:
+ARM_FUNC_START libfunc_unk_20C16A8
+libfunc_unk_20C16A8:
 .incbin "fe11-arm9-base.bin", 0xC16A8, 0xC1738 - 0xC16A8
 
 ARM_FUNC_START _ll_mod
 _ll_mod:
 .incbin "fe11-arm9-base.bin", 0xC1738, 0xC19B0 - 0xC1738
 
-ARM_FUNC_START sub_20C19B0
-sub_20C19B0:
+ARM_FUNC_START libfunc_unk_20C19B0
+libfunc_unk_20C19B0:
 .incbin "fe11-arm9-base.bin", 0xC19B0, 0xC19C0 - 0xC19B0
 
-ARM_FUNC_START sub_20C19C0
-sub_20C19C0:
+ARM_FUNC_START libfunc_unk_20C19C0
+libfunc_unk_20C19C0:
 .incbin "fe11-arm9-base.bin", 0xC19C0, 0xC1B70 - 0xC19C0
 
 ARM_FUNC_START _ll_udiv
 _ll_udiv:
 .incbin "fe11-arm9-base.bin", 0xC1B70, 0xC1B7C - 0xC1B70
 
-ARM_FUNC_START sub_20C1B7C
-sub_20C1B7C:
+ARM_FUNC_START libfunc_unk_20C1B7C
+libfunc_unk_20C1B7C:
 .incbin "fe11-arm9-base.bin", 0xC1B7C, 0xC1BB8 - 0xC1B7C
 
 ARM_FUNC_START _ll_mul
@@ -4607,12 +4607,12 @@ ARM_FUNC_START _u32_div_f
 _u32_div_f:
 .incbin "fe11-arm9-base.bin", 0xC1DE4, 0xC1DEC - 0xC1DE4
 
-ARM_FUNC_START sub_20C1DEC
-sub_20C1DEC:
+ARM_FUNC_START libfunc_unk_20C1DEC
+libfunc_unk_20C1DEC:
 .incbin "fe11-arm9-base.bin", 0xC1DEC, 0xC1FE0 - 0xC1DEC
 
-ARM_FUNC_START sub_20C1FE0
-sub_20C1FE0:
+ARM_FUNC_START libfunc_unk_20C1FE0
+libfunc_unk_20C1FE0:
 .incbin "fe11-arm9-base.bin", 0xC1FE0, 0xC2524 - 0xC1FE0
 
 ARM_FUNC_START _fp_init
@@ -4643,250 +4643,250 @@ ARM_FUNC_START __close_console
 __close_console:
 .incbin "fe11-arm9-base.bin", 0xC25E4, 0xC25EC - 0xC25E4
 
-ARM_FUNC_START sub_20C25EC
-sub_20C25EC:
+ARM_FUNC_START libfunc_unk_20C25EC
+libfunc_unk_20C25EC:
 .incbin "fe11-arm9-base.bin", 0xC25EC, 0xC25F8 - 0xC25EC
 
-ARM_FUNC_START sub_20C25F8
-sub_20C25F8:
+ARM_FUNC_START libfunc_unk_20C25F8
+libfunc_unk_20C25F8:
 .incbin "fe11-arm9-base.bin", 0xC25F8, 0xC2608 - 0xC25F8
 
-ARM_FUNC_START sub_20C2608
-sub_20C2608:
+ARM_FUNC_START libfunc_unk_20C2608
+libfunc_unk_20C2608:
 .incbin "fe11-arm9-base.bin", 0xC2608, 0xC2694 - 0xC2608
 
-ARM_FUNC_START sub_20C2694
-sub_20C2694:
+ARM_FUNC_START libfunc_unk_20C2694
+libfunc_unk_20C2694:
 .incbin "fe11-arm9-base.bin", 0xC2694, 0xC2720 - 0xC2694
 
-ARM_FUNC_START sub_20C2720
-sub_20C2720:
+ARM_FUNC_START libfunc_unk_20C2720
+libfunc_unk_20C2720:
 .incbin "fe11-arm9-base.bin", 0xC2720, 0xC2784 - 0xC2720
 
-ARM_FUNC_START sub_20C2784
-sub_20C2784:
+ARM_FUNC_START libfunc_unk_20C2784
+libfunc_unk_20C2784:
 .incbin "fe11-arm9-base.bin", 0xC2784, 0xC288C - 0xC2784
 
-ARM_FUNC_START sub_20C288C
-sub_20C288C:
+ARM_FUNC_START libfunc_unk_20C288C
+libfunc_unk_20C288C:
 .incbin "fe11-arm9-base.bin", 0xC288C, 0xC28A8 - 0xC288C
 
-ARM_FUNC_START sub_20C28A8
-sub_20C28A8:
+ARM_FUNC_START libfunc_unk_20C28A8
+libfunc_unk_20C28A8:
 .incbin "fe11-arm9-base.bin", 0xC28A8, 0xC2C30 - 0xC28A8
 
-ARM_FUNC_START sub_20C2C30
-sub_20C2C30:
+ARM_FUNC_START libfunc_unk_20C2C30
+libfunc_unk_20C2C30:
 .incbin "fe11-arm9-base.bin", 0xC2C30, 0xC34E0 - 0xC2C30
 
-ARM_FUNC_START sub_20C34E0
-sub_20C34E0:
+ARM_FUNC_START libfunc_unk_20C34E0
+libfunc_unk_20C34E0:
 .incbin "fe11-arm9-base.bin", 0xC34E0, 0xC3634 - 0xC34E0
 
-ARM_FUNC_START sub_20C3634
-sub_20C3634:
+ARM_FUNC_START libfunc_unk_20C3634
+libfunc_unk_20C3634:
 .incbin "fe11-arm9-base.bin", 0xC3634, 0xC36B8 - 0xC3634
 
-ARM_FUNC_START sub_20C36B8
-sub_20C36B8:
+ARM_FUNC_START libfunc_unk_20C36B8
+libfunc_unk_20C36B8:
 .incbin "fe11-arm9-base.bin", 0xC36B8, 0xC3764 - 0xC36B8
 
-ARM_FUNC_START sub_20C3764
-sub_20C3764:
+ARM_FUNC_START libfunc_unk_20C3764
+libfunc_unk_20C3764:
 .incbin "fe11-arm9-base.bin", 0xC3764, 0xC37C4 - 0xC3764
 
-ARM_FUNC_START sub_20C37C4
-sub_20C37C4:
+ARM_FUNC_START libfunc_unk_20C37C4
+libfunc_unk_20C37C4:
 .incbin "fe11-arm9-base.bin", 0xC37C4, 0xC39A0 - 0xC37C4
 
-ARM_FUNC_START sub_20C39A0
-sub_20C39A0:
+ARM_FUNC_START libfunc_unk_20C39A0
+libfunc_unk_20C39A0:
 .incbin "fe11-arm9-base.bin", 0xC39A0, 0xC39FC - 0xC39A0
 
-ARM_FUNC_START sub_20C39FC
-sub_20C39FC:
+ARM_FUNC_START libfunc_unk_20C39FC
+libfunc_unk_20C39FC:
 .incbin "fe11-arm9-base.bin", 0xC39FC, 0xC3AE8 - 0xC39FC
 
-ARM_FUNC_START sub_20C3AE8
-sub_20C3AE8:
+ARM_FUNC_START libfunc_unk_20C3AE8
+libfunc_unk_20C3AE8:
 .incbin "fe11-arm9-base.bin", 0xC3AE8, 0xC3B10 - 0xC3AE8
 
-ARM_FUNC_START sub_20C3B10
-sub_20C3B10:
+ARM_FUNC_START libfunc_unk_20C3B10
+libfunc_unk_20C3B10:
 .incbin "fe11-arm9-base.bin", 0xC3B10, 0xC3B24 - 0xC3B10
 
-ARM_FUNC_START sub_20C3B24
-sub_20C3B24:
+ARM_FUNC_START libfunc_unk_20C3B24
+libfunc_unk_20C3B24:
 .incbin "fe11-arm9-base.bin", 0xC3B24, 0xC3B30 - 0xC3B24
 
 ARM_FUNC_START __call_static_initializers
 __call_static_initializers:
 .incbin "fe11-arm9-base.bin", 0xC3B30, 0xC3B5C - 0xC3B30
 
-ARM_FUNC_START sub_20C3B5C
-sub_20C3B5C:
+ARM_FUNC_START libfunc_unk_20C3B5C
+libfunc_unk_20C3B5C:
 .incbin "fe11-arm9-base.bin", 0xC3B5C, 0xC3BA0 - 0xC3B5C
 
-ARM_FUNC_START sub_20C3BA0
-sub_20C3BA0:
+ARM_FUNC_START libfunc_unk_20C3BA0
+libfunc_unk_20C3BA0:
 .incbin "fe11-arm9-base.bin", 0xC3BA0, 0xC3BFC - 0xC3BA0
 
-ARM_FUNC_START sub_20C3BFC
-sub_20C3BFC:
+ARM_FUNC_START libfunc_unk_20C3BFC
+libfunc_unk_20C3BFC:
 .incbin "fe11-arm9-base.bin", 0xC3BFC, 0xC3CB4 - 0xC3BFC
 
-ARM_FUNC_START sub_20C3CB4
-sub_20C3CB4:
+ARM_FUNC_START libfunc_unk_20C3CB4
+libfunc_unk_20C3CB4:
 .incbin "fe11-arm9-base.bin", 0xC3CB4, 0xC3D64 - 0xC3CB4
 
-ARM_FUNC_START sub_20C3D64
-sub_20C3D64:
+ARM_FUNC_START libfunc_unk_20C3D64
+libfunc_unk_20C3D64:
 .incbin "fe11-arm9-base.bin", 0xC3D64, 0xC3E88 - 0xC3D64
 
-ARM_FUNC_START sub_20C3E88
-sub_20C3E88:
+ARM_FUNC_START libfunc_unk_20C3E88
+libfunc_unk_20C3E88:
 .incbin "fe11-arm9-base.bin", 0xC3E88, 0xC3EB8 - 0xC3E88
 
-ARM_FUNC_START sub_20C3EB8
-sub_20C3EB8:
+ARM_FUNC_START libfunc_unk_20C3EB8
+libfunc_unk_20C3EB8:
 .incbin "fe11-arm9-base.bin", 0xC3EB8, 0xC3ECC - 0xC3EB8
 
-ARM_FUNC_START sub_20C3ECC
-sub_20C3ECC:
+ARM_FUNC_START libfunc_unk_20C3ECC
+libfunc_unk_20C3ECC:
 .incbin "fe11-arm9-base.bin", 0xC3ECC, 0xC3EE8 - 0xC3ECC
 
-ARM_FUNC_START sub_20C3EE8
-sub_20C3EE8:
+ARM_FUNC_START libfunc_unk_20C3EE8
+libfunc_unk_20C3EE8:
 .incbin "fe11-arm9-base.bin", 0xC3EE8, 0xC3EFC - 0xC3EE8
 
-ARM_FUNC_START sub_20C3EFC
-sub_20C3EFC:
+ARM_FUNC_START libfunc_unk_20C3EFC
+libfunc_unk_20C3EFC:
 .incbin "fe11-arm9-base.bin", 0xC3EFC, 0xC3F10 - 0xC3EFC
 
-ARM_FUNC_START sub_20C3F10
-sub_20C3F10:
+ARM_FUNC_START libfunc_unk_20C3F10
+libfunc_unk_20C3F10:
 .incbin "fe11-arm9-base.bin", 0xC3F10, 0xC3F2C - 0xC3F10
 
-ARM_FUNC_START sub_20C3F2C
-sub_20C3F2C:
+ARM_FUNC_START libfunc_unk_20C3F2C
+libfunc_unk_20C3F2C:
 .incbin "fe11-arm9-base.bin", 0xC3F2C, 0xC3F40 - 0xC3F2C
 
-ARM_FUNC_START sub_20C3F40
-sub_20C3F40:
+ARM_FUNC_START libfunc_unk_20C3F40
+libfunc_unk_20C3F40:
 .incbin "fe11-arm9-base.bin", 0xC3F40, 0xC3F5C - 0xC3F40
 
-ARM_FUNC_START sub_20C3F5C
-sub_20C3F5C:
+ARM_FUNC_START libfunc_unk_20C3F5C
+libfunc_unk_20C3F5C:
 .incbin "fe11-arm9-base.bin", 0xC3F5C, 0xC418C - 0xC3F5C
 
-ARM_FUNC_START sub_20C418C
-sub_20C418C:
+ARM_FUNC_START libfunc_unk_20C418C
+libfunc_unk_20C418C:
 .incbin "fe11-arm9-base.bin", 0xC418C, 0xC425C - 0xC418C
 
-ARM_FUNC_START sub_20C425C
-sub_20C425C:
+ARM_FUNC_START libfunc_unk_20C425C
+libfunc_unk_20C425C:
 .incbin "fe11-arm9-base.bin", 0xC425C, 0xC4268 - 0xC425C
 
-ARM_FUNC_START sub_20C4268
-sub_20C4268:
+ARM_FUNC_START libfunc_unk_20C4268
+libfunc_unk_20C4268:
 .incbin "fe11-arm9-base.bin", 0xC4268, 0xC4274 - 0xC4268
 
-ARM_FUNC_START sub_20C4274
-sub_20C4274:
+ARM_FUNC_START libfunc_unk_20C4274
+libfunc_unk_20C4274:
 .incbin "fe11-arm9-base.bin", 0xC4274, 0xC428C - 0xC4274
 
-ARM_FUNC_START sub_20C428C
-sub_20C428C:
+ARM_FUNC_START libfunc_unk_20C428C
+libfunc_unk_20C428C:
 .incbin "fe11-arm9-base.bin", 0xC428C, 0xC42A4 - 0xC428C
 
-ARM_FUNC_START sub_20C42A4
-sub_20C42A4:
+ARM_FUNC_START libfunc_unk_20C42A4
+libfunc_unk_20C42A4:
 .incbin "fe11-arm9-base.bin", 0xC42A4, 0xC42C4 - 0xC42A4
 
-ARM_FUNC_START sub_20C42C4
-sub_20C42C4:
+ARM_FUNC_START libfunc_unk_20C42C4
+libfunc_unk_20C42C4:
 .incbin "fe11-arm9-base.bin", 0xC42C4, 0xC4474 - 0xC42C4
 
-ARM_FUNC_START sub_20C4474
-sub_20C4474:
+ARM_FUNC_START libfunc_unk_20C4474
+libfunc_unk_20C4474:
 .incbin "fe11-arm9-base.bin", 0xC4474, 0xC44D0 - 0xC4474
 
-ARM_FUNC_START sub_20C44D0
-sub_20C44D0:
+ARM_FUNC_START libfunc_unk_20C44D0
+libfunc_unk_20C44D0:
 .incbin "fe11-arm9-base.bin", 0xC44D0, 0xC4570 - 0xC44D0
 
-ARM_FUNC_START sub_20C4570
-sub_20C4570:
+ARM_FUNC_START libfunc_unk_20C4570
+libfunc_unk_20C4570:
 .incbin "fe11-arm9-base.bin", 0xC4570, 0xC4590 - 0xC4570
 
-ARM_FUNC_START sub_20C4590
-sub_20C4590:
+ARM_FUNC_START libfunc_unk_20C4590
+libfunc_unk_20C4590:
 .incbin "fe11-arm9-base.bin", 0xC4590, 0xC45C0 - 0xC4590
 
-ARM_FUNC_START sub_20C45C0
-sub_20C45C0:
+ARM_FUNC_START libfunc_unk_20C45C0
+libfunc_unk_20C45C0:
 .incbin "fe11-arm9-base.bin", 0xC45C0, 0xC45F0 - 0xC45C0
 
-ARM_FUNC_START sub_20C45F0
-sub_20C45F0:
+ARM_FUNC_START libfunc_unk_20C45F0
+libfunc_unk_20C45F0:
 .incbin "fe11-arm9-base.bin", 0xC45F0, 0xC4638 - 0xC45F0
 
-ARM_FUNC_START sub_20C4638
-sub_20C4638:
+ARM_FUNC_START libfunc_unk_20C4638
+libfunc_unk_20C4638:
 .incbin "fe11-arm9-base.bin", 0xC4638, 0xC4684 - 0xC4638
 
 ARM_FUNC_START _ExitProcess
 _ExitProcess:
 .incbin "fe11-arm9-base.bin", 0xC4684, 0xC4CDC - 0xC4684
 
-ARM_FUNC_START sub_20C4CDC
-sub_20C4CDC:
+ARM_FUNC_START libfunc_unk_20C4CDC
+libfunc_unk_20C4CDC:
 .incbin "fe11-arm9-base.bin", 0xC4CDC, 0xC4CFC - 0xC4CDC
 
-ARM_FUNC_START sub_20C4CFC
-sub_20C4CFC:
+ARM_FUNC_START libfunc_unk_20C4CFC
+libfunc_unk_20C4CFC:
 .incbin "fe11-arm9-base.bin", 0xC4CFC, 0xC4D10 - 0xC4CFC
 
-ARM_FUNC_START sub_20C4D10
-sub_20C4D10:
+ARM_FUNC_START libfunc_unk_20C4D10
+libfunc_unk_20C4D10:
 .incbin "fe11-arm9-base.bin", 0xC4D10, 0xC4D28 - 0xC4D10
 
-ARM_FUNC_START sub_20C4D28
-sub_20C4D28:
+ARM_FUNC_START libfunc_unk_20C4D28
+libfunc_unk_20C4D28:
 .incbin "fe11-arm9-base.bin", 0xC4D28, 0xC4D2C - 0xC4D28
 
-ARM_FUNC_START sub_20C4D2C
-sub_20C4D2C:
+ARM_FUNC_START libfunc_unk_20C4D2C
+libfunc_unk_20C4D2C:
 .incbin "fe11-arm9-base.bin", 0xC4D2C, 0xC4D58 - 0xC4D2C
 
-ARM_FUNC_START sub_20C4D58
-sub_20C4D58:
+ARM_FUNC_START libfunc_unk_20C4D58
+libfunc_unk_20C4D58:
 .incbin "fe11-arm9-base.bin", 0xC4D58, 0xC4FA0 - 0xC4D58
 
-ARM_FUNC_START sub_20C4FA0
-sub_20C4FA0:
+ARM_FUNC_START libfunc_unk_20C4FA0
+libfunc_unk_20C4FA0:
 .incbin "fe11-arm9-base.bin", 0xC4FA0, 0xC4FCC - 0xC4FA0
 
-ARM_FUNC_START sub_20C4FCC
-sub_20C4FCC:
+ARM_FUNC_START libfunc_unk_20C4FCC
+libfunc_unk_20C4FCC:
 .incbin "fe11-arm9-base.bin", 0xC4FCC, 0xC5064 - 0xC4FCC
 
-ARM_FUNC_START sub_20C5064
-sub_20C5064:
+ARM_FUNC_START libfunc_unk_20C5064
+libfunc_unk_20C5064:
 .incbin "fe11-arm9-base.bin", 0xC5064, 0xC5088 - 0xC5064
 
-ARM_FUNC_START sub_20C5088
-sub_20C5088:
+ARM_FUNC_START libfunc_unk_20C5088
+libfunc_unk_20C5088:
 .incbin "fe11-arm9-base.bin", 0xC5088, 0xC50C0 - 0xC5088
 
-ARM_FUNC_START sub_20C50C0
-sub_20C50C0:
+ARM_FUNC_START libfunc_unk_20C50C0
+libfunc_unk_20C50C0:
 .incbin "fe11-arm9-base.bin", 0xC50C0, 0xC50D8 - 0xC50C0
 
-ARM_FUNC_START sub_20C50D8
-sub_20C50D8:
+ARM_FUNC_START libfunc_unk_20C50D8
+libfunc_unk_20C50D8:
 .incbin "fe11-arm9-base.bin", 0xC50D8, 0xC50F0 - 0xC50D8
 
-ARM_FUNC_START sub_20C50F0
-sub_20C50F0:
+ARM_FUNC_START libfunc_unk_20C50F0
+libfunc_unk_20C50F0:
 .incbin "fe11-arm9-base.bin", 0xC50F0, 0xC9B10 - 0xC50F0

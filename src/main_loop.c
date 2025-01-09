@@ -29,7 +29,7 @@ void sub_200EDF0(void)
 	GX_SetBankForLCDC(0x1FF);
 
 	MIi_CpuClearFast(0, VRAM, 0xA4000);
-	sub_20A094C();
+	libfunc_unk_20A094C();
 	MIi_CpuClearFast(0xC0, OAM, 0x400);
 	MIi_CpuClearFast(0x0, BG_PALETTE, 0x400);
 	MIi_CpuClearFast(0xC0, OAM_SUB, 0x400);
@@ -94,7 +94,7 @@ void InitSystem(void)
 	sub_201BC28();
 	sub_200EECC();
 	sub_201F3DC();
-	sub_20AC298();
+	libfunc_unk_20AC298();
 	sub_201FF20();
 	sub_20217B4();
 

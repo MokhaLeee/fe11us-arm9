@@ -3587,7 +3587,7 @@ void GX_SetBankForLCDC(int a);
 // ??? sub_20A08D8
 // ??? sub_20A08FC
 // ??? sub_20A0910
-void sub_20A094C(void);
+void libfunc_unk_20A094C(void);
 // ??? sub_20A0960
 // ??? sub_20A0974
 // ??? sub_20A0988
@@ -4022,7 +4022,7 @@ void PM_Init(void);
 // ??? PM_AppendPostSleepCallback
 // ??? sub_20AC268
 // ??? sub_20AC280
-void sub_20AC298(void);
+void libfunc_unk_20AC298(void);
 // ??? sub_20AC304
 // ??? sub_20AC374
 // ??? sub_20AC3AC
@@ -4247,7 +4247,7 @@ void CARD_SetThreadPriority(int a);
 // ??? sub_20B6B08
 // ??? sub_20B6B48
 // ??? sub_20B6B84
-// ??? sub_20B6BAC
+// ??? libfunc_unk_20B6BAC
 // ??? sub_20B6BD4
 char * STD_CopyString(char * dest, const char * src);
 int STD_CopyLStringZeroFill(char * dst, const char * src, int n);
