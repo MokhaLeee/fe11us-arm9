@@ -153,28 +153,32 @@ ARM_FUNC_START strlen
 strlen:
 .incbin "fe11-arm9-base.bin", 0xBB30C, 0xBB328 - 0xBB30C
 
-ARM_FUNC_START sub_20BB328
-sub_20BB328:
+ARM_FUNC_START strcpy
+strcpy:
 .incbin "fe11-arm9-base.bin", 0xBB328, 0xBB3F0 - 0xBB328
 
-ARM_FUNC_START sub_20BB3F0
-sub_20BB3F0:
-.incbin "fe11-arm9-base.bin", 0xBB3F0, 0xBB470 - 0xBB3F0
+ARM_FUNC_START strncpy
+strncpy:
+.incbin "fe11-arm9-base.bin", 0xBB3F0, 0xBB440 - 0xBB3F0
 
-ARM_FUNC_START sub_20BB470
-sub_20BB470:
+ARM_FUNC_START strcat
+strcat:
+.incbin "fe11-arm9-base.bin", 0xBB440, 0xBB470 - 0xBB440
+
+ARM_FUNC_START strcmp
+strcmp:
 .incbin "fe11-arm9-base.bin", 0xBB470, 0xBB584 - 0xBB470
 
-ARM_FUNC_START sub_20BB584
-sub_20BB584:
+ARM_FUNC_START strncmp
+strncmp:
 .incbin "fe11-arm9-base.bin", 0xBB584, 0xBB5B8 - 0xBB584
 
-ARM_FUNC_START sub_20BB5B8
-sub_20BB5B8:
+ARM_FUNC_START strchr
+strchr:
 .incbin "fe11-arm9-base.bin", 0xBB5B8, 0xBB5F4 - 0xBB5B8
 
-ARM_FUNC_START sub_20BB5F4
-sub_20BB5F4:
+ARM_FUNC_START strstr
+strstr:
 .incbin "fe11-arm9-base.bin", 0xBB5F4, 0xBB660 - 0xBB5F4
 
 ARM_FUNC_START sub_20BB660
@@ -217,52 +221,52 @@ ARM_FUNC_START sub_20BCFA8
 sub_20BCFA8:
 .incbin "fe11-arm9-base.bin", 0xBCFA8, 0xBE130 - 0xBCFA8
 
-ARM_FUNC_START sub_20BE130
-sub_20BE130:
+ARM_FUNC_START copysign
+copysign:
 .incbin "fe11-arm9-base.bin", 0xBE130, 0xBE158 - 0xBE130
 
-ARM_FUNC_START sub_20BE158
-sub_20BE158:
+ARM_FUNC_START fabs
+fabs:
 .incbin "fe11-arm9-base.bin", 0xBE158, 0xBE178 - 0xBE158
 
-ARM_FUNC_START sub_20BE178
-sub_20BE178:
+ARM_FUNC_START frexp
+frexp:
 .incbin "fe11-arm9-base.bin", 0xBE178, 0xBE234 - 0xBE178
 
-ARM_FUNC_START sub_20BE234
-sub_20BE234:
+ARM_FUNC_START ldexp
+ldexp:
 .incbin "fe11-arm9-base.bin", 0xBE234, 0xBE480 - 0xBE234
 
 ARM_FUNC_START sub_20BE480
 sub_20BE480:
 .incbin "fe11-arm9-base.bin", 0xBE480, 0xBE48C - 0xBE480
 
-ARM_FUNC_START sub_20BE48C
-sub_20BE48C:
+ARM_FUNC_START __must_round
+__must_round:
 .incbin "fe11-arm9-base.bin", 0xBE48C, 0xBE4F8 - 0xBE48C
 
-ARM_FUNC_START sub_20BE4F8
-sub_20BE4F8:
+ARM_FUNC_START __dorounddecup
+__dorounddecup:
 .incbin "fe11-arm9-base.bin", 0xBE4F8, 0xBE548 - 0xBE4F8
 
-ARM_FUNC_START sub_20BE548
-sub_20BE548:
+ARM_FUNC_START __rounddec
+__rounddec:
 .incbin "fe11-arm9-base.bin", 0xBE548, 0xBE588 - 0xBE548
 
-ARM_FUNC_START sub_20BE588
-sub_20BE588:
+ARM_FUNC_START __ull2dec
+__ull2dec:
 .incbin "fe11-arm9-base.bin", 0xBE588, 0xBE654 - 0xBE588
 
-ARM_FUNC_START sub_20BE654
-sub_20BE654:
+ARM_FUNC_START __timesdec
+__timesdec:
 .incbin "fe11-arm9-base.bin", 0xBE654, 0xBE7D8 - 0xBE654
 
 ARM_FUNC_START sub_20BE7D8
 sub_20BE7D8:
 .incbin "fe11-arm9-base.bin", 0xBE7D8, 0xBE874 - 0xBE7D8
 
-ARM_FUNC_START sub_20BE874
-sub_20BE874:
+ARM_FUNC_START __two_exp
+__two_exp:
 .incbin "fe11-arm9-base.bin", 0xBE874, 0xBEBF8 - 0xBE874
 
 ARM_FUNC_START sub_20BEBF8
@@ -277,28 +281,28 @@ ARM_FUNC_START sub_20BEDB8
 sub_20BEDB8:
 .incbin "fe11-arm9-base.bin", 0xBEDB8, 0xBF05C - 0xBEDB8
 
-ARM_FUNC_START sub_20BF05C
-sub_20BF05C:
+ARM_FUNC_START __num2dec_internal
+__num2dec_internal:
 .incbin "fe11-arm9-base.bin", 0xBF05C, 0xBF1DC - 0xBF05C
 
-ARM_FUNC_START sub_20BF1DC
-sub_20BF1DC:
+ARM_FUNC_START __num2dec
+__num2dec:
 .incbin "fe11-arm9-base.bin", 0xBF1DC, 0xBF284 - 0xBF1DC
 
 ARM_FUNC_START sub_20BF284
 sub_20BF284:
 .incbin "fe11-arm9-base.bin", 0xBF284, 0xBF8A8 - 0xBF284
 
-ARM_FUNC_START sub_20BF8A8
-sub_20BF8A8:
+ARM_FUNC_START __msl_generic_count_bits64
+__msl_generic_count_bits64:
 .incbin "fe11-arm9-base.bin", 0xBF8A8, 0xBF93C - 0xBF8A8
 
-ARM_FUNC_START sub_20BF93C
-sub_20BF93C:
+ARM_FUNC_START __signbitd
+__signbitd:
 .incbin "fe11-arm9-base.bin", 0xBF93C, 0xBF950 - 0xBF93C
 
-ARM_FUNC_START sub_20BF950
-sub_20BF950:
+ARM_FUNC_START __fpclassifyd
+__fpclassifyd:
 .incbin "fe11-arm9-base.bin", 0xBF950, 0xBF9C0 - 0xBF950
 
 ARM_FUNC_START sub_20BF9C0
