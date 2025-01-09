@@ -1065,7 +1065,7 @@
 020AF59C    G3CS_Nop
 020AF610    WM_Disable
 020AF650    WM_PowerOn
-020AF690    WM_PowerOff
+020AF690    sub_20AF690
 020AF740    WM_Reset
 020AF778    WM_End
 020AF7B8    WM_SetParentParameter

@@ -70,68 +70,68 @@ ARM_FUNC_START NitroMain
 NitroMain:
 .incbin "fe11-arm9-base.bin", 0x00C50, 0x00C70 - 0x00C50
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x00C70, 0x02180 - 0x00C70
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x02180, 0x02424 - 0x02180
 
 ARM_FUNC_START PRC_IsPenUpMarker
 PRC_IsPenUpMarker:
 .incbin "fe11-arm9-base.bin", 0x02424, 0x0378C - 0x02424
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x0378C, 0x03798 - 0x0378C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x03798, 0x076F8 - 0x03798
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x076F8, 0x10814 - 0x076F8
 
 ARM_FUNC_START PRC_IsEmpty
 PRC_IsEmpty:
 .incbin "fe11-arm9-base.bin", 0x10814, 0x12108 - 0x10814
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x12108, 0x12124 - 0x12108
 
 ARM_FUNC_START OS_EnableMainExArena
 OS_EnableMainExArena:
 .incbin "fe11-arm9-base.bin", 0x12124, 0x12138 - 0x12124
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x12138, 0x12144 - 0x12138
 
-ARM_FUNC_START G3CS_Nop
-G3CS_Nop:
+ARM_FUNC_START //
+//:
 .incbin "fe11-arm9-base.bin", 0x12144, 0x12164 - 0x12144
 
-ARM_FUNC_START G3CS_Nop
-G3CS_Nop:
+ARM_FUNC_START //
+//:
 .incbin "fe11-arm9-base.bin", 0x12164, 0x12174 - 0x12164
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x12174, 0x1239C - 0x12174
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x1239C, 0x13868 - 0x1239C
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x13868, 0x138D0 - 0x13868
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x138D0, 0x13A80 - 0x138D0
 
 ARM_FUNC_START OS_SetMainArenaHi
@@ -146,24 +146,24 @@ ARM_FUNC_START OS_SetMainArenaHi
 OS_SetMainArenaHi:
 .incbin "fe11-arm9-base.bin", 0x13F6C, 0x14074 - 0x13F6C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x14074, 0x14758 - 0x14074
 
-ARM_FUNC_START GX_GetDefaultDMA
-GX_GetDefaultDMA:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x14758, 0x15F58 - 0x14758
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x15F58, 0x163C4 - 0x15F58
 
 ARM_FUNC_START G2dCellDataBankHasVramTransferData
 G2dCellDataBankHasVramTransferData:
 .incbin "fe11-arm9-base.bin", 0x163C4, 0x181D8 - 0x163C4
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x181D8, 0x18F40 - 0x181D8
 
 ARM_FUNC_START G2dResetEntityPaletteTable
@@ -186,32 +186,32 @@ ARM_FUNC_START strerror
 strerror:
 .incbin "fe11-arm9-base.bin", 0x19034, 0x1AF64 - 0x19034
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x1AF64, 0x1BCE4 - 0x1AF64
 
 ARM_FUNC_START WBTi_get_my_user_command_counter
 WBTi_get_my_user_command_counter:
 .incbin "fe11-arm9-base.bin", 0x1BCE4, 0x1D6F8 - 0x1BCE4
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x1D6F8, 0x1D704 - 0x1D6F8
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x1D704, 0x1D710 - 0x1D704
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x1D710, 0x1D71C - 0x1D710
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x1D71C, 0x1F6C0 - 0x1D71C
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x1F6C0, 0x1F6CC - 0x1F6C0
 
 ARM_FUNC_START SndCaptureGetCaptureType
@@ -222,12 +222,12 @@ ARM_FUNC_START CARD_SetPulledOutCallback
 CARD_SetPulledOutCallback:
 .incbin "fe11-arm9-base.bin", 0x1FFB0, 0x1FFC0 - 0x1FFB0
 
-ARM_FUNC_START OS_GetCurrentThread
-OS_GetCurrentThread:
+ARM_FUNC_START //
+//:
 .incbin "fe11-arm9-base.bin", 0x1FFC0, 0x2016C - 0x1FFC0
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x2016C, 0x20838 - 0x2016C
 
 ARM_FUNC_START FX_DivS32
@@ -246,28 +246,28 @@ ARM_FUNC_START FS_GetTableSize
 FS_GetTableSize:
 .incbin "fe11-arm9-base.bin", 0x21B00, 0x23964 - 0x21B00
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x23964, 0x24C74 - 0x23964
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x24C74, 0x2CD20 - 0x24C74
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x2CD20, 0x2CD2C - 0x2CD20
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x2CD2C, 0x2CD38 - 0x2CD2C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x2CD38, 0x33F00 - 0x2CD38
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x33F00, 0x357E8 - 0x33F00
 
 ARM_FUNC_START WBTi_get_block_info_list_header
@@ -278,76 +278,76 @@ ARM_FUNC_START WBTi_set_block_info_list_header
 WBTi_set_block_info_list_header:
 .incbin "fe11-arm9-base.bin", 0x357F8, 0x37680 - 0x357F8
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x37680, 0x37C50 - 0x37680
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x37C50, 0x37C5C - 0x37C50
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x37C5C, 0x37C68 - 0x37C5C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x37C68, 0x37C74 - 0x37C68
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x37C74, 0x37C9C - 0x37C74
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x37C9C, 0x37D30 - 0x37C9C
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x37D30, 0x3D660 - 0x37D30
 
 ARM_FUNC_START OS_GetTotalOccupiedSize
 OS_GetTotalOccupiedSize:
 .incbin "fe11-arm9-base.bin", 0x3D660, 0x42460 - 0x3D660
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x42460, 0x424AC - 0x42460
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x424AC, 0x42634 - 0x424AC
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x42634, 0x426C4 - 0x42634
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x426C4, 0x42AA8 - 0x426C4
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x42AA8, 0x42AB4 - 0x42AA8
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x42AB4, 0x4345C - 0x42AB4
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x4345C, 0x43724 - 0x4345C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x43724, 0x44A30 - 0x43724
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x44A30, 0x44B1C - 0x44A30
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x44B1C, 0x454AC - 0x44B1C
 
 ARM_FUNC_START FS_IsFile
@@ -358,268 +358,268 @@ ARM_FUNC_START G2dFontGetType
 G2dFontGetType:
 .incbin "fe11-arm9-base.bin", 0x4558C, 0x45B18 - 0x4558C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x45B18, 0x47450 - 0x45B18
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x47450, 0x478C0 - 0x47450
 
 ARM_FUNC_START getCaptureMode_
 getCaptureMode_:
 .incbin "fe11-arm9-base.bin", 0x478C0, 0x49004 - 0x478C0
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x49004, 0x4B250 - 0x49004
 
-ARM_FUNC_START GX_GetDefaultDMA
-GX_GetDefaultDMA:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x4B250, 0x4E824 - 0x4B250
 
 ARM_FUNC_START G2dResetOamSoftEmuUVFlipCorrectFuncc
 G2dResetOamSoftEmuUVFlipCorrectFuncc:
 .incbin "fe11-arm9-base.bin", 0x4E824, 0x53E10 - 0x4E824
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x53E10, 0x53E1C - 0x53E10
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x53E1C, 0x53E80 - 0x53E1C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x53E80, 0x53E8C - 0x53E80
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x53E8C, 0x53EB0 - 0x53E8C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x53EB0, 0x53EBC - 0x53EB0
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x53EBC, 0x53EE0 - 0x53EBC
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x53EE0, 0x53EEC - 0x53EE0
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x53EEC, 0x53F10 - 0x53EEC
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x53F10, 0x54044 - 0x53F10
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x54044, 0x54080 - 0x54044
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x54080, 0x5408C - 0x54080
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x5408C, 0x540B0 - 0x5408C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x540B0, 0x540BC - 0x540B0
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x540BC, 0x54170 - 0x540BC
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x54170, 0x54194 - 0x54170
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x54194, 0x541B8 - 0x54194
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x541B8, 0x541C4 - 0x541B8
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x541C4, 0x541D0 - 0x541C4
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x541D0, 0x541F4 - 0x541D0
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x541F4, 0x54200 - 0x541F4
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x54200, 0x54224 - 0x54200
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x54224, 0x54230 - 0x54224
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x54230, 0x5423C - 0x54230
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x5423C, 0x54278 - 0x5423C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x54278, 0x5E824 - 0x54278
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x5E824, 0x5F758 - 0x5E824
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x5F758, 0x66704 - 0x5F758
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x66704, 0x676DC - 0x66704
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x676DC, 0x67DD4 - 0x676DC
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x67DD4, 0x67DE0 - 0x67DD4
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x67DE0, 0x67E34 - 0x67DE0
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x67E34, 0x67E40 - 0x67E34
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x67E40, 0x67E94 - 0x67E40
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x67E94, 0x67EA0 - 0x67E94
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x67EA0, 0x67F9C - 0x67EA0
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x67F9C, 0x67FA8 - 0x67F9C
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x67FA8, 0x67FF4 - 0x67FA8
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x67FF4, 0x68000 - 0x67FF4
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x68000, 0x68070 - 0x68000
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x68070, 0x6807C - 0x68070
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x6807C, 0x680EC - 0x6807C
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x680EC, 0x680F8 - 0x680EC
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x680F8, 0x681BC - 0x680F8
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x681BC, 0x681C8 - 0x681BC
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x681C8, 0x6821C - 0x681C8
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x6821C, 0x68228 - 0x6821C
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x68228, 0x6827C - 0x68228
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x6827C, 0x68288 - 0x6827C
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x68288, 0x6833C - 0x68288
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x6833C, 0x68348 - 0x6833C
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x68348, 0x683FC - 0x68348
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x683FC, 0x68408 - 0x683FC
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x68408, 0x68454 - 0x68408
 
 ARM_FUNC_START G2dFontSetLineFeed
 G2dFontSetLineFeed:
 .incbin "fe11-arm9-base.bin", 0x68454, 0x684E0 - 0x68454
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x684E0, 0x684EC - 0x684E0
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x684EC, 0x685A0 - 0x684EC
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x685A0, 0x685AC - 0x685A0
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x685AC, 0x6881C - 0x685AC
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x6881C, 0x68828 - 0x6881C
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x68828, 0x6CB8C - 0x68828
 
 ARM_FUNC_START FS_SeekFileToBegin
@@ -634,28 +634,28 @@ ARM_FUNC_START MATH_CRC8Init
 MATH_CRC8Init:
 .incbin "fe11-arm9-base.bin", 0x6E840, 0x6ECA4 - 0x6E840
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x6ECA4, 0x6ECB0 - 0x6ECA4
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x6ECB0, 0x737D0 - 0x6ECB0
 
-ARM_FUNC_START CTRDG_SetPulledOutCallback
-CTRDG_SetPulledOutCallback:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x737D0, 0x79140 - 0x737D0
 
 ARM_FUNC_START OS_IsAlarmAvailable
 OS_IsAlarmAvailable:
 .incbin "fe11-arm9-base.bin", 0x79140, 0x79210 - 0x79140
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x79210, 0x79DF0 - 0x79210
 
-ARM_FUNC_START GX_GetDefaultDMA
-GX_GetDefaultDMA:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x79DF0, 0x79E20 - 0x79DF0
 
 ARM_FUNC_START G3dGeIsBufferExist
@@ -670,32 +670,32 @@ ARM_FUNC_START OS_SetSharedArenaHi
 OS_SetSharedArenaHi:
 .incbin "fe11-arm9-base.bin", 0x79F98, 0x7A3D0 - 0x79F98
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x7A3D0, 0x7A428 - 0x7A3D0
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x7A428, 0x7A4A8 - 0x7A428
 
-ARM_FUNC_START GX_GetDefaultDMA
-GX_GetDefaultDMA:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x7A4A8, 0x7BED0 - 0x7A4A8
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x7BED0, 0x7C234 - 0x7BED0
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x7C234, 0x7D0AC - 0x7C234
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x7D0AC, 0x7D0B8 - 0x7D0AC
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x7D0B8, 0x7DBB0 - 0x7D0B8
 
 ARM_FUNC_START G2dStopAnimCtrl
@@ -706,48 +706,48 @@ ARM_FUNC_START G2dResetEntityPaletteTable
 G2dResetEntityPaletteTable:
 .incbin "fe11-arm9-base.bin", 0x7EC9C, 0x86B34 - 0x7EC9C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x86B34, 0x87178 - 0x86B34
 
 ARM_FUNC_START CARD_SetPulledOutCallback
 CARD_SetPulledOutCallback:
 .incbin "fe11-arm9-base.bin", 0x87178, 0x87188 - 0x87178
 
-ARM_FUNC_START OS_GetCurrentThread
-OS_GetCurrentThread:
+ARM_FUNC_START //
+//:
 .incbin "fe11-arm9-base.bin", 0x87188, 0x881DC - 0x87188
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x881DC, 0x8874C - 0x881DC
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x8874C, 0x88758 - 0x8874C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x88758, 0x88898 - 0x88758
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x88898, 0x888BC - 0x88898
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x888BC, 0x8B29C - 0x888BC
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x8B29C, 0x8B2A8 - 0x8B29C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x8B2A8, 0x8B6C8 - 0x8B2A8
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x8B6C8, 0x8D6D0 - 0x8B6C8
 
 ARM_FUNC_START G3CS_MtxMode
@@ -770,20 +770,20 @@ ARM_FUNC_START MI_CpuFill16
 MI_CpuFill16:
 .incbin "fe11-arm9-base.bin", 0x93694, 0x960F4 - 0x93694
 
-ARM_FUNC_START GX_GetDefaultDMA
-GX_GetDefaultDMA:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x960F4, 0x97FD4 - 0x960F4
 
 ARM_FUNC_START MATH_MD5Init
 MATH_MD5Init:
 .incbin "fe11-arm9-base.bin", 0x97FD4, 0x97FE0 - 0x97FD4
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x97FE0, 0x97FEC - 0x97FE0
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x97FEC, 0x97FF8 - 0x97FEC
 
 ARM_FUNC_START SndInit
@@ -802,8 +802,8 @@ ARM_FUNC_START BeginSleep
 BeginSleep:
 .incbin "fe11-arm9-base.bin", 0x980D0, 0x98108 - 0x980D0
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x98108, 0x98114 - 0x98108
 
 ARM_FUNC_START SndLockChannel
@@ -918,8 +918,8 @@ ARM_FUNC_START SndPlayerAllocSeqPlayer
 SndPlayerAllocSeqPlayer:
 .incbin "fe11-arm9-base.bin", 0x98750, 0x987E8 - 0x98750
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x987E8, 0x987F4 - 0x987E8
 
 ARM_FUNC_START SndPlayerStartSeq
@@ -1062,8 +1062,8 @@ ARM_FUNC_START SndArcSetCurrent
 SndArcSetCurrent:
 .incbin "fe11-arm9-base.bin", 0x99CAC, 0x99CC4 - 0x99CAC
 
-ARM_FUNC_START GX_GetDefaultDMA
-GX_GetDefaultDMA:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x99CC4, 0x99CD4 - 0x99CC4
 
 ARM_FUNC_START SndArcGetSeqInfo
@@ -1158,8 +1158,8 @@ ARM_FUNC_START SndHeapGetCurrentLevel
 SndHeapGetCurrentLevel:
 .incbin "fe11-arm9-base.bin", 0x9A474, 0x9A480 - 0x9A474
 
-ARM_FUNC_START G3CS_Nop
-G3CS_Nop:
+ARM_FUNC_START //
+//:
 .incbin "fe11-arm9-base.bin", 0x9A480, 0x9A490 - 0x9A480
 
 ARM_FUNC_START InitHeap
@@ -1550,8 +1550,8 @@ ARM_FUNC_START FndCreateExpHeapEx
 FndCreateExpHeapEx:
 .incbin "fe11-arm9-base.bin", 0x9D874, 0x9D8AC - 0x9D874
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x9D8AC, 0x9D8B8 - 0x9D8AC
 
 ARM_FUNC_START FndAllocFromExpHeapEx
@@ -1586,8 +1586,8 @@ ARM_FUNC_START FndCreateFrmHeapEx
 FndCreateFrmHeapEx:
 .incbin "fe11-arm9-base.bin", 0x9DA60, 0x9DA98 - 0x9DA60
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0x9DA98, 0x9DAA4 - 0x9DA98
 
 ARM_FUNC_START FndAllocFromFrmHeapEx
@@ -1842,8 +1842,8 @@ ARM_FUNC_START OS_SPrintf
 OS_SPrintf:
 .incbin "fe11-arm9-base.bin", 0xA2BF8, 0xA2C60 - 0xA2BF8
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xA2C60, 0xA2C6C - 0xA2C60
 
 ARM_FUNC_START OSi_GetUnusedThreadId
@@ -1878,8 +1878,8 @@ ARM_FUNC_START OSi_RescheduleThread
 OSi_RescheduleThread:
 .incbin "fe11-arm9-base.bin", 0xA2E5C, 0xA3070 - 0xA2E5C
 
-ARM_FUNC_START GX_GetDefaultDMA
-GX_GetDefaultDMA:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xA3070, 0xA3080 - 0xA3070
 
 ARM_FUNC_START OS_CreateThread
@@ -2630,8 +2630,8 @@ ARM_FUNC_START SND_GetWaveDataAddress
 SND_GetWaveDataAddress:
 .incbin "fe11-arm9-base.bin", 0xA6FDC, 0xA7018 - 0xA6FDC
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xA7018, 0xA7024 - 0xA7018
 
 ARM_FUNC_START PXI_InitFifo
@@ -3030,8 +3030,8 @@ ARM_FUNC_START MIC_StopAutoSampling
 MIC_StopAutoSampling:
 .incbin "fe11-arm9-base.bin", 0xAB338, 0xAB370 - 0xAB338
 
-ARM_FUNC_START GX_GetDefaultDMA
-GX_GetDefaultDMA:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xAB370, 0xAB380 - 0xAB370
 
 ARM_FUNC_START MicCommonCallback
@@ -3174,16 +3174,16 @@ ARM_FUNC_START CARDi_UnlockResource
 CARDi_UnlockResource:
 .incbin "fe11-arm9-base.bin", 0xACFEC, 0xAD188 - 0xACFEC
 
-ARM_FUNC_START GX_GetDefaultDMA
-GX_GetDefaultDMA:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xAD188, 0xAD198 - 0xAD188
 
 ARM_FUNC_START CARD_CheckEnabled
 CARD_CheckEnabled:
 .incbin "fe11-arm9-base.bin", 0xAD198, 0xAD1B0 - 0xAD198
 
-ARM_FUNC_START CTRDG_SetPulledOutCallback
-CTRDG_SetPulledOutCallback:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xAD1B0, 0xAD1C0 - 0xAD1B0
 
 ARM_FUNC_START CARDi_WaitAsync
@@ -3230,12 +3230,12 @@ ARM_FUNC_START CARD_IdentifyBackup
 CARD_IdentifyBackup:
 .incbin "fe11-arm9-base.bin", 0xAD938, 0xADA70 - 0xAD938
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xADA70, 0xADA7C - 0xADA70
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xADA7C, 0xADA88 - 0xADA7C
 
 ARM_FUNC_START CARDi_ReadFromCache
@@ -3266,12 +3266,12 @@ ARM_FUNC_START CARDi_ReadRom
 CARDi_ReadRom:
 .incbin "fe11-arm9-base.bin", 0xAE008, 0xAE168 - 0xAE008
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xAE168, 0xAE174 - 0xAE168
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xAE174, 0xAE180 - 0xAE174
 
 ARM_FUNC_START CARDi_OnFifoRecv
@@ -3290,8 +3290,8 @@ ARM_FUNC_START CARDi_PulledOutCallback
 CARDi_PulledOutCallback:
 .incbin "fe11-arm9-base.bin", 0xAE384, 0xAE3D8 - 0xAE384
 
-ARM_FUNC_START GX_GetDefaultDMA
-GX_GetDefaultDMA:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xAE3D8, 0xAE3E8 - 0xAE3D8
 
 ARM_FUNC_START CARD_TerminateForPulledOut
@@ -3330,8 +3330,8 @@ ARM_FUNC_START WMi_SendCommandDirect
 WMi_SendCommandDirect:
 .incbin "fe11-arm9-base.bin", 0xAE8C0, 0xAE930 - 0xAE8C0
 
-ARM_FUNC_START OS_GetCurrentThread
-OS_GetCurrentThread:
+ARM_FUNC_START //
+//:
 .incbin "fe11-arm9-base.bin", 0xAE930, 0xAE940 - 0xAE930
 
 ARM_FUNC_START WMi_CheckInitialized
@@ -3394,8 +3394,8 @@ ARM_FUNC_START WM_GetDispersionScanPeriod
 WM_GetDispersionScanPeriod:
 .incbin "fe11-arm9-base.bin", 0xAF33C, 0xAF59C - 0xAF33C
 
-ARM_FUNC_START G3CS_Nop
-G3CS_Nop:
+ARM_FUNC_START //
+//:
 .incbin "fe11-arm9-base.bin", 0xAF59C, 0xAF610 - 0xAF59C
 
 ARM_FUNC_START WM_Disable
@@ -3526,8 +3526,8 @@ ARM_FUNC_START WM_StartKeySharing
 WM_StartKeySharing:
 .incbin "fe11-arm9-base.bin", 0xB0FEC, 0xB1008 - 0xB0FEC
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xB1008, 0xB1014 - 0xB1008
 
 ARM_FUNC_START WM_SetWEPKey
@@ -3754,8 +3754,8 @@ ARM_FUNC_START MBi_CallReset
 MBi_CallReset:
 .incbin "fe11-arm9-base.bin", 0xB5558, 0xB5590 - 0xB5558
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xB5590, 0xB559C - 0xB5590
 
 ARM_FUNC_START MBi_CommEnd
@@ -4106,8 +4106,8 @@ ARM_FUNC_START sprintf
 sprintf:
 .incbin "fe11-arm9-base.bin", 0xBAF84, 0xBB148 - 0xBAF84
 
-ARM_FUNC_START CTRDG_SetPulledOutCallback
-CTRDG_SetPulledOutCallback:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xBB148, 0xBB30C - 0xBB148
 
 ARM_FUNC_START strlen
@@ -4142,8 +4142,8 @@ ARM_FUNC_START strstr
 strstr:
 .incbin "fe11-arm9-base.bin", 0xBB5F4, 0xBC98C - 0xBB5F4
 
-ARM_FUNC_START G3CS_Nop
-G3CS_Nop:
+ARM_FUNC_START //
+//:
 .incbin "fe11-arm9-base.bin", 0xBC98C, 0xBE130 - 0xBC98C
 
 ARM_FUNC_START copysign
@@ -4162,8 +4162,8 @@ ARM_FUNC_START ldexp
 ldexp:
 .incbin "fe11-arm9-base.bin", 0xBE234, 0xBE480 - 0xBE234
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xBE480, 0xBE48C - 0xBE480
 
 ARM_FUNC_START __must_round
@@ -4210,16 +4210,16 @@ ARM_FUNC_START __fpclassifyd
 __fpclassifyd:
 .incbin "fe11-arm9-base.bin", 0xBF950, 0xBFA54 - 0xBF950
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xBFA54, 0xBFA60 - 0xBFA54
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xBFA60, 0xBFA6C - 0xBFA60
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xBFA6C, 0xC02FC - 0xBFA6C
 
 ARM_FUNC_START __dadd_start
@@ -4258,24 +4258,24 @@ ARM_FUNC_START _u32_div_f
 _u32_div_f:
 .incbin "fe11-arm9-base.bin", 0xC1DE4, 0xC3B24 - 0xC1DE4
 
-ARM_FUNC_START ENV_GetClass
-ENV_GetClass:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xC3B24, 0xC3B30 - 0xC3B24
 
 ARM_FUNC_START __call_static_initializers
 __call_static_initializers:
 .incbin "fe11-arm9-base.bin", 0xC3B30, 0xC425C - 0xC3B30
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xC425C, 0xC4268 - 0xC425C
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xC4268, 0xC4684 - 0xC4268
 
-ARM_FUNC_START MTX_Scale44
-MTX_Scale44:
+ARM_FUNC_START // 
+// :
 .incbin "fe11-arm9-base.bin", 0xC4684, 0xC4CFC - 0xC4684
 
 ARM_FUNC_START G2dResetOamSoftEmuUVFlipCorrectFuncc

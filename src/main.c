@@ -6,7 +6,7 @@ void NitroMain(void)
     InitSystem();
     sub_200F028();
     sub_2022F10();
-    sub_20AD244(0x14);
+    CARD_SetThreadPriority(0x14);
 
     while (1)
         main_loop();

@@ -129,20 +129,28 @@ ARM_FUNC_START __StringWrite
 __StringWrite:
 .incbin "fe11-arm9-base.bin", 0xBAD98, 0xBADDC - 0xBAD98
 
-ARM_FUNC_START vsnprintf
-vsnprintf:
+ARM_FUNC_START sub_20BADDC
+sub_20BADDC:
 .incbin "fe11-arm9-base.bin", 0xBADDC, 0xBAEF4 - 0xBADDC
 
-ARM_FUNC_START sub_20BAEF4
-sub_20BAEF4:
-.incbin "fe11-arm9-base.bin", 0xBAEF4, 0xBB1DC - 0xBAEF4
+ARM_FUNC_START vsnprintf
+vsnprintf:
+.incbin "fe11-arm9-base.bin", 0xBAEF4, 0xBAF84 - 0xBAEF4
+
+ARM_FUNC_START sprintf
+sprintf:
+.incbin "fe11-arm9-base.bin", 0xBAF84, 0xBB148 - 0xBAF84
+
+ARM_FUNC_START sub_20BB148
+sub_20BB148:
+.incbin "fe11-arm9-base.bin", 0xBB148, 0xBB1DC - 0xBB148
 
 ARM_FUNC_START raise
 raise:
 .incbin "fe11-arm9-base.bin", 0xBB1DC, 0xBB30C - 0xBB1DC
 
-ARM_FUNC_START sub_20BB30C
-sub_20BB30C:
+ARM_FUNC_START strlen
+strlen:
 .incbin "fe11-arm9-base.bin", 0xBB30C, 0xBB328 - 0xBB30C
 
 ARM_FUNC_START sub_20BB328
