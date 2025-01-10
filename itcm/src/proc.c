@@ -6,24 +6,24 @@ BOOL (* gProcessCmdTable[])(struct Proc *) =
 {
     [PROC_CMD_END] = ProcCmd_End,
     [PROC_CMD_01] = ProcCmd_End,
-    [PROC_CMD_02] = func_02019368,
-    [PROC_CMD_03] = func_02019370,
-    [PROC_CMD_04] = func_02019378,
+    [PROC_CMD_NOP] = ProcCmd_Continue,
+    [PROC_CMD_03] = ProcCmd_Block,
+    [PROC_CMD_04] = ProcCmd_Yield,
     [PROC_CMD_ONEND] = ProcCmd_SetEndFunc,
-    [PROC_CMD_06] = func_020193b4,
+    [PROC_CMD_06] = ProcCmd_Unk06,
     [PROC_CMD_CALL] = ProcCmd_Call,
     [PROC_CMD_CALL_ARG] = ProcCmd_CallArg,
     [PROC_CMD_09] = ProcCmd_While,
     [PROC_CMD_0A] = ProcCmd_WhileArg,
-    [PROC_CMD_0B] = func_0201951c,
+    [PROC_CMD_0B] = ProcCmd_ChangeThread,
     [PROC_CMD_0C] = ProcCmd_Repeat,
     [PROC_CMD_0D] = ProcCmd_WhileExists,
     [PROC_CMD_START_CHILD] = ProcCmd_SpawnChild,
     [PROC_CMD_START_CHILD_BLOCKING] = ProcCmd_SpawnLockChild,
     [PROC_CMD_START_IN_TREE] = ProcCmd_SpawnChildInTree,
-    [PROC_CMD_11] = func_020196F8,
-    [PROC_CMD_12] = func_02019734,
-    [PROC_CMD_LABEL] = func_02019954,
+    [PROC_CMD_11] = ProcCmd_KillProc,
+    [PROC_CMD_12] = ProcCmd_BreakProc,
+    [PROC_CMD_LABEL] = ProcCmd_Yield2,
     [PROC_CMD_GOTO] = ProcCmd_Goto,
     [PROC_CMD_GOTO_IF_YES] = ProcCmd_GotoIfYes,
     [PROC_CMD_GOTO_IF_NO] = ProcCmd_GotoIfNo,
@@ -33,7 +33,7 @@ BOOL (* gProcessCmdTable[])(struct Proc *) =
     [PROC_CMD_1A] = func_020198c4,
     [PROC_CMD_1B] = func_020198f8,
     [PROC_CMD_1C] = func_0201992c,
-    [PROC_CMD_NOP_1D] = func_02019954,
+    [PROC_CMD_NOP_1D] = ProcCmd_Yield2,
     [PROC_CMD_1E] = func_02019968,
     [PROC_CMD_1F] = func_020199b8,
     [PROC_CMD_20] = func_02019a08,
@@ -520,7 +520,7 @@ void Proc_Break(struct Proc * proc, s32 arg_1)
     }
     else
     {
-        if ((proc->proc_scrCur != NULL) && (proc->proc_scrCur->opcode == PROC_CMD_02))
+        if ((proc->proc_scrCur != NULL) && (proc->proc_scrCur->opcode == PROC_CMD_NOP))
         {
             proc->proc_scrCur++;
         }

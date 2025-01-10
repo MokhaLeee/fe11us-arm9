@@ -11,7 +11,7 @@ enum
 {
     PROC_CMD_END = 0x00,
     PROC_CMD_01 = 0x01,
-    PROC_CMD_02 = 0x02,
+    PROC_CMD_NOP = 0x02,
     PROC_CMD_03 = 0x03,
     PROC_CMD_04 = 0x04,
     PROC_CMD_ONEND = 0x05,
@@ -109,8 +109,8 @@ void Proc_SetMark(struct Proc * proc, u32 mark);
 void Proc_Goto(struct Proc * proc, s32 label, s32 unk);
 void Proc_GotoScript(struct Proc * proc, struct ProcCmd * script);
 void Proc_SetEndFunc(struct Proc * proc, ProcFunc func);
-void func_02018F54(struct Proc * proc, void * unk_14);
-void * func_02018F5C(struct Proc * proc);
+void Proc_SetUnk14(struct Proc * proc, void * unk_14);
+void * Proc_GetUnk14(struct Proc * proc);
 void Proc_ForEach(struct ProcCmd * script, ProcFunc func);
 void func_02018FA4(struct ProcCmd * script, ProcFunc func);
 void Proc_BreakEach(struct ProcCmd * script);
@@ -135,25 +135,25 @@ void func_02019310(void * func, struct Proc * parent);
 void func_0201932c(struct Proc * proc);
 void func_0201933c(void * func, struct Proc * parent);
 BOOL ProcCmd_End(struct Proc * proc);
-BOOL func_02019368(struct Proc * proc);
-BOOL func_02019370(struct Proc * proc);
-BOOL func_02019378(struct Proc * proc);
+BOOL ProcCmd_Continue(struct Proc * proc);
+BOOL ProcCmd_Block(struct Proc * proc);
+BOOL ProcCmd_Yield(struct Proc * proc);
 BOOL ProcCmd_SetEndFunc(struct Proc * proc);
-BOOL func_020193b4(struct Proc * proc);
+BOOL ProcCmd_Unk06(struct Proc * proc);
 BOOL ProcCmd_Call(struct Proc * proc);
 BOOL ProcCmd_CallArg(struct Proc * proc);
 BOOL ProcCmd_While(struct Proc * proc);
 BOOL ProcCmd_WhileArg(struct Proc * proc);
 void func_0201949c(void * arg_0, void * arg_1);
 void func_020194fc(void * unused);
-BOOL func_0201951c(struct Proc * proc);
+BOOL ProcCmd_ChangeThread(struct Proc * proc);
 BOOL ProcCmd_Repeat(struct Proc * proc);
 BOOL ProcCmd_WhileExists(struct Proc * proc);
 BOOL ProcCmd_SpawnChild(struct Proc * proc);
 BOOL ProcCmd_SpawnLockChild(struct Proc * proc);
 BOOL ProcCmd_SpawnChildInTree(struct Proc * proc);
-BOOL func_020196F8(struct Proc * proc);
-BOOL func_02019734(struct Proc * proc);
+BOOL ProcCmd_KillProc(struct Proc * proc);
+BOOL ProcCmd_BreakProc(struct Proc * proc);
 BOOL ProcCmd_Goto(struct Proc * proc);
 BOOL ProcCmd_GotoIfYes(struct Proc * proc);
 BOOL ProcCmd_GotoIfNo(struct Proc * proc);
@@ -164,7 +164,7 @@ BOOL ProcCmd_Mark(struct Proc * proc);
 BOOL func_020198c4(struct Proc * proc);
 BOOL func_020198f8(struct Proc * proc);
 BOOL func_0201992c(struct Proc * proc);
-BOOL func_02019954(struct Proc * proc);
+BOOL ProcCmd_Yield2(struct Proc * proc);
 BOOL func_02019968(struct Proc * proc);
 BOOL func_020199b8(struct Proc * proc);
 BOOL func_02019a08(struct Proc * proc);

@@ -203,13 +203,13 @@ void Proc_SetEndFunc(struct Proc * proc, ProcFunc func)
     return;
 }
 
-void func_02018F54(struct Proc * proc, void * unk_14)
+void Proc_SetUnk14(struct Proc * proc, void * unk_14)
 {
     proc->unk_14 = unk_14;
     return;
 }
 
-void * func_02018F5C(struct Proc * proc)
+void * Proc_GetUnk14(struct Proc * proc)
 {
     return proc->unk_14;
 }
@@ -489,17 +489,17 @@ BOOL ProcCmd_End(struct Proc * proc)
     return FALSE;
 }
 
-BOOL func_02019368(struct Proc * proc)
+BOOL ProcCmd_Continue(struct Proc * proc)
 {
     return FALSE;
 }
 
-BOOL func_02019370(struct Proc * proc)
+BOOL ProcCmd_Block(struct Proc * proc)
 {
     return TRUE;
 }
 
-BOOL func_02019378(struct Proc * proc)
+BOOL ProcCmd_Yield(struct Proc * proc)
 {
     proc->proc_scrCur++;
     return TRUE;
@@ -512,9 +512,9 @@ BOOL ProcCmd_SetEndFunc(struct Proc * proc)
     return TRUE;
 }
 
-BOOL func_020193b4(struct Proc * proc)
+BOOL ProcCmd_Unk06(struct Proc * proc)
 {
-    func_02018F54(proc, proc->proc_scrCur->dataPtr);
+    Proc_SetUnk14(proc, proc->proc_scrCur->dataPtr);
     proc->proc_scrCur++;
     return TRUE;
 }
@@ -600,7 +600,7 @@ void func_020194fc(void * unused)
     OSi_SleepAlarmCallback(NULL);
 }
 
-BOOL func_0201951c(struct Proc * proc)
+BOOL ProcCmd_ChangeThread(struct Proc * proc)
 {
     void * (*func)(void *);
     OSThread * thread;
@@ -677,7 +677,7 @@ BOOL ProcCmd_SpawnChildInTree(struct Proc * proc)
     return TRUE;
 }
 
-BOOL func_020196F8(struct Proc * proc)
+BOOL ProcCmd_KillProc(struct Proc * proc)
 {
     if (proc->proc_scrCur->dataImm != 0)
     {
@@ -693,7 +693,7 @@ BOOL func_020196F8(struct Proc * proc)
     return TRUE;
 }
 
-BOOL func_02019734(struct Proc * proc)
+BOOL ProcCmd_BreakProc(struct Proc * proc)
 {
     if (proc->proc_scrCur->dataImm != 0)
     {
@@ -815,7 +815,7 @@ BOOL func_0201992c(struct Proc * proc)
     return TRUE;
 }
 
-BOOL func_02019954(struct Proc * proc)
+BOOL ProcCmd_Yield2(struct Proc * proc)
 {
     proc->proc_scrCur++;
     return TRUE;
