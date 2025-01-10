@@ -5,6 +5,9 @@
 
 #include "nitro/types.h"
 
+#define NAKED_FUNCTION(x)
+#define NONMATCHING 1
+
 #define BIT(n) (1 << (n))
 
 #include "nds/nds.h"
