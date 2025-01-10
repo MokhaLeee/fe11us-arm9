@@ -201,36 +201,36 @@ ARM_FUNC_START func_01FFB574
 func_01FFB574:
 .incbin "itcm-base.bin", 0x03574, 0x035DC - 0x03574
 
-ARM_FUNC_START func_01FFB5DC
-func_01FFB5DC:
+ARM_FUNC_START AllocDirect
+AllocDirect:
 .incbin "itcm-base.bin", 0x035DC, 0x03718 - 0x035DC
 
-ARM_FUNC_START func_01FFB718
-func_01FFB718:
+ARM_FUNC_START ReallocFromResource
+ReallocFromResource:
 .incbin "itcm-base.bin", 0x03718, 0x0382C - 0x03718
 
-ARM_FUNC_START func_01FFB82C
-func_01FFB82C:
+ARM_FUNC_START UnlinkThreadresource
+UnlinkThreadresource:
 .incbin "itcm-base.bin", 0x0382C, 0x03934 - 0x0382C
 
-ARM_FUNC_START Proc_AllocThreadTask
-Proc_AllocThreadTask:
+ARM_FUNC_START AllocSpace
+AllocSpace:
 .incbin "itcm-base.bin", 0x03934, 0x039BC - 0x03934
 
-ARM_FUNC_START func_01FFB9BC
-func_01FFB9BC:
+ARM_FUNC_START ReallocSpace
+ReallocSpace:
 .incbin "itcm-base.bin", 0x039BC, 0x03A40 - 0x039BC
 
-ARM_FUNC_START func_01FFBA40
-func_01FFBA40:
+ARM_FUNC_START AllocAligned
+AllocAligned:
 .incbin "itcm-base.bin", 0x03A40, 0x03AEC - 0x03A40
 
-ARM_FUNC_START func_01FFBAEC
-func_01FFBAEC:
+ARM_FUNC_START ReallocAligned
+ReallocAligned:
 .incbin "itcm-base.bin", 0x03AEC, 0x03B90 - 0x03AEC
 
-ARM_FUNC_START func_01FFBB90
-func_01FFBB90:
+ARM_FUNC_START ReleaseAllocResource
+ReleaseAllocResource:
 .incbin "itcm-base.bin", 0x03B90, 0x03C90 - 0x03B90
 
 ARM_FUNC_START Root_Proc

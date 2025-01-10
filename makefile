@@ -19,5 +19,8 @@ $(RUNTIME_BUILD).elf: $(ASM_GENERATE) $(RUNTIME_BUILD).lds
 
 CLEAN_FILES += $(RUNTIME_BUILD).elf $(RUNTIME_BUILD).map $(RUNTIME_BUILD).bin
 
+update:
+	./tools/scripts/elf2s.sh
+
 clean:
 	rm -rf $(CLEAN_FILES)

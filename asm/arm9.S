@@ -1713,7 +1713,19 @@ func_020135CC:
 
 ARM_FUNC_START func_020135E8
 func_020135E8:
-.incbin "fe11-arm9-base.bin", 0x135E8, 0x136BC - 0x135E8
+.incbin "fe11-arm9-base.bin", 0x135E8, 0x13634 - 0x135E8
+
+ARM_FUNC_START func_02013634
+func_02013634:
+.incbin "fe11-arm9-base.bin", 0x13634, 0x13658 - 0x13634
+
+ARM_FUNC_START func_02013658
+func_02013658:
+.incbin "fe11-arm9-base.bin", 0x13658, 0x13698 - 0x13658
+
+ARM_FUNC_START func_02013698
+func_02013698:
+.incbin "fe11-arm9-base.bin", 0x13698, 0x136BC - 0x13698
 
 ARM_FUNC_START func_020136BC
 func_020136BC:
@@ -2583,12 +2595,12 @@ ARM_FUNC_START Proc_SetEndFunc
 Proc_SetEndFunc:
 .incbin "fe11-arm9-base.bin", 0x18F4C, 0x18F54 - 0x18F4C
 
-ARM_FUNC_START func_02018F54
-func_02018F54:
+ARM_FUNC_START Proc_SetUnk14
+Proc_SetUnk14:
 .incbin "fe11-arm9-base.bin", 0x18F54, 0x18F5C - 0x18F54
 
-ARM_FUNC_START func_02018F5C
-func_02018F5C:
+ARM_FUNC_START Proc_GetUnk14
+Proc_GetUnk14:
 .incbin "fe11-arm9-base.bin", 0x18F5C, 0x18F64 - 0x18F5C
 
 ARM_FUNC_START Proc_ForEach
@@ -2687,24 +2699,24 @@ ARM_FUNC_START ProcCmd_End
 ProcCmd_End:
 .incbin "fe11-arm9-base.bin", 0x19358, 0x19368 - 0x19358
 
-ARM_FUNC_START func_02019368
-func_02019368:
+ARM_FUNC_START ProcCmd_Continue
+ProcCmd_Continue:
 .incbin "fe11-arm9-base.bin", 0x19368, 0x19370 - 0x19368
 
-ARM_FUNC_START func_02019370
-func_02019370:
+ARM_FUNC_START ProcCmd_Block
+ProcCmd_Block:
 .incbin "fe11-arm9-base.bin", 0x19370, 0x19378 - 0x19370
 
-ARM_FUNC_START func_02019378
-func_02019378:
+ARM_FUNC_START ProcCmd_Yield
+ProcCmd_Yield:
 .incbin "fe11-arm9-base.bin", 0x19378, 0x1938C - 0x19378
 
 ARM_FUNC_START ProcCmd_SetEndFunc
 ProcCmd_SetEndFunc:
 .incbin "fe11-arm9-base.bin", 0x1938C, 0x193B4 - 0x1938C
 
-ARM_FUNC_START func_020193b4
-func_020193b4:
+ARM_FUNC_START ProcCmd_Unk06
+ProcCmd_Unk06:
 .incbin "fe11-arm9-base.bin", 0x193B4, 0x193DC - 0x193B4
 
 ARM_FUNC_START ProcCmd_Call
@@ -2731,8 +2743,8 @@ ARM_FUNC_START func_020194fc
 func_020194fc:
 .incbin "fe11-arm9-base.bin", 0x194FC, 0x1951C - 0x194FC
 
-ARM_FUNC_START func_0201951c
-func_0201951c:
+ARM_FUNC_START ProcCmd_NewThread
+ProcCmd_NewThread:
 .incbin "fe11-arm9-base.bin", 0x1951C, 0x19620 - 0x1951C
 
 ARM_FUNC_START ProcCmd_Repeat
@@ -2755,12 +2767,12 @@ ARM_FUNC_START ProcCmd_SpawnChildInTree
 ProcCmd_SpawnChildInTree:
 .incbin "fe11-arm9-base.bin", 0x196CC, 0x196F8 - 0x196CC
 
-ARM_FUNC_START func_020196F8
-func_020196F8:
+ARM_FUNC_START ProcCmd_KillProc
+ProcCmd_KillProc:
 .incbin "fe11-arm9-base.bin", 0x196F8, 0x19734 - 0x196F8
 
-ARM_FUNC_START func_02019734
-func_02019734:
+ARM_FUNC_START ProcCmd_BreakProc
+ProcCmd_BreakProc:
 .incbin "fe11-arm9-base.bin", 0x19734, 0x19770 - 0x19734
 
 ARM_FUNC_START ProcCmd_Goto
@@ -2803,8 +2815,8 @@ ARM_FUNC_START func_0201992c
 func_0201992c:
 .incbin "fe11-arm9-base.bin", 0x1992C, 0x19954 - 0x1992C
 
-ARM_FUNC_START func_02019954
-func_02019954:
+ARM_FUNC_START ProcCmd_Yield2
+ProcCmd_Yield2:
 .incbin "fe11-arm9-base.bin", 0x19954, 0x19968 - 0x19954
 
 ARM_FUNC_START func_02019968
