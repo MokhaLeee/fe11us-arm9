@@ -21,6 +21,10 @@ ProcScr_020ce730:
 
 .global ProcScr_020ce750
 ProcScr_020ce750:
-.incbin "fe11-arm9-base.bin", 0xCE750, 0xCEE70 - 0xCE750
+.incbin "fe11-arm9-base.bin", 0xCE750, 0xCEC44 - 0xCE750
 
-.incbin "fe11-arm9-base.bin", 0xCEE70, 0xD4464 - 0xCEE70
+.global ProcScr_GameController
+ProcScr_GameController:
+.incbin "fe11-arm9-base.bin", 0xCEC44, 0xCF48C - 0xCEC44
+
+.incbin "fe11-arm9-base.bin", 0xCF48C, 0xD4464 - 0xCF48C

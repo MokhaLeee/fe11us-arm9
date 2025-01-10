@@ -4,7 +4,7 @@
 	arm_func_start func_01FFC404
 func_01FFC404: @ 0x01FFC404
 	push {r3, r4, r5, r6, r7, lr}
-	ldr r5, _01FFC4E0 @ =data_027e1268
+	ldr r5, _01FFC4E0 @ =prFreeSpace
 	ldr r4, [sp, #0x18]
 	ldr ip, [r5]
 	ldrb r6, [ip, #0x41]
@@ -56,19 +56,19 @@ _01FFC4C0:
 	mov r1, r2
 	b _01FFC49C
 _01FFC4C8:
-	ldr r0, _01FFC4E0 @ =data_027e1268
+	ldr r0, _01FFC4E0 @ =prFreeSpace
 	ldr r1, [r0]
 	ldrb r0, [r1, #0x41]
 	add r0, r0, #1
 	strb r0, [r1, #0x41]
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
-_01FFC4E0: .4byte data_027e1268
+_01FFC4E0: .4byte prFreeSpace
 
 	arm_func_start func_01FFC4E4
 func_01FFC4E4: @ 0x01FFC4E4
 	push {r3, r4, r5, r6, r7, lr}
-	ldr r4, _01FFC5D0 @ =data_027e1268
+	ldr r4, _01FFC5D0 @ =prFreeSpace
 	ldr lr, [sp, #0x20]
 	ldr r6, [r4]
 	ldrb r5, [r6, #0x41]
@@ -125,19 +125,19 @@ _01FFC5B0:
 	mov r1, r2
 	b _01FFC58C
 _01FFC5B8:
-	ldr r0, _01FFC5D0 @ =data_027e1268
+	ldr r0, _01FFC5D0 @ =prFreeSpace
 	ldr r1, [r0]
 	ldrb r0, [r1, #0x41]
 	add r0, r0, #1
 	strb r0, [r1, #0x41]
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
-_01FFC5D0: .4byte data_027e1268
+_01FFC5D0: .4byte prFreeSpace
 
 	arm_func_start func_01FFC5D4
 func_01FFC5D4: @ 0x01FFC5D4
 	push {r3, r4, r5, lr}
-	ldr lr, _01FFC610 @ =data_027e1268
+	ldr lr, _01FFC610 @ =prFreeSpace
 	mov ip, #0x14
 	ldr r4, [lr]
 	ldrb lr, [sp, #0x10]
@@ -152,13 +152,13 @@ func_01FFC5D4: @ 0x01FFC5D4
 	strb r0, [r5, #0x12]
 	pop {r3, r4, r5, pc}
 	.align 2, 0
-_01FFC610: .4byte data_027e1268
+_01FFC610: .4byte prFreeSpace
 
 	arm_func_start func_01FFC614
 func_01FFC614: @ 0x01FFC614
 	push {r4, r5, r6, r7, lr}
 	sub sp, sp, #0xc
-	ldr ip, _01FFC664 @ =data_027e1268
+	ldr ip, _01FFC664 @ =prFreeSpace
 	mov r4, #0x14
 	ldr r6, [ip]
 	ldrh r5, [sp, #0x20]
@@ -177,13 +177,13 @@ func_01FFC614: @ 0x01FFC614
 	add sp, sp, #0xc
 	pop {r4, r5, r6, r7, pc}
 	.align 2, 0
-_01FFC664: .4byte data_027e1268
+_01FFC664: .4byte prFreeSpace
 
 	arm_func_start func_01FFC668
 func_01FFC668: @ 0x01FFC668
 	push {r4, r5, r6, r7, lr}
 	sub sp, sp, #0xc
-	ldr ip, _01FFC6B8 @ =data_027e1268
+	ldr ip, _01FFC6B8 @ =prFreeSpace
 	mov r4, #0x14
 	ldr r6, [ip]
 	ldrh r5, [sp, #0x20]
@@ -202,7 +202,7 @@ func_01FFC668: @ 0x01FFC668
 	add sp, sp, #0xc
 	pop {r4, r5, r6, r7, pc}
 	.align 2, 0
-_01FFC6B8: .4byte data_027e1268
+_01FFC6B8: .4byte prFreeSpace
 
 	arm_func_start OS_IrqHandler
 OS_IrqHandler: @ 0x01FFC6BC

@@ -16,6 +16,6 @@ extern vu8 gMainLoopBlocked;
 extern vu8 unk_27E125C;
 extern vu32 gClock;
 extern vu32 unk_27E1264;
-extern struct UnkStruct_027E1268 * data_027e1268;
+extern struct UnkStruct_027E1268 * prFreeSpace;
 
 #endif // UNKNOWN_DATA_H

@@ -7,17 +7,17 @@ BOOL (* gProcessCmdTable[])(struct Proc *) =
     [PROC_CMD_END] = ProcCmd_End,
     [PROC_CMD_01] = ProcCmd_End,
     [PROC_CMD_NOP] = ProcCmd_Continue,
-    [PROC_CMD_03] = ProcCmd_Block,
+    [PROC_CMD_BLOCK] = ProcCmd_Block,
     [PROC_CMD_04] = ProcCmd_Yield,
     [PROC_CMD_ONEND] = ProcCmd_SetEndFunc,
     [PROC_CMD_06] = ProcCmd_Unk06,
     [PROC_CMD_CALL] = ProcCmd_Call,
     [PROC_CMD_CALL_ARG] = ProcCmd_CallArg,
-    [PROC_CMD_09] = ProcCmd_While,
-    [PROC_CMD_0A] = ProcCmd_WhileArg,
-    [PROC_CMD_0B] = ProcCmd_ChangeThread,
-    [PROC_CMD_0C] = ProcCmd_Repeat,
-    [PROC_CMD_0D] = ProcCmd_WhileExists,
+    [PROC_CMD_WHILE] = ProcCmd_While,
+    [PROC_CMD_WHILE_ARG] = ProcCmd_WhileArg,
+    [PROC_CMD_THREAD] = ProcCmd_NewThread,
+    [PROC_CMD_REPEAT] = ProcCmd_Repeat,
+    [PROC_CMD_WHILE_EXISTS] = ProcCmd_WhileExists,
     [PROC_CMD_START_CHILD] = ProcCmd_SpawnChild,
     [PROC_CMD_START_CHILD_BLOCKING] = ProcCmd_SpawnLockChild,
     [PROC_CMD_START_IN_TREE] = ProcCmd_SpawnChildInTree,
@@ -194,7 +194,7 @@ void UnlinkProc(struct Proc * proc)
     proc->proc_prev = NULL;
 }
 
-struct Proc * Proc_StartExt(struct ProcCmd * script, struct Proc * parent, void * arg_2)
+struct Proc * Proc_StartExt(struct ProcCmd * script, struct Proc * parent, void * resource)
 {
     void * tmp;
 
@@ -209,8 +209,8 @@ struct Proc * Proc_StartExt(struct ProcCmd * script, struct Proc * parent, void 
     proc->proc_child = NULL;
     proc->proc_next = NULL;
     proc->proc_prev = NULL;
-    proc->unk_28 = arg_2;
-    proc->unk_2c = NULL;
+    proc->resource = resource;
+    proc->thread = NULL;
     proc->proc_sleepTime = 0;
     proc->proc_mark = 0;
     proc->proc_lockCnt = 0;
@@ -230,12 +230,12 @@ struct Proc * Proc_StartExt(struct ProcCmd * script, struct Proc * parent, void 
         InsertChildProcess(proc, parent);
     }
 
-    tmp = data_027e1268;
-    data_027e1268 = arg_2;
+    tmp = prFreeSpace;
+    prFreeSpace = resource;
 
     RunProcessScript(proc);
 
-    data_027e1268 = tmp;
+    prFreeSpace = tmp;
 
     proc->proc_flags &= ~4;
 
@@ -244,7 +244,7 @@ struct Proc * Proc_StartExt(struct ProcCmd * script, struct Proc * parent, void 
 
 struct Proc * Proc_Start(struct ProcCmd * script, struct Proc * parent)
 {
-    return Proc_StartExt(script, parent, data_027e1268);
+    return Proc_StartExt(script, parent, prFreeSpace);
 }
 
 struct Proc * func_01FFBF90(struct ProcCmd * script, struct Proc * parent)
@@ -252,7 +252,7 @@ struct Proc * func_01FFBF90(struct ProcCmd * script, struct Proc * parent)
     OSIntrMode var_0 = OS_DisableInterrupts();
 
     struct Proc * proc = Proc_Start(script, parent);
-    proc->proc_flags |= 4;
+    proc->proc_flags |= PROC_FLAG_UNK2;
 
     OS_RestoreInterrupts(var_0);
     return proc;
@@ -270,7 +270,7 @@ struct Proc * Proc_StartBlockingExt(struct ProcCmd * script, struct Proc * paren
 
     if (proc->proc_script != NULL)
     {
-        proc->proc_flags |= 2;
+        proc->proc_flags |= PROC_FLAG_BLOCKING;
         proc->proc_parent->proc_lockCnt++;
 
         return proc;
@@ -281,7 +281,7 @@ struct Proc * Proc_StartBlockingExt(struct ProcCmd * script, struct Proc * paren
 
 struct Proc * Proc_StartBlocking(struct ProcCmd * script, struct Proc * parent)
 {
-    return Proc_StartBlockingExt(script, parent, data_027e1268);
+    return Proc_StartBlockingExt(script, parent, prFreeSpace);
 }
 
 struct Proc * func_01FFC030(struct ProcCmd * script, struct Proc * parent)
@@ -432,8 +432,8 @@ void RunProcessRecursive(struct Proc * proc)
 
     if ((proc->proc_lockCnt == 0) && (!(proc->proc_flags & 4)))
     {
-        tmp = data_027e1268;
-        data_027e1268 = proc->unk_28;
+        tmp = prFreeSpace;
+        prFreeSpace = proc->resource;
 
         do
         {
@@ -452,7 +452,7 @@ void RunProcessRecursive(struct Proc * proc)
 
         proc->proc_flags &= ~0x20;
 
-        data_027e1268 = tmp;
+        prFreeSpace = tmp;
 
         if (proc->proc_flags & 1)
         {
@@ -487,12 +487,12 @@ void func_01FFC2F4(struct Proc * proc)
 
     if (!(proc->proc_flags & 8) && !(proc->proc_flags & 4) && (proc->unk_14 != NULL))
     {
-        unk = data_027e1268;
-        data_027e1268 = proc->unk_28;
+        unk = prFreeSpace;
+        prFreeSpace = proc->resource;
 
         proc->unk_14(proc);
 
-        data_027e1268 = unk;
+        prFreeSpace = unk;
 
         if (proc->proc_flags & 1)
         {

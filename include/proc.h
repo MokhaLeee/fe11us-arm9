@@ -9,20 +9,26 @@ typedef void (*ProcFunc)(struct Proc *);
 
 enum
 {
+    PROC_FLAG_BLOCKING = (1 << 1),
+    PROC_FLAG_UNK2     = (1 << 2),
+};
+
+enum
+{
     PROC_CMD_END = 0x00,
     PROC_CMD_01 = 0x01,
     PROC_CMD_NOP = 0x02,
-    PROC_CMD_03 = 0x03,
+    PROC_CMD_BLOCK = 0x03,
     PROC_CMD_04 = 0x04,
     PROC_CMD_ONEND = 0x05,
     PROC_CMD_06 = 0x06,
     PROC_CMD_CALL = 0x07,
     PROC_CMD_CALL_ARG = 0x08,
-    PROC_CMD_09 = 0x09,
-    PROC_CMD_0A = 0x0A,
-    PROC_CMD_0B = 0x0B,
-    PROC_CMD_0C = 0x0C,
-    PROC_CMD_0D = 0x0D,
+    PROC_CMD_WHILE = 0x09,
+    PROC_CMD_WHILE_ARG = 0x0A,
+    PROC_CMD_THREAD = 0x0B,
+    PROC_CMD_REPEAT = 0x0C,
+    PROC_CMD_WHILE_EXISTS = 0x0D,
     PROC_CMD_START_CHILD = 0x0E,
     PROC_CMD_START_CHILD_BLOCKING = 0x0F,
     PROC_CMD_START_IN_TREE = 0x10,
@@ -46,7 +52,7 @@ enum
     PROC_CMD_22 = 0x22,
     PROC_CMD_23 = 0x23,
     PROC_CMD_OVERLAY = 0x24,
-    PROC_CMD_25 = 0x25,
+    PROC_CMD_25 = 0x25, // maybe also related to load overlay?
 };
 
 struct ProcCmd
@@ -55,6 +61,29 @@ struct ProcCmd
     /* 02 */ s16 dataImm;
     /* 04 */ void * dataPtr;
 };
+
+#define PROC_END                          { PROC_CMD_END, 0, 0 }
+#define PROC_BLOCK                        { PROC_CMD_BLOCK, 0, 0 }
+#define PROC_06(unk_14)                   { PROC_CMD_06, {unk_14}, 0 }
+#define PROC_CALL(func)                   { PROC_CMD_CALL, 0, (func) }
+#define PROC_CALL_ARG(func, arg)          { PROC_CMD_CALL_ARG, (arg), (func) }
+#define PROC_WHILE(func)                  { PROC_CMD_WHILE, 0, (func) }
+#define PROC_WHILE_ARG(func, arg)         { PROC_CMD_WHILE_ARG, {arg}, (func) }
+#define PROC_REPEAT(func)                 { PROC_CMD_REPEAT, 0, (func) }
+#define PROC_WHILE_EXISTS(procscr)        { PROC_CMD_WHILE_EXISTS, 0, (procscr) }
+#define PROC_START_CHILD(procscr)         { PROC_CMD_START_CHILD, 0, (procscr) }
+#define PROC_START_CHILD_LOCKING(procscr) { PROC_CMD_START_CHILD_BLOCKING, 1, (procscr) }
+#define PROC_GOTO_IF_YES(func, label)     { PROC_CMD_GOTO_IF_YES, {label}, (func) }
+#define PROC_GOTO_IF_NO(func, label)      { PROC_CMD_GOTO_IF_NO, {label}, (func) }
+#define PROC_SLEEP(duration)              { PROC_CMD_SLEEP, {duration}, 0 }
+#define PROC_1D                           { PROC_CMD_NOP_1D, 0, 0 }
+#define PROC_20(flag, arg)                { PROC_CMD_20, (arg), (flag) }
+#define PROC_21(flag, arg)                { PROC_CMD_21, (arg), (flag) }
+#define PROC_OVERLAY(layer, ops)          { PROC_CMD_OVERLAY, (layer), (ops) }
+#define PROC_OVERLAY_LOAD_UNK(layer)      { PROC_CMD_25, {layer}, 0 }
+
+#define PROC_OVERLAY_UNLOAD(layer) PROC_OVERLAY(layer, 0)
+#define PROC_OVERLAY_LOAD(layer) PROC_OVERLAY(layer, 1)
 
 struct ProcFuncTable
 {
@@ -76,8 +105,8 @@ struct Proc
     /* 1C */ struct Proc * proc_child;
     /* 20 */ struct Proc * proc_next;
     /* 24 */ struct Proc * proc_prev;
-    /* 28 */ void * unk_28; // maybe child?
-    /* 2C */ void * unk_2c; // thread
+    /* 28 */ void * resource; // maybe child?
+    /* 2C */ void * thread; // thread
     /* 30 */ s16 proc_sleepTime;
     /* 32 */ u16 proc_flags;
     /* 34 */ u8 proc_mark;
@@ -146,7 +175,7 @@ BOOL ProcCmd_While(struct Proc * proc);
 BOOL ProcCmd_WhileArg(struct Proc * proc);
 void func_0201949c(void * arg_0, void * arg_1);
 void func_020194fc(void * unused);
-BOOL ProcCmd_ChangeThread(struct Proc * proc);
+BOOL ProcCmd_NewThread(struct Proc * proc);
 BOOL ProcCmd_Repeat(struct Proc * proc);
 BOOL ProcCmd_WhileExists(struct Proc * proc);
 BOOL ProcCmd_SpawnChild(struct Proc * proc);

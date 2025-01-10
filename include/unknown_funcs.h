@@ -58,14 +58,14 @@ void func_01FFA764(void);
 // ??? func_01FFB08C
 // ??? func_01FFB264
 // ??? func_01FFB574
-// ??? func_01FFB5DC
-// ??? func_01FFB718
+// ??? AllocDirect
+// ??? ReallocFromResource
 // ??? UnlinkThreadTask
-// void * Proc_AllocThreadTask(void * unk, int a);
-// ??? func_01FFB9BC
-// ??? func_01FFBA40
-// ??? func_01FFBAEC
-// void func_01FFBB90(void *, void *);
+// void * AllocSpace(void * unk, int a);
+// ??? ReallocSpace
+// ??? AllocAligned
+// ??? ReallocAligned
+// void ReleaseAllocResource(void *, void *);
 
 /* proc.h */
 
@@ -782,7 +782,7 @@ void func_02015FB4(void);
 // ??? func_02019190
 // ??? func_02019230
 // ??? func_02019310
-// ??? ProcCmd_ChangeThread
+// ??? ProcCmd_NewThread
 // ??? ProcCmd_Repeat
 // ??? ProcCmd_WhileExists
 // ??? ProcCmd_SpawnChild

@@ -49,7 +49,7 @@
 . = 0x1945C; ProcCmd_WhileArg = .;
 . = 0x1949C; func_0201949c = .;
 . = 0x194FC; func_020194fc = .;
-. = 0x1951C; ProcCmd_ChangeThread = .;
+. = 0x1951C; ProcCmd_NewThread = .;
 . = 0x19620; ProcCmd_Repeat = .;
 . = 0x19640; ProcCmd_WhileExists = .;
 . = 0x19674; ProcCmd_SpawnChild = .;

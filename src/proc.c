@@ -4,8 +4,8 @@
 
 #pragma force_active on
 
-void * Proc_AllocThreadTask(void * unk, int a);
-void func_01FFBB90(void *, void *);
+void * AllocSpace(void * unk, int a);
+void ReleaseAllocResource(void *, void *);
 
 void Proc_Init(void)
 {
@@ -24,8 +24,8 @@ void Proc_Init(void)
         it->proc_child = NULL;
         it->proc_next = NULL;
         it->proc_prev = NULL;
-        it->unk_28 = NULL;
-        it->unk_2c = NULL;
+        it->resource = NULL;
+        it->thread = NULL;
         it->proc_sleepTime = 0;
         it->proc_mark = 0;
         it->proc_flags = 0x80;
@@ -65,7 +65,7 @@ struct Proc * func_02018D40(struct ProcCmd * script)
     {
         struct Proc * other = *it;
 
-        if (other->unk_28 != data_027e1268)
+        if (other->resource != prFreeSpace)
             continue;
 
         if (other->proc_script != script)
@@ -240,7 +240,7 @@ void func_02018FA4(struct ProcCmd * script, ProcFunc func)
         if (it->proc_script != script)
             continue;
 
-        if (it->unk_28 != data_027e1268)
+        if (it->resource != prFreeSpace)
             continue;
 
         func(it);
@@ -390,7 +390,7 @@ BOOL func_02019190(struct Proc * proc, u32 flags)
 
         if (flags & 1)
         {
-            if (other->unk_28 != data_027e1268)
+            if (other->resource != prFreeSpace)
             {
                 continue;
             }
@@ -426,7 +426,7 @@ BOOL func_02019230(struct Proc * proc, u32 flags)
 
         if (flags & 1)
         {
-            if (other->unk_28 != data_027e1268)
+            if (other->resource != prFreeSpace)
             {
                 continue;
             }
@@ -579,16 +579,16 @@ void func_0201949c(void * arg_0, void * arg_1)
 
     if (data_020ce6ec == cast_0->unk_6c)
     {
-        data_02190ce0.unk_08 = data_027e1268;
-        data_027e1268 = data_02190ce0.unk_04;
+        data_02190ce0.unk_08 = prFreeSpace;
+        prFreeSpace = data_02190ce0.unk_04;
     }
 
     cast_1 = arg_1;
 
     if (data_020ce6ec == cast_1->unk_6c)
     {
-        data_02190ce0.unk_04 = data_027e1268;
-        data_027e1268 = data_02190ce0.unk_08;
+        data_02190ce0.unk_04 = prFreeSpace;
+        prFreeSpace = data_02190ce0.unk_08;
     }
 
     return;
@@ -600,19 +600,19 @@ void func_020194fc(void * unused)
     OSi_SleepAlarmCallback(NULL);
 }
 
-BOOL ProcCmd_ChangeThread(struct Proc * proc)
+BOOL ProcCmd_NewThread(struct Proc * proc)
 {
     void * (*func)(void *);
     OSThread * thread;
 
     if (proc->proc_flags & 0x40)
     {
-        if (!OS_IsThreadTerminated(proc->unk_2c))
+        if (!OS_IsThreadTerminated(proc->thread))
             return FALSE;
 
-        func_01FFBB90(&data_027e1b9c, proc->unk_2c);
+        ReleaseAllocResource(&data_027e1b9c, proc->thread);
 
-        proc->unk_2c = 0;
+        proc->thread = NULL;
         proc->proc_flags &= ~0x40;
 
         proc->proc_scrCur++;
@@ -621,18 +621,18 @@ BOOL ProcCmd_ChangeThread(struct Proc * proc)
     }
 
     func = proc->proc_scrCur->dataPtr;
-    thread = Proc_AllocThreadTask(&data_027e1b9c, 0x10c0);
+    thread = AllocSpace(&data_027e1b9c, 0x10c0);
     OS_CreateThread(thread, (void *)func, proc, ((void *)thread) + 0x10c0, 0x1000, 0x13);
 
     libfunc_unk_20A374C(thread, func_020194fc);
 
-    data_02190ce0.unk_08 = proc->unk_28;
+    data_02190ce0.unk_08 = proc->resource;
     data_020ce6ec = thread->id;
 
     OSi_SleepAlarmCallback(func_0201949c);
     OS_WakeupThreadDirect(thread);
 
-    proc->unk_2c = thread;
+    proc->thread = thread;
     proc->proc_flags |= 0x40;
 
     return TRUE;

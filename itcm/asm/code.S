@@ -1764,7 +1764,7 @@ func_01FF9894: @ 0x01FF9894
 	bl func_01FF97A0
 	cmp r0, #0
 	beq _01FF98D4
-	ldr r0, _01FF993C @ =data_027e1268
+	ldr r0, _01FF993C @ =prFreeSpace
 	ldr r1, _01FF9940 @ =0x01FF9790
 	ldr r0, [r0]
 	ldr r0, [r0]
@@ -1780,7 +1780,7 @@ _01FF98D4:
 	bl func_01FF97F4
 	cmp r0, #0
 	beq _01FF9910
-	ldr r0, _01FF993C @ =data_027e1268
+	ldr r0, _01FF993C @ =prFreeSpace
 	ldr r1, _01FF9944 @ =func_01FF9780
 	ldr r0, [r0]
 	ldr r0, [r0]
@@ -1791,7 +1791,7 @@ _01FF98D4:
 	ldr r0, [r1, r0, lsl #2]
 	pop {r3, r4, r5, pc}
 _01FF9910:
-	ldr r0, _01FF993C @ =data_027e1268
+	ldr r0, _01FF993C @ =prFreeSpace
 	ldr r1, _01FF9944 @ =func_01FF9780
 	ldr r0, [r0]
 	ldr r0, [r0]
@@ -1803,14 +1803,14 @@ _01FF9910:
 	lsl r0, r0, #1
 	pop {r3, r4, r5, pc}
 	.align 2, 0
-_01FF993C: .4byte data_027e1268
+_01FF993C: .4byte prFreeSpace
 _01FF9940: .4byte 0x01FF9790
 _01FF9944: .4byte func_01FF9780
 
 	arm_func_start func_01FF9948
 func_01FF9948: @ 0x01FF9948
 	push {r4, lr}
-	ldr r1, _01FF9994 @ =data_027e1268
+	ldr r1, _01FF9994 @ =prFreeSpace
 	mov r4, r0
 	ldr r0, [r1]
 	mov r1, r4
@@ -1820,7 +1820,7 @@ func_01FF9948: @ 0x01FF9948
 	lsr r0, r0, #0x1d
 	and r0, r0, #0xff
 	bl func_01FF9894
-	ldr r1, _01FF9994 @ =data_027e1268
+	ldr r1, _01FF9994 @ =prFreeSpace
 	mov r2, r0
 	ldr r1, [r1]
 	mov r0, #0
@@ -1829,24 +1829,24 @@ func_01FF9948: @ 0x01FF9948
 	bl MIi_CpuClearFast
 	pop {r4, pc}
 	.align 2, 0
-_01FF9994: .4byte data_027e1268
+_01FF9994: .4byte prFreeSpace
 
 	arm_func_start func_01FF9998
 func_01FF9998: @ 0x01FF9998
 	push {r3, lr}
-	ldr r3, _01FF99C8 @ =data_027e1268
+	ldr r3, _01FF99C8 @ =prFreeSpace
 	ldr r3, [r3]
 	ldr r3, [r3, #0x30]
 	add r1, r3, r1
 	bl MIi_CpuCopyFast
-	ldr r0, _01FF99C8 @ =data_027e1268
+	ldr r0, _01FF99C8 @ =prFreeSpace
 	ldr r1, [r0]
 	ldrb r0, [r1, #0x3e]
 	orr r0, r0, #0x10
 	strb r0, [r1, #0x3e]
 	pop {r3, pc}
 	.align 2, 0
-_01FF99C8: .4byte data_027e1268
+_01FF99C8: .4byte prFreeSpace
 
 	arm_func_start func_01FF99CC
 func_01FF99CC: @ 0x01FF99CC
@@ -1885,19 +1885,19 @@ _01FF9A30: .4byte 0x027E0004
 	arm_func_start func_01FF9A34
 func_01FF9A34: @ 0x01FF9A34
 	push {r3, lr}
-	ldr r3, _01FF9A64 @ =data_027e1268
+	ldr r3, _01FF9A64 @ =prFreeSpace
 	ldr r3, [r3]
 	ldr r3, [r3, #0x30]
 	add r1, r3, r1
 	bl MI_CpuCopy8
-	ldr r0, _01FF9A64 @ =data_027e1268
+	ldr r0, _01FF9A64 @ =prFreeSpace
 	ldr r1, [r0]
 	ldrb r0, [r1, #0x3e]
 	orr r0, r0, #0x10
 	strb r0, [r1, #0x3e]
 	pop {r3, pc}
 	.align 2, 0
-_01FF9A64: .4byte data_027e1268
+_01FF9A64: .4byte prFreeSpace
 
 	arm_func_start func_01FF9A68
 func_01FF9A68: @ 0x01FF9A68
@@ -1915,7 +1915,7 @@ _01FF9A88: .4byte MIi_CpuCopyFast
 	arm_func_start func_01FF9A8C
 func_01FF9A8C: @ 0x01FF9A8C
 	push {r4, r5, r6, lr}
-	ldr r3, _01FF9AF0 @ =data_027e1268
+	ldr r3, _01FF9AF0 @ =prFreeSpace
 	mov r5, r1
 	ldr r1, [r3]
 	mov r6, r0
@@ -1923,7 +1923,7 @@ func_01FF9A8C: @ 0x01FF9A8C
 	mov r4, r2
 	add r1, r1, r5
 	bl MIi_CpuCopyFast
-	ldr r1, _01FF9AF0 @ =data_027e1268
+	ldr r1, _01FF9AF0 @ =prFreeSpace
 	ldr r0, _01FF9AF4 @ =0x027E0000
 	ldr r1, [r1]
 	ldr r0, [r0]
@@ -1940,13 +1940,13 @@ func_01FF9A8C: @ 0x01FF9A8C
 	bl func_01FF9A68
 	pop {r4, r5, r6, pc}
 	.align 2, 0
-_01FF9AF0: .4byte data_027e1268
+_01FF9AF0: .4byte prFreeSpace
 _01FF9AF4: .4byte 0x027E0000
 
 	arm_func_start func_01FF9AF8
 func_01FF9AF8: @ 0x01FF9AF8
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	ldr r0, _01FF9C78 @ =data_027e1268
+	ldr r0, _01FF9C78 @ =prFreeSpace
 	mov r7, #0
 	ldr r0, [r0]
 	str r0, [sp]
@@ -1955,12 +1955,12 @@ _01FF9B0C:
 	ldreq r0, _01FF9C7C @ =0x027E0000
 	mov r6, #0
 	ldrne r0, _01FF9C80 @ =0x027E0004
-	ldr r1, _01FF9C78 @ =data_027e1268
+	ldr r1, _01FF9C78 @ =prFreeSpace
 	ldr r2, [r0]
 	ldr r0, _01FF9C7C @ =0x027E0000
 	ldr fp, _01FF9C7C @ =0x027E0000
 	ldr r0, [r0]
-	ldr r4, _01FF9C78 @ =data_027e1268
+	ldr r4, _01FF9C78 @ =prFreeSpace
 	cmp r2, r0
 	moveq r0, #1
 	movne r0, #0
@@ -2015,7 +2015,7 @@ _01FF9BF0:
 	cmp r6, #4
 	add r8, r8, #2
 	blt _01FF9B58
-	ldr r0, _01FF9C78 @ =data_027e1268
+	ldr r0, _01FF9C78 @ =prFreeSpace
 	ldr r2, [r0]
 	ldrb r1, [r2, #0x3e]
 	tst r1, #0x10
@@ -2033,7 +2033,7 @@ _01FF9BF0:
 	mov r3, #0x400
 	bl func_01FF9A68
 _01FF9C44:
-	ldr r1, _01FF9C78 @ =data_027e1268
+	ldr r1, _01FF9C78 @ =prFreeSpace
 	add r7, r7, #1
 	ldr r0, [r1]
 	mov r2, #0
@@ -2047,7 +2047,7 @@ _01FF9C44:
 	str r0, [r1]
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_01FF9C78: .4byte data_027e1268
+_01FF9C78: .4byte prFreeSpace
 _01FF9C7C: .4byte 0x027E0000
 _01FF9C80: .4byte 0x027E0004
 _01FF9C84: .4byte 0x027E0008
@@ -2780,7 +2780,7 @@ _01FFA760: .4byte 0x027E0058
 
 	arm_func_start func_01FFA764
 func_01FFA764: @ 0x01FFA764
-	ldr r1, _01FFA78C @ =data_027e1268
+	ldr r1, _01FFA78C @ =prFreeSpace
 	mov r3, #0
 	ldr r2, [r1]
 	ldr ip, _01FFA790 @ =MIi_CpuClearFast
@@ -2791,13 +2791,13 @@ func_01FFA764: @ 0x01FFA764
 	ldr r1, [r1, #0x34]
 	bx ip
 	.align 2, 0
-_01FFA78C: .4byte data_027e1268
+_01FFA78C: .4byte prFreeSpace
 _01FFA790: .4byte MIi_CpuClearFast
 
 	arm_func_start func_01FFA794
 func_01FFA794: @ 0x01FFA794
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	ldr r6, _01FFA818 @ =data_027e1268
+	ldr r6, _01FFA818 @ =prFreeSpace
 	mov sl, #0
 	ldr r0, [r6]
 	ldr fp, _01FFA81C @ =0x07000400
@@ -2826,12 +2826,12 @@ _01FFA7C0:
 	add sl, sl, #1
 	cmp sl, #2
 	blt _01FFA7C0
-	ldr r1, _01FFA818 @ =data_027e1268
+	ldr r1, _01FFA818 @ =prFreeSpace
 	ldr r0, [sp]
 	str r0, [r1]
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_01FFA818: .4byte data_027e1268
+_01FFA818: .4byte prFreeSpace
 _01FFA81C: .4byte 0x07000400
 _01FFA820: .4byte 0x027E0004
 _01FFA824: .4byte 0x027E0000
@@ -2839,7 +2839,7 @@ _01FFA824: .4byte 0x027E0000
 	arm_func_start func_01FFA828
 func_01FFA828: @ 0x01FFA828
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	ldr lr, _01FFA968 @ =data_027e1268
+	ldr lr, _01FFA968 @ =prFreeSpace
 	cmp r3, #0
 	ldr r6, [lr]
 	ldr r5, [r6, #0x34]
@@ -2922,7 +2922,7 @@ _01FFA948:
 	blo _01FFA8B0
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_01FFA968: .4byte data_027e1268
+_01FFA968: .4byte prFreeSpace
 _01FFA96C: .4byte 0x000001FF
 _01FFA970: .4byte 0x000003FF
 
@@ -2930,7 +2930,7 @@ _01FFA970: .4byte 0x000003FF
 func_01FFA974: @ 0x01FFA974
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x18
-	ldr r5, _01FFABD0 @ =data_027e1268
+	ldr r5, _01FFABD0 @ =prFreeSpace
 	ldr r8, [sp, #0x44]
 	ldr r4, [r5]
 	mov fp, r1
@@ -3085,7 +3085,7 @@ _01FFABA4:
 	add sp, sp, #0x18
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_01FFABD0: .4byte data_027e1268
+_01FFABD0: .4byte prFreeSpace
 _01FFABD4: .4byte 0x000001FF
 _01FFABD8: .4byte 0x000003FF
 
@@ -3093,7 +3093,7 @@ _01FFABD8: .4byte 0x000003FF
 func_01FFABDC: @ 0x01FFABDC
 	push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x10
-	ldr r6, _01FFADB4 @ =data_027e1268
+	ldr r6, _01FFADB4 @ =prFreeSpace
 	movs r8, r3
 	ldr r4, [r6]
 	mov sl, r0
@@ -3213,7 +3213,7 @@ _01FFAD88:
 	add sp, sp, #0x10
 	pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_01FFADB4: .4byte data_027e1268
+_01FFADB4: .4byte prFreeSpace
 _01FFADB8: .4byte 0x000001FF
 _01FFADBC: .4byte 0x000003FF
 
@@ -3221,7 +3221,7 @@ _01FFADBC: .4byte 0x000003FF
 func_01FFADC0: @ 0x01FFADC0
 	push {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x24
-	ldr sb, _01FFB080 @ =data_027e1268
+	ldr sb, _01FFB080 @ =prFreeSpace
 	ldr r4, [sp, #0x4c]
 	ldr r7, [sb]
 	mov fp, r1
@@ -3401,7 +3401,7 @@ _01FFB054:
 	add sp, sp, #0x24
 	pop {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_01FFB080: .4byte data_027e1268
+_01FFB080: .4byte prFreeSpace
 _01FFB084: .4byte 0x000001FF
 _01FFB088: .4byte 0x000003FF
 
@@ -3409,7 +3409,7 @@ _01FFB088: .4byte 0x000003FF
 func_01FFB08C: @ 0x01FFB08C
 	push {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0xc
-	ldr r6, _01FFB258 @ =data_027e1268
+	ldr r6, _01FFB258 @ =prFreeSpace
 	movs r8, r3
 	ldr r4, [r6]
 	mov sl, r0
@@ -3526,7 +3526,7 @@ _01FFB22C:
 	add sp, sp, #0xc
 	pop {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_01FFB258: .4byte data_027e1268
+_01FFB258: .4byte prFreeSpace
 _01FFB25C: .4byte 0x000001FF
 _01FFB260: .4byte 0x000003FF
 
@@ -3534,7 +3534,7 @@ _01FFB260: .4byte 0x000003FF
 func_01FFB264: @ 0x01FFB264
 	push {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x1c
-	ldr r4, _01FFB568 @ =data_027e1268
+	ldr r4, _01FFB568 @ =prFreeSpace
 	ldr sb, [sp, #0x44]
 	ldr r6, [r4]
 	mov fp, r2
@@ -3568,7 +3568,7 @@ func_01FFB264: @ 0x01FFB264
 	addge sp, sp, #0x1c
 	popge {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	ldr r0, [sp, #4]
-	ldr r1, _01FFB568 @ =data_027e1268
+	ldr r1, _01FFB568 @ =prFreeSpace
 	add r2, sl, r0
 	ldr r0, [r1]
 	and r6, sl, #0xff00
@@ -3731,14 +3731,14 @@ _01FFB53C:
 	add sp, sp, #0x1c
 	pop {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_01FFB568: .4byte data_027e1268
+_01FFB568: .4byte prFreeSpace
 _01FFB56C: .4byte 0x000001FF
 _01FFB570: .4byte 0x000003FF
 
 	arm_func_start func_01FFB574
 func_01FFB574: @ 0x01FFB574
 	push {r4, lr}
-	ldr ip, _01FFB5D8 @ =data_027e1268
+	ldr ip, _01FFB5D8 @ =prFreeSpace
 	lsl r0, r0, #4
 	ldr r4, [ip]
 	add lr, r0, #3
@@ -3763,5 +3763,5 @@ func_01FFB574: @ 0x01FFB574
 	strh r2, [r1, r0]
 	pop {r4, pc}
 	.align 2, 0
-_01FFB5D8: .4byte data_027e1268
+_01FFB5D8: .4byte prFreeSpace
 

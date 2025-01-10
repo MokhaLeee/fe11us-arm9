@@ -74,17 +74,17 @@ void InitSystem(void)
 	func_0200F1E8();
 	func_0200F350(1);
 
-	tmp = data_027e1268;
+	tmp = prFreeSpace;
 
 	for (i = 0; i < 2; i++)
 	{
-		data_027e1268 = i == 0 ? (void *)SDK_AUTOLOAD_DTCM_START[0] : unk_027E0004;
+		prFreeSpace = i == 0 ? (void *)SDK_AUTOLOAD_DTCM_START[0] : unk_027E0004;
 
 		func_01FFA764();
 		func_02010C84(NULL);
 	}
 
-	data_027e1268 = tmp;
+	prFreeSpace = tmp;
 
 	func_02019BD4();
 	func_02011458();
@@ -98,17 +98,17 @@ void InitSystem(void)
 	func_0201FF20();
 	func_020217B4();
 
-	tmp = data_027e1268;
+	tmp = prFreeSpace;
 
 	for (i = 0; i < 2; i++)
 	{
-		data_027e1268 = (i == 0) ? (void *)SDK_AUTOLOAD_DTCM_START[0] : unk_027E0004;
+		prFreeSpace = (i == 0) ? (void *)SDK_AUTOLOAD_DTCM_START[0] : unk_027E0004;
 
 		func_0201C204();
 		func_01FFA720();
 	}
 
-	data_027e1268 = tmp;
+	prFreeSpace = tmp;
 }
 
 void func_0200F028(void)
