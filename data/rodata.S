@@ -1,30 +1,26 @@
 .include "macros.inc"
 .section .rodata
 
-.incbin "fe11-arm9-base.bin", 0xC9B60, 0xCE6EC - 0xC9B60
+.incbin "fe11-arm9-base.bin", 0xC9B60, 0xCA9D0 - 0xC9B60
 
-.global data_020ce6ec
-data_020ce6ec:
-.incbin "fe11-arm9-base.bin", 0xCE6EC, 4
+.global funcs_020CA9D0
+funcs_020CA9D0:
+.incbin "fe11-arm9-base.bin", 0xCA9D0, 0xCA9E8 - 0xCA9D0
 
-.global ProcScr_020ce6f0
-ProcScr_020ce6f0:
-.incbin "fe11-arm9-base.bin", 0xCE6F0, 0xCE710 - 0xCE6F0
+.global funcs_020CA9E8
+funcs_020CA9E8:
+.incbin "fe11-arm9-base.bin", 0xCA9E8, 0xCAA00 - 0xCA9E8
 
-.global ProcScr_020ce710
-ProcScr_020ce710:
-.incbin "fe11-arm9-base.bin", 0xCE710, 0xCE730 - 0xCE710
+.global funcs_020CAA00
+funcs_020CAA00:
+.incbin "fe11-arm9-base.bin", 0xCAA00, 0xCAA18 - 0xCAA00
 
-.global ProcScr_020ce730
-ProcScr_020ce730:
-.incbin "fe11-arm9-base.bin", 0xCE730, 0xCE750 - 0xCE730
+.global funcs_020CAA18
+funcs_020CAA18:
+.incbin "fe11-arm9-base.bin", 0xCAA18, 0xCAA30 - 0xCAA18
 
-.global ProcScr_020ce750
-ProcScr_020ce750:
-.incbin "fe11-arm9-base.bin", 0xCE750, 0xCEC44 - 0xCE750
+.global funcs_020CAA30
+funcs_020CAA30:
+.incbin "fe11-arm9-base.bin", 0xCAA30, 0xCAA40 - 0xCAA30
 
-.global ProcScr_GameController
-ProcScr_GameController:
-.incbin "fe11-arm9-base.bin", 0xCEC44, 0xCF48C - 0xCEC44
-
-.incbin "fe11-arm9-base.bin", 0xCF48C, 0xD4464 - 0xCF48C
+.incbin "fe11-arm9-base.bin", 0xCAA40, 0xCAAE8 - 0xCAA40

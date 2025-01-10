@@ -28,6 +28,8 @@ SECTIONS
 		asm/code_02000FEC.o(.text);
 		src/main_loop.o(.text);
 		asm/code_0200F0F0.o(.text);
+		src/code_02013634.o(.text);
+		asm/code_020136BC.o(.text);
 		src/proc.o(.text);
 		asm/code.o(.text);
 		src/menu.o(.text);
@@ -43,6 +45,8 @@ SECTIONS
 		/* rodata */
 		data/sinit.o(.rodata);
 		data/rodata.o(.rodata);
+		src/code_02013634.o(.data);
+		data/data_020CAB30.o(.data);
 		src/menu.o(.data);
 		data/rodata_020D457C.o(.rodata);
 		src/unit.o(.data);

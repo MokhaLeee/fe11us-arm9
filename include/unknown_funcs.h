@@ -529,17 +529,20 @@ void func_02012124(void);
 // ??? func_020135B8
 // ??? func_020135CC
 // ??? func_020135E8
-// ??? func_020136BC
-// ??? func_02013700
+void func_02013634(struct Proc * proc);
+void func_02013658(struct Proc * proc);
+void func_02013698(struct Proc * proc);
+// ??? StartProc_020CAAE8
+void func_02013700(void *);
 // ??? func_02013868
-// ??? func_02013874
+void func_02013874(void (*func)(void *));
 // ??? func_020138D0
-// ??? func_020138DC
+BOOL func_020138DC(void (*func)(void *));
 // ??? func_0201394C
-// ??? func_02013A04
-// ??? func_02013B0C
-// ??? func_02013D74
-// ??? func_02013EF0
+void func_02013A04(void (*func)(void *), ProcPtr proc);
+void func_02013B0C(void (*func)(void *), ProcPtr proc);
+void func_02013D74(void (*func)(void *), ProcPtr proc);
+void func_02013EF0(void (*func)(void *), ProcPtr proc);
 // ??? func_02013F80
 // ??? func_0201409C
 // ??? func_020140FC
@@ -3815,7 +3818,7 @@ void OS_Halt(void);
 // ??? MIi_CpuCopy16
 // ??? MIi_CpuClear32
 // ??? MIi_CpuCopy32
-void MIi_CpuClearFast(int val, void * dst, int size);
+// void MIi_CpuClearFast(int val, void * dst, int size);
 // ??? MIi_CpuCopyFast
 // ??? MI_Copy36B
 // ??? MI_Copy48B
@@ -4493,5 +4496,8 @@ void func_020C4D28(void);
 // ??? func_020E8624
 // ??? func_020E86CC
 // ??? func_020E87A4
+
+void unk_020EF27C(void *);
+void unk_020EF2FC(void *);
 
 #endif // UNKNOWN_FUNCS_H

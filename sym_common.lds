@@ -3,7 +3,7 @@
 . = 0x020E3DA8 - BSS_START; unk_020E3DA8 = .;
 . = 0x020EF264 - BSS_START; unk_020EF264 = .;
 . = 0x020EF27C - BSS_START; unk_020EF27C = .;
-. = 0x020EF280 - BSS_START; unk_020EF280 = .;
+. = 0x020EF2FC - BSS_START; unk_020EF2FC = .;
 . = 0x02190CE0 - BSS_START; data_02190ce0 = .;
 . = 0x02190CEC - BSS_START; gProcTreeRootArray = .;
 . = 0x02190D24 - BSS_START; gProcAllocList = .;

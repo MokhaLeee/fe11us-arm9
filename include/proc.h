@@ -7,6 +7,8 @@ struct Proc;
 typedef void * ProcPtr;
 typedef void (*ProcFunc)(struct Proc *);
 
+#define PROC_TREE(root) ((ProcPtr)(root))
+
 enum
 {
     PROC_FLAG_BLOCKING = (1 << 1),
@@ -73,10 +75,12 @@ struct ProcCmd
 #define PROC_WHILE_EXISTS(procscr)        { PROC_CMD_WHILE_EXISTS, 0, (procscr) }
 #define PROC_START_CHILD(procscr)         { PROC_CMD_START_CHILD, 0, (procscr) }
 #define PROC_START_CHILD_LOCKING(procscr) { PROC_CMD_START_CHILD_BLOCKING, 1, (procscr) }
+#define PROC_LABEL(label)                 { PROC_CMD_LABEL, (label), 0 }
+#define PROC_GOTO(label)                  { PROC_CMD_GOTO, (label), 0 }
 #define PROC_GOTO_IF_YES(func, label)     { PROC_CMD_GOTO_IF_YES, {label}, (func) }
 #define PROC_GOTO_IF_NO(func, label)      { PROC_CMD_GOTO_IF_NO, {label}, (func) }
 #define PROC_SLEEP(duration)              { PROC_CMD_SLEEP, {duration}, 0 }
-#define PROC_1D                           { PROC_CMD_NOP_1D, 0, 0 }
+#define PROC_NAME                         { PROC_CMD_NOP_1D, 0, 0 }
 #define PROC_20(flag, arg)                { PROC_CMD_20, (arg), (flag) }
 #define PROC_21(flag, arg)                { PROC_CMD_21, (arg), (flag) }
 #define PROC_OVERLAY(layer, ops)          { PROC_CMD_OVERLAY, (layer), (ops) }
@@ -113,7 +117,8 @@ struct Proc
     /* 35 */ u8 proc_lockCnt;
     STRUCT_PAD(0x36, 0x38);
     /* 38 */ void (*unk_38)(void *);
-    STRUCT_PAD(0x3C, 0x58);
+    /* 38 */ void (*unk_3C)(void *);
+    STRUCT_PAD(0x40, 0x58);
     /* 58 */ s16 unk_58;
     STRUCT_PAD(0x5A, 0x78);
 };
