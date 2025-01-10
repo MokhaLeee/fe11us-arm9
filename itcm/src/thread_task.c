@@ -4,88 +4,209 @@
 #include "thread_task.h"
 
 #if NONMATCHING
-
-NAKED_FUNCTION("https://decomp.me/scratch/ZeTO8")
-asm void UnlinkThreadTask(struct ProcThreadList ** _unused_, struct ProcThreadList * task)
+NAKED_FUNCTION("https://decomp.me/scratch/YXeK1")
+asm OSThread * func_01FFB5DC(struct ProcThreadList ** head, struct ProcThreadList * task, u32 size, int align_byte)
 {
-	ldmia r1, {r0, r3}
-	cmp r0, #0
-	ldrneb r2, [r0, #0xe]
-	cmpne r2, #0
-	bne _01FFB8BC
-	cmp r3, #0
-	ldrneb r0, [r3, #0xe]
-	cmpne r0, #0
-	mov r0, #1
-	bne _01FFB878
-	strb r0, [r1, #0xe]
-	ldrh r2, [r1, #0xc]
-	ldr r3, [r1, #8]
-	mov r0, #0
-	add r2, r3, r2
-	str r2, [r1, #8]
+	stmfd sp!, {r4, r14}
+	add r4, r1, #0x10
+	add r0, r4, r3
+	rsb r12, r3, #0
+	sub r0, r0, #1
+	and r0, r12, r0
+	sub r0, r0, r4
 	strh r0, [r1, #0xc]
-	strb r0, [r1, #0xf]
-	bx lr
-_01FFB878:
-	strb r0, [r1, #0xe]
-	ldr r0, [r3, #4]
-	str r0, [r1, #4]
-	cmp r0, #0
-	strne r1, [r0]
-	ldr r0, [r3, #8]
-	ldr r2, [r1, #8]
-	add r0, r0, #0x10
-	add r3, r2, r0
-	str r3, [r1, #8]
-	ldrh r2, [r1, #0xc]
-	mov r0, #0
-	add r2, r3, r2
-	str r2, [r1, #8]
-	strh r0, [r1, #0xc]
-	strb r0, [r1, #0xf]
-	bx lr
-_01FFB8BC:
-	cmp r3, #0
-	ldrneb r2, [r3, #0xe]
-	cmpne r2, #0
-	bne _01FFB8FC
+	ldrh r0, [r1, #0xc]
+	add r2, r2, r3
+	sub r2, r2, #1
+	cmp r0, #0x14
+	and r2, r12, r2
+	blt _01FFB678
+	str r1, [r1, r0]
+	ldr r3, [r1, #4]
+	add r0, r1, r0
 	str r3, [r0, #4]
-	cmp r3, #0
-	ldrne r2, [r1]
-	strne r2, [r3]
-	ldr r2, [r1, #8]
-	ldrh r3, [r1, #0xc]
-	add r1, r2, #0x10
-	ldr r2, [r0, #8]
-	add r1, r3, r1
-	add r1, r2, r1
-	str r1, [r0, #8]
-	bx lr
-_01FFB8FC:
-	ldr r2, [r3, #4]
-	str r2, [r0, #4]
-	cmp r2, #0
-	strne r0, [r2]
-	ldr r3, [r3, #8]
-	ldr r2, [r1, #8]
-	add r3, r3, #0x20
-	add r2, r3, r2
-	ldrh r1, [r1, #0xc]
+	ldrh r4, [r1, #0xc]
+	ldr r12, [r1, #8]
+	mov r3, #1
+	sub r4, r12, r4
+	str r4, [r0, #8]
+	strb r3, [r0, #0xe]
+	mov r12, #0
+	strh r12, [r0, #0xc]
+	strb r12, [r0, #0xf]
+	str r0, [r1, #4]
 	ldr r3, [r0, #8]
-	add r1, r2, r1
-	add r1, r3, r1
-	str r1, [r0, #8]
-	bx lr
+	ldr r4, [r1, #8]
+	add r3, r3, #0x10
+	sub r3, r4, r3
+	str r3, [r1, #8]
+	strh r12, [r1, #0xc]
+	ldr r3, [r0, #4]
+	cmp r3, #0
+	ldrne r1, [r1, #4]
+	strne r1, [r3]
+	mov r1, r0
+_01FFB678:
+	mov r0, #0
+	strb r0, [r1, #0xe]
+	ldrh r3, [r1, #0xc]
+	ldr r4, [r1, #8]
+	sub r4, r4, r3
+	sub r3, r4, r2
+	str r4, [r1, #8]
+	cmp r3, #0x14
+	blo _01FFB6FC
+	ldrh r3, [r1, #0xc]
+	add r4, r1, #0x10
+	add r12, r2, #0x10
+	add r14, r3, r2
+	ldr r3, [r1, #4]
+	add r4, r4, r14
+	stmia r4, {r1, r3}
+	ldr r14, [r1, #8]
+	mov r3, #1
+	sub r12, r14, r12
+	str r12, [r4, #8]
+	strb r3, [r4, #0xe]
+	strh r0, [r4, #0xc]
+	strb r0, [r4, #0xf]
+	str r4, [r1, #4]
+	ldr r0, [r4, #8]
+	ldr r3, [r1, #8]
+	add r0, r0, #0x10
+	sub r0, r3, r0
+	str r0, [r1, #8]
+	ldr r3, [r4, #4]
+	cmp r3, #0
+	ldrne r0, [r1, #4]
+	strne r0, [r3]
+_01FFB6FC:
+	ldr r0, [r1, #8]
+	sub r0, r0, r2
+	strb r0, [r1, #0xf]
+	ldrh r0, [r1, #0xc]
+	add r0, r1, r0
+	add r0, r0, #0x10
+	ldmfd sp!, {r4, pc}
+}
+#else
+OSThread * func_01FFB5DC(struct ProcThreadList ** head, struct ProcThreadList * task, u32 size, int align_byte)
+{
+	struct ProcThreadList * new_task;
+	void * pr = (void *)task + 0x10;
+	task->unk_0C = ALIGN_BYTE_AUTO(pr, align_byte) - (u32)pr;
+	size = (size + align_byte - 1) & (-align_byte);
+
+	if ((int)task->unk_0C >= 0x14)
+	{
+		new_task = (void *)task + task->unk_0C;
+
+		new_task->pre = task;
+		new_task->next = task->next;
+		new_task->size = task->size - task->unk_0C;
+		new_task->free = TRUE;
+		new_task->unk_0C = 0;
+		new_task->unk_0F = 0;
+
+		task->next = new_task;
+		task->size = task->size - (new_task->size + 0x10);
+		task->unk_0C = 0;
+
+		if (new_task->next)
+			new_task->next->pre = task->next;
+
+		task = new_task;
+	}
+
+	task->free = FALSE;
+	task->size -= task->unk_0C;
+
+	if ((task->size - size) >= 0x14)
+	{
+		new_task = (void *)task + 0x10 + (task->unk_0C + size);
+
+		new_task->pre = task;
+		new_task->next = task->next;
+		new_task->size = task->size - (size + 0x10);
+		new_task->free = TRUE;
+		new_task->unk_0C = 0;
+		new_task->unk_0F = 0;
+
+		task->next = new_task;
+		task->size = task->size - (new_task->size + 0x10);
+
+		if (new_task->next)
+			new_task->next->pre = task->next;
+	}
+
+	task->unk_0F = task->size - size;
+	return (void *)task + task->unk_0C + 0x10;
+}
+#endif
+
+OSThread * func_01FFB718(struct ProcThreadList ** head, struct ProcThreadList * task, u32 size, int align_byte)
+{
+	struct ProcThreadList * tmp, * new_task;
+	u32 r2, r4, r5, r10, lr;
+	void * tail;
+
+    size = (size + align_byte - 1) & (-align_byte);
+	tail = (void *)task->size;
+	tail = (void *)task + ((u32)tail + 0x10);
+	r5 = ((u32)tail) - (((u32)tail) & (-align_byte));
+
+	if (r5 >= 0x14)
+	{
+		new_task = tail - r5;
+
+		new_task->pre = task;
+		new_task->next = task->next;
+		new_task->size = r5 - 0x10;
+		new_task->free = TRUE;
+		new_task->unk_0C = 0;
+		new_task->unk_0F = 0;
+
+		task->next = new_task;
+		task->size = task->size - (new_task->size + 0x10);
+
+		if (new_task->next)
+			new_task->next->pre = task->next;
+
+        r5 = 0;
+	}
+
+	r4 = r5 + size;
+	if ((task->size - r4) >= 0x14)
+	{
+		u32 tmp1 = task->size + 0x10;
+		new_task = (void *)task + tmp1 - (r4 + 0x10);
+
+		new_task->pre = task;
+		new_task->next = task->next;
+		new_task->size = r4;
+		new_task->free = FALSE;
+		new_task->unk_0C = 0;
+
+		new_task->unk_0F = new_task->size - size;
+		task->next = new_task;
+
+		task->next = new_task;
+		task->size -= new_task->size + 0x10;
+
+		if (new_task->next)
+			new_task->next->pre = task->next;
+
+		return (void *)new_task + new_task->unk_0C + 0x10;
+	}
+
+	return func_01FFB5DC(head, task, size, align_byte);
 }
 
-#else
 void UnlinkThreadTask(struct ProcThreadList ** _unused_, struct ProcThreadList * task)
 {
 	struct ProcThreadList * tmp;
 	struct ProcThreadList * pre  = task->pre;
 	struct ProcThreadList * next = task->next;
-	u32 size;
 
 	if (pre == NULL || pre->free == FALSE)
 	{
@@ -124,27 +245,30 @@ void UnlinkThreadTask(struct ProcThreadList ** _unused_, struct ProcThreadList *
 		}
 		else
 		{
+			u32 size;
+			u32 _size;
+
 			pre->next = tmp = next->next;
 
 			if (tmp)
 				tmp->pre = pre;
 
-			size = next->size;
-			pre->size += task->unk_0C + task->size + (size + 0x20);
+			size = (next->size + 0x20) + task->size;
+			_size = size + task->unk_0C;
+			pre->size += _size;
 		}
 	}
 }
-#endif
 
 OSThread * Proc_AllocThreadTask(struct ProcThreadList ** head, u32 size)
 {
-    struct ProcThreadList * it = *head;
-    struct ProcThreadList * free_task = NULL;
+	struct ProcThreadList * it = *head;
+	struct ProcThreadList * free_task = NULL;
 	OSThread * thread = NULL;
 	OSIntrMode irq_flag;
 
-    size = ALIGN_BYTE(size, 4);
-    irq_flag = OS_DisableInterrupts();
+	size = ALIGN_BYTE(size, 4);
+	irq_flag = OS_DisableInterrupts();
 
 	for (; it != NULL; it = it->next)
 	{
@@ -164,13 +288,13 @@ OSThread * Proc_AllocThreadTask(struct ProcThreadList ** head, u32 size)
 
 OSThread * func_01FFB9BC(struct ProcThreadList ** head, u32 size)
 {
-    struct ProcThreadList * it = *head;
-    struct ProcThreadList * free_task = NULL;
+	struct ProcThreadList * it = *head;
+	struct ProcThreadList * free_task = NULL;
 	OSThread * thread = NULL;
 	OSIntrMode irq_flag;
 
-    size = ALIGN_BYTE(size, 4);
-    irq_flag = OS_DisableInterrupts();
+	size = ALIGN_BYTE(size, 4);
+	irq_flag = OS_DisableInterrupts();
 
 	for (; it != NULL; it = it->next)
 	{
@@ -187,17 +311,17 @@ OSThread * func_01FFB9BC(struct ProcThreadList ** head, u32 size)
 
 OSThread * func_01FFBA40(struct ProcThreadList ** head, u32 size, int aligned)
 {
-    struct ProcThreadList * it = *head;
-    struct ProcThreadList * free_task = NULL;
+	struct ProcThreadList * it = *head;
+	struct ProcThreadList * free_task = NULL;
 	OSThread * thread = NULL;
 	OSIntrMode irq_flag;
 
-    size = ALIGN_BYTE_AUTO(size, aligned);
-    irq_flag = OS_DisableInterrupts();
+	size = ALIGN_BYTE_AUTO(size, aligned);
+	irq_flag = OS_DisableInterrupts();
 
 	for (; it != NULL; it = it->next)
 	{
-		if (it->free == TRUE && it->size >= (size + ALIGN_MEMORY_AUTO(it)))
+		if (it->free == TRUE && it->size >= (size + ALIGN_MEMORY_AUTO(it, aligned)))
 		{
 			free_task = it;
 			break;
@@ -266,13 +390,13 @@ _01FFBB80:
 #else
 OSThread * func_01FFBAEC(struct ProcThreadList ** head, u32 size, int aligned)
 {
-    struct ProcThreadList * it = *head;
-    struct ProcThreadList * free_task = NULL;
+	struct ProcThreadList * it = *head;
+	struct ProcThreadList * free_task = NULL;
 	OSThread * thread = NULL;
 	OSIntrMode irq_flag;
 
-    size = ALIGN_BYTE_AUTO(size, aligned);
-    irq_flag = OS_DisableInterrupts();
+	size = ALIGN_BYTE_AUTO(size, aligned);
+	irq_flag = OS_DisableInterrupts();
 
 	for (; it != NULL; it = it->next)
 	{

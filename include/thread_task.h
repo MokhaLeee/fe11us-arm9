@@ -4,10 +4,8 @@
 #include "nitro-sdk/OS_thread.h"
 
 #define ALIGN_BYTE_AUTO(n, a) (((u32)(n) + (a) - 1) & -(a))
-#define ALIGN_MEMORY_AUTO(pr) (ALIGN_BYTE_AUTO((u32)(pr) + sizeof(*(pr)), aligned) - ((u32)(pr) + sizeof(*(pr))))
+#define ALIGN_MEMORY_AUTO(pr, a) (ALIGN_BYTE_AUTO((u32)(pr) + sizeof(*(pr)), a) - ((u32)(pr) + sizeof(*(pr))))
 
-#define ALIGN_BYTE_AUTO2(n, a) (((u32)(n) + (a)) & -(a))
-#define ALIGN_MEMORY_AUTO2(pr) (ALIGN_BYTE_AUTO2((u32)(pr) + sizeof(*(pr)), aligned) - ((u32)(pr) + sizeof(*(pr))))
 
 struct ProcThreadList {
 	struct ProcThreadList * pre;
