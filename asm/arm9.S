@@ -1443,36 +1443,36 @@ ARM_FUNC_START func_020114DC
 func_020114DC:
 .incbin "fe11-arm9-base.bin", 0x114DC, 0x1153C - 0x114DC
 
-ARM_FUNC_START func_0201153C
-func_0201153C:
+ARM_FUNC_START FindMaxAllocableSize
+FindMaxAllocableSize:
 .incbin "fe11-arm9-base.bin", 0x1153C, 0x11574 - 0x1153C
 
-ARM_FUNC_START func_02011574
-func_02011574:
+ARM_FUNC_START AllocSpaceDirect
+AllocSpaceDirect:
 .incbin "fe11-arm9-base.bin", 0x11574, 0x1158C - 0x11574
 
-ARM_FUNC_START func_0201158C
-func_0201158C:
+ARM_FUNC_START AllocSpaceDirect_
+AllocSpaceDirect_:
 .incbin "fe11-arm9-base.bin", 0x1158C, 0x115A4 - 0x1158C
 
-ARM_FUNC_START func_020115A4
-func_020115A4:
+ARM_FUNC_START FreeAllocedSpaceDirect
+FreeAllocedSpaceDirect:
 .incbin "fe11-arm9-base.bin", 0x115A4, 0x115BC - 0x115A4
 
-ARM_FUNC_START func_020115BC
-func_020115BC:
+ARM_FUNC_START FreeAllocedSpaceDirect_
+FreeAllocedSpaceDirect_:
 .incbin "fe11-arm9-base.bin", 0x115BC, 0x115D4 - 0x115BC
 
-ARM_FUNC_START func_020115D4
-func_020115D4:
+ARM_FUNC_START InitSystemMemory
+InitSystemMemory:
 .incbin "fe11-arm9-base.bin", 0x115D4, 0x1160C - 0x115D4
 
-ARM_FUNC_START func_0201160C
-func_0201160C:
+ARM_FUNC_START FileExists
+FileExists:
 .incbin "fe11-arm9-base.bin", 0x1160C, 0x11650 - 0x1160C
 
-ARM_FUNC_START func_02011650
-func_02011650:
+ARM_FUNC_START GetFileSize
+GetFileSize:
 .incbin "fe11-arm9-base.bin", 0x11650, 0x116A0 - 0x11650
 
 ARM_FUNC_START func_020116A0
@@ -1727,8 +1727,8 @@ ARM_FUNC_START func_02013698
 func_02013698:
 .incbin "fe11-arm9-base.bin", 0x13698, 0x136BC - 0x13698
 
-ARM_FUNC_START func_020136BC
-func_020136BC:
+ARM_FUNC_START StartProc_020CAAE8
+StartProc_020CAAE8:
 .incbin "fe11-arm9-base.bin", 0x136BC, 0x13700 - 0x136BC
 
 ARM_FUNC_START func_02013700
