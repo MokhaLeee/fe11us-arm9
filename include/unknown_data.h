@@ -8,6 +8,7 @@
 
 extern u32 unk_20DD67C;
 extern struct UnkStruct_02197254 * unk_02197254;
+extern struct UnkStruct_02197240 * unk_02197240;
 extern struct UnkStruct_021E3324 * unk_021E3324;
 extern struct UnkStruct_021E3328 * unk_021E3328;
 extern void * unk_027E0004;

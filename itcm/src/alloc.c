@@ -260,8 +260,9 @@ void UnlinkThreadresource(struct ResourceList ** _unused_, struct ResourceList *
 	}
 }
 
-void * AllocSpace(struct ResourceList ** head, u32 size)
+void * AllocSpace(void *buf, u32 size)
 {
+	struct ResourceList ** head = buf;
 	struct ResourceList * it = *head;
 	struct ResourceList * free_resource = NULL;
 	void * ret = NULL;
@@ -286,8 +287,9 @@ void * AllocSpace(struct ResourceList ** head, u32 size)
 	return ret;
 }
 
-void * ReallocSpace(struct ResourceList ** head, u32 size)
+void * ReallocSpace(void *buf, u32 size)
 {
+	struct ResourceList ** head = buf;
 	struct ResourceList * it = *head;
 	struct ResourceList * free_resource = NULL;
 	void * ret = NULL;
@@ -309,8 +311,9 @@ void * ReallocSpace(struct ResourceList ** head, u32 size)
 	return ret;
 }
 
-void * AllocAligned(struct ResourceList ** head, u32 size, int aligned)
+void * AllocAligned(void *buf, u32 size, int aligned)
 {
+	struct ResourceList ** head = buf;
 	struct ResourceList * it = *head;
 	struct ResourceList * free_resource = NULL;
 	void * ret = NULL;
@@ -338,7 +341,7 @@ void * AllocAligned(struct ResourceList ** head, u32 size, int aligned)
 #if NONMATCHING
 
 NAKED_FUNCTION("https://decomp.me/scratch/0pcya")
-asm void * ReallocAligned(struct ResourceList ** head, u32 size, int aligned)
+asm void * ReallocAligned(void *buf, u32 size, int aligned)
 {
 	stmfd sp!, {r3-r11, lr}
 	mov r10, r0
@@ -388,8 +391,9 @@ _01FFBB80:
 }
 
 #else
-void * ReallocAligned(struct ResourceList ** head, u32 size, int aligned)
+void * ReallocAligned(void *buf, u32 size, int aligned)
 {
+	struct ResourceList ** head = buf;
 	struct ResourceList * it = *head;
 	struct ResourceList * free_resource = NULL;
 	void * ret = NULL;
@@ -420,8 +424,9 @@ void * ReallocAligned(struct ResourceList ** head, u32 size, int aligned)
 }
 #endif
 
-void ReleaseAllocResource(struct ResourceList ** head, void * pr)
+void ReleaseAllocResource(void *buf, void * pr)
 {
+	struct ResourceList ** head = buf;
 	struct ResourceList * it = *head;
 	OSIntrMode irq_flag;
 

@@ -61,11 +61,11 @@ void func_01FFA764(void);
 // ??? AllocDirect
 // ??? ReallocFromResource
 // ??? UnlinkThreadTask
-// void * AllocSpace(void * unk, int a);
-// ??? ReallocSpace
-// ??? AllocAligned
-// ??? ReallocAligned
-// void ReleaseAllocResource(void *, void *);
+void * AllocSpace(void *buf, u32 size);
+void * ReallocSpace(void *buf, u32 size);
+void * AllocAligned(void *buf, u32 size, int aligned);
+void * ReallocAligned(void *buf, u32 size, int aligned);
+void ReleaseAllocResource(void *buf, void * pr);
 
 /* proc.h */
 
@@ -459,16 +459,16 @@ void func_02010C84(void *);
 // ??? func_020113D0
 // ??? func_02011408
 void func_02011458(void);
-// ??? func_02011498
+void func_02011498(void *head, void *resource, int size);
 // ??? func_020114DC
-// ??? func_0201153C
-// ??? func_02011574
-// ??? func_0201158C
-void func_020115A4(struct UnkStruct_Func_200EDD4 * unk);
-// ??? func_020115BC
-void func_020115D4(void);
-// ??? func_0201160C
-// ??? func_02011650
+// ??? FindMaxAllocableSize
+// ??? AllocSpaceDirect
+// ??? AllocSpaceDirect_
+void FreeAllocedSpaceDirect(void *buf);
+// ??? FreeAllocedSpaceDirect_
+void InitSystemMemory(void);
+// ??? FileExists
+// ??? GetFileSize
 // ??? func_020116A0
 void func_0201177C(const char * str, u32 a);
 // ??? func_02011854
@@ -1001,8 +1001,8 @@ void func_0201FF20(void);
 // ??? func_020208B0
 // ??? func_02020994
 // ??? func_02020A2C
-// ??? func_02020BC0
-// ??? func_02020C0C
+void func_02020BC0(void *src, void *dst);
+int func_02020C0C(void *buf);
 // ??? func_02020C18
 // ??? func_02020C4C
 // ??? func_02020D70

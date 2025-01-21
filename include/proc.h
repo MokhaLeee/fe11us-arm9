@@ -241,8 +241,6 @@ extern struct Proc * gProcTreeRootArray[14];
 extern struct Proc * gProcAllocList[0x80 + 1];
 extern struct Proc gProcArray[0x80];
 
-extern u8 data_027e1b9c[];
-
 extern u32 data_020ce6ec;
 extern struct ProcCmd ProcScr_020ce6f0[];
 extern struct ProcCmd ProcScr_020ce710[];

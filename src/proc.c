@@ -1,10 +1,9 @@
 #include "global.h"
 #include "proc.h"
+#include "alloc.h"
 #include "nitro-sdk/OS_thread.h"
 
 #pragma force_active on
-
-void * AllocSpace(void * unk, int a);
 void ReleaseAllocResource(void *, void *);
 
 void Proc_Init(void)
@@ -610,7 +609,7 @@ BOOL ProcCmd_NewThread(struct Proc * proc)
         if (!OS_IsThreadTerminated(proc->thread))
             return FALSE;
 
-        ReleaseAllocResource(&data_027e1b9c, proc->thread);
+        ReleaseAllocResource(&AllocListHead, proc->thread);
 
         proc->thread = NULL;
         proc->proc_flags &= ~0x40;
@@ -621,7 +620,7 @@ BOOL ProcCmd_NewThread(struct Proc * proc)
     }
 
     func = proc->proc_scrCur->dataPtr;
-    thread = AllocSpace(&data_027e1b9c, 0x10c0);
+    thread = AllocSpace(&AllocListHead, 0x10c0);
     OS_CreateThread(thread, (void *)func, proc, ((void *)thread) + 0x10c0, 0x1000, 0x13);
 
     libfunc_unk_20A374C(thread, func_020194fc);

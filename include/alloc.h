@@ -16,6 +16,8 @@ struct ResourceList {
 	u8 unk_0F;
 };
 
+extern u8 AllocListHead[];
+
 void * AllocDirect(struct ResourceList ** head, struct ResourceList * task, u32 size, int align_byte);
 void * ReallocFromResource(struct ResourceList ** head, struct ResourceList * task, u32 size, int align_byte);
 void UnlinkThreadTask(struct ResourceList ** head, struct ResourceList * task);

@@ -28,12 +28,16 @@ SECTIONS
 		asm/code_02000FEC.o(.text);
 		src/main_loop.o(.text);
 		asm/code_0200F0F0.o(.text);
+		src/code_0201153C.o(.text);
+		asm/code_0201153C.o(.text);
 		src/code_02013634.o(.text);
 		asm/code_020136BC.o(.text);
 		src/proc.o(.text);
 		asm/code.o(.text);
 		src/menu.o(.text);
 		asm/code_02034C44.o(.text);
+		src/code_020374F4.o(.text);
+		asm/code_020374F4.o(.text);
 		src/unit.o(.text);
 		asm/unit.o(.text);
 		asm/code_0203DF78.o(.text);

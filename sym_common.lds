@@ -8,6 +8,7 @@
 . = 0x02190CEC - BSS_START; gProcTreeRootArray = .;
 . = 0x02190D24 - BSS_START; gProcAllocList = .;
 . = 0x02190F28 - BSS_START; gProcArray = .;
+. = 0x02197240 - BSS_START; unk_02197240 = .;
 . = 0x02197254 - BSS_START; unk_02197254 = .;
 . = 0x0219796C - BSS_START; unk_0219796C = .;
 . = 0x0219E20C - BSS_START; OSi_IrqCallbackInfo = .;
@@ -41,7 +42,7 @@
 . = 0x027E1260 - BSS_START; gClock = .;
 . = 0x027E1264 - BSS_START; unk_27E1264 = .;
 . = 0x027E1268 - BSS_START; prFreeSpace = .;
-. = 0x027E1B9C - BSS_START; data_027e1b9c = .;
+. = 0x027E1B9C - BSS_START; AllocListHead = .;
 . = 0x027E1BA0 - BSS_START; OSi_IrqThreadQueue = .;
 . = 0x027FFC00 - BSS_START; g_nds_bios_ram_h = .;
 . = 0x027FFF9C - BSS_START; HW_COMPONENT_PARAM = .;

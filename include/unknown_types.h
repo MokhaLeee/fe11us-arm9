@@ -119,4 +119,10 @@ struct UnkStruct_027E1268 {
     /* 1C */ u32 unk_1C;
 };
 
+struct UnkStruct_02197240 {
+    /* 00 */ u32 unk_00;
+    /* 04 */ u32 unk_04;
+    /* 08 */ u32 unk_08;
+};
+
 #endif // UNKNOWN_TYPES_H

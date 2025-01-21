@@ -6,7 +6,7 @@
 struct UnkStruct_Func_200EDD4 * func_0200EDD4(struct UnkStruct_Func_200EDD4 * unk)
 {
 	func_0200C49C(unk);
-	func_020115A4(unk);
+	FreeAllocedSpaceDirect(unk);
 
 	return unk;
 }
@@ -88,7 +88,7 @@ void InitSystem(void)
 
 	func_02019BD4();
 	func_02011458();
-	func_020115D4();
+	InitSystemMemory();
 	func_02015BD0();
 	Proc_Init();
 	func_0201BC28();
