@@ -199,13 +199,12 @@ int func_0201177C(const char *fpath, void *dst)
 	return ret;
 }
 
-#if 0
 void *func_02011854(const char *fpath, int flag)
 {
-	int ret;
-	int size, total, read_len;
-	FSFile file;
 	void *buf;
+	int size;
+    int total;
+	FSFile file;
 
 	FS_InitFile(&file);
 
@@ -220,10 +219,7 @@ void *func_02011854(const char *fpath, int flag)
 		buf = ReallocSpace((void *)AllocListHead, size);
 
 	for (total = 0; (size - total) != 0;) {
-		read_len = size - total;
-
-		if (read_len >= 0x2800)
-			read_len = 0x2800;
+        s32 read_len = size - total >= 0x2800 ? 0x2800 : size - total;
 
 		if (read_len != FS_ReadFile(&file, buf + total, read_len))
 			return 0;
@@ -234,4 +230,3 @@ void *func_02011854(const char *fpath, int flag)
 	FS_CloseFile(&file);
 	return buf;
 }
-#endif
