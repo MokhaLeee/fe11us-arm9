@@ -1,13 +1,6 @@
 .include "macros.inc"
 .section .text
 
-ARM_FUNC_START func_020116A0
-func_020116A0:
-.incbin "fe11-arm9-base.bin", 0x116A0, 0x1177C - 0x116A0
-
-ARM_FUNC_START func_0201177C
-func_0201177C:
-.incbin "fe11-arm9-base.bin", 0x1177C, 0x11854 - 0x1177C
 
 ARM_FUNC_START func_02011854
 func_02011854:

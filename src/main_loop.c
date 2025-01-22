@@ -87,7 +87,7 @@ void InitSystem(void)
 	prFreeSpace = tmp;
 
 	func_02019BD4();
-	func_02011458();
+	InitSystemHeap();
 	InitSystemMemory();
 	func_02015BD0();
 	Proc_Init();

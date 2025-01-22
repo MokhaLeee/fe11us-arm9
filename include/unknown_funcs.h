@@ -458,19 +458,19 @@ void func_02010C84(void *);
 // ??? func_0201122C
 // ??? func_020113D0
 // ??? func_02011408
-void func_02011458(void);
-void func_02011498(void *head, void *resource, int size);
-// ??? func_020114DC
-// ??? FindMaxAllocableSize
-// ??? AllocSpaceDirect
-// ??? AllocSpaceDirect_
+void InitSystemHeap(void);
+void InitHeapList(void *head, void *resource, int size);
+int func_020114DC(void *head, void *pr_buf);
+int FindMaxAllocableSize(void *head);
+void *AllocSpaceDirect(int size);
+void *AllocSpaceDirect_(int size);
 void FreeAllocedSpaceDirect(void *buf);
-// ??? FreeAllocedSpaceDirect_
+void FreeAllocedSpaceDirect_(void *pr);
 void InitSystemMemory(void);
-// ??? FileExists
-// ??? GetFileSize
-// ??? func_020116A0
-void func_0201177C(const char * str, u32 a);
+BOOL FileExists(const char *fpath);
+int GetFileSize(const char *fpath);
+int func_020116A0(const char *fpath, void *dst, int size, int offset);
+int func_0201177C(const char *fpath, void *dst);
 // ??? func_02011854
 // ??? func_02011920
 // ??? func_02011A30
