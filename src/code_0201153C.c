@@ -198,3 +198,40 @@ int func_0201177C(const char *fpath, void *dst)
 	ReleaseAllocResource((void *)AllocListHead, buf);
 	return ret;
 }
+
+#if 0
+void *func_02011854(const char *fpath, int flag)
+{
+	int ret;
+	int size, total, read_len;
+	FSFile file;
+	void *buf;
+
+	FS_InitFile(&file);
+
+	if (FS_OpenFile(&file, fpath) == FALSE)
+		return 0;
+
+	size = file.prop.file.bottom - file.prop.file.top;
+
+	if (flag)
+		buf = AllocSpace((void *)AllocListHead, size);
+	else
+		buf = ReallocSpace((void *)AllocListHead, size);
+
+	for (total = 0; (size - total) != 0;) {
+		read_len = size - total;
+
+		if (read_len >= 0x2800)
+			read_len = 0x2800;
+
+		if (read_len != FS_ReadFile(&file, buf + total, read_len))
+			return 0;
+
+		total += read_len;
+	}
+
+	FS_CloseFile(&file);
+	return buf;
+}
+#endif
