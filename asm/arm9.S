@@ -1431,12 +1431,12 @@ ARM_FUNC_START func_02011408
 func_02011408:
 .incbin "fe11-arm9-base.bin", 0x11408, 0x11458 - 0x11408
 
-ARM_FUNC_START func_02011458
-func_02011458:
+ARM_FUNC_START InitSystemHeap
+InitSystemHeap:
 .incbin "fe11-arm9-base.bin", 0x11458, 0x11498 - 0x11458
 
-ARM_FUNC_START func_02011498
-func_02011498:
+ARM_FUNC_START InitHeapList
+InitHeapList:
 .incbin "fe11-arm9-base.bin", 0x11498, 0x114DC - 0x11498
 
 ARM_FUNC_START func_020114DC
