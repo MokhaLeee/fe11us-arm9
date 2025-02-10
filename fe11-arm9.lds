@@ -44,6 +44,8 @@ SECTIONS
 		src/code_02078808.o(.text);
 		asm/code_0207884C.o(.text);
 		asm/code_02078878.o(.text);
+		src/wm.o(.text);
+		asm/wm.o(.text);
 		asm/code_sdk.o(.text);
 
 		/* rodata */

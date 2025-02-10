@@ -11,6 +11,8 @@
 . = 0x02197240 - BSS_START; unk_02197240 = .;
 . = 0x02197254 - BSS_START; unk_02197254 = .;
 . = 0x0219796C - BSS_START; unk_0219796C = .;
+. = 0x02199EF0 - BSS_START; unk_02199EF0 = .;
+. = 0x02199EFC - BSS_START; unk_02199EF0_mutex = .;
 . = 0x0219E20C - BSS_START; OSi_IrqCallbackInfo = .;
 . = 0x0219E294 - BSS_START; OSi_ThreadInfo = .;
 . = 0x0219E5AC - BSS_START; unk_0219E5AC = .;
