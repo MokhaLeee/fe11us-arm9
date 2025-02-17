@@ -2,6 +2,7 @@
 #define UNKNOWN_FUNCS_H
 
 #include "nitro/types.h"
+#include "nitro-sdk/OS_mutex.h"
 #include "proc.h"
 
 /**
@@ -3294,7 +3295,7 @@ void func_02070480(void);
 // ??? func_02095E18
 // ??? func_02096028
 // ??? func_02096058
-// ??? func_020960F4
+void *func_020960F4(void);
 // ??? func_02096104
 // ??? func_02096224
 // ??? func_020963BC
@@ -3330,8 +3331,9 @@ void func_02070480(void);
 // ??? func_02097BCC
 // ??? func_02097BEC
 // ??? func_02097D74
-// ??? func_02097DC8
-// ??? func_02097E18
+BOOL func_02097DC8(OSMutex *mutex);
+void func_02097DB4(void *arg);
+void func_02097E18(OSMutex *mutex);
 // ??? func_02097E50
 // ??? func_02097E7C
 // ??? func_02097EC0
@@ -4136,6 +4138,7 @@ void CARD_SetThreadPriority(int a);
 // ??? WM_SetMPParameter
 // ??? func_020B00F4
 // ??? WM_StartDCF
+int WM_SetDCFData(void (*callback)(void *arg), const u8 *destAdr, const u16 *sendData, u16 sendDataSize);
 // ??? WM_SetDCFData
 // ??? WM_EndDCF
 // ??? WM_StartDataSharing

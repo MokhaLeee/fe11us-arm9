@@ -1,8 +1,7 @@
 #include "global.h"
 #include "nitro-sdk/OS_mutex.h"
-
-static u8 inited;
-static 
+#include "nitro-sdk/FSi_util.h"
+#include "nitro-sdk/OS_thread.h"
 
 struct struct_unk_02199EF0 {
 	/* 00 */ u8 inited;
@@ -50,22 +49,45 @@ void func_02097A84(struct UnkStruct_Func_02097A84 *unk)
 		unk_02199EF0.func(&unk->unk_1E, &unk->unk_18, &unk->unk_2C, unk->unk_06);
 }
 
-#if 0
 void func_02097AB8(void)
 {
-	void *buf = func_020960F4();
+	struct UnkStruct_02197EEC *buf;
+	int ret;
 
-	if (buf) {
-		struct UnkStruct_02199EEC *unk = buf + 0x2000;
+	buf = func_020960F4();
+	if (buf == NULL)
+		return;
 
-		if (unk->unk_260 == 9)
-			return;
+	if (buf->ent.unk_260 != 9)
+		return;
 
-		if (unk->unk_26B == TRUE)
-			return;
+	if (buf->ent.unk_26B == TRUE)
+		return;
 
-		if (func_02097DC8(&unk_02199EF0.mutex) == FALSE)
-			return;
-	}
+	if (func_02097DC8(&unk_02199EF0_mutex) == FALSE)
+		return;
+
+	ret = WM_SetDCFData(func_02097DB4, buf->ent.dest_addr, buf->send_data, 0);
+	if (ret != 2)
+		func_02097E18(&unk_02199EF0_mutex);
 }
-#endif
+
+void *func_02097B28(void)
+{
+	OSIntrMode irq_flag;
+	struct UnkStruct_02197EEC *buf;
+	void *ret = NULL;
+
+	buf = func_020960F4();
+
+	irq_flag = OS_DisableInterrupts();
+
+	if (buf != NULL)
+	{
+		if (buf->ent.unk_260 == 9 && buf->ent.unk_26B == FALSE)
+			ret = &buf->ent.dest_addr;
+	}
+
+	OS_RestoreInterrupts(irq_flag);
+	return ret;
+}

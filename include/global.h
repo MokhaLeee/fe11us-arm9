@@ -2,6 +2,7 @@
 #define GLOBAL_H
 
 #define ARM9
+#define SDK_ARM9 1
 
 #include "nitro/types.h"
 

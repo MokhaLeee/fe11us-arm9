@@ -1,15 +1,6 @@
 .include "macros.inc"
 .section .text
 
-
-ARM_FUNC_START func_02097AB8
-func_02097AB8:
-.incbin "fe11-arm9-base.bin", 0x97AB8, 0x97B28 - 0x97AB8
-
-ARM_FUNC_START func_02097B28
-func_02097B28:
-.incbin "fe11-arm9-base.bin", 0x97B28, 0x97B6C - 0x97B28
-
 ARM_FUNC_START func_02097B6C
 func_02097B6C:
 .incbin "fe11-arm9-base.bin", 0x97B6C, 0x97BCC - 0x97B6C
@@ -24,7 +15,11 @@ func_02097BEC:
 
 ARM_FUNC_START func_02097D74
 func_02097D74:
-.incbin "fe11-arm9-base.bin", 0x97D74, 0x97DC8 - 0x97D74
+.incbin "fe11-arm9-base.bin", 0x97D74, 0x97DB4 - 0x97D74
+
+ARM_FUNC_START func_02097DB4
+func_02097DB4:
+.incbin "fe11-arm9-base.bin", 0x97DB4, 0x97DC8 - 0x97DB4
 
 ARM_FUNC_START func_02097DC8
 func_02097DC8:

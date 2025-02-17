@@ -125,4 +125,21 @@ struct UnkStruct_02197240 {
     /* 08 */ u32 unk_08;
 };
 
+struct UnkStruct_02199EEC {
+    STRUCT_PAD(0x000, 0x144);
+
+    /* 144 */ u8 dest_addr[0x260 - 0x144];
+    /* 260 */ int unk_260;
+
+    STRUCT_PAD(0x264, 0x26B);
+
+    /* 26B */ u8 unk_26B;
+};
+
+struct UnkStruct_02197EEC {
+    STRUCT_PAD(0x0000, 0x0F00);
+    /* 0F00 */ u16 send_data[(0x2000 - 0x0F00) / 2];
+    struct UnkStruct_02199EEC ent;
+};
+
 #endif // UNKNOWN_TYPES_H
