@@ -38,6 +38,8 @@ SECTIONS
 		asm/code_02019BD4.o(.text);
 		src/code_0201F608.o(.text);
 		asm/code.o(.text);
+		src/code_02020804.o(.text);
+		asm/code_02020804.o(.text);
 		src/menu.o(.text);
 		asm/code_02034C44.o(.text);
 		src/code_020374F4.o(.text);
