@@ -2484,8 +2484,8 @@ void func_02034C44(int a, int b, int c);
 // ??? func_0206E69C
 // ??? func_0206E724
 // ??? func_0206E768
-// ??? func_0206E7B8
-// ??? func_0206E7F4
+void local_strncpy(char *dst, const char *src, int size);
+void local_strncat(char *dst, const char *src, int size);
 // ??? func_0206E8D0
 // ??? func_0206E95C
 // ??? func_0206EA7C
