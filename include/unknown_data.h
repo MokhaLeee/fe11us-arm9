@@ -19,5 +19,7 @@ extern vu32 gClock;
 extern vu32 unk_27E1264;
 extern struct UnkStruct_027E1268 * prFreeSpace;
 extern u32 unk_02194B2C[];
+extern struct UnkStruct_02195778 unk_02195778[];
+extern struct UnkStruct_02196B2C unk_02196B2C;
 
 #endif // UNKNOWN_DATA_H

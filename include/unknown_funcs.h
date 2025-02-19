@@ -915,10 +915,10 @@ void func_0201da48(struct Proc * proc, u16 data, u32 flag);
 void func_0201DA98(struct Proc * proc, u16 data, u32 flag);
 // ??? func_0201DAE8
 // ??? func_0201DB24
-// ??? func_0201DB38
+void func_0201DB38(void (*func)(ProcPtr proc), int a, int b, int c, int d);
 // ??? func_0201DC04
 // ??? func_0201DC14
-// ??? func_0201DC30
+void func_0201DC30(int a);
 // ??? func_0201DC58
 // ??? func_0201DCA8
 // ??? func_0201DCF0
@@ -936,12 +936,13 @@ void func_0201DA98(struct Proc * proc, u16 data, u32 flag);
 // ??? func_0201E950
 // ??? func_0201EC14
 // ??? func_0201EEE4
-// ??? func_0201EF94
-// ??? func_0201F100
+void func_0201EF94(void *data, int a, int b);
+void func_0201F100(void *data, int a);
 // ??? func_0201F170
 // ??? func_0201F270
 void func_0201F364(void *unk, int a);
 // ??? func_0201F3AC
+void func_0201F3C8(ProcPtr proc);
 void func_0201F3DC(void);
 // ??? func_0201F4C4
 // ??? func_0201F4FC
@@ -961,8 +962,8 @@ void func_0201F3DC(void);
 // ??? func_0201F794
 // ??? func_0201F7DC
 // ??? func_0201F80C
-// ??? func_0201F840
-// ??? func_0201F8A0
+int func_0201F840(int a, int b);
+// ??? func_unk_hang_0201F8A0
 // ??? func_0201FE00
 // ??? func_0201FE14
 // ??? func_0201FE40

@@ -142,4 +142,22 @@ struct UnkStruct_02197EEC {
     struct UnkStruct_02199EEC ent;
 };
 
+struct UnkStruct_02196B2C {
+    STRUCT_PAD(0x00, 0x4C);
+
+    /* 4C */ int unk_4C;
+    /* 50 */ u8 unk_50;
+    /* 51 */ u8 unk_51;
+    /* 52 */ u8 unk_52;
+    /* 53 */ u8 unk_53;
+};
+
+struct UnkStruct_02195778 {
+    u16 unk_00;
+    u8 unk_02;
+    int unk_04;
+
+    STRUCT_PAD(0x08, 0x28);
+};
+
 #endif // UNKNOWN_TYPES_H

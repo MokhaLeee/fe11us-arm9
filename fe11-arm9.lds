@@ -32,6 +32,8 @@ SECTIONS
 		asm/code_0201153C.o(.text);
 		src/code_02013634.o(.text);
 		asm/code_020136BC.o(.text);
+		src/code_02013F80.o(.text);
+		asm/code_02013F80.o(.text);
 		src/proc.o(.text);
 		asm/code_02019BD4.o(.text);
 		src/code_0201F608.o(.text);

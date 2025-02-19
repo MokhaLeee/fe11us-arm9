@@ -1,73 +1,25 @@
 .include "macros.inc"
 .section .text
 
-ARM_FUNC_START func_0201F620
-func_0201F620:
-.incbin "fe11-arm9-base.bin", 0x1F620, 0x1F648 - 0x1F620
-
-ARM_FUNC_START func_0201F648
-func_0201F648:
-.incbin "fe11-arm9-base.bin", 0x1F648, 0x1F668 - 0x1F648
-
-ARM_FUNC_START func_0201F668
-func_0201F668:
-.incbin "fe11-arm9-base.bin", 0x1F668, 0x1F680 - 0x1F668
-
-ARM_FUNC_START func_0201F680
-func_0201F680:
-.incbin "fe11-arm9-base.bin", 0x1F680, 0x1F690 - 0x1F680
-
-ARM_FUNC_START func_0201F690
-func_0201F690:
-.incbin "fe11-arm9-base.bin", 0x1F690, 0x1F6A0 - 0x1F690
-
-ARM_FUNC_START func_0201F6A0
-func_0201F6A0:
-.incbin "fe11-arm9-base.bin", 0x1F6A0, 0x1F6B0 - 0x1F6A0
-
-ARM_FUNC_START func_0201F6B0
-func_0201F6B0:
-.incbin "fe11-arm9-base.bin", 0x1F6B0, 0x1F6C0 - 0x1F6B0
-
-ARM_FUNC_START func_0201F6C0
-func_0201F6C0:
-.incbin "fe11-arm9-base.bin", 0x1F6C0, 0x1F6CC - 0x1F6C0
-
-ARM_FUNC_START func_0201F6CC
-func_0201F6CC:
-.incbin "fe11-arm9-base.bin", 0x1F6CC, 0x1F6DC - 0x1F6CC
-
-ARM_FUNC_START func_0201F6DC
-func_0201F6DC:
-.incbin "fe11-arm9-base.bin", 0x1F6DC, 0x1F748 - 0x1F6DC
-
-ARM_FUNC_START func_0201F748
-func_0201F748:
-.incbin "fe11-arm9-base.bin", 0x1F748, 0x1F760 - 0x1F748
-
-ARM_FUNC_START func_0201F760
-func_0201F760:
-.incbin "fe11-arm9-base.bin", 0x1F760, 0x1F794 - 0x1F760
-
-ARM_FUNC_START func_0201F794
-func_0201F794:
-.incbin "fe11-arm9-base.bin", 0x1F794, 0x1F7DC - 0x1F794
-
-ARM_FUNC_START func_0201F7DC
-func_0201F7DC:
-.incbin "fe11-arm9-base.bin", 0x1F7DC, 0x1F80C - 0x1F7DC
-
-ARM_FUNC_START func_0201F80C
-func_0201F80C:
-.incbin "fe11-arm9-base.bin", 0x1F80C, 0x1F840 - 0x1F80C
-
 ARM_FUNC_START func_0201F840
 func_0201F840:
 .incbin "fe11-arm9-base.bin", 0x1F840, 0x1F8A0 - 0x1F840
 
-ARM_FUNC_START func_0201F8A0
-func_0201F8A0:
-.incbin "fe11-arm9-base.bin", 0x1F8A0, 0x1FE00 - 0x1F8A0
+ARM_FUNC_START func_unk_hang_0201F8A0
+func_unk_hang_0201F8A0:
+.incbin "fe11-arm9-base.bin", 0x1F8A0, 0x1FD08 - 0x1F8A0
+
+ARM_FUNC_START func_0201FD08
+func_0201FD08:
+.incbin "fe11-arm9-base.bin", 0x1FD08, 0x1FD44 - 0x1FD08
+
+ARM_FUNC_START func_0201FD44
+func_0201FD44:
+.incbin "fe11-arm9-base.bin", 0x1FD44, 0x1FDFC - 0x1FD44
+
+ARM_FUNC_START func_0201FDFC
+func_0201FDFC:
+.incbin "fe11-arm9-base.bin", 0x1FDFC, 0x1FE00 - 0x1FDFC
 
 ARM_FUNC_START func_0201FE00
 func_0201FE00:

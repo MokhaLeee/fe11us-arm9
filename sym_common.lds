@@ -9,6 +9,8 @@
 . = 0x02190D24 - BSS_START; gProcAllocList = .;
 . = 0x02190F28 - BSS_START; gProcArray = .;
 . = 0x02194B2C - BSS_START; unk_02194B2C = .;
+. = 0x02195778 - BSS_START; unk_02195778 = .;
+. = 0x02196B2C - BSS_START; unk_02196B2C = .;
 . = 0x02197240 - BSS_START; unk_02197240 = .;
 . = 0x02197254 - BSS_START; unk_02197254 = .;
 . = 0x0219796C - BSS_START; unk_0219796C = .;
