@@ -493,7 +493,7 @@ void func_02012124(void);
 // ??? func_02012174
 // ??? func_02012180
 // ??? func_02012190
-// ??? func_020121C0
+int func_020121C0(void);
 // ??? func_02012264
 // ??? func_02012298
 // ??? func_02012334
@@ -535,9 +535,9 @@ void func_02013658(struct Proc * proc);
 void func_02013698(struct Proc * proc);
 // ??? StartProc_020CAAE8
 void func_02013700(void *);
-// ??? func_02013868
+void *func_02013868(void);
 void func_02013874(void (*func)(void *));
-// ??? func_020138D0
+void *func_020138D0(void);
 BOOL func_020138DC(void (*func)(void *));
 // ??? func_0201394C
 void func_02013A04(void (*func)(void *), ProcPtr proc);
@@ -2776,7 +2776,7 @@ void func_02070480(void);
 // ??? func_0207CD24
 // ??? func_0207CD68
 // ??? func_0207CD80
-// ??? func_0207CFB8
+BOOL func_0207CFB8(void);
 // ??? func_0207CFEC
 // ??? func_0207D1A4
 // ??? func_0207D35C
@@ -2958,7 +2958,7 @@ void func_02070480(void);
 // ??? func_0208816C
 // ??? func_020881A4
 // ??? func_020881C0
-// ??? func_020881DC
+int func_020881DC(void *);
 // ??? func_020881E8
 // ??? func_02088200
 // ??? func_02088224
@@ -2967,10 +2967,10 @@ void func_02070480(void);
 // ??? func_020882A0
 // ??? func_020882D0
 // ??? func_02088300
-// ??? func_02088388
+void func_02088388(void *, void *, void *);
 // ??? func_020883A8
 // ??? func_020883EC
-// ??? func_02088440
+void func_02088440(int a);
 // ??? func_02088460
 // ??? func_020884D0
 // ??? func_02088560
@@ -2978,7 +2978,7 @@ void func_02070480(void);
 // ??? func_020886A0
 // ??? func_0208870C
 // ??? func_02088724
-// ??? func_02088734
+BOOL func_02088734(void *buf);
 // ??? func_0208874C
 // ??? func_02088758
 // ??? func_02088764
@@ -2987,11 +2987,11 @@ void func_02070480(void);
 // ??? func_02088840
 // ??? func_02088898
 // ??? func_020888BC
-// ??? func_0208890C
+u64 func_0208890C(void *);
 // ??? func_02088934
-// ??? func_02088994
-// ??? func_020889C8
-// ??? func_02088A04
+int func_02088994(void *);
+void func_020889C8(void *a, void *b, void *c);
+void func_02088A04(void *, void *);
 // ??? func_02088A58
 // ??? func_02088A8C
 // ??? func_02088AA4
@@ -4504,5 +4504,6 @@ void func_020C4D28(void);
 
 void unk_020EF27C(void *);
 void unk_020EF2FC(void *);
+int func_02206544(int);
 
 #endif // UNKNOWN_FUNCS_H

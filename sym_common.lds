@@ -35,6 +35,7 @@
 
 . = 0x021E3324 - BSS_START; unk_021E3324 = .;
 . = 0x021E3328 - BSS_START; unk_021E3328 = .;
+. = 0x02206544 - BSS_START; func_02206544 = .;
 
 /* arm9_data */
 . = 0x027E0000 - BSS_START; SDK_AUTOLOAD_DTCM_START = .;

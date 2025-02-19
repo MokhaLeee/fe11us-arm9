@@ -1603,16 +1603,16 @@ ARM_FUNC_START OS_SPrintf
 OS_SPrintf:
 .incbin "fe11-arm9-base.bin", 0xA2BF8, 0xA2C20 - 0xA2BF8
 
-ARM_FUNC_START libfunc_unk_20A2C20
-libfunc_unk_20A2C20:
+ARM_FUNC_START OS_VSPrintf
+OS_VSPrintf:
 .incbin "fe11-arm9-base.bin", 0xA2C20, 0xA2C38 - 0xA2C20
 
-ARM_FUNC_START libfunc_unk_20A2C38
-libfunc_unk_20A2C38:
+ARM_FUNC_START OS_SNPrintf
+OS_SNPrintf:
 .incbin "fe11-arm9-base.bin", 0xA2C38, 0xA2C60 - 0xA2C38
 
-ARM_FUNC_START libfunc_unk_20A2C60
-libfunc_unk_20A2C60:
+ARM_FUNC_START OS_VSNPrintf
+OS_VSNPrintf:
 .incbin "fe11-arm9-base.bin", 0xA2C60, 0xA2C6C - 0xA2C60
 
 ARM_FUNC_START OSi_GetUnusedThreadId
