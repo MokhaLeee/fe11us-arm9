@@ -47,6 +47,8 @@ SECTIONS
 		src/unit.o(.text);
 		asm/unit.o(.text);
 		asm/code_0203DF78.o(.text);
+		src/code_020492F4.o(.text);
+		asm/code_020492F4.o(.text);
 		src/code_0206E7B8.o(.text);
 		asm/code_0206E7B8.o(.text);
 		src/code_02078808.o(.text);
