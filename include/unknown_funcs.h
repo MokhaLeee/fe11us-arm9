@@ -940,6 +940,7 @@ void func_0201DA98(struct Proc * proc, u16 data, u32 flag);
 // ??? func_0201F100
 // ??? func_0201F170
 // ??? func_0201F270
+void func_0201F364(void *unk, int a);
 // ??? func_0201F3AC
 void func_0201F3DC(void);
 // ??? func_0201F4C4

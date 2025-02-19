@@ -5,6 +5,30 @@
 #include "nitro-sdk/FS_file.h"
 #include "alloc.h"
 
+#if 0
+struct UnkStruct_func_02011408 {
+	/* 00 */ u16 unk_00;
+	/* 02 */ u16 unk_02;
+	/* 04 */ u16 unk_04;
+
+	STRUCT_PAD(0x06, 0x40);
+
+	/* 40 */ u16 unk_40;
+	/* 42 */ u16 unk_42;
+	/* 44 */ u16 unk_44;
+};
+
+void func_02011408(struct UnkStruct_func_02011408 *buf, int a, int b)
+{
+	buf->unk_00 = (a + 0) | (u16)(b << 12);
+	buf->unk_02 = (a + 1) | (u16)(b << 12);
+	buf->unk_04 = (a + 4) | (u16)(b << 12);
+	buf->unk_40 = (a + 2) | (u16)(b << 12);
+	buf->unk_42 = (a + 3) | (u16)(b << 12);
+	buf->unk_44 = (a + 5) | (u16)(b << 12);
+}
+#endif
+
 void InitSystemHeap(void)
 {
 	void *lo = OS_GetArenaLo(0);
