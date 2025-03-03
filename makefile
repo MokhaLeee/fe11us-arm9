@@ -34,6 +34,7 @@ MW_INC_FLAG  := $(foreach dir, $(INC_DIRS), -i $(dir))
 ARM_INC_FLAG := $(foreach dir, $(INC_DIRS), -I $(dir))
 
 MW_CFLAGS  := $(MW_INC_FLAG) -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa -w iserr
+MW_CPPFLAGS := $(MW_INC_FLAG) 
 MW_ASFLAGS := $(MW_INC_FLAG) -proc arm5te
 
 ARM_ASFLAGS := -mcpu=arm9tdmi
