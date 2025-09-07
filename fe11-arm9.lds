@@ -85,6 +85,8 @@ SECTIONS
 	. = main_end;
 	BSS : ALIGN(4)
 	{
-		INCLUDE "sym_common.lds"
+		INCLUDE "lds/bss.lds"
+		INCLUDE "lds/ov.lds"
+		INCLUDE "lds/data.lds"
 	}
 }

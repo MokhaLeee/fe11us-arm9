@@ -8,7 +8,7 @@ ram_copy_start:
 .4byte 0x027E1B48
 .4byte 0x027E1AF4
 
-.incbin "fe11-arm9-base.bin", 0xE8990, 0xE8A60 - 0xE8990
+.incbin "roms/fe11-arm9-base.bin", 0xE8990, 0xE8A60 - 0xE8990
 
 .global SDK_AUTOLOAD_LIST
 SDK_AUTOLOAD_LIST:

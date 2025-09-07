@@ -48,6 +48,11 @@ DATA_SRCS := $(shell find $(DATA_DIR) -name *.S)
 # = Targets =
 # ===========
 
+BASE_ROM_ARM9 := roms/fe11-arm9-base.bin
+BASE_ROM_OV0  := roms/overlay0-base.bin
+BASE_ROM_OV2  := roms/overlay2-base.bin
+BASE_ROM_OV4  := roms/overlay4-base.bin
+
 ROM := $(BUILD_NAME).bin
 ELF := $(ROM:%.bin=%.elf)
 MAP := $(ROM:%.bin=%.map)
@@ -117,7 +122,7 @@ $(ROM): $(ELF)
 
 compare: $(ROM)
 #	$(SHASUM) -c fe11-arm9.sha1
-	@python3 tools/scripts/fix_diff.py $(BUILD_NAME)-base.bin $(BUILD_NAME).bin
+	@python3 tools/scripts/fix_diff.py $(BASE_ROM_ARM9) $(ROM)
 
 CLEAN_FILES += $(ROM) $(ELF) $(MAP)
 
