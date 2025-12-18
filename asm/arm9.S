@@ -1773,11 +1773,47 @@ func_02013EF0:
 
 ARM_FUNC_START func_02013F80
 func_02013F80:
-.incbin "fe11-arm9-base.bin", 0x13F80, 0x1409C - 0x13F80
+.incbin "fe11-arm9-base.bin", 0x13F80, 0x13FBC - 0x13F80
+
+ARM_FUNC_START func_02013FBC
+func_02013FBC:
+.incbin "fe11-arm9-base.bin", 0x13FBC, 0x13FFC - 0x13FBC
+
+ARM_FUNC_START func_02013FFC
+func_02013FFC:
+.incbin "fe11-arm9-base.bin", 0x13FFC, 0x14034 - 0x13FFC
+
+ARM_FUNC_START func_2014034
+func_2014034:
+.incbin "fe11-arm9-base.bin", 0x14034, 0x14050 - 0x14034
+
+ARM_FUNC_START sub_2014050
+sub_2014050:
+.incbin "fe11-arm9-base.bin", 0x14050, 0x14074 - 0x14050
+
+ARM_FUNC_START func_02014074
+func_02014074:
+.incbin "fe11-arm9-base.bin", 0x14074, 0x14080 - 0x14074
+
+ARM_FUNC_START func_02014080
+func_02014080:
+.incbin "fe11-arm9-base.bin", 0x14080, 0x1409C - 0x14080
 
 ARM_FUNC_START func_0201409C
 func_0201409C:
-.incbin "fe11-arm9-base.bin", 0x1409C, 0x140FC - 0x1409C
+.incbin "fe11-arm9-base.bin", 0x1409C, 0x140B4 - 0x1409C
+
+ARM_FUNC_START func_020140B4
+func_020140B4:
+.incbin "fe11-arm9-base.bin", 0x140B4, 0x140C4 - 0x140B4
+
+ARM_FUNC_START func_020140C4
+func_020140C4:
+.incbin "fe11-arm9-base.bin", 0x140C4, 0x140E8 - 0x140C4
+
+ARM_FUNC_START func_020140E8
+func_020140E8:
+.incbin "fe11-arm9-base.bin", 0x140E8, 0x140FC - 0x140E8
 
 ARM_FUNC_START func_020140FC
 func_020140FC:
@@ -3205,7 +3241,23 @@ func_0201CC84:
 
 ARM_FUNC_START func_0201D370
 func_0201D370:
-.incbin "fe11-arm9-base.bin", 0x1D370, 0x1D728 - 0x1D370
+.incbin "fe11-arm9-base.bin", 0x1D370, 0x1D6F8 - 0x1D370
+
+ARM_FUNC_START func_0201D6F8
+func_0201D6F8:
+.incbin "fe11-arm9-base.bin", 0x1D6F8, 0x1D704 - 0x1D6F8
+
+ARM_FUNC_START func_0201D704
+func_0201D704:
+.incbin "fe11-arm9-base.bin", 0x1D704, 0x1D710 - 0x1D704
+
+ARM_FUNC_START func_0201D710
+func_0201D710:
+.incbin "fe11-arm9-base.bin", 0x1D710, 0x1D71C - 0x1D710
+
+ARM_FUNC_START func_0201D71C
+func_0201D71C:
+.incbin "fe11-arm9-base.bin", 0x1D71C, 0x1D728 - 0x1D71C
 
 ARM_FUNC_START func_0201D728
 func_0201D728:
@@ -3361,11 +3413,19 @@ func_0201F170:
 
 ARM_FUNC_START func_0201F270
 func_0201F270:
-.incbin "fe11-arm9-base.bin", 0x1F270, 0x1F3AC - 0x1F270
+.incbin "fe11-arm9-base.bin", 0x1F270, 0x1F364 - 0x1F270
+
+ARM_FUNC_START func_0201F364
+func_0201F364:
+.incbin "fe11-arm9-base.bin", 0x1F364, 0x1F3AC - 0x1F364
 
 ARM_FUNC_START func_0201F3AC
 func_0201F3AC:
-.incbin "fe11-arm9-base.bin", 0x1F3AC, 0x1F3DC - 0x1F3AC
+.incbin "fe11-arm9-base.bin", 0x1F3AC, 0x1F3C8 - 0x1F3AC
+
+ARM_FUNC_START func_0201F3C8
+func_0201F3C8:
+.incbin "fe11-arm9-base.bin", 0x1F3C8, 0x1F3DC - 0x1F3C8
 
 ARM_FUNC_START func_0201F3DC
 func_0201F3DC:
@@ -3447,9 +3507,21 @@ ARM_FUNC_START func_0201F840
 func_0201F840:
 .incbin "fe11-arm9-base.bin", 0x1F840, 0x1F8A0 - 0x1F840
 
-ARM_FUNC_START func_0201F8A0
-func_0201F8A0:
-.incbin "fe11-arm9-base.bin", 0x1F8A0, 0x1FE00 - 0x1F8A0
+ARM_FUNC_START func_unk_hang_0201F8A0
+func_unk_hang_0201F8A0:
+.incbin "fe11-arm9-base.bin", 0x1F8A0, 0x1FD08 - 0x1F8A0
+
+ARM_FUNC_START func_0201FD08
+func_0201FD08:
+.incbin "fe11-arm9-base.bin", 0x1FD08, 0x1FD44 - 0x1FD08
+
+ARM_FUNC_START func_0201FD44
+func_0201FD44:
+.incbin "fe11-arm9-base.bin", 0x1FD44, 0x1FDFC - 0x1FD44
+
+ARM_FUNC_START func_0201FDFC
+func_0201FDFC:
+.incbin "fe11-arm9-base.bin", 0x1FDFC, 0x1FE00 - 0x1FDFC
 
 ARM_FUNC_START func_0201FE00
 func_0201FE00:
@@ -3581,22 +3653,26 @@ func_0202079C:
 
 ARM_FUNC_START func_02020804
 func_02020804:
-.incbin "fe11-arm9-base.bin", 0x20804, 0x20824 - 0x20804
+.incbin "fe11-arm9-base.bin", 0x20804, 0x20820 - 0x20804
+
+ARM_FUNC_START func_02020820
+func_02020820:
+.incbin "fe11-arm9-base.bin", 0x20820, 0x20824 - 0x20820
 
 ARM_FUNC_START func_02020824
 func_02020824:
 .incbin "fe11-arm9-base.bin", 0x20824, 0x20838 - 0x20824
 
-ARM_FUNC_START func_02020838
-func_02020838:
+ARM_FUNC_START local_udiv32
+local_udiv32:
 .incbin "fe11-arm9-base.bin", 0x20838, 0x20874 - 0x20838
 
-ARM_FUNC_START func_02020874
-func_02020874:
+ARM_FUNC_START local_umod32
+local_umod32:
 .incbin "fe11-arm9-base.bin", 0x20874, 0x208B0 - 0x20874
 
-ARM_FUNC_START func_020208B0
-func_020208B0:
+ARM_FUNC_START local_divcalc
+local_divcalc:
 .incbin "fe11-arm9-base.bin", 0x208B0, 0x20994 - 0x208B0
 
 ARM_FUNC_START func_02020994
@@ -7323,33 +7399,29 @@ ARM_FUNC_START func_020492A0
 func_020492A0:
 .incbin "fe11-arm9-base.bin", 0x492A0, 0x492F4 - 0x492A0
 
-ARM_FUNC_START func_020492F4
-func_020492F4:
+ARM_FUNC_START Unk02196F0C_GetChunkIndexByName
+Unk02196F0C_GetChunkIndexByName:
 .incbin "fe11-arm9-base.bin", 0x492F4, 0x49350 - 0x492F4
 
-ARM_FUNC_START func_02049350
-func_02049350:
+ARM_FUNC_START Unk02196F0C_CheckBit
+Unk02196F0C_CheckBit:
 .incbin "fe11-arm9-base.bin", 0x49350, 0x49370 - 0x49350
 
-ARM_FUNC_START func_02049370
-func_02049370:
+ARM_FUNC_START Unk02196F0C_CheckBitByName
+Unk02196F0C_CheckBitByName:
 .incbin "fe11-arm9-base.bin", 0x49370, 0x4939C - 0x49370
 
-ARM_FUNC_START func_0204939C
-func_0204939C:
+ARM_FUNC_START Unk02196F0C_SetBit
+Unk02196F0C_SetBit:
 .incbin "fe11-arm9-base.bin", 0x4939C, 0x493B8 - 0x4939C
 
-ARM_FUNC_START func_020493B8
-func_020493B8:
+ARM_FUNC_START Unk02196F0C_SetBitByName
+Unk02196F0C_SetBitByName:
 .incbin "fe11-arm9-base.bin", 0x493B8, 0x493E0 - 0x493B8
 
-ARM_FUNC_START func_020493E0
-func_020493E0:
-.incbin "fe11-arm9-base.bin", 0x493E0, 0x49408 - 0x493E0
-
-ARM_FUNC_START func_02049408
-func_02049408:
-.incbin "fe11-arm9-base.bin", 0x49408, 0x4947C - 0x49408
+ARM_FUNC_START Unk02196F0C_ClearBit
+Unk02196F0C_ClearBit:
+.incbin "fe11-arm9-base.bin", 0x493E0, 0x4947C - 0x493E0
 
 ARM_FUNC_START func_0204947C
 func_0204947C:
@@ -9871,13 +9943,17 @@ ARM_FUNC_START func_0206E768
 func_0206E768:
 .incbin "fe11-arm9-base.bin", 0x6E768, 0x6E7B8 - 0x6E768
 
-ARM_FUNC_START func_0206E7B8
-func_0206E7B8:
+ARM_FUNC_START local_strncpy
+local_strncpy:
 .incbin "fe11-arm9-base.bin", 0x6E7B8, 0x6E7F4 - 0x6E7B8
 
-ARM_FUNC_START func_0206E7F4
-func_0206E7F4:
-.incbin "fe11-arm9-base.bin", 0x6E7F4, 0x6E8D0 - 0x6E7F4
+ARM_FUNC_START local_strncat
+local_strncat:
+.incbin "fe11-arm9-base.bin", 0x6E7F4, 0x6E84C - 0x6E7F4
+
+ARM_FUNC_START func_0206E84C
+func_0206E84C:
+.incbin "fe11-arm9-base.bin", 0x6E84C, 0x6E8D0 - 0x6E84C
 
 ARM_FUNC_START func_0206E8D0
 func_0206E8D0:
@@ -13261,7 +13337,11 @@ func_02097BEC:
 
 ARM_FUNC_START func_02097D74
 func_02097D74:
-.incbin "fe11-arm9-base.bin", 0x97D74, 0x97DC8 - 0x97D74
+.incbin "fe11-arm9-base.bin", 0x97D74, 0x97DB4 - 0x97D74
+
+ARM_FUNC_START func_02097DB4
+func_02097DB4:
+.incbin "fe11-arm9-base.bin", 0x97DB4, 0x97DC8 - 0x97DB4
 
 ARM_FUNC_START func_02097DC8
 func_02097DC8:
@@ -14887,16 +14967,16 @@ ARM_FUNC_START OS_SPrintf
 OS_SPrintf:
 .incbin "fe11-arm9-base.bin", 0xA2BF8, 0xA2C20 - 0xA2BF8
 
-ARM_FUNC_START libfunc_unk_20A2C20
-libfunc_unk_20A2C20:
+ARM_FUNC_START OS_VSPrintf
+OS_VSPrintf:
 .incbin "fe11-arm9-base.bin", 0xA2C20, 0xA2C38 - 0xA2C20
 
-ARM_FUNC_START libfunc_unk_20A2C38
-libfunc_unk_20A2C38:
+ARM_FUNC_START OS_SNPrintf
+OS_SNPrintf:
 .incbin "fe11-arm9-base.bin", 0xA2C38, 0xA2C60 - 0xA2C38
 
-ARM_FUNC_START libfunc_unk_20A2C60
-libfunc_unk_20A2C60:
+ARM_FUNC_START OS_VSNPrintf
+OS_VSNPrintf:
 .incbin "fe11-arm9-base.bin", 0xA2C60, 0xA2C6C - 0xA2C60
 
 ARM_FUNC_START OSi_GetUnusedThreadId
