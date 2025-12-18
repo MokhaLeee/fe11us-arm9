@@ -33,7 +33,7 @@ INC_DIRS := include include/mw include/nitro-sdk
 MW_INC_FLAG  := $(foreach dir, $(INC_DIRS), -i $(dir))
 ARM_INC_FLAG := $(foreach dir, $(INC_DIRS), -I $(dir))
 
-MW_CFLAGS  := $(MW_INC_FLAG) -O4,p -enum int -proc arm946e -gccext,on -fp soft -lang c99 -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa -w iserr
+MW_CFLAGS  := $(MW_INC_FLAG) -O4,p -enum int -proc arm946e -gccext,on -fp soft -inline on,noauto -Cpp_exceptions off -gccinc -interworking -gccdep -sym on -nolink -char signed -g -nolink -msgstyle gcc -d usa -w iserr
 MW_CPPFLAGS := $(MW_INC_FLAG) 
 MW_ASFLAGS := $(MW_INC_FLAG) -proc arm5te
 
@@ -94,7 +94,11 @@ CLEAN_DIRS += $(ALL_OBJS)
 
 %.o: %.c include/*.h
 	@echo "[CC]	$@"
-	@$(MWCC) $(MW_CFLAGS) $(MW_INC_FLAG) $< -o $@
+	@$(MWCC) $(MW_CFLAGS) -lang=c $(MW_INC_FLAG) $< -o $@
+
+%.o: %.cpp include/*.h
+	@echo "[CC]	$@"
+	@$(MWCC) $(MW_CFLAGS) -lang=c++ $(MW_INC_FLAG) $< -o $@
 
 %.o: %.S
 	@echo "[AS]	$@"
