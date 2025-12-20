@@ -3283,12 +3283,12 @@ ARM_FUNC_START CARDi_OnReadCard
 CARDi_OnReadCard:
 .incbin "fe11-arm9-base.bin", 0xADBC8, 0xADC98 - 0xADBC8
 
-ARM_FUNC_START libfunc_unk_20ADC98
-libfunc_unk_20ADC98:
+ARM_FUNC_START CARDi_TryReadCardDma
+CARDi_TryReadCardDma:
 .incbin "fe11-arm9-base.bin", 0xADC98, 0xADE24 - 0xADC98
 
-ARM_FUNC_START libfunc_unk_20ADE24
-libfunc_unk_20ADE24:
+ARM_FUNC_START CARDi_ReadCard
+CARDi_ReadCard:
 .incbin "fe11-arm9-base.bin", 0xADE24, 0xADF14 - 0xADE24
 
 ARM_FUNC_START CARDi_ReadRomIDCore
@@ -3935,8 +3935,8 @@ ARM_FUNC_START libfunc_unk_20B6174
 libfunc_unk_20B6174:
 .incbin "fe11-arm9-base.bin", 0xB6174, 0xB61C8 - 0xB6174
 
-ARM_FUNC_START libfunc_unk_20B61C8
-libfunc_unk_20B61C8:
+ARM_FUNC_START CTRDGi_InitCommon
+CTRDGi_InitCommon:
 .incbin "fe11-arm9-base.bin", 0xB61C8, 0xB6200 - 0xB61C8
 
 ARM_FUNC_START libfunc_unk_20B6200
@@ -3979,24 +3979,24 @@ ARM_FUNC_START CTRDG_Init
 CTRDG_Init:
 .incbin "fe11-arm9-base.bin", 0xB64E0, 0xB6594 - 0xB64E0
 
-ARM_FUNC_START libfunc_unk_20B6594
-libfunc_unk_20B6594:
+ARM_FUNC_START CTRDGi_InitModuleInfo
+CTRDGi_InitModuleInfo:
 .incbin "fe11-arm9-base.bin", 0xB6594, 0xB6788 - 0xB6594
 
-ARM_FUNC_START libfunc_unk_20B6788
-libfunc_unk_20B6788:
+ARM_FUNC_START CTRDGi_CallbackForInitModuleInfo
+CTRDGi_CallbackForInitModuleInfo:
 .incbin "fe11-arm9-base.bin", 0xB6788, 0xB67B4 - 0xB6788
 
-ARM_FUNC_START libfunc_unk_20B67B4
-libfunc_unk_20B67B4:
+ARM_FUNC_START CTRDGi_PulledOutCallback
+CTRDGi_PulledOutCallback:
 .incbin "fe11-arm9-base.bin", 0xB67B4, 0xB6810 - 0xB67B4
 
 ARM_FUNC_START libfunc_unk_20B6810
 libfunc_unk_20B6810:
 .incbin "fe11-arm9-base.bin", 0xB6810, 0xB6838 - 0xB6810
 
-ARM_FUNC_START libfunc_unk_20B6838
-libfunc_unk_20B6838:
+ARM_FUNC_START CTRDGi_InitTaskThread
+CTRDGi_InitTaskThread:
 .incbin "fe11-arm9-base.bin", 0xB6838, 0xB68C4 - 0xB6838
 
 ARM_FUNC_START libfunc_unk_20B68C4

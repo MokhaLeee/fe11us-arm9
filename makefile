@@ -93,8 +93,8 @@ ALL_DEPS := $(ALL_OBJS:%.o=%.d)
 CLEAN_DIRS += $(ALL_OBJS)
 
 %.o: %.c include/*.h
-	@echo "[CC]	$@"
-	@$(MWCC) $(MW_CFLAGS) -lang=c $(MW_INC_FLAG) $< -o $@
+#	@echo "[CC]	$@"
+	$(MWCC) $(MW_CFLAGS) -lang=c $(MW_INC_FLAG) $< -o $@
 
 %.o: %.cpp include/*.h
 	@echo "[CC]	$@"
