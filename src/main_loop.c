@@ -46,7 +46,7 @@ void func_0200EECC(void)
 {
 	int ime_old;
 
-	OS_SetIrqFunction(1, func_0200F0F0);
+	OS_SetIrqFunction(1, VBlankIntr);
 	OS_EnableIrqMask(1);
 
 	ime_old = REG_IME;

@@ -1,8 +1,8 @@
 .include "macros.inc"
 .section .text
 
-ARM_FUNC_START func_0200F0F0
-func_0200F0F0:
+ARM_FUNC_START VBlankIntr
+VBlankIntr:
 .incbin "fe11-arm9-base.bin", 0x0F0F0, 0x0F1E8 - 0x0F0F0
 
 ARM_FUNC_START func_0200F1E8

@@ -87,7 +87,11 @@ func_020217B4:
 
 ARM_FUNC_START func_020219A4
 func_020219A4:
-.incbin "fe11-arm9-base.bin", 0x219A4, 0x21B14 - 0x219A4
+.incbin "fe11-arm9-base.bin", 0x219A4, 0x21B00 - 0x219A4
+
+ARM_FUNC_START func_02021B00
+func_02021B00:
+.incbin "fe11-arm9-base.bin", 0x21B00, 0x21B14 - 0x21B00
 
 ARM_FUNC_START func_02021B14
 func_02021B14:

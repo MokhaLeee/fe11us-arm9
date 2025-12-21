@@ -402,7 +402,7 @@ void func_0200EECC(void);
 void InitSystem(void);
 void func_0200F028(void);
 void main_loop(void);
-void func_0200F0F0(void);
+void VBlankIntr(void);
 void func_0200F1E8(void);
 void func_0200F20C(u32 overlayId);
 void func_0200F24C(u32 overlayId);
