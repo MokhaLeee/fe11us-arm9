@@ -42,8 +42,13 @@ SECTIONS
 		. = 0x1E3560;
 		asm/overlay2.o(.text);
 
+/*
 		. = 0x204C20;
 		asm/overlay4.o(.text);
+*/
+
+		. = 0x204c20;
+		asm/overlay8.o(.text);
 	} > ram
 
 }
