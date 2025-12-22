@@ -1,0 +1,72 @@
+    .text       start:0x02000000 end:0x020c4690 kind:code align:32
+    .exception  start:0x020c4690 end:0x020c47f0 kind:rodata align:1
+    .exceptix   start:0x020c47f0 end:0x020c4cdc kind:rodata align:4
+    .init       start:0x020c4cdc end:0x020c515c kind:code align:4
+    .rodata     start:0x020c515c end:0x020c9b10 kind:rodata align:4
+    .ctor       start:0x020c9b10 end:0x020c9b48 kind:rodata align:4
+    .data       start:0x020c9b60 end:0x020e3ca0 kind:data align:32
+    .bss        start:0x020e3ca0 end:0x021a23e0 kind:bss align:32
+
+src/main.cpp:
+    .text       start:0x02000c50 end:0x020010a0
+
+src/main_loop.cpp:
+    .text       start:0x0200ef04 end:0x0200f0f0
+
+src/proc.c:
+    complete
+    .text       start:0x02018c58 end:0x02019bd4
+
+src/anime.cpp:
+    .text       start:0x02019d80 end:0x0201bc28
+    .data       start:0x020ce770 end:0x020ce8f4
+
+src/fade.cpp:
+    .text       start:0x0201bc28 end:0x0201db38
+    .data       start:0x020ce8f4 end:0x020ce974
+
+src/gamectrl.cpp:
+    .text       start:0x020217b4 end:0x02022f4c
+    .data       start:0x020cec44 end:0x020cf650
+
+src/hashtable.cpp:
+    .text       start:0x02037460 end:0x02037890
+    .init       start:0x020c5088 end:0x020c50c0
+    .ctor       start:0x020c9b34 end:0x020c9b38
+    .bss        start:0x02197234 end:0x02197254
+
+src/database.cpp:
+    .text       start:0x02037a04 end:0x02038348
+    .data       start:0x020d463c end:0x020d4894
+
+src/item.cpp:
+    .text       start:0x02038348 end:0x02039088
+    .data       start:0x020d4900 end:0x020d4958
+
+src/unit.cpp:
+    .text       start:0x0203a94c end:0x0203df8c
+
+src/unit_item.cpp:
+    .text       start:0x0203df8c end:0x0203e220
+
+src/force.cpp:
+    .text       start:0x0203fafc end:0x02040eec
+    .bss        start:0x021974d8 end:0x021974e0
+
+src/convoy.cpp:
+    .text       start:0x02040eec end:0x020411e8
+    .bss        start:0x021974e0 end:0x021974e4
+
+src/event_funcs.cpp:
+    .text       start:0x02044974 end:0x020449bc
+
+src/event.cpp:
+    .text       start:0x0204745c end:0x020492a0
+    .data       start:0x020d5db8 end:0x020d5eb0
+
+src/state_manager.cpp:
+    .text       start:0x020492a0 end:0x0204a0dc
+    .data       start:0x020d5eb0 end:0x020d5f14
+
+src/code_02078808.c:
+    .text       start:0x02078808 end:0x02078878

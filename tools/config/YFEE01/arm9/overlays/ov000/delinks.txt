@@ -1,0 +1,28 @@
+    .text       start:0x021a23e0 end:0x021db65c kind:code align:32
+    .rodata     start:0x021db65c end:0x021db690 kind:rodata align:4
+    .ctor       start:0x021db690 end:0x021db694 kind:rodata align:4
+    .data       start:0x021db6a0 end:0x021e3320 kind:data align:32
+    .bss        start:0x021e3320 end:0x021e3560 kind:bss align:32
+
+src/ov000/map.cpp:
+    .text       start:0x021a23e0 end:0x021a4a7c
+    .data       start:0x021db6a0 end:0x021db814
+    .bss        start:0x021e3324 end:0x021e332c
+
+src/ov000/camera.cpp:
+    complete
+    .text       start:0x021a4a7c end:0x021a5318
+
+src/ov000/playerphase.cpp:
+    .text       start:0x021aa210 end:0x021ae2f4
+
+src/ov000/mind.cpp:
+    .text       start:0x021af79c end:0x021b06fc
+
+src/ov000/arena.cpp:
+    .text       start:0x021d7c90 end:0x021d9adc
+    .data       start:0x021e2c88 end:0x021e32c4
+
+src/ov000/disposition.cpp:
+    .text       start:0x021d9adc end:0x021db65c
+    .data       start:0x021e32c4 end:0x021e3320
